@@ -72,8 +72,53 @@
 </head>
 <body class="bg-gray-50">
 
-    <!-- Navigation placeholder -->
-    <div id="nav-placeholder"></div>
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 shadow-lg">
+        <!-- Mobile Nav -->
+        <div class="md:hidden bg-white border-b border-gray-100">
+            <div class="px-4 py-2.5">
+                <div class="flex items-center justify-between">
+                    <a href="/" class="flex items-center gap-2.5">
+                        <div class="w-10 h-10 bg-gradient-to-br from-primary-600 to-primary-700 rounded-xl flex items-center justify-center shadow-md">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M21 4H3a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1zM4 18V6h7v12H4zm16 0h-7V6h7v12zM6 8h3v2H6V8zm0 4h3v2H6v-2zm9-4h3v2h-3V8zm0 4h3v2h-3v-2z"/>
+                            </svg>
+                        </div>
+                        <div class="flex flex-col">
+                            <span class="text-gray-900 font-bold text-sm leading-tight">BibleTeaching</span>
+                            <span class="text-primary-600 text-[10px] font-medium leading-tight">Program.com</span>
+                        </div>
+                    </a>
+                    <a href="/" class="p-2.5 rounded-xl bg-primary-600 text-white hover:bg-primary-700 transition shadow-md">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- Desktop Nav -->
+        <div class="hidden md:block bg-white border-b border-gray-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-16">
+                    <a href="/" class="flex items-center gap-2">
+                        <div class="w-10 h-10 bg-gradient-to-br from-primary-600 to-primary-700 rounded-xl flex items-center justify-center shadow-md">
+                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M21 4H3a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1zM4 18V6h7v12H4zm16 0h-7V6h7v12zM6 8h3v2H6V8zm0 4h3v2H6v-2zm9-4h3v2h-3V8zm0 4h3v2h-3v-2z"/>
+                            </svg>
+                        </div>
+                        <span class="text-primary-700 font-bold text-lg tracking-tight">BibleTeachingProgram.com</span>
+                    </a>
+                    <div class="flex items-center gap-4">
+                        <a href="/bible.html" class="text-sm font-medium text-gray-600 hover:text-primary-700 transition px-2 py-1">Bible</a>
+                        <a href="/courses.html" class="text-sm font-medium text-gray-600 hover:text-primary-700 transition px-2 py-1">Courses</a>
+                        <a href="/books.html" class="text-sm font-medium text-gray-600 hover:text-primary-700 transition px-2 py-1">Books</a>
+                        <a href="/dailyverses.html" class="text-sm font-medium text-white bg-primary-700 hover:bg-primary-800 transition px-3 py-1.5 rounded-lg">Daily Verses</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
     <section class="relative bg-gradient-to-br from-indigo-900 via-purple-900 to-indigo-800 text-white overflow-hidden">
@@ -337,9 +382,40 @@
         </div>
     </main>
 
-    <!-- Footer placeholder -->
-    <div id="footer-placeholder"></div>
-
-    <script src="/js/components.js"></script>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-primary-700 text-white rounded-lg flex items-center justify-center font-bold">BTP</div>
+                        <span class="font-bold text-xl text-white">Bible Teaching Program</span>
+                    </div>
+                    <p class="text-gray-400 text-sm">Equipping believers worldwide through biblical teaching</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/bible.html" class="text-gray-400 hover:text-white transition">Bible</a></li>
+                        <li><a href="/courses.html" class="text-gray-400 hover:text-white transition">Courses</a></li>
+                        <li><a href="/books.html" class="text-gray-400 hover:text-white transition">Books</a></li>
+                        <li><a href="/dailyverses.html" class="text-gray-400 hover:text-white transition">Daily Verses</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-4">Resources</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="/category/prayer.html" class="text-gray-400 hover:text-white transition">Prayer</a></li>
+                        <li><a href="/videos.html" class="text-gray-400 hover:text-white transition">Videos</a></li>
+                        <li><a href="/sitemap.html" class="text-gray-400 hover:text-white transition">Sitemap</a></li>
+                        <li><a href="/contact.html" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-6 text-center">
+                <p class="text-sm text-gray-500">&copy; 2025 Bible Teaching Program. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
