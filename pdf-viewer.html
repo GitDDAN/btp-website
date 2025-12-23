@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PDF Viewer - Bible Teaching Program">
+    <title>PDF Viewer | Bible Teaching Program</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': {
+                            '50': '#f0f7ff',
+                            '100': '#e0effe',
+                            '600': '#006fc7',
+                            '700': '#0058a2',
+                            '800': '#004a85',
+                            '900': '#003d6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .pdf-viewer-container {
+            min-height: calc(100vh - 64px - 80px - 60px - 140px);
+        }
+
+        #pdf-canvas {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .page-controls button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-6">
+                    <a href="/" class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-primary-700 text-white rounded-lg flex items-center justify-center font-bold text-lg">
+                            BTP
+                        </div>
+                        <div class="hidden md:block">
+                            <div class="font-bold text-lg text-gray-900">Bible Teaching Program</div>
+                            <div class="text-xs text-gray-600">Biblical Education</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="flex items-center gap-2 md:gap-4">
+                    <button onclick="history.back()" class="flex items-center gap-1 px-3 py-1.5 bg-primary-700 text-white rounded-lg text-sm font-medium hover:bg-primary-800 transition">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+                        </svg>
+                        <span class="hidden sm:inline">Back</span>
+                    </button>
+                    <a href="/" class="text-sm font-medium text-gray-700 hover:text-primary-700 transition hidden md:block">Home</a>
+                    </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PDF Viewer Header -->
+    <div class="bg-white border-b border-gray-200 py-4">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <svg class="w-6 h-6 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 id="pdf-title" class="text-lg font-bold text-gray-900">Loading PDF...</h1>
+                        <p id="page-info" class="text-sm text-gray-600">Page 1 of 1</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-2 flex-wrap">
+                    <a id="download-link" href="#" download class="inline-flex items-center gap-2 px-4 py-2 bg-primary-700 text-white rounded-lg font-medium hover:bg-primary-800 transition text-sm">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                        </svg>
+                        Download
+                    </a>
+                    <a id="new-tab-link" href="#" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 bg-gray-100 text-gray-700 rounded-lg font-medium hover:bg-gray-200 transition text-sm">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                        </svg>
+                        Open in New Tab
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PDF Controls -->
+    <div class="bg-gradient-to-r from-primary-700 to-primary-800 text-white py-3">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2 page-controls">
+                    <button id="prev-page" class="p-2 hover:bg-white hover:bg-opacity-20 rounded-lg transition disabled:hover:bg-transparent" title="Previous Page">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                    </button>
+                    <button id="next-page" class="p-2 hover:bg-white hover:bg-opacity-20 rounded-lg transition disabled:hover:bg-transparent" title="Next Page">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                    <span class="px-3 text-sm font-medium">Page <span id="page-num">1</span> / <span id="page-count">1</span></span>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <button id="zoom-out" class="p-2 hover:bg-white hover:bg-opacity-20 rounded-lg transition" title="Zoom Out">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM13 10H7"/>
+                        </svg>
+                    </button>
+                    <span id="zoom-level" class="px-3 text-sm font-medium">100%</span>
+                    <button id="zoom-in" class="p-2 hover:bg-white hover:bg-opacity-20 rounded-lg transition" title="Zoom In">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/>
+                        </svg>
+                    </button>
+                    <button id="zoom-fit" class="px-3 py-2 text-sm hover:bg-white hover:bg-opacity-20 rounded-lg transition font-medium" title="Fit to Width">
+                        Fit Width
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PDF Canvas Container -->
+    <div class="pdf-viewer-container overflow-auto" style="background: linear-gradient(135deg, #f0f7ff 0%, #e0effe 100%);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div id="loading-message" class="text-center py-20">
+                <div class="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-primary-700 mb-4"></div>
+                <p class="text-gray-600 text-lg">Loading PDF...</p>
+            </div>
+            <div id="error-message" class="hidden text-center py-20">
+                <div class="text-6xl mb-4">⚠️</div>
+                <p class="text-gray-900 text-xl font-semibold mb-2">Unable to load PDF</p>
+                <p class="text-gray-600">Please try downloading the file instead.</p>
+            </div>
+            <div class="flex justify-center">
+                <canvas id="pdf-canvas" class="bg-white rounded-lg"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Resources Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div class="bg-blue-50 border-2 border-blue-200 rounded-xl p-6">
+            <div class="flex items-center justify-between flex-wrap gap-4">
+                <div class="flex items-center gap-4">
+                    <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                        <span class="text-2xl">&#128218;</span>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-gray-900">Done Reading?</h3>
+                        <p class="text-sm text-gray-600">Go back to browse more resources</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button onclick="history.back()" class="px-6 py-3 bg-primary-700 text-white rounded-lg font-medium hover:bg-primary-800 transition">
+                        &#8592; Back to Previous Page
+                    </button>
+                    <a href="/books.html" class="px-6 py-3 bg-white border border-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-50 transition">
+                        Browse Books
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-6 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center gap-3 mb-2">
+                    <div class="w-8 h-8 bg-primary-700 text-white rounded-lg flex items-center justify-center font-bold text-sm">
+                        BTP
+                    </div>
+                    <span class="font-bold text-lg text-white">Bible Teaching Program</span>
+                </div>
+                <p class="text-gray-400 text-sm">Equipping believers worldwide through biblical teaching</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set PDF.js worker
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+        // Get PDF URL from query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const pdfUrl = urlParams.get('file');
+
+        if (!pdfUrl) {
+            document.getElementById('loading-message').classList.add('hidden');
+            document.getElementById('error-message').classList.remove('hidden');
+            document.getElementById('pdf-title').textContent = 'No PDF specified';
+        } else {
+            // Decode and set links
+            const decodedUrl = decodeURIComponent(pdfUrl);
+            document.getElementById('download-link').href = decodedUrl;
+            document.getElementById('new-tab-link').href = decodedUrl;
+
+            // Extract filename for title
+            const filename = decodedUrl.split('/').pop().split('?')[0];
+            document.getElementById('pdf-title').textContent = filename;
+            document.title = filename + ' | Bible Teaching Program';
+
+            // PDF viewing state
+            let pdfDoc = null;
+            let pageNum = 1;
+            let pageRendering = false;
+            let pageNumPending = null;
+            let scale = 1.5;
+
+            const canvas = document.getElementById('pdf-canvas');
+            const ctx = canvas.getContext('2d');
+
+            /**
+             * Render the page
+             */
+            function renderPage(num) {
+                pageRendering = true;
+
+                pdfDoc.getPage(num).then(function(page) {
+                    const viewport = page.getViewport({ scale: scale });
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
+
+                    const renderContext = {
+                        canvasContext: ctx,
+                        viewport: viewport
+                    };
+
+                    const renderTask = page.render(renderContext);
+
+                    renderTask.promise.then(function() {
+                        pageRendering = false;
+                        if (pageNumPending !== null) {
+                            renderPage(pageNumPending);
+                            pageNumPending = null;
+                        }
+                    });
+                });
+
+                // Update page counters
+                document.getElementById('page-num').textContent = num;
+                updatePageControls();
+            }
+
+            /**
+             * Queue page rendering
+             */
+            function queueRenderPage(num) {
+                if (pageRendering) {
+                    pageNumPending = num;
+                } else {
+                    renderPage(num);
+                }
+            }
+
+            /**
+             * Update page controls state
+             */
+            function updatePageControls() {
+                document.getElementById('prev-page').disabled = pageNum <= 1;
+                document.getElementById('next-page').disabled = pageNum >= pdfDoc.numPages;
+            }
+
+            /**
+             * Update zoom level display
+             */
+            function updateZoomDisplay() {
+                document.getElementById('zoom-level').textContent = Math.round(scale * 100) + '%';
+            }
+
+            /**
+             * Previous page
+             */
+            document.getElementById('prev-page').addEventListener('click', function() {
+                if (pageNum <= 1) return;
+                pageNum--;
+                queueRenderPage(pageNum);
+            });
+
+            /**
+             * Next page
+             */
+            document.getElementById('next-page').addEventListener('click', function() {
+                if (pageNum >= pdfDoc.numPages) return;
+                pageNum++;
+                queueRenderPage(pageNum);
+            });
+
+            /**
+             * Zoom in
+             */
+            document.getElementById('zoom-in').addEventListener('click', function() {
+                scale = Math.min(scale + 0.25, 3);
+                updateZoomDisplay();
+                queueRenderPage(pageNum);
+            });
+
+            /**
+             * Zoom out
+             */
+            document.getElementById('zoom-out').addEventListener('click', function() {
+                scale = Math.max(scale - 0.25, 0.5);
+                updateZoomDisplay();
+                queueRenderPage(pageNum);
+            });
+
+            /**
+             * Fit to width
+             */
+            document.getElementById('zoom-fit').addEventListener('click', function() {
+                scale = 1.5;
+                updateZoomDisplay();
+                queueRenderPage(pageNum);
+            });
+
+            /**
+             * Load the PDF
+             */
+            pdfjsLib.getDocument(decodedUrl).promise.then(function(pdfDoc_) {
+                pdfDoc = pdfDoc_;
+                document.getElementById('page-count').textContent = pdfDoc.numPages;
+                document.getElementById('page-info').textContent = 'Page 1 of ' + pdfDoc.numPages;
+
+                // Hide loading, show canvas
+                document.getElementById('loading-message').classList.add('hidden');
+
+                // Initial render
+                renderPage(pageNum);
+                updateZoomDisplay();
+            }).catch(function(error) {
+                console.error('Error loading PDF:', error);
+                document.getElementById('loading-message').classList.add('hidden');
+                document.getElementById('error-message').classList.remove('hidden');
+            });
+        }
+    </script>
+
+    <script src="/js/inline-editor.js"></script>
+</body>
+</html>

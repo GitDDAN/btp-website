@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Ekklesia of God. - General Studies">
+    <title>The Ekklesia of God. | General Studies | Bible Teaching Program</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': {
+                            '50': '#f0f7ff',
+                            '100': '#e0effe',
+                            '600': '#006fc7',
+                            '700': '#0058a2',
+                            '800': '#004a85',
+                            '900': '#003d6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .content-area {
+            font-size: 1.0625rem;
+            line-height: 1.8;
+            color: #1f2937;
+            font-family: Georgia, 'Times New Roman', serif;
+        }
+
+        .content-area h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #171717;
+        }
+
+        .content-area h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 1.75rem;
+            margin-bottom: 0.875rem;
+            color: #262626;
+        }
+
+        .content-area h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #404040;
+        }
+
+        .content-area p {
+            margin-bottom: 1rem;
+        }
+
+        .content-area ul, .content-area ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-area li {
+            margin-bottom: 0.5rem;
+        }
+
+        .content-area blockquote {
+            border-left: 4px solid #0058a2;
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #525252;
+        }
+
+        .content-area table {
+            width: 100%;
+            margin: 1.5rem 0;
+            border-collapse: collapse;
+        }
+
+        .content-area table td, .content-area table th {
+            padding: 0.75rem;
+            border: 1px solid #e5e5e5;
+        }
+
+        .content-area img {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0;
+            border-radius: 0.5rem;
+        }
+
+        /* Professional styling for numbered lists */
+        .content-area .numbered-item {
+            margin-left: 0;
+            padding-left: 0;
+            margin-bottom: 1.25rem;
+            margin-top: 1rem;
+            line-height: 1.8;
+        }
+
+        /* Styled number for lists */
+        .content-area .list-number {
+            display: inline;
+            color: #004a85;
+            font-weight: 700;
+            margin-right: 0.5rem;
+            font-size: 1rem;
+        }
+
+        /* Professional styling for bullet points */
+        .content-area .bullet-item {
+            margin-left: 0;
+            padding-left: 2rem;
+            position: relative;
+            margin-bottom: 0.875rem;
+            line-height: 1.75;
+        }
+
+        .content-area .bullet-item::before {
+            content: "•";
+            position: absolute;
+            left: 0.5rem;
+            color: #006fc7;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Scripture reference highlighting */
+        .content-area .scripture-ref {
+            font-weight: 600;
+            color: #0058a2;
+            font-style: italic;
+        }
+
+        /* Section headers styling */
+        .content-area .section-header {
+            display: inline;
+            color: #1f2937;
+            font-size: 1.0625rem;
+            font-weight: 700;
+        }
+
+        /* Roman numeral list items */
+        .content-area .roman-item {
+            margin-left: 0;
+            padding-left: 0;
+            margin-bottom: 1rem;
+            margin-top: 0.75rem;
+            line-height: 1.75;
+        }
+
+        /* Styled Roman numerals */
+        .content-area .roman-number {
+            display: inline;
+            color: #004a85;
+            font-weight: 700;
+            margin-right: 0.5rem;
+            font-size: 1rem;
+            font-style: normal;
+        }
+
+        /* Better paragraph spacing */
+        .content-area p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-6">
+                    <a href="/" class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-primary-700 text-white rounded-lg flex items-center justify-center font-bold text-lg">
+                            BTP
+                        </div>
+                        <div class="hidden md:block">
+                            <div class="font-bold text-lg text-gray-900">Bible Teaching Program</div>
+                            <div class="text-xs text-gray-600">Biblical Education & Courses</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="/general.html" class="text-sm font-medium text-gray-700 hover:text-primary-700 transition">← Back to General Studies</a>
+                    </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Lesson Header -->
+    <section class="bg-gradient-to-br from-amber-600 via-amber-700 to-amber-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Breadcrumb -->
+            <div class="flex items-center gap-2 text-sm text-white text-opacity-80 mb-4">
+                <a href="/" class="hover:text-white transition">Home</a>
+                <span>›</span>
+                <a href="/category/teaching-courses.html" class="hover:text-white transition">Teaching & Courses</a>
+                <span>›</span>
+                <a href="/general.html" class="hover:text-white transition">General Studies</a>
+                
+                <span>›</span>
+                <span class="text-white">The Ekklesia of God.</span>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <div class="w-14 h-14 bg-white bg-opacity-20 backdrop-blur-sm rounded-xl flex items-center justify-center text-2xl">
+                    📚
+                </div>
+                <div>
+                    <div class="text-sm text-white text-opacity-80 mb-1">General Studies</div>
+                    <h1 class="text-2xl md:text-3xl font-bold">The Ekklesia of God.</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+
+            <!-- Main Column -->
+            <div class="lg:col-span-3 space-y-6">
+                <!-- Lesson Content with PDF Viewer -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    
+
+                    <!-- Content Tab -->
+                    <div id="contentSection" class="p-8">
+                        <article class="content-area">
+<div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 mb-6 border-2 border-blue-200">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 bg-primary-600 text-white rounded-lg flex items-center justify-center flex-shrink-0 text-xl">
+ 📖
+ </div>
+<div class="flex-1">
+<div class="text-sm text-gray-600"><span class="font-semibold">Scripture:</span> Matthew16:18AndI say also unto thee,
+That thou art Peter, and upon this rock I will build my church; and the gates
+of hell shall not prevail against it.</div>
+</div>
+</div>
+</div>
+<p></p><p class="MsoNormal"><b><span lang="EN-GB">Greek Word Studies</span></b></p>
+<p class="MsoNormal"><b><span lang="EN-GB">Advanced Level</span></b></p>
+<p class="MsoNormal"><b><span lang="EN-GB">Lesson</span><span lang="EN-GB"> Title:</span></b><span lang="EN-GB"><span>The <span class="SpellE">Ekklesia</span>
+of God</span></span></p>
+<p class="MsoNormal"><b class="section-header section-header section-header section-header section-header section-header section-header section-header section-header section-header"><span lang="EN-GB">Introduction:</span></b><span lang="EN-GB">Literal me<span>aning of <span class="SpellE">ekklesia</span>.</span></span></p>
+<p class="MsoNormal"><span class="SpellE"><span lang="EN-GB">Ekklesia</span></span><span lang="EN-GB"> comes from two Greek words 
+<span class="SpellE">ek</span> meaning out and <span class="SpellE">kaleo</span>
+to call.</span></p>
+<p class="MsoNormal"><span class="SpellE"><span lang="EN-GB">Ekklesia</span></span><span lang="EN-GB"> literally means called
+out.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">But the meaning of <span class="SpellE">ekklesia</span>
+goes beyond the literal meaning of the word as those who are 'called out'.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">The <span class="SpellE">ekklesia</span> were not only called out.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">The <span class="SpellE">ekklesia</span> was an assembly of citizens who came together to
+make important decisions.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">The <span class="SpellE">ekklesia</span> refers to a company of citizens who are called out
+for the purpose of coming together, an assembly.</span></p>
+<p class="MsoNormal"><span lang="EN-GB"><b>The example of marriage.</b></span></p>
+<p class="MsoNormal"><span lang="EN-GB">A marriage is the joining together of two
+individuals not just leaving the mother and father.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">The New Testament <span class="SpellE"><i>ekklesia</i></span>
+are those who are joined to Christ in one body.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Just as a bride and her husband become one so the
+<span class="SpellE"><i>ekklesia</i></span> is one body in Christ.</span></p>
+<p class="MsoNormal"><b><span lang="EN-GB">Introductory
+illustration:The <span class="SpellE">Ekklesia</span>
+in <span>Athenian <span class="GramE">democracy</span></span></span></b><span lang="EN-GB"><a href="athenian.html"><span>(see notes on Athenian Democracy)</span></a></span></p>
+<p class="MsoNormal"><span class="SpellE"><i><span lang="EN-GB">Ekklesia</span></i></span><i><span lang="EN-GB">:</span></i><span lang="EN-GB">Governing body - supreme 'assembly':</span></p>
+<p class="MsoNormal"><span lang="EN-GB">All male
+citizens over 18 years of age could be part of the <span class="SpellE"><i>ekklesia</i></span>.
+</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Met in amphitheatre in <span class="SpellE">Pnyx</span>
+<span class="GramE">which could hold 6000,</span> </span></p>
+<p class="MsoNormal"><span class="GramE"><span lang="EN-GB">Met minimum 40 times a
+year (4 times a month).</span></span></p>
+<p class="MsoNormal"><span lang="EN-GB">Each citizen had the right to speak.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">They came together to decide all matters
+concerning the state.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Majority vote decided issues of war and
+peace, treaties, finance, legislation, public works, all government activity.</span></p>
+<p class="MsoNormal"><span class="GramE"><span lang="EN-GB">Supreme in all
+legislative.</span></span></p>
+<p class="MsoNormal"><span lang="EN-GB">Plato hated Athenian democracy because it meant
+legislation was made by amateurs.</span></p>
+<p class="MsoNormal"><b><span lang="EN-GB">Main Points</span></b></p>
+<p class="MsoNormal"><b><span lang="EN-GB">1. Equality and Freedom</span></b></p>
+<p class="MsoNormal"><span lang="EN-GB"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Ephesians 5:31</span></span></span></span></span></span></span></span></span></span>-<span class="GramE">32<span>For</span></span></span><span lang="EN-GB">
+this cause shall a man leave his father and mother, and shall be joined unto
+his wife, and they two shall be one flesh. This is a great mystery: but I speak
+concerning Christ and the church.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">The two words that were associated with Athenian
+democracy were Equality and Freedom</span></p>
+<p><b>There can never be real Equality or Freedom outside of the <span class="SpellE">ekklesia</span> of God.</b></p>
+<p><b>Equality</b></p>
+<p class="MsoNormal"><span lang="EN-GB">Athenian democracy did not have equality for all.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Athenian democracy did not recognise the equality
+of slaves, barbarians or women.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">No slaves, barbarians or women could be on the <span class="SpellE"><i>ekklesia</i></span>.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Only in Christ all barriers are broken down,</span>
+<span><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Galatians 3:28</span></span></span></span></span></span></span></span></span></span>, <span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Colossians 3:11</span></span></span></span></span></span></span></span></span></span>.</span></p>
+<p><b>Freedom</b></p>
+<p class="MsoNormal"><span lang="EN-GB">Athenian democracy could not provide freedom for
+all.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Although all citizens were free to vote they had
+to obey the will of the majority.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Freedom can only happen when everyone has the
+same will and this will is obeyed.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">It is impossible outside of Christ</span></p>
+<p class="MsoNormal"><span lang="EN-GB">But in Christ</span></p>
+<p class="MsoNormal"><span lang="EN-GB">The body of Christ has one will because the life
+and mind of Christ is in His body.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">The world cannot produce equality and freedom.</span></p>
+<p class="MsoNormal"><span class="GramE"><span lang="EN-GB">Example communism.</span></span></p>
+<p class="MsoNormal"><span lang="EN-GB">George Orwell (1903-1950) expressed the failure of communism
+to produce equality by the words in Animal Farm 'All animals are equal but some
+animals are more equal than others'.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Jean Jacque Rousseau (1712-1778) believed that 'man is born
+free but everywhere in chains'.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">As a Christian we know that man is not born free
+but is in bondage to sin.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">But the words of Jean Jacque Rousseau can easily
+be applied to the <span class="SpellE">ekklesia</span> of God.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">The <span class="SpellE">ekklesia</span> is born
+free in Christ but the body of Christ is everywhere in chains.</span></p>
+<p><span><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Galatians 5:1</span></span></span></span></span></span></span></span></span></span> 'Stand fast in the liberty
+wherewith Christ has set us free.'</span></p>
+<p><b>Equality and Freedom comes through the unity of the Holy Spirit</b></p>
+<p>The <span class="SpellE">ekklesia</span>
+is one body united in Christ.</p>
+<p class="MsoNormal"><span lang="EN-GB">A people united in Christ</span></p>
+<p><b>The <span class="SpellE">ekklesia</span>
+grows in the unity of the body of Christ.</b></p>
+<p class="MsoNormal"><span lang="EN-GB">A body is not united through organisation.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">A body is united by life</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Organisation will bring bondage when it seeks to
+control the body of Christ.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">When Paul wrote </span><span lang="EN-GB">'follow me as I
+follow Christ' (1 Cor.11:1)</span><span lang="EN-GB"> he was not starting an organisation.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">He was showing the Corinthians how to live the
+Christian life by example.</span></p>
+<p><b>The <span class="SpellE">ekklesia</span>
+is not an institution</b></p>
+<p class="MsoNormal"><span class="GramE"><span lang="EN-GB">William <span class="SpellE">Tyndales</span> (c.1493 -1536) dispute with Thomas More (1478-1535).</span></span></p>
+<p class="MsoNormal"><span class="SpellE"><span lang="EN-GB">Tyndale</span></span><span lang="EN-GB"> translated <span class="SpellE"><i>Ekklesia</i></span>
+as congregation</span></p>
+<p class="MsoNormal"><span lang="EN-GB">More
+stated that <span class="SpellE"><i>Ekklesia</i></span> should be translated
+Church</span></p>
+<p class="MsoNormal"><span class="SpellE"><span lang="EN-GB">Tyndales</span></span><span lang="EN-GB"> argument was that Church conveyed the meaning of an
+institution but this is not what the word means.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">It means
+people who are called together. </span></p>
+<p class="MsoNormal"><span lang="EN-GB">The word
+congregation used by <span class="SpellE">Tyndale</span> conveyed the meaning of
+a company of people coming together.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">But it
+does not express the other meaning of <span class="SpellE">Ekklesia</span> of
+being called out.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">The New
+Testament <span class="SpellE"><i>Ekklesia</i></span> are those who called by God
+to come out of the world to come together into the family of God.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">The King
+James Version translators went against <span class="SpellE">Tyndale</span> in
+this instance and chose to translate <span class="SpellE"><i>Ekklesia</i></span>
+as Church. </span></p>
+<p><b>A 'party spirit' will bring the <span class="SpellE">ekklesia</span> into bondage.</b></p>
+<p class="MsoNormal"><span lang="EN-GB">A party spirit seeks to divide the body of Christ
+into factions.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">A party spirit is a work of the flesh. </span></p>
+<p class="MsoNormal numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item"><span class="list-number">1)</span><span class="list-number"></span>Seeking
+to win followers</p>
+<p class="MsoNormal numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item"><span class="list-number">2)</span><span class="list-number"></span>Cause
+divisions</p>
+<p class="MsoNormal numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item"><span lang="EN-GB">3)Using
+scripture to promote ones own opinion.<b>
+</b></span></p>
+<p class="MsoNormal"><b><span lang="EN-GB"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Galatians 5:20</span></span></span></span></span></span></span></span></span></span>.</span></b></p>
+<p class="MsoNormal"><span lang="EN-GB">'</span><span class="GramE"><span lang="EN-GB">strife</span></span><span lang="EN-GB">',</span><span class="SpellE"><span lang="EN-GB">eritheiai</span></span><span lang="EN-GB"> (party spirit, rivalry</span><span lang="EN-GB">)</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Faction
+<span class="GramE">-is</span> the fruit
+of jealousy. Derived from <span class="SpellE">erithos</span> 'a hireling' it is not strife but it means seeking
+to win followers.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">'<span class="GramE">seditions</span>',</span><span class="SpellE"><span lang="EN-GB">dichostasiai</span></span><span lang="EN-GB">(standing apart)</span></p>
+<p class="MsoNormal"><span class="SpellE"><span class="GramE"><span lang="EN-GB">dicha</span></span></span><span lang="EN-GB"> 'asunder' and stasis 'a
+standing' - <span class="SpellE">di</span> indicates division.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Cf.
+Romans </span><span lang="EN-GB">16:17</span><span lang="EN-GB"> 'mark those who cause
+divisions and turn away'.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">'<span class="GramE">heresies</span>',</span><span class="SpellE"><span lang="EN-GB">aireseis</span></span><span lang="EN-GB">(choosing opinions)</span></p>
+<p class="MsoNormal"><span lang="EN-GB">A
+choosing - A self willed opinion, which is substituted for submission to the
+power of truth, and leads to division and the formation of sects.</span></p>
+<p class="MsoNormal"><span class="GramE"><span lang="EN-GB">A division and the formation of a party or sect in
+contrast to the uniting power of 'the truth'.</span></span></p>
+<p class="MsoNormal"><b><span lang="EN-GB">2. Freedom can only be experienced through truth
+and unity of mind.</span></b></p>
+<p class="MsoNormal"><span lang="EN-GB"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">John 8:31</span></span></span></span></span></span></span></span></span></span>-32Then said Jesus to those Jews which believed
+on him, If ye continue in my word, then are ye my disciples indeed;And ye shall know the truth, and the truth
+shall make you free.</span></p>
+<p><b>Freedom requires people to be united
+in truth how we live.</b></p>
+<p class="MsoNormal"><span lang="EN-GB">The ekklesia knows freedom through
+abiding (continuously living) in the words of Christ.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">We will know the truth when we live in
+the truth. Jesus said </span><span lang="EN-GB">If ye
+continue in my <span class="GramE">word, you</span> will know the truth and the
+truth shall set you free</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Freedom comes out of discipleship.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Being the disciple of Christ means
+being one with Christ by letting His words abide in us.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">John <span class="GramE">15:7</span>If ye abide in me, and my words abide in you,
+ye shall ask what ye will, and it shall be done unto you.</span></p>
+<p><b>Freedom requires people to be united
+in mind how we think.</b></p>
+<p class="MsoNormal"><span lang="EN-GB">The ekklesia knows freedom through
+having one mind - the mind of Christ.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Freedom is lost when the <span class="SpellE">ekklesia</span> does not walk in the mind of Christ.</span></p>
+<p class="MsoNormal"><span lang="EN-GB"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Philippians 2:5</span></span></span></span></span></span></span></span></span></span> 'Let this mind be in you'.</span></p>
+<p class="MsoNormal"><span class="GramE"><span lang="EN-GB">Humility and Love.</span></span></p>
+<p class="MsoNormal"><span lang="EN-GB">Freedom within a community requires everyone having the same will
+and the same mind. Anything less than this is a compromised freedom, for instance where the wishes of a majority take percedence over a minority.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Having the same mind can only be experienced through the life of Christ
+in us.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">If we follow the plans of self appointed leaders
+it will bring us into bondage.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">The Holy Spirit will lead the church into the freedom of new life in Christ where we are one with Christ, and one with each other.</span></p>
+<p class="MsoNormal"><b><span lang="EN-GB">3. The ekklesia is 'Christ's great possession'</span></b></p>
+<p><b>The love of Christ for His <span class="SpellE">ekklesia</span>.</b></p>
+<p><span lang="EN-GB">Ephesians </span><span lang="EN-GB">5:25</span><span lang="EN-GB">Husbands, love
+your wives, just as Christ also loved the church and gave Himself for her,</span></p>
+<p><a href="../../../../dailyverses/dec13/dvdec25.html"><span class="text-primary"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">John 3:16</span></span></span></span></span></span></span></span></span></span></span></a> There was no greater love than this.</p>
+<p><a href="../../../../dailyverses/aug13/dvaug28.html"><span class="text-primary"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Ephesians 3:19</span></span></span></span></span></span></span></span></span></span></span></a> His love is beyond knowledge.</p>
+<br/>
+<p>We love Him because He first loved us. <span lang="EN-GB">John </span><span class="GramE"><span lang="EN-GB">4:</span><span>19</span></span><span class="GramE"><span>We</span></span><span> love him, because he first loved us.</span></p>
+<p class="MsoNormal"><span>Romans <span class="GramE">5:8But</span> God commends his love toward us,
+in that, while we were yet sinners, Christ died for us.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">The love of Christ for His Church was
+due to the grace of God and nothing else.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">He loved us when we <span class="GramE">wereyet</span> sinners.</span></p>
+<p><b>The love of the <span class="SpellE">ekklesia</span> for Christ</b></p>
+<p class="MsoNormal"><span lang="EN-GB">Paul wrote </span><span lang="EN-GB">the love of Christ
+compels <span class="GramE">us2</span>
+<span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Corinthians 5:14</span></span></span></span></span></span></span></span></span></span>.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Paul meant it was the love of Christ
+that motivated and held everything together in His ministry.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Jesus taught Peter the same thing when
+He said to Peter </span><span lang="EN-GB">If you love me, feed my sheep John 21.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Love for Christ will be seen in our
+love for one <span class="GramE">another<span>Ephesians</span></span></span><span lang="EN-GB"> 1:15
+'Faith in Christ, love one for another'</span></p>
+<p class="MsoNormal"><span lang="EN-GB">The love of
+Christ in the <span class="SpellE">ekklesia</span> will reveal t</span><span lang="EN-GB">he beauty of Jesus.</span></p>
+<p><span><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Hebrews 12:2</span></span></span></span></span></span></span></span></span></span> Looking unto Jesus the author and finisher of our faith; who for the joy that was set before Him endured the cross, despising the shame, and is set down at the right hand of the throne of God.</span></p>
+<p>We are to look to Jesus <span>the author and the completer of our faith.</span></p>
+<p>He endured the cross because of the joy of redeeming His people.</p>
+<p>The Greek word for looking is aphoran which literally means looking away from.</p>
+<p>It means to look away from the world in order to look to Christ.</p>
+<p>In Hebrews 11 we see a people of faith who looked away from the world and looked unto Jesus.</p>
+<p><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Hebrews 11:10</span></span></span></span></span></span></span></span></span></span> Abraham 'looked for a city',</p>
+<p><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Hebrews 11:13</span></span></span></span></span></span></span></span></span></span> Descendants of Abraham 'looked for a country'</p>
+<p><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Hebrews 11:24-26</span></span></span></span></span></span></span></span></span></span> Moses refused to be called the son of Pharoahs daughter - 'he looked to the reward'.</p>
+<p>The Ekklesia are those who have been called out of this world to inherit another kingdom.</p>
+<p class="MsoNormal"><b><span lang="EN-GB">Summary:</span></b></p>
+<p class="MsoNormal"><span lang="EN-GB">The ekklesia of God has been called out of the
+world to be gathered together in the body of Christ.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Only in the <span class="SpellE">ekklesia</span>
+can true freedom and equality be known.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">1. Equality and Freedom come through the unity of the body of Christ</span></p>
+<p class="MsoNormal"><span lang="EN-GB">2. Equality and Freedom can only be known in Christ it is both unity in
+truth and unity in mind.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">3. The <span class="SpellE">ekklesia</span> is Christs own possession. The love of Christ is revealed through His
+great love for the <span class="SpellE">ekklesia</span>. The love of the <span class="SpellE">ekklesia</span>
+for Christ is seen in love one for another.</span></p>
+</article>
+                    </div>
+
+                    
+                </div>
+
+                <script>
+                    function showTab(tab) {
+                        const contentSection = document.getElementById('contentSection');
+                        const pdfSection = document.getElementById('pdfSection');
+                        const contentTab = document.getElementById('contentTab');
+                        const pdfTab = document.getElementById('pdfTab');
+
+                        if (tab === 'content') {
+                            contentSection.classList.remove('hidden');
+                            pdfSection.classList.add('hidden');
+                            contentTab.classList.add('border-primary-700', 'text-primary-700');
+                            contentTab.classList.remove('border-transparent');
+                            pdfTab.classList.remove('border-primary-700', 'text-primary-700');
+                            pdfTab.classList.add('border-transparent');
+                        } else {
+                            contentSection.classList.add('hidden');
+                            pdfSection.classList.remove('hidden');
+                            pdfTab.classList.add('border-primary-700', 'text-primary-700');
+                            pdfTab.classList.remove('border-transparent');
+                            contentTab.classList.remove('border-primary-700', 'text-primary-700');
+                            contentTab.classList.add('border-transparent');
+                        }
+                    }
+
+                    // Set content tab as active by default
+                    document.addEventListener('DOMContentLoaded', function() {
+                        showTab('content');
+                    });
+                </script>
+
+                <!-- Lesson Navigation -->
+                <div class="bg-gradient-to-r from-amber-50 to-amber-100 rounded-xl p-6 border-2 border-amber-200">
+                    <div class="flex items-center justify-between flex-wrap gap-4">
+                        <button onclick="window.history.back()" class="flex items-center gap-2 px-6 py-3 bg-white border-2 border-gray-300 rounded-lg font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-400 transition">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                            </svg>
+                            <span>Previous Lesson</span>
+                        </button>
+
+                        <a href="/general.html" class="flex items-center gap-2 px-6 py-3 bg-primary-700 text-white rounded-lg font-medium hover:bg-primary-800 transition">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+                            </svg>
+                            <span>All General Studies Lessons</span>
+                        </a>
+
+                        <div class="text-sm text-gray-600 italic">
+                            💡 Tip: PDFs open in new tabs so you don't lose your place
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-6">
+
+                <!-- Course Info -->
+                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-amber-50 rounded-lg flex items-center justify-center text-xl">
+                            📚
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-900">Course</h3>
+                            <p class="text-xs text-gray-600">General Studies</p>
+                        </div>
+                    </div>
+                    <a href="/general.html" class="block w-full px-4 py-2 bg-primary-700 text-white text-center rounded-lg font-medium hover:bg-primary-800 transition text-sm">
+                        View All Lessons
+                    </a>
+                </div>
+
+                
+
+                
+
+                <!-- Quick Links -->
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 border border-blue-200">
+                    <h3 class="font-bold text-lg text-gray-900 mb-3">More Courses</h3>
+                    <p class="text-sm text-gray-600 mb-4">Explore our other biblical courses</p>
+                    <a href="/category/teaching-courses.html" class="inline-flex items-center gap-2 px-4 py-2 bg-primary-700 text-white rounded-lg font-medium hover:bg-primary-800 transition text-sm">
+                        <span>All Courses</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center gap-3 mb-4">
+                    <div class="w-10 h-10 bg-primary-700 text-white rounded-lg flex items-center justify-center font-bold">
+                        BTP
+                    </div>
+                    <span class="font-bold text-xl text-white">Bible Teaching Program</span>
+                </div>
+                <p class="text-gray-400 mb-6">Equipping believers worldwide through biblical teaching</p>
+                <p class="text-sm text-gray-500">&copy; 2025 Bible Teaching Program. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/inline-editor.js"></script>
+</body>
+</html>

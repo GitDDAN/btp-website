@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agathos 'good'. - General Studies">
+    <title>Agathos 'good'. | General Studies | Bible Teaching Program</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': {
+                            '50': '#f0f7ff',
+                            '100': '#e0effe',
+                            '600': '#006fc7',
+                            '700': '#0058a2',
+                            '800': '#004a85',
+                            '900': '#003d6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .content-area {
+            font-size: 1.0625rem;
+            line-height: 1.8;
+            color: #1f2937;
+            font-family: Georgia, 'Times New Roman', serif;
+        }
+
+        .content-area h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #171717;
+        }
+
+        .content-area h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 1.75rem;
+            margin-bottom: 0.875rem;
+            color: #262626;
+        }
+
+        .content-area h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #404040;
+        }
+
+        .content-area p {
+            margin-bottom: 1rem;
+        }
+
+        .content-area ul, .content-area ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-area li {
+            margin-bottom: 0.5rem;
+        }
+
+        .content-area blockquote {
+            border-left: 4px solid #0058a2;
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #525252;
+        }
+
+        .content-area table {
+            width: 100%;
+            margin: 1.5rem 0;
+            border-collapse: collapse;
+        }
+
+        .content-area table td, .content-area table th {
+            padding: 0.75rem;
+            border: 1px solid #e5e5e5;
+        }
+
+        .content-area img {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0;
+            border-radius: 0.5rem;
+        }
+
+        /* Professional styling for numbered lists */
+        .content-area .numbered-item {
+            margin-left: 0;
+            padding-left: 0;
+            margin-bottom: 1.25rem;
+            margin-top: 1rem;
+            line-height: 1.8;
+        }
+
+        /* Styled number for lists */
+        .content-area .list-number {
+            display: inline;
+            color: #004a85;
+            font-weight: 700;
+            margin-right: 0.5rem;
+            font-size: 1rem;
+        }
+
+        /* Professional styling for bullet points */
+        .content-area .bullet-item {
+            margin-left: 0;
+            padding-left: 2rem;
+            position: relative;
+            margin-bottom: 0.875rem;
+            line-height: 1.75;
+        }
+
+        .content-area .bullet-item::before {
+            content: "•";
+            position: absolute;
+            left: 0.5rem;
+            color: #006fc7;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Scripture reference highlighting */
+        .content-area .scripture-ref {
+            font-weight: 600;
+            color: #0058a2;
+            font-style: italic;
+        }
+
+        /* Section headers styling */
+        .content-area .section-header {
+            display: inline;
+            color: #1f2937;
+            font-size: 1.0625rem;
+            font-weight: 700;
+        }
+
+        /* Roman numeral list items */
+        .content-area .roman-item {
+            margin-left: 0;
+            padding-left: 0;
+            margin-bottom: 1rem;
+            margin-top: 0.75rem;
+            line-height: 1.75;
+        }
+
+        /* Styled Roman numerals */
+        .content-area .roman-number {
+            display: inline;
+            color: #004a85;
+            font-weight: 700;
+            margin-right: 0.5rem;
+            font-size: 1rem;
+            font-style: normal;
+        }
+
+        /* Better paragraph spacing */
+        .content-area p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-6">
+                    <a href="/" class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-primary-700 text-white rounded-lg flex items-center justify-center font-bold text-lg">
+                            BTP
+                        </div>
+                        <div class="hidden md:block">
+                            <div class="font-bold text-lg text-gray-900">Bible Teaching Program</div>
+                            <div class="text-xs text-gray-600">Biblical Education & Courses</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="/general.html" class="text-sm font-medium text-gray-700 hover:text-primary-700 transition">← Back to General Studies</a>
+                    </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Lesson Header -->
+    <section class="bg-gradient-to-br from-amber-600 via-amber-700 to-amber-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Breadcrumb -->
+            <div class="flex items-center gap-2 text-sm text-white text-opacity-80 mb-4">
+                <a href="/" class="hover:text-white transition">Home</a>
+                <span>›</span>
+                <a href="/category/teaching-courses.html" class="hover:text-white transition">Teaching & Courses</a>
+                <span>›</span>
+                <a href="/general.html" class="hover:text-white transition">General Studies</a>
+                
+                <span>›</span>
+                <span class="text-white">Agathos 'good'.</span>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <div class="w-14 h-14 bg-white bg-opacity-20 backdrop-blur-sm rounded-xl flex items-center justify-center text-2xl">
+                    📚
+                </div>
+                <div>
+                    <div class="text-sm text-white text-opacity-80 mb-1">General Studies</div>
+                    <h1 class="text-2xl md:text-3xl font-bold">Agathos 'good'.</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+
+            <!-- Main Column -->
+            <div class="lg:col-span-3 space-y-6">
+                <!-- Lesson Content with PDF Viewer -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    
+
+                    <!-- Content Tab -->
+                    <div id="contentSection" class="p-8">
+                        <article class="content-area">
+<div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 mb-6 border-2 border-blue-200">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 bg-primary-600 text-white rounded-lg flex items-center justify-center flex-shrink-0 text-xl">
+ 📖
+ </div>
+<div class="flex-1">
+<div class="text-sm text-gray-600"><span class="font-semibold">Scripture:</span> <span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Matthew 19:16</span></span></span></span></span></span></span></span></span>-22And, behold, one came and said unto him,Good(agathos) Master, whatgood(agathos) thing shall I do, that I may have eternal
+life? And he said unto him,Whycall you megood?thereis none good (agathos)but one, that is, God: but if you will enter
+into life, keep the commandments. He
+says unto him,Which? Jesus said,Youshall do no murder, You shall not commit adultery, You shall not steal, You
+shall not bear false witness, Honour your father and your mother: and, You
+shall love your neighbour as yourself. The young man says unto him,Allthese things
+have I kept from my youth up: what lack I yet? Jesus said unto him,Ifyou will be perfect, go
+and sell that you have, and give to the poor, and you shall have treasure in
+heaven: and come and follow me. But when
+the young man heard that saying, he went away sorrowful: for he had great
+possessions.</div>
+</div>
+</div>
+</div>
+<p></p><p class="MsoNormal"><b>Greek Word Studies</b></p>
+<p class="MsoNormal"><b>Advanced Level</b></p>
+<br/>
+<p class="MsoNormal"><b>Lesson Title:<span class="SpellE">Agathos</span></b></p>
+<br/>
+<p class="MsoNormal"><b><span lang="EN-GB">Theme:</span></b><span lang="EN-GB">Follow after <span class="SpellE">agathos</span>.</span></p>
+<p class="MsoNormal"><b class="section-header section-header section-header section-header section-header section-header section-header section-header section-header section-header"><span lang="EN-GB">Introduction:</span></b><span lang="EN-GB"><b>Meaning <span class="GramE">of<span class="SpellE">Agathos</span></span></b></span></p>
+<p class="MsoNormal"><span lang="EN-GB">A good (<span class="SpellE">agathos</span>)
+heart is one that instead of working ill to a neighbour, acts beneficially
+towards him.(Vines)</span></p>
+<p class="MsoNormal"><span class="SpellE"><span lang="EN-GB">Agathos</span></span><span lang="EN-GB"> means good that acts for the benefit of others.</span></p>
+<p class="MsoNormal"><span class="GramE"><b><span lang="EN-GB"><span class="SpellE">Agathos</span>
+and <span class="SpellE">Kalos</span>.</span></b></span></p>
+<p class="MsoNormal"><span lang="EN-GB">There are two different Greek words in the
+New Testament which are usually translated good,<span class="SpellE">agathos</span> and <span class="SpellE">kalos</span>. </span></p>
+<p class="MsoNormal"><span lang="EN-GB">In the parable of the <span class="SpellE">sower</span>
+some seed fell on good ground. In<span class="scripture-ref"> <span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Luke
+8:8</span></span></span></span></span></span></span></span></span></span>, the word for good is <span class="SpellE">agathos</span> but in Luke </span><span lang="EN-GB">8:15</span><span lang="EN-GB">
+in describing the same ground the word translated <span class="GramE">good</span>
+is <span class="SpellE">kalos</span>.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Both <span class="SpellE">agathos</span>
+and <span class="SpellE">kalos</span> are translated as good, but there is a
+difference in the meaning of these Greek words.</span></p>
+<br/>
+<p class="MsoNormal"><span lang="EN-GB">We are to follow after <span class="SpellE">agathos</span>. </span></p>
+<p class="MsoNormal"><span lang="EN-GB">1 Thessalonians </span><span lang="EN-GB">5:15</span><span lang="EN-GB">See that none render evil for
+evil unto any man; but ever follow that which is good </span><span lang="EN-GB">(<span class="SpellE">agathos</span>)</span><span lang="EN-GB">,
+both among yourselves, and to all men.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">We are to hold fast to <span class="SpellE">kalos</span>.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">1 Thessalonians </span><span lang="EN-GB">5:21</span><span lang="EN-GB">Prove all things; hold fast
+that which is good</span><span lang="EN-GB"> (<span class="SpellE">kalos</span>)</span><span lang="EN-GB">.</span></p>
+<br/>
+<p class="MsoNormal"><span class="SpellE"><span lang="EN-GB">Agathos</span></span><span lang="EN-GB"> refers to something that is good in its character or constitution
+and is beneficial in its effect</span><span lang="EN-GB">(Vines).</span></p>
+<p class="MsoNormal"><span lang="EN-GB">The character of <span class="SpellE">Agathos</span>
+is seen by what it does. </span></p>
+<p class="MsoNormal"><span lang="EN-GB">A good (<span class="SpellE">agathos</span>)
+tree will produce fruit</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Luke </span><span lang="EN-GB">8:15</span><span lang="EN-GB"> A good heart (<span class="SpellE">agathos</span>) will give sacrificially.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">See Lesson 5 for teaching on <span class="SpellE">Kalos</span></span></p>
+<p class="MsoNormal"><b><span lang="EN-GB">Introductory
+Illustration:</span></b><span lang="EN-GB">Example of Barnabas</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Look at the good (<span class="SpellE">agathos</span>)
+heart of Barnabas in<span class="scripture-ref"> <span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Acts 4:36-37</span></span></span></span></span></span></span></span></span></span> he sold a large piece of land and gave to
+the assembly of believers.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Barnabas is described as good (<span class="SpellE">agathos</span>) Acts </span><span lang="EN-GB">11:24</span><span lang="EN-GB"> A good man (<span class="SpellE">agathos</span>) full of the Holy Spirit.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Acts
+</span><span lang="EN-GB">11:22</span><span lang="EN-GB">-<span class="GramE">24<span>Then</span></span></span><span lang="EN-GB"> tidings of these things came
+unto the ears of the church which was in </span><span lang="EN-GB">Jerusalem</span><span lang="EN-GB">: and they sent forth
+Barnabas, that he should go as far as </span><span lang="EN-GB">Antioch</span><span lang="EN-GB">. Who, when he came, and had seen the grace of
+God, was glad, and exhorted them all, that with purpose of heart they would
+cleave unto the Lord. For he was a good
+man, and full of the Holy Ghost and of faith: and much people was added unto
+the Lord.</span></p>
+<p class="MsoNormal"><b><span lang="EN-GB">Main
+Points:</span></b></p>
+<p><b>1. The Rich Young Ruler needed to recognise the person of Jesus.</b></p>
+<p>The Rich Young Ruler approached Jesus using the word <span class="SpellE">agathos</span>.</p>
+<p class="MsoNormal"><span lang="EN-GB">There is
+confusion over this passage. Jesus asked
+the Rich Young Ruler Why do you call <span class="GramE">Me</span> good, there
+is none good but God. He did not tell
+the young man not to say it but only drew his attention to what he had said.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Jesus was the
+Master Teacher and he spoke to the man with the intention of guiding him into
+truth.</span></p>
+<p><a href="deductive.html"><span class="text-primary">Deductive Reasoning</span></a></p>
+<p>Jesus used deductive reasoning with the Rich Young Ruler.</p>
+<p class="MsoNormal"><span lang="EN-GB">First of all Jesus drew the mans attention
+to what he had said.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">The logic of his words could only leave one
+conclusion that Jesus is God.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Good (<span class="SpellE">agathos</span>)
+Master</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Why do you call ME good? There is none good but God.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Deductive reasoning begins with a
+proposition (Only God is good)</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Then we associate the subject with the
+proposition (Jesus is good)</span></p>
+<p class="MsoNormal"><span lang="EN-GB">From this we draw the conclusion (Jesus is
+God)</span></p>
+<p class="MsoNormal"><span lang="EN-GB">If the proposition is right the conclusion
+must be right.</span></p>
+<p><b>2. The need to recognise the bankruptcy of good works.</b></p>
+<br/>
+<p class="MsoNormal"><span lang="EN-GB">Jesus then continued to answer the question
+of the Rich Young Ruler: </span></p>
+<p class="MsoNormal"><span lang="EN-GB">He came to Jesus seeking to be justified by
+his deeds what good thing must I do to inherit eternal life?</span></p>
+<p class="MsoNormal"><span lang="EN-GB">No matter how good he was, his conscience
+told him he wasnt good enough. This is
+seen by the fact that he asked Jesus this question.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Jesus did not give an immediate answer as
+He needed to guide Him into truth.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">He did not just say follow <span class="GramE">Me</span>.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">He had to remove the Rich Young Rulers
+trust in his own deeds.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">So He leads him first by telling him to do
+what he already tried to do.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Jesus said keep the commandments.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">In Marks gospel it says defraud not 
+this was not a specific commandment but it is commandment derived from the
+others do not covet, do not steal, do not lie.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Notice Jesus doesnt mention the
+commandments in relation to Love the Lord your God, but only Love your
+neighbour as yourself.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">This is because the question was what good
+(<span class="SpellE">agathos</span>) thing must I do and Jesus was dealing with
+the issue of doing good <span class="SpellE">agathos</span></span></p>
+<p class="MsoNormal"><span lang="EN-GB">Definition:A good (<span class="SpellE">agathos</span>)
+heart is one that instead of working ill to a neighbour, acts beneficially
+towards him.(Vines)</span></p>
+<p class="MsoNormal"><span lang="EN-GB">The rich young ruler believed he had always
+done this. </span></p>
+<p class="MsoNormal"><span lang="EN-GB">He was using his authority as ruler, his youthful
+energy, and his money for the benefit of others. Jesus loved him.</span></p>
+<p><b>The inability of works</b></p>
+<p>Jesus sought to bring the Rich Young Ruler to the place of unconditional surrender</p>
+<br/>
+<p class="MsoBodyText"><b class="section-header section-header section-header section-header section-header section-header section-header section-header section-header section-header"><span lang="EN-GB">Illustration:</span></b><span lang="EN-GB">First World War was ended by an Armistice.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">The result was that the German people did
+not know they had been defeated.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">The Treaty of Versailles in 1919 was seen
+as a betrayal</span></p>
+<p class="MsoNormal"><span lang="EN-GB">The result was the eventual rise of Hitler,
+Nazism and WW2. </span></p>
+<p class="MsoNormal"><span lang="EN-GB">But learning by the mistake the allies
+would only accept unconditional surrender to end WW2 and instead of having a
+treaty to make Germany pay the Marshall Plan was formed to help rebuild
+Germany. </span></p>
+<p class="MsoNormal"><span lang="EN-GB">The church today is weak because we try to
+bring people to Christ without bringing them to the point of unconditional
+surrender.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Jesus took the Rich man down the road of
+works.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Jesus showed him the one good thing that
+he should do. </span></p>
+<p class="MsoNormal"><span lang="EN-GB">He deals with the issue of trusting riches
+and the laws requirement to love your neighbour as yourself in regard to
+giving to the poor.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">No matter how much you give to the poor,
+there will still be more poor.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Jesus said </span><span lang="EN-GB">the poor you always have with you, <span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">John
+12:8</span></span></span></span></span></span></span></span></span></span></span></p>
+<p class="MsoNormal"><span lang="EN-GB">You find this with missions</span></p>
+<p class="MsoNormal"><span lang="EN-GB">The more you give the more they need 
+there is no end.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">That is why missions should aim to become
+indigenous.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">This is not always possible but it should
+always be the aim. See the book The
+indigenous Church by Melvin Hodges.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">But in regard to the poor, how can you ever
+fulfil this law You shall love your neighbour as yourself?</span></p>
+<p class="MsoNormal"><span lang="EN-GB">The scripture says concerning the poor (our
+neighbour)</span></p>
+<p class="MsoNormal"><span lang="EN-GB"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Proverbs 21:13</span></span></span></span></span></span></span></span></span></span></span><span lang="EN-GB">Whoso <span class="SpellE">stoppeth</span> his ears at the
+cry of the poor, he also shall cry himself, but shall not be heard.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Jesus is answering the question </span><span lang="EN-GB">What good </span><span lang="EN-GB">(<span class="SpellE">agathos</span>)</span><span lang="EN-GB"> thing must I do</span><span lang="EN-GB">.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">The rich man is following after <span class="SpellE">agathos</span> to inherit eternal life. </span></p>
+<p class="MsoNormal"><span lang="EN-GB">Jesus says do this good thing - </span><span lang="EN-GB">sell everything you have and
+give it away to the poor.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Robertson
+states that the Rich Young Ruler "Went away grieved." He felt that
+Jesus had asked too much of him. He worshipped money more than God when put to the
+test. Does Jesus demand this same test of every one? Not unless he is in the
+grip of money. Different persons are in the power of different sins. One sin is enough to keep one away from
+Christ. (see Online Bible)</span></p>
+<p class="MsoNormal"><span lang="EN-GB">This misses the point.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">The mans riches was not the issue.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">The issue is <span class="SpellE">agathos</span>
+what good thing must I do to inherit eternal life.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">The good thing is love your poor
+neighbour.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">There are only two ways to love your poor
+neighbour and for your conscience to know you did all that was possible.</span></p>
+<p class="MsoNormal"><span lang="EN-GB"><span>1.</span></span><span lang="EN-GB">To give until world poverty has come to an end,or</span></p>
+<p class="MsoNormal"><span lang="EN-GB"><span>2.</span></span><span lang="EN-GB">Give all away so you become poor yourself.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">No. 1 is impossible so No. 2 was the only
+option.</span></p>
+<p>The end of the road of good works is no nearer eternal life
+ than at the start.</p>
+<p class="MsoNormal"><span lang="EN-GB">What good thing must I do? Well if you
+want to walk down the road of doing good to inherit eternal life then this is
+as far as the road can go - sell all your property, everything that you have
+and give to the poor.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">It is a wonderful truth that earthly riches
+can be used in this life to gain an eternal inheritance when it is given with a
+good (<span class="SpellE">agathos</span>) heart filled with the love (agape) of
+Christ. But giving all away is not
+enough to inherit eternal life.</span></p>
+<p class="MsoNormal"><span lang="EN-GB"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">1 Corinthians 13:3</span></span></span></span></span></span></span></span></span></span> </span><span lang="EN-GB">And though I bestow all my goods to feed
+the poor, and though I give my body to be burned, and have not charity, it
+profits me nothing.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Riches can not bring eternal life, but
+riches can stop a person inheriting eternal life.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">He went away sorrowful because he had much
+riches. He was unable to do this good
+thing but even this good thing could not have saved him.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Jesus was showing him how far the road of
+works went sell all that you have and give to the poor this is the good
+thing.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">But from this road of spiritual bankruptcy
+there was a way to inherit eternal life. Jesus says to him then come and follow me.</span></p>
+<p><b>3. Follow Me:</b></p>
+<p>It is not by
+following <span class="SpellE">agathos</span> that we inherit eternal
+life. It is by following Christ that we
+inherit eternal life.<i></i></p>
+<p>This is the message of the book of Galatians.</p>
+<p class="MsoNormal"><span lang="EN-GB">The Law was the tutor to bring us to
+Christ, </span><span lang="EN-GB"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Galatians
+3:24</span></span></span></span></span></span></span></span></span></span></span><span lang="EN-GB">Wherefore the law was our schoolmaster to bring us unto Christ, that we might be
+justified by faith.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Jesus said </span><span lang="EN-GB">Be perfect even as your Father in heaven
+is perfect.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Perfection is maturity.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Under the law we are like children.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Under the gospel we grow towards maturity
+as disciples of Christ.</span></p>
+<br/>
+<p class="MsoNormal"><span lang="EN-GB">There is none <span class="SpellE">agathos</span> except God</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Jesus is <span class="SpellE">Agathos</span></span></p>
+<p class="MsoNormal"><span lang="EN-GB">Jesus is God</span></p>
+<p class="MsoNormal"><span lang="EN-GB">We should follow after <span class="SpellE">agathos</span></span></p>
+<p class="MsoNormal"><span lang="EN-GB">Jesus is <span class="SpellE">agathos</span></span></p>
+<p class="MsoNormal"><span lang="EN-GB">Follow Jesus</span></p>
+<br/>
+<p><b>Theological Question:</b> Goodness is the fruit of the Holy Spirit.</p>
+<p class="MsoNormal"><span lang="EN-GB">Why did Jesus say there is none good but
+God?</span></p>
+<p class="MsoNormal"><span lang="EN-GB">What about the angels?</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Are they not good?</span></p>
+<p class="MsoNormal"><span lang="EN-GB">The angels are holy but being good is
+more than this.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Being good (<span class="SpellE">agathos</span>)
+is higher than the nature of angels; only God is good (<span class="SpellE">agathos</span>).</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Being good (<span class="SpellE">agathos</span>)
+is having the character of God.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Adam and Eve were created in the image of
+God the angels were not.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Goodness is a fruit of the Spirit.</span></p>
+<p class="MsoNormal"><span lang="EN-GB"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Galatians 5:22</span></span></span></span></span></span></span></span></span></span> goodness <span class="SpellE">agathosune</span> from <span class="SpellE">agathos</span> </span></p>
+<p class="MsoNormal"><span lang="EN-GB">It is produced through the life of Christ
+in the believer.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">The Rich Young Ruler said what good thing
+must I do? </span></p>
+<p class="MsoNormal"><span lang="EN-GB">Here is the answer:Follow Christ and let His goodness live
+through us by bearing the Fruit of the Spirit.</span></p>
+<p>We will be rewarded for <span class="SpellE">agathos</span> 
+ the works we <span class="SpellE">fufil</span> because the life of Christ
+ dwells in us.<span lang="EN-GB">2 Corinthians 5:10For we must all appear before the
+ judgment seat of Christ; that every one may receive the things done in his
+ body, according to that he has done, whether it be good (<span class="SpellE">agathos</span>) or bad (<span class="SpellE">kakos</span>).</span><span lang="EN-GB">C.T. Studd (1860-1931) put it this way Only one life will soon be past, Only whats done for Christ will last</span></p>
+<p class="MsoNormal"><b><span lang="EN-GB">Summary:</span></b></p>
+<p class="MsoNormal"><span lang="EN-GB">Jesus is <span class="SpellE">agathos</span>. We must seek after Him. </span></p>
+<p class="numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item"><span class="list-number">1)</span><span class="list-number"></span>The Rich Young Ruler needed to recognise that Jesus is God. He recognised His character
+ but failed to understand the significance that He is the Christ, the Son
+ of God.</p>
+<p class="numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item"><span class="list-number">2)</span><span class="list-number"></span>The Rich Young Ruler needed to recognise the bankruptcy of good works. He sought to inherit eternal life through good works but not matter how much we do we can never inherit eternal life by works.</p>
+<p class="numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item"><span class="list-number">3)</span><span class="list-number"></span>The Rich Young Ruler needed to recognise that he needed to follow after Jesus. It is not by following good works that we inherit eternal life. It is by following Christ that we inherit eternal life.</p>
+</article>
+                    </div>
+
+                    
+                </div>
+
+                <script>
+                    function showTab(tab) {
+                        const contentSection = document.getElementById('contentSection');
+                        const pdfSection = document.getElementById('pdfSection');
+                        const contentTab = document.getElementById('contentTab');
+                        const pdfTab = document.getElementById('pdfTab');
+
+                        if (tab === 'content') {
+                            contentSection.classList.remove('hidden');
+                            pdfSection.classList.add('hidden');
+                            contentTab.classList.add('border-primary-700', 'text-primary-700');
+                            contentTab.classList.remove('border-transparent');
+                            pdfTab.classList.remove('border-primary-700', 'text-primary-700');
+                            pdfTab.classList.add('border-transparent');
+                        } else {
+                            contentSection.classList.add('hidden');
+                            pdfSection.classList.remove('hidden');
+                            pdfTab.classList.add('border-primary-700', 'text-primary-700');
+                            pdfTab.classList.remove('border-transparent');
+                            contentTab.classList.remove('border-primary-700', 'text-primary-700');
+                            contentTab.classList.add('border-transparent');
+                        }
+                    }
+
+                    // Set content tab as active by default
+                    document.addEventListener('DOMContentLoaded', function() {
+                        showTab('content');
+                    });
+                </script>
+
+                <!-- Lesson Navigation -->
+                <div class="bg-gradient-to-r from-amber-50 to-amber-100 rounded-xl p-6 border-2 border-amber-200">
+                    <div class="flex items-center justify-between flex-wrap gap-4">
+                        <button onclick="window.history.back()" class="flex items-center gap-2 px-6 py-3 bg-white border-2 border-gray-300 rounded-lg font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-400 transition">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                            </svg>
+                            <span>Previous Lesson</span>
+                        </button>
+
+                        <a href="/general.html" class="flex items-center gap-2 px-6 py-3 bg-primary-700 text-white rounded-lg font-medium hover:bg-primary-800 transition">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+                            </svg>
+                            <span>All General Studies Lessons</span>
+                        </a>
+
+                        <div class="text-sm text-gray-600 italic">
+                            💡 Tip: PDFs open in new tabs so you don't lose your place
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-6">
+
+                <!-- Course Info -->
+                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-amber-50 rounded-lg flex items-center justify-center text-xl">
+                            📚
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-900">Course</h3>
+                            <p class="text-xs text-gray-600">General Studies</p>
+                        </div>
+                    </div>
+                    <a href="/general.html" class="block w-full px-4 py-2 bg-primary-700 text-white text-center rounded-lg font-medium hover:bg-primary-800 transition text-sm">
+                        View All Lessons
+                    </a>
+                </div>
+
+                
+
+                
+
+                <!-- Quick Links -->
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 border border-blue-200">
+                    <h3 class="font-bold text-lg text-gray-900 mb-3">More Courses</h3>
+                    <p class="text-sm text-gray-600 mb-4">Explore our other biblical courses</p>
+                    <a href="/category/teaching-courses.html" class="inline-flex items-center gap-2 px-4 py-2 bg-primary-700 text-white rounded-lg font-medium hover:bg-primary-800 transition text-sm">
+                        <span>All Courses</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center gap-3 mb-4">
+                    <div class="w-10 h-10 bg-primary-700 text-white rounded-lg flex items-center justify-center font-bold">
+                        BTP
+                    </div>
+                    <span class="font-bold text-xl text-white">Bible Teaching Program</span>
+                </div>
+                <p class="text-gray-400 mb-6">Equipping believers worldwide through biblical teaching</p>
+                <p class="text-sm text-gray-500">&copy; 2025 Bible Teaching Program. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/inline-editor.js"></script>
+</body>
+</html>

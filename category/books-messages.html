@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Books & Messages - Biblical books, classic Christian authors, testimonies, mission stories, and teaching messages">
+    <title>Books & Messages | Bible Teaching Program</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': {
+                            '50': '#f0f7ff',
+                            '100': '#e0effe',
+                            '600': '#006fc7',
+                            '700': '#0058a2',
+                            '800': '#004a85',
+                            '900': '#003d6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .resource-card { transition: all 0.2s ease; }
+        .resource-card:hover { transform: translateY(-4px); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-6">
+                    <a href="/" class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-primary-700 text-white rounded-lg flex items-center justify-center font-bold text-lg">BTP</div>
+                        <div class="hidden md:block">
+                            <div class="font-bold text-lg text-gray-900">Bible Teaching Program</div>
+                            <div class="text-xs text-gray-600">Biblical Education & Courses</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button onclick="window.history.back()" class="text-sm font-medium text-gray-700 hover:text-primary-700 transition">Back</button>
+                    <a href="/" class="text-sm font-medium text-gray-700 hover:text-primary-700 transition">Home</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <nav class="flex items-center gap-2 text-sm">
+                <a href="/" class="text-gray-600 hover:text-primary-700 transition">Home</a>
+                <span class="text-gray-400">/</span>
+                <span class="text-gray-900 font-medium">Books & Messages</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-purple-600 via-purple-700 to-purple-800 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-20 h-20 bg-white bg-opacity-20 backdrop-blur-sm rounded-2xl flex items-center justify-center text-4xl">&#128218;</div>
+                <div>
+                    <h1 class="text-4xl md:text-5xl font-bold mb-2">Books & Messages</h1>
+                    <p class="text-xl text-white text-opacity-90">Biblical books, testimonies, and teaching messages from classic Christian authors</p>
+                </div>
+            </div>
+            <div class="flex flex-wrap gap-6 mt-8">
+                <div class="bg-white bg-opacity-20 rounded-lg px-4 py-2">
+                    <div class="text-2xl font-bold">20+</div>
+                    <div class="text-sm text-white text-opacity-80">Books</div>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-lg px-4 py-2">
+                    <div class="text-2xl font-bold">100+</div>
+                    <div class="text-sm text-white text-opacity-80">Messages</div>
+                </div>
+                <div class="bg-white bg-opacity-20 rounded-lg px-4 py-2">
+                    <div class="text-2xl font-bold">6</div>
+                    <div class="text-sm text-white text-opacity-80">Categories</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Quote -->
+    <section class="py-10 bg-amber-50 border-b border-amber-100">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="text-5xl mb-4">&#128220;</div>
+            <blockquote class="text-2xl md:text-3xl font-serif text-gray-800 italic mb-4">
+                "Thy word is a lamp unto my feet, and a light unto my path."
+            </blockquote>
+            <cite class="text-lg text-amber-700 font-medium">Psalm 119:105 (KJV)</cite>
+        </div>
+    </section>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- Scripture Resources -->
+        <section class="mb-12">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center text-2xl">&#128214;</div>
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900">Scripture Resources</h2>
+                    <p class="text-gray-600">The King James Version Bible in various formats</p>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <a href="/bibleot.html" class="resource-card bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-amber-400 hover:shadow-xl transition-all">
+                    <div class="flex items-start gap-4">
+                        <div class="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">&#128220;</div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Old Testament (KJV)</h3>
+                            <p class="text-sm text-gray-600 mb-2">Complete Old Testament in PDF format</p>
+                            <span class="inline-block px-2 py-1 bg-amber-100 text-amber-700 text-xs rounded-full font-medium">39 Books</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/biblent.html" class="resource-card bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-blue-400 hover:shadow-xl transition-all">
+                    <div class="flex items-start gap-4">
+                        <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">&#128216;</div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">New Testament (KJV)</h3>
+                            <p class="text-sm text-gray-600 mb-2">Complete New Testament in PDF format</p>
+                            <span class="inline-block px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full font-medium">27 Books</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/bible.html" class="resource-card bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-green-400 hover:shadow-xl transition-all">
+                    <div class="flex items-start gap-4">
+                        <div class="w-14 h-14 bg-green-50 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">&#128215;</div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Complete Bible</h3>
+                            <p class="text-sm text-gray-600 mb-2">Access the complete KJV Bible online</p>
+                            <span class="inline-block px-2 py-1 bg-green-100 text-green-700 text-xs rounded-full font-medium">66 Books</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Featured Books -->
+        <section class="mb-12">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 bg-sky-600 text-white rounded-xl flex items-center justify-center text-2xl">&#11088;</div>
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900">Featured Books & Testimonies</h2>
+                    <p class="text-gray-600">Inspiring stories of faith and spiritual growth</p>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <a href="/hc/hcindex.html" class="resource-card bg-gradient-to-br from-sky-50 to-sky-100 rounded-xl p-6 border border-sky-200 hover:shadow-xl transition-all">
+                    <div class="w-14 h-14 bg-sky-500 text-white rounded-xl flex items-center justify-center text-2xl mb-4">&#11088;</div>
+                    <h3 class="font-bold text-lg text-gray-900 mb-2">The Higher Calling to Worship</h3>
+                    <p class="text-sm text-gray-600 mb-3">Steve Dulwich explores the biblical foundations of authentic worship.</p>
+                    <span class="text-sky-700 font-medium text-sm">Read Book &#8594;</span>
+                </a>
+                <a href="/floods/floodsindex.htm" class="resource-card bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-blue-400 hover:shadow-xl transition-all">
+                    <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-2xl mb-4">&#127754;</div>
+                    <h3 class="font-bold text-lg text-gray-900 mb-2">Floods Upon the Dry Ground</h3>
+                    <p class="text-sm text-gray-600 mb-3">Jackie Ritchie's account of revival and spiritual awakening.</p>
+                    <span class="text-primary-700 font-medium text-sm">Read Book &#8594;</span>
+                </a>
+                <div class="resource-card bg-white rounded-xl p-6 shadow-md border border-gray-200 block hover:shadow-lg transition">
+                    <div class="w-14 h-14 bg-purple-50 rounded-xl flex items-center justify-center text-2xl mb-4">&#128156;</div>
+                    <h3 class="font-bold text-lg text-gray-900 mb-2">Jehovah Jireh - My Provider</h3>
+                    <p class="text-sm text-gray-600 mb-3">Sarah Spackman's testimony of God's faithful provision.</p>
+                    <div class="flex flex-col gap-2">
+                        <a href="/pdfviewer.html?pdf=/JehovahJireh.pdf" class="inline-flex items-center gap-2 text-purple-700 font-medium text-sm hover:underline">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                            Read Testimony &#8594;
+                        </a>
+                        <a href="/pdfviewer.html?pdf=/JehovahJireh(1).pdf" class="inline-flex items-center gap-2 text-purple-600 font-medium text-sm hover:underline">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                            Part 2 &#8594;
+                        </a>
+                        <a href="/pdfviewer.html?pdf=/jjmp.pdf" class="inline-flex items-center gap-2 text-purple-600 font-medium text-sm hover:underline">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+                            Study Notes &#8594;
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Classic Christian Authors -->
+        <section class="mb-12">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 bg-amber-600 text-white rounded-xl flex items-center justify-center text-2xl">&#128210;</div>
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900">Classic Christian Authors</h2>
+                    <p class="text-gray-600">Timeless writings from great men of faith</p>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <a href="/bunyan/lobindex.htm" class="resource-card bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 border border-purple-200 hover:shadow-xl transition-all">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-purple-600 text-white rounded-full flex items-center justify-center text-2xl mx-auto mb-4">JB</div>
+                        <h3 class="font-bold text-lg text-gray-900 mb-1">John Bunyan</h3>
+                        <p class="text-sm text-purple-700 font-medium mb-2">Life & Works</p>
+                        <p class="text-xs text-gray-600">Author of Pilgrim's Progress</p>
+                    </div>
+                </a>
+                <a href="/luther.html" class="resource-card bg-gradient-to-br from-orange-50 to-orange-100 rounded-xl p-6 border border-orange-200 hover:shadow-xl transition-all">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-orange-600 text-white rounded-full flex items-center justify-center text-2xl mx-auto mb-4">ML</div>
+                        <h3 class="font-bold text-lg text-gray-900 mb-1">Martin Luther</h3>
+                        <p class="text-sm text-orange-700 font-medium mb-2">Reformation Writings</p>
+                        <p class="text-xs text-gray-600">Great Reformer</p>
+                    </div>
+                </a>
+                <a href="/btp/message/newton letters.html" class="resource-card bg-gradient-to-br from-amber-50 to-amber-100 rounded-xl p-6 border border-amber-200 hover:shadow-xl transition-all">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-amber-600 text-white rounded-full flex items-center justify-center text-2xl mx-auto mb-4">JN</div>
+                        <h3 class="font-bold text-lg text-gray-900 mb-1">John Newton</h3>
+                        <p class="text-sm text-amber-700 font-medium mb-2">Autobiography & Letters</p>
+                        <p class="text-xs text-gray-600">Author of Amazing Grace</p>
+                    </div>
+                </a>
+                <a href="/gurnall.html" class="resource-card bg-gradient-to-br from-red-50 to-red-100 rounded-xl p-6 border border-red-200 hover:shadow-xl transition-all">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-red-600 text-white rounded-full flex items-center justify-center text-2xl mx-auto mb-4">WG</div>
+                        <h3 class="font-bold text-lg text-gray-900 mb-1">William Gurnall</h3>
+                        <p class="text-sm text-red-700 font-medium mb-2">Christian in Complete Armour</p>
+                        <p class="text-xs text-gray-600">Spiritual warfare classic</p>
+                    </div>
+                </a>
+                <a href="/prayer/torrey/htp.html" class="resource-card bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-xl p-6 border border-yellow-200 hover:shadow-xl transition-all">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-yellow-600 text-white rounded-full flex items-center justify-center text-2xl mx-auto mb-4">RT</div>
+                        <h3 class="font-bold text-lg text-gray-900 mb-1">R.A. Torrey</h3>
+                        <p class="text-sm text-yellow-700 font-medium mb-2">How to Pray</p>
+                        <p class="text-xs text-gray-600">12-chapter classic on prayer</p>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Messages & Teaching -->
+        <section class="mb-12">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 bg-green-600 text-white rounded-xl flex items-center justify-center text-2xl">&#128172;</div>
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900">Messages & Teaching</h2>
+                    <p class="text-gray-600">Biblical expositions and practical messages</p>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <a href="/psalm104.html" class="resource-card bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-amber-400 hover:shadow-xl transition-all">
+                    <div class="flex items-start gap-4">
+                        <div class="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">&#10024;</div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Psalm 104 Notes</h3>
+                            <p class="text-sm text-gray-600 mb-2">God's creative power and provision</p>
+                            <span class="text-primary-700 font-medium text-sm">View Teaching</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/nehemiah.html" class="resource-card bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-green-400 hover:shadow-xl transition-all">
+                    <div class="flex items-start gap-4">
+                        <div class="w-14 h-14 bg-green-50 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">&#127959;</div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Nehemiah: Facing Opposition</h3>
+                            <p class="text-sm text-gray-600 mb-2">Faithful leadership in challenges</p>
+                            <span class="text-primary-700 font-medium text-sm">View Teaching</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/pebdr.html" class="resource-card bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-blue-400 hover:shadow-xl transition-all">
+                    <div class="flex items-start gap-4">
+                        <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">&#128221;</div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Short Messages Collection</h3>
+                            <p class="text-sm text-gray-600 mb-2">Quick, impactful devotional messages</p>
+                            <span class="text-primary-700 font-medium text-sm">View Messages</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/criticism.html" class="resource-card bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-rose-400 hover:shadow-xl transition-all">
+                    <div class="flex items-start gap-4">
+                        <div class="w-14 h-14 bg-rose-50 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">&#128172;</div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Notes on Criticism</h3>
+                            <p class="text-sm text-gray-600 mb-2">Biblical perspective on handling criticism</p>
+                            <span class="text-primary-700 font-medium text-sm">View Teaching</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Mission Stories -->
+        <section class="mb-12">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 bg-teal-600 text-white rounded-xl flex items-center justify-center text-2xl">&#127758;</div>
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900">Mission Stories</h2>
+                    <p class="text-gray-600">Inspiring accounts of gospel work around the world</p>
+                </div>
+            </div>
+
+            <!-- Featured Mission Story -->
+            <div class="bg-gradient-to-br from-teal-50 to-teal-100 rounded-2xl p-8 border border-teal-200 mb-6">
+                <div class="flex items-start gap-4">
+                    <div class="w-16 h-16 bg-teal-500 text-white rounded-xl flex items-center justify-center text-2xl flex-shrink-0">&#127965;</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Mission to Faroe Islands (1862)</h3>
+                        <p class="text-gray-700 mb-4">The inspiring story of Isaac Sharp and Asbjorn Kloster's 8-week mission to all 17 inhabited islands of the Faroes. During April-June 1862, one third of the population attended their meetings.</p>
+                        <div class="flex flex-wrap gap-3">
+                            <a href="/is/index.html" class="inline-flex items-center gap-2 px-4 py-2 bg-teal-600 text-white rounded-lg text-sm font-medium hover:bg-teal-700 transition">
+                                View Book &#8594;
+                            </a>
+                            <a href="/is/isjournal.html" class="inline-flex items-center gap-2 px-4 py-2 bg-white text-teal-700 border border-teal-300 rounded-lg text-sm font-medium hover:bg-teal-50 transition">
+                                Read Journal
+                            </a>
+                            <a href="/is/ism1862.html" class="inline-flex items-center gap-2 px-4 py-2 bg-white text-teal-700 border border-teal-300 rounded-lg text-sm font-medium hover:bg-teal-50 transition">
+                                Day by Day Index
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <a href="/congo.html" class="resource-card bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-green-400 hover:shadow-xl transition-all">
+                    <div class="flex items-start gap-4">
+                        <div class="w-14 h-14 bg-green-50 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">&#127796;</div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Congo Evangelistic Mission</h3>
+                            <p class="text-sm text-gray-600 mb-2">Testimony of faithful missionary work in Africa</p>
+                            <span class="text-primary-700 font-medium text-sm">Read Story</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/testimony.htm" class="resource-card bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-blue-400 hover:shadow-xl transition-all">
+                    <div class="flex items-start gap-4">
+                        <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">&#127956;</div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Ministry Among the Negritos</h3>
+                            <p class="text-sm text-gray-600 mb-2">Gospel work in the Philippines</p>
+                            <span class="text-primary-700 font-medium text-sm">Read Story</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Biblical Studies -->
+        <section class="mb-12">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 bg-stone-600 text-white rounded-xl flex items-center justify-center text-2xl">&#128506;</div>
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900">Biblical Studies</h2>
+                    <p class="text-gray-600">Archaeological and historical resources</p>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <a href="/archeology.html" class="resource-card bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-stone-400 hover:shadow-xl transition-all">
+                    <div class="flex items-start gap-4">
+                        <div class="w-14 h-14 bg-stone-100 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">&#127978;</div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Biblical Archaeology</h3>
+                            <p class="text-sm text-gray-600 mb-2">Historical evidence for Scripture</p>
+                            <span class="text-primary-700 font-medium text-sm">Explore</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="/dailyverses.html" class="resource-card bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-yellow-400 hover:shadow-xl transition-all">
+                    <div class="flex items-start gap-4">
+                        <div class="w-14 h-14 bg-yellow-50 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">&#128197;</div>
+                        <div class="flex-1">
+                            <h3 class="font-bold text-lg text-gray-900 mb-2">Daily Verses</h3>
+                            <p class="text-sm text-gray-600 mb-2">Scripture readings and devotionals</p>
+                            <span class="text-primary-700 font-medium text-sm">View Calendar</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Browse More CTA -->
+        <section class="bg-gradient-to-r from-purple-700 to-purple-800 text-white rounded-2xl p-8">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-2xl font-bold mb-4">Explore More Resources</h2>
+                <p class="text-lg text-white text-opacity-90 mb-6">Visit our main Books page for the complete collection of biblical resources, testimonies, and teaching materials.</p>
+                <a href="/books.html" class="inline-block px-8 py-4 bg-white text-purple-700 rounded-xl font-bold text-lg hover:bg-gray-100 transition shadow-lg">
+                    View All Books & Messages
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-900 text-gray-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 bg-primary-600 text-white rounded-xl flex items-center justify-center font-bold text-lg shadow-lg">BTP</div>
+                        <div><div class="font-bold text-xl text-white">Bible Teaching</div><div class="text-sm text-gray-400">Program</div></div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Equipping believers worldwide with sound biblical teaching.</p>
+                </div>
+                <div><h4 class="font-semibold text-white mb-6 text-lg">Resources</h4><ul class="space-y-3"><li><a href="/bible.html" class="text-gray-400 hover:text-white">Bible</a></li><li><a href="/books.html" class="text-gray-400 hover:text-white">Books</a></li><li><a href="/courses.html" class="text-gray-400 hover:text-white">Courses</a></li><li><a href="/dailyverses.html" class="text-gray-400 hover:text-white">Daily Verses</a></li></ul></div>
+                <div><h4 class="font-semibold text-white mb-6 text-lg">Bible</h4><ul class="space-y-3"><li><a href="/bibleot.html" class="text-gray-400 hover:text-white">Old Testament</a></li><li><a href="/biblent.html" class="text-gray-400 hover:text-white">New Testament</a></li><li><a href="/biblepen.html" class="text-gray-400 hover:text-white">Pentateuch</a></li></ul></div>
+                <div><h4 class="font-semibold text-white mb-6 text-lg">Today's Verse</h4><div id="daily-verse-container" class="bg-gray-800 rounded-lg p-4 border border-gray-700"></div></div>
+            </div>
+        </div>
+        <div class="border-t border-gray-800"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6"><p class="text-sm text-gray-500 text-center">2025 Bible Teaching Program. All rights reserved.</p></div></div>
+    </footer>
+    <script src="/js/daily-verse.js"></script>
+</body>
+</html>

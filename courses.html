@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore our comprehensive biblical courses including Foundation, Christian Life, Prayer, Church History, and General Studies - over 85 lessons available.">
+    <title>Courses | Bible Teaching Program</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': {
+                            '50': '#f0f7ff',
+                            '100': '#e0effe',
+                            '600': '#006fc7',
+                            '700': '#0058a2',
+                            '800': '#004a85',
+                            '900': '#003d6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .course-card {
+            transition: all 0.3s ease;
+        }
+        .course-card:hover {
+            transform: translateY(-4px);
+        }
+    </style>
+    <link rel="stylesheet" href="/css/components.css">
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navigation placeholder - loaded by components.js -->
+    <div id="nav-placeholder"></div>
+
+    <!-- Page Header -->
+    <section class="relative overflow-hidden">
+        <!-- Background with pattern -->
+        <div class="absolute inset-0 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800"></div>
+        <div class="absolute inset-0 opacity-10">
+            <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <defs>
+                    <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+                        <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.5"/>
+                    </pattern>
+                </defs>
+                <rect width="100" height="100" fill="url(#grid)"/>
+            </svg>
+        </div>
+
+        <!-- Decorative circles -->
+        <div class="absolute -top-20 -right-20 w-64 h-64 bg-white opacity-5 rounded-full"></div>
+        <div class="absolute -bottom-32 -left-16 w-80 h-80 bg-white opacity-5 rounded-full"></div>
+
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="text-center text-white">
+                <div class="inline-flex items-center justify-center w-20 h-20 bg-white bg-opacity-15 backdrop-blur-sm rounded-2xl mb-6 border border-white border-opacity-20 shadow-lg">
+                    <span class="text-4xl">&#128218;</span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Bible Teaching Courses</h1>
+                <p class="text-xl text-white text-opacity-90 max-w-2xl mx-auto mb-8">
+                    Comprehensive biblical education through structured courses designed to deepen your understanding of God's Word
+                </p>
+                <div class="flex flex-wrap justify-center gap-4 text-sm mb-8">
+                    <div class="bg-white bg-opacity-15 backdrop-blur-sm px-4 py-2 rounded-full border border-white border-opacity-20">&#128214; 18+ Courses</div>
+                    <div class="bg-white bg-opacity-15 backdrop-blur-sm px-4 py-2 rounded-full border border-white border-opacity-20">&#128221; 85+ Lessons</div>
+                    <div class="bg-white bg-opacity-15 backdrop-blur-sm px-4 py-2 rounded-full border border-white border-opacity-20">&#127891; Self-Paced</div>
+                </div>
+
+                <!-- Jump Navigation in Header -->
+                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-xl p-3 sm:p-4 border border-white border-opacity-20 max-w-4xl mx-auto">
+                    <p class="text-xs sm:text-sm text-white text-opacity-80 mb-2 sm:mb-3 font-medium">Jump to category:</p>
+                    <div class="grid grid-cols-3 sm:grid-cols-5 gap-2">
+                        <a href="#foundation" class="px-2 sm:px-4 py-2 bg-blue-500 hover:bg-blue-400 text-white rounded-lg text-xs sm:text-sm font-semibold shadow-lg hover:shadow-xl transition-all flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
+                            <span class="text-base sm:text-sm">&#128216;</span><span class="hidden sm:inline">Foundation</span><span class="sm:hidden">Found.</span>
+                        </a>
+                        <a href="#christian-life" class="px-2 sm:px-4 py-2 bg-green-500 hover:bg-green-400 text-white rounded-lg text-xs sm:text-sm font-semibold shadow-lg hover:shadow-xl transition-all flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
+                            <span class="text-base sm:text-sm">&#127807;</span><span class="hidden sm:inline">Christian Life</span><span class="sm:hidden">Life</span>
+                        </a>
+                        <a href="#prayer" class="px-2 sm:px-4 py-2 bg-orange-500 hover:bg-orange-400 text-white rounded-lg text-xs sm:text-sm font-semibold shadow-lg hover:shadow-xl transition-all flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
+                            <span class="text-base sm:text-sm">&#128591;</span><span>Prayer</span>
+                        </a>
+                        <a href="#church-history" class="px-2 sm:px-4 py-2 bg-purple-500 hover:bg-purple-400 text-white rounded-lg text-xs sm:text-sm font-semibold shadow-lg hover:shadow-xl transition-all flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
+                            <span class="text-base sm:text-sm">&#128220;</span><span class="hidden sm:inline">Church History</span><span class="sm:hidden">History</span>
+                        </a>
+                        <a href="#general" class="px-2 sm:px-4 py-2 bg-amber-500 hover:bg-amber-400 text-white rounded-lg text-xs sm:text-sm font-semibold shadow-lg hover:shadow-xl transition-all flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
+                            <span class="text-base sm:text-sm">&#128218;</span><span class="hidden sm:inline">General Studies</span><span class="sm:hidden">General</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- Foundation Courses -->
+        <section id="foundation" class="mb-16 scroll-mt-32">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 bg-blue-600 text-white rounded-xl flex items-center justify-center text-2xl">&#128216;</div>
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900">Foundation Courses</h2>
+                    <p class="text-gray-600">Essential biblical foundations for Christian faith</p>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <a href="/foundation.html" class="course-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg">
+                    <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-bold text-lg">Foundation Course</h3>
+                            <span class="px-2 py-1 bg-white bg-opacity-20 rounded text-xs">3 Lessons</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-gray-600 text-sm mb-3">Build a solid foundation in core Christian doctrines including salvation, the cross, and eternal life.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Salvation</span>
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">The Cross</span>
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Eternal Life</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/cfcross.html" class="course-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg">
+                    <div class="bg-gradient-to-r from-red-600 to-red-700 text-white p-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-bold text-lg">The Cross</h3>
+                            <span class="px-2 py-1 bg-white bg-opacity-20 rounded text-xs">10 Lessons</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-gray-600 text-sm mb-3">An in-depth study of the meaning and significance of Christ's death on the cross for our redemption.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-red-50 text-red-700 rounded text-xs">Redemption</span>
+                            <span class="px-2 py-1 bg-red-50 text-red-700 rounded text-xs">Atonement</span>
+                            <span class="px-2 py-1 bg-red-50 text-red-700 rounded text-xs">Sacrifice</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/cfeternal.html" class="course-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg">
+                    <div class="bg-gradient-to-r from-amber-600 to-amber-700 text-white p-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-bold text-lg">The Eternal Son of God</h3>
+                            <span class="px-2 py-1 bg-white bg-opacity-20 rounded text-xs">10 Lessons</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-gray-600 text-sm mb-3">Exploring the eternal nature and deity of Jesus Christ, the Son of God, from Genesis to Revelation.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-amber-50 text-amber-700 rounded text-xs">Christology</span>
+                            <span class="px-2 py-1 bg-amber-50 text-amber-700 rounded text-xs">Deity of Christ</span>
+                            <span class="px-2 py-1 bg-amber-50 text-amber-700 rounded text-xs">Eternity</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Christian Life Courses -->
+        <section id="christian-life" class="mb-16 scroll-mt-32">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 bg-green-600 text-white rounded-xl flex items-center justify-center text-2xl">&#127807;</div>
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900">Christian Life Courses</h2>
+                    <p class="text-gray-600">Practical teachings on living the Christian life</p>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <a href="/christian_life_course.html" class="course-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg">
+                    <div class="bg-gradient-to-r from-green-600 to-green-700 text-white p-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-bold text-lg">Christian Life Overview</h3>
+                            <span class="px-2 py-1 bg-white bg-opacity-20 rounded text-xs">12 Topics</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-gray-600 text-sm mb-3">Comprehensive index of all Christian Life teachings including the Holy Spirit, prayer, worship and more.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-green-50 text-green-700 rounded text-xs">Holy Spirit</span>
+                            <span class="px-2 py-1 bg-green-50 text-green-700 rounded text-xs">Worship</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/arweb.html" class="course-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg">
+                    <div class="bg-gradient-to-r from-indigo-600 to-indigo-700 text-white p-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-bold text-lg">Armour of God</h3>
+                            <span class="px-2 py-1 bg-white bg-opacity-20 rounded text-xs">10 Lessons</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-gray-600 text-sm mb-3">Equipping believers to stand against spiritual attacks based on Ephesians 6:10-17.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-indigo-50 text-indigo-700 rounded text-xs">Spiritual Warfare</span>
+                            <span class="px-2 py-1 bg-indigo-50 text-indigo-700 rounded text-xs">Ephesians 6</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/fruitweb.html" class="course-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg">
+                    <div class="bg-gradient-to-r from-emerald-600 to-emerald-700 text-white p-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-bold text-lg">Fruit of the Spirit</h3>
+                            <span class="px-2 py-1 bg-white bg-opacity-20 rounded text-xs">10 Lessons</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-gray-600 text-sm mb-3">A study based upon the Greek words describing the Fruit of the Spirit in Galatians 5:19-25.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-emerald-50 text-emerald-700 rounded text-xs">Love</span>
+                            <span class="px-2 py-1 bg-emerald-50 text-emerald-700 rounded text-xs">Joy</span>
+                            <span class="px-2 py-1 bg-emerald-50 text-emerald-700 rounded text-xs">Peace</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/giftsweb.html" class="course-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg">
+                    <div class="bg-gradient-to-r from-violet-600 to-violet-700 text-white p-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-bold text-lg">Gifts of the Holy Spirit</h3>
+                            <span class="px-2 py-1 bg-white bg-opacity-20 rounded text-xs">10 Lessons</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-gray-600 text-sm mb-3">A study of the Gifts of the Spirit in scripture and their relevance for today (1 Cor 12:8-10).</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-violet-50 text-violet-700 rounded text-xs">Spiritual Gifts</span>
+                            <span class="px-2 py-1 bg-violet-50 text-violet-700 rounded text-xs">1 Corinthians</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/clntc.html" class="course-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg">
+                    <div class="bg-gradient-to-r from-teal-600 to-teal-700 text-white p-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-bold text-lg">Ministry of the Holy Spirit</h3>
+                            <span class="px-2 py-1 bg-white bg-opacity-20 rounded text-xs">Course</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-gray-600 text-sm mb-3">How the ministry of the Holy Spirit in the New Testament Church has not changed.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-teal-50 text-teal-700 rounded text-xs">Holy Spirit</span>
+                            <span class="px-2 py-1 bg-teal-50 text-teal-700 rounded text-xs">John 7</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/worship1web.html" class="course-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg">
+                    <div class="bg-gradient-to-r from-rose-600 to-rose-700 text-white p-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-bold text-lg">The Life of Worship</h3>
+                            <span class="px-2 py-1 bg-white bg-opacity-20 rounded text-xs">Course</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-gray-600 text-sm mb-3">The Christian Life is a life of worship - an introductory course into the life of worship.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-rose-50 text-rose-700 rounded text-xs">Worship</span>
+                            <span class="px-2 py-1 bg-rose-50 text-rose-700 rounded text-xs">Devotion</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/worship2web.html" class="course-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg">
+                    <div class="bg-gradient-to-r from-pink-600 to-pink-700 text-white p-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-bold text-lg">Heights of Anointed Worship</h3>
+                            <span class="px-2 py-1 bg-white bg-opacity-20 rounded text-xs">Advanced</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-gray-600 text-sm mb-3">Reaching the heights of anointed worship and intercessory prayer.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-pink-50 text-pink-700 rounded text-xs">Anointing</span>
+                            <span class="px-2 py-1 bg-pink-50 text-pink-700 rounded text-xs">Intercession</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Prayer Courses -->
+        <section id="prayer" class="mb-16 scroll-mt-32">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 bg-orange-600 text-white rounded-xl flex items-center justify-center text-2xl">&#128591;</div>
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900">Prayer Courses</h2>
+                    <p class="text-gray-600">Learn the principles of effective biblical prayer</p>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <a href="/prayer/pindx.html" class="course-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg">
+                    <div class="bg-gradient-to-r from-orange-600 to-orange-700 text-white p-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-bold text-lg">Effective Prayer</h3>
+                            <span class="px-2 py-1 bg-white bg-opacity-20 rounded text-xs">10 Lessons</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-gray-600 text-sm mb-3">A comprehensive course on the importance of effective prayer (CL104).</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-orange-50 text-orange-700 rounded text-xs">James 5</span>
+                            <span class="px-2 py-1 bg-orange-50 text-orange-700 rounded text-xs">Faith</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/prayer.html" class="course-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg">
+                    <div class="bg-gradient-to-r from-amber-600 to-amber-700 text-white p-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-bold text-lg">Different Kinds of Prayer</h3>
+                            <span class="px-2 py-1 bg-white bg-opacity-20 rounded text-xs">10 Lessons</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-gray-600 text-sm mb-3">An exposition of the different forms and types of prayer in scripture.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-amber-50 text-amber-700 rounded text-xs">Intercession</span>
+                            <span class="px-2 py-1 bg-amber-50 text-amber-700 rounded text-xs">Petition</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/category/prayer.html" class="course-card bg-gradient-to-br from-orange-50 to-amber-50 rounded-xl border-2 border-dashed border-orange-300 p-6 hover:border-orange-400 transition flex items-center justify-center">
+                    <div class="text-center">
+                        <div class="text-3xl mb-2">&#128279;</div>
+                        <span class="font-medium text-orange-700">View All Prayer Resources</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Church History Courses -->
+        <section id="church-history" class="mb-16 scroll-mt-32">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 bg-purple-600 text-white rounded-xl flex items-center justify-center text-2xl">&#128220;</div>
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900">Church History Courses</h2>
+                    <p class="text-gray-600">Explore the rich history of the Christian church</p>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <a href="/history.html" class="course-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg">
+                    <div class="bg-gradient-to-r from-purple-600 to-purple-700 text-white p-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-bold text-lg">Church History Overview</h3>
+                            <span class="px-2 py-1 bg-white bg-opacity-20 rounded text-xs">Index</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-gray-600 text-sm mb-3">Comprehensive overview of Church History courses from early church to modern day.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-purple-50 text-purple-700 rounded text-xs">Overview</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/chweb.html" class="course-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg">
+                    <div class="bg-gradient-to-r from-fuchsia-600 to-fuchsia-700 text-white p-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-bold text-lg">Church History & NT Standard</h3>
+                            <span class="px-2 py-1 bg-white bg-opacity-20 rounded text-xs">Course</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-gray-600 text-sm mb-3">An introduction to church history from the 1st century until the Reformation.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-fuchsia-50 text-fuchsia-700 rounded text-xs">Early Church</span>
+                            <span class="px-2 py-1 bg-fuchsia-50 text-fuchsia-700 rounded text-xs">Reformation</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/mmweb.html" class="course-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg">
+                    <div class="bg-gradient-to-r from-cyan-600 to-cyan-700 text-white p-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-bold text-lg">History of Modern Missions</h3>
+                            <span class="px-2 py-1 bg-white bg-opacity-20 rounded text-xs">Course</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-gray-600 text-sm mb-3">A course looking at the development of modern missions around the world.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-cyan-50 text-cyan-700 rounded text-xs">Missions</span>
+                            <span class="px-2 py-1 bg-cyan-50 text-cyan-700 rounded text-xs">Evangelism</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/hhpweb.html" class="course-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg">
+                    <div class="bg-gradient-to-r from-red-600 to-red-700 text-white p-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-bold text-lg">Holiness, Healing & Pentecost</h3>
+                            <span class="px-2 py-1 bg-white bg-opacity-20 rounded text-xs">Course</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-gray-600 text-sm mb-3">The development of the Pentecostal movement from Holiness camp meetings to today.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-red-50 text-red-700 rounded text-xs">Revival</span>
+                            <span class="px-2 py-1 bg-red-50 text-red-700 rounded text-xs">Pentecost</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/otweb1.html" class="course-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg">
+                    <div class="bg-gradient-to-r from-stone-600 to-stone-700 text-white p-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-bold text-lg">Old Testament History</h3>
+                            <span class="px-2 py-1 bg-white bg-opacity-20 rounded text-xs">Course</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-gray-600 text-sm mb-3">Examining the historical background of the Old Testament through archaeology.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-stone-100 text-stone-700 rounded text-xs">Archaeology</span>
+                            <span class="px-2 py-1 bg-stone-100 text-stone-700 rounded text-xs">History</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/jhweb1.html" class="course-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg">
+                    <div class="bg-gradient-to-r from-slate-600 to-slate-700 text-white p-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-bold text-lg">Jews and Romans</h3>
+                            <span class="px-2 py-1 bg-white bg-opacity-20 rounded text-xs">Course</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-gray-600 text-sm mb-3">Historical background from Herod until the Bar Kokhbar Revolt (132 BC - 135 AD).</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-slate-100 text-slate-700 rounded text-xs">Jewish History</span>
+                            <span class="px-2 py-1 bg-slate-100 text-slate-700 rounded text-xs">Roman Era</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- General Studies -->
+        <section id="general" class="mb-16 scroll-mt-32">
+            <div class="flex items-center gap-3 mb-6">
+                <div class="w-12 h-12 bg-amber-600 text-white rounded-xl flex items-center justify-center text-2xl">&#128218;</div>
+                <div>
+                    <h2 class="text-2xl font-bold text-gray-900">General Studies</h2>
+                    <p class="text-gray-600">Special topics and advanced biblical studies</p>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <a href="/general.html" class="course-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg">
+                    <div class="bg-gradient-to-r from-amber-600 to-amber-700 text-white p-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-bold text-lg">General Studies Overview</h3>
+                            <span class="px-2 py-1 bg-white bg-opacity-20 rounded text-xs">4 Topics</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-gray-600 text-sm mb-3">Various biblical topics, special studies, and teachings that complement core curriculum.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-amber-50 text-amber-700 rounded text-xs">Overview</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/cmrch.html" class="course-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg">
+                    <div class="bg-gradient-to-r from-red-700 to-red-800 text-white p-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-bold text-lg">World Religions & Cults</h3>
+                            <span class="px-2 py-1 bg-white bg-opacity-20 rounded text-xs">Course</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-gray-600 text-sm mb-3">Understanding world religions, cults, and heresies from a biblical perspective.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-red-50 text-red-700 rounded text-xs">Apologetics</span>
+                            <span class="px-2 py-1 bg-red-50 text-red-700 rounded text-xs">Discernment</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/greekweb.html" class="course-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg">
+                    <div class="bg-gradient-to-r from-sky-600 to-sky-700 text-white p-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-bold text-lg">Greek Words Study (1)</h3>
+                            <span class="px-2 py-1 bg-white bg-opacity-20 rounded text-xs">10 Lessons</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-gray-600 text-sm mb-3">Examining the meaning of Greek words in the New Testament - Advanced study.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-sky-50 text-sky-700 rounded text-xs">Greek</span>
+                            <span class="px-2 py-1 bg-sky-50 text-sky-700 rounded text-xs">Advanced</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/greekweb2.html" class="course-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg">
+                    <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-bold text-lg">Greek Words Study (2)</h3>
+                            <span class="px-2 py-1 bg-white bg-opacity-20 rounded text-xs">Advanced</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-gray-600 text-sm mb-3">Continuation of the Greek word studies for deeper understanding.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Greek</span>
+                            <span class="px-2 py-1 bg-blue-50 text-blue-700 rounded text-xs">Word Study</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="/alphabets.html" class="course-card bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden hover:shadow-lg">
+                    <div class="bg-gradient-to-r from-indigo-600 to-indigo-700 text-white p-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="font-bold text-lg">Biblical Alphabets</h3>
+                            <span class="px-2 py-1 bg-white bg-opacity-20 rounded text-xs">Course</span>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <p class="text-gray-600 text-sm mb-3">Learn the Hebrew and Greek alphabets - the original languages of Scripture.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-2 py-1 bg-indigo-50 text-indigo-700 rounded text-xs">Hebrew</span>
+                            <span class="px-2 py-1 bg-indigo-50 text-indigo-700 rounded text-xs">Greek</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- How to Use Section -->
+        <div class="bg-gradient-to-br from-primary-50 to-blue-100 rounded-2xl p-8 border border-primary-200">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4">How to Use These Courses</h2>
+                <p class="text-gray-700 mb-8 leading-relaxed">
+                    Our courses are designed for self-paced learning and small group teaching. Each course contains carefully crafted lessons that build upon one another.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-xl">1</div>
+                        <h3 class="font-bold text-gray-900 mb-1">Choose a Course</h3>
+                        <p class="text-sm text-gray-600">Select based on your interest or group needs</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-xl">2</div>
+                        <h3 class="font-bold text-gray-900 mb-1">Study the Lesson</h3>
+                        <p class="text-sm text-gray-600">Teachers only need to be one lesson ahead</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-xl">3</div>
+                        <h3 class="font-bold text-gray-900 mb-1">Gather Your Group</h3>
+                        <p class="text-sm text-gray-600">Optimal group size is up to 8 people</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-12 h-12 bg-primary-600 text-white rounded-full flex items-center justify-center mx-auto mb-3 font-bold text-xl">4</div>
+                        <h3 class="font-bold text-gray-900 mb-1">Teach & Discuss</h3>
+                        <p class="text-sm text-gray-600">Allow time for discussion and questions</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer placeholder - loaded by components.js -->
+    <div id="footer-placeholder"></div>
+
+    <script src="/js/daily-verse.js"></script>
+    <script src="/js/components.js"></script>
+</body>
+</html>

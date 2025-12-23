@@ -1,0 +1,64 @@
+/**
+ * BTP Shared Component Styles
+ * Include this CSS on all pages using the component system
+ */
+
+/* Nav placeholder - reserve space while loading to prevent page jump */
+#nav-placeholder {
+    min-height: 60px; /* Mobile nav height */
+    background: white;
+    border-bottom: 1px solid #f3f4f6;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+@media (min-width: 768px) {
+    #nav-placeholder {
+        min-height: 64px; /* Desktop nav height */
+        border-bottom: 1px solid #e5e7eb;
+    }
+}
+
+/* Elite Mobile Menu Styles */
+.mobile-menu-overlay {
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+.mobile-menu-panel {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mobile-menu-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+.mobile-menu-overlay.hidden .mobile-menu-panel {
+    transform: translateX(100%);
+}
+.mobile-menu-overlay:not(.hidden) {
+    opacity: 1;
+    visibility: visible;
+}
+.mobile-menu-overlay:not(.hidden) .mobile-menu-panel {
+    transform: translateX(0);
+}
+
+/* Menu Accordion */
+.menu-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+.menu-accordion-content.open {
+    max-height: 500px;
+}
+.menu-accordion-arrow {
+    transition: transform 0.2s ease;
+}
+.menu-accordion-arrow.open {
+    transform: rotate(180deg);
+}
+
+/* Card hover effects */
+.card-hover {
+    transition: all 0.3s ease;
+}
+.card-hover:hover {
+    transform: translateY(-4px);
+}

@@ -1,0 +1,669 @@
+/*
+ * BTP Modernization Stylesheet
+ * Bible Teaching Program - Modern CSS
+ *
+ * Contents:
+ * 1. Tailwind CSS Integration
+ * 2. Custom Variables & Theme
+ * 3. Typography (Biblical/Educational Content)
+ * 4. Layout & Components
+ * 5. Navigation Styles
+ * 6. Mobile Responsiveness
+ * 7. Print Styles
+ * 8. Legacy HTML Element Overrides
+ */
+
+/* ============================================
+   1. TAILWIND CSS CDN
+   Note: This is loaded via CDN in the HTML
+   For production, compile custom Tailwind build
+   ============================================ */
+
+/* ============================================
+   2. CUSTOM VARIABLES & THEME
+   ============================================ */
+
+:root {
+    /* Brand Colors */
+    --btp-primary: #1e3a8a;        /* Deep blue */
+    --btp-primary-hover: #1e40af;  /* Lighter blue */
+    --btp-secondary: #b45309;      /* Warm amber */
+    --btp-accent: #059669;         /* Emerald */
+    --btp-gold: #d97706;           /* Gold accent */
+
+    /* Text Colors */
+    --btp-text: #1f2937;           /* Dark gray */
+    --btp-text-light: #6b7280;     /* Medium gray */
+    --btp-text-lighter: #9ca3af;   /* Light gray */
+
+    /* Background Colors */
+    --btp-bg: #f9fafb;             /* Light gray background */
+    --btp-bg-white: #ffffff;       /* White */
+
+    /* Typography */
+    --font-serif: Georgia, Cambria, 'Times New Roman', serif;
+    --font-sans: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+    /* Spacing */
+    --max-width-reading: 75ch;     /* Optimal reading width */
+    --max-width-content: 1280px;   /* Max content width */
+
+    /* Typography Scale */
+    --text-base: 1.125rem;         /* 18px */
+    --text-sm: 0.875rem;           /* 14px */
+    --text-xs: 0.75rem;            /* 12px */
+    --text-lg: 1.25rem;            /* 20px */
+    --text-xl: 1.5rem;             /* 24px */
+    --text-2xl: 1.875rem;          /* 30px */
+    --text-3xl: 2.25rem;           /* 36px */
+    --text-4xl: 3rem;              /* 48px */
+
+    /* Line Heights */
+    --leading-tight: 1.25;
+    --leading-normal: 1.5;
+    --leading-relaxed: 1.75;
+    --leading-loose: 2;
+}
+
+/* ============================================
+   3. TYPOGRAPHY - BIBLICAL/EDUCATIONAL CONTENT
+   ============================================ */
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Base body typography */
+body {
+    font-family: var(--font-serif);
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+    color: var(--btp-text);
+    background-color: var(--btp-bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Content Area Typography */
+.content-area {
+    font-family: var(--font-serif);
+    font-size: var(--text-base);
+    line-height: var(--leading-relaxed);
+    color: var(--btp-text);
+    max-width: var(--max-width-reading);
+}
+
+/* Heading Hierarchy */
+.content-area h1 {
+    font-size: var(--text-3xl);
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--btp-primary);
+    line-height: var(--leading-tight);
+}
+
+.content-area h2 {
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    margin-top: 1.75rem;
+    margin-bottom: 0.875rem;
+    color: var(--btp-primary-hover);
+    line-height: 1.3;
+}
+
+.content-area h3 {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--btp-primary-hover);
+    line-height: 1.4;
+}
+
+.content-area h4 {
+    font-size: var(--text-lg);
+    font-weight: 600;
+    margin-top: 1.25rem;
+    margin-bottom: 0.625rem;
+    color: var(--btp-text);
+    line-height: var(--leading-normal);
+}
+
+.content-area h5,
+.content-area h6 {
+    font-size: var(--text-base);
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--btp-text);
+}
+
+/* Paragraphs */
+.content-area p {
+    margin-bottom: 1rem;
+    line-height: var(--leading-relaxed);
+}
+
+/* Links */
+.content-area a {
+    color: var(--btp-primary);
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.content-area a:hover {
+    color: var(--btp-primary-hover);
+}
+
+.content-area a:focus {
+    outline: 2px solid var(--btp-primary);
+    outline-offset: 2px;
+}
+
+/* Lists */
+.content-area ul,
+.content-area ol {
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+}
+
+.content-area li {
+    margin-bottom: 0.5rem;
+    line-height: var(--leading-relaxed);
+}
+
+.content-area ul {
+    list-style-type: disc;
+}
+
+.content-area ol {
+    list-style-type: decimal;
+}
+
+.content-area ul ul,
+.content-area ol ul {
+    list-style-type: circle;
+}
+
+.content-area ol ol,
+.content-area ul ol {
+    list-style-type: lower-alpha;
+}
+
+/* Blockquotes - for scripture and quotes */
+.content-area blockquote {
+    border-left: 4px solid var(--btp-gold);
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: #374151;
+    background-color: #f9fafb;
+    padding: 1rem;
+    border-radius: 0.25rem;
+}
+
+.content-area blockquote p:last-child {
+    margin-bottom: 0;
+}
+
+/* Strong and emphasis */
+.content-area strong,
+.content-area b {
+    font-weight: 700;
+    color: var(--btp-text);
+}
+
+.content-area em,
+.content-area i {
+    font-style: italic;
+}
+
+/* Scripture references - special styling */
+.scripture-ref {
+    font-weight: 600;
+    color: var(--btp-secondary);
+}
+
+.verse-number {
+    font-size: var(--text-sm);
+    vertical-align: super;
+    font-weight: 600;
+    color: var(--btp-gold);
+}
+
+/* Code blocks (for Greek/Hebrew text) */
+.content-area code {
+    font-family: 'Courier New', monospace;
+    background-color: #f3f4f6;
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+    font-size: 0.9em;
+}
+
+.content-area pre {
+    background-color: #f3f4f6;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin-bottom: 1rem;
+}
+
+.content-area pre code {
+    background-color: transparent;
+    padding: 0;
+}
+
+/* ============================================
+   4. LAYOUT & COMPONENTS
+   ============================================ */
+
+/* Skip to main content (accessibility) */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--btp-primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    z-index: 100;
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Main container */
+.main-container {
+    max-width: var(--max-width-content);
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+/* Card component */
+.card {
+    background-color: var(--btp-bg-white);
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+}
+
+/* Images */
+.content-area img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.25rem;
+}
+
+.content-area figure {
+    margin: 1.5rem 0;
+}
+
+.content-area figcaption {
+    font-size: var(--text-sm);
+    color: var(--btp-text-light);
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+/* ============================================
+   5. NAVIGATION STYLES
+   ============================================ */
+
+/* Header sticky positioning */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background-color: var(--btp-bg-white);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Logo hover effect */
+.logo-container:hover .logo-icon {
+    background-color: var(--btp-secondary);
+    transition: background-color 0.3s ease;
+}
+
+/* Navigation links */
+nav a {
+    transition: all 0.2s ease;
+}
+
+nav a:hover {
+    background-color: var(--btp-primary);
+    color: white;
+}
+
+/* Active navigation state */
+.nav-active {
+    background-color: var(--btp-primary);
+    color: white;
+}
+
+/* Breadcrumb styling */
+.breadcrumb-separator {
+    margin: 0 0.5rem;
+    color: var(--btp-text-lighter);
+}
+
+/* ============================================
+   6. MOBILE RESPONSIVENESS
+   ============================================ */
+
+/* Mobile menu hidden state */
+.mobile-menu-hidden {
+    display: none;
+}
+
+/* Mobile menu button */
+.mobile-menu-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    color: var(--btp-primary);
+    transition: background-color 0.2s ease;
+}
+
+.mobile-menu-btn:hover {
+    background-color: var(--btp-bg);
+}
+
+.mobile-menu-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--btp-primary);
+}
+
+/* Mobile navigation */
+@media (max-width: 767px) {
+    .content-area h1 {
+        font-size: var(--text-2xl);
+    }
+
+    .content-area h2 {
+        font-size: var(--text-xl);
+    }
+
+    .content-area h3 {
+        font-size: var(--text-lg);
+    }
+
+    .content-area {
+        font-size: 1rem;
+    }
+
+    /* Reduce padding on mobile */
+    .main-container {
+        padding: 1rem;
+    }
+
+    .card {
+        padding: 1rem;
+    }
+}
+
+/* Tablet adjustments */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .content-area {
+        font-size: 1.0625rem; /* 17px */
+    }
+}
+
+/* ============================================
+   7. PRINT STYLES
+   ============================================ */
+
+@media print {
+    /* Hide non-content elements */
+    .no-print,
+    header,
+    nav,
+    footer,
+    .breadcrumb,
+    .mobile-menu-btn,
+    button {
+        display: none !important;
+    }
+
+    /* Reset colors for printing */
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+        color: #000;
+        background: #fff;
+    }
+
+    .content-area {
+        font-size: 11pt;
+        line-height: 1.6;
+        max-width: 100%;
+    }
+
+    /* Links */
+    a {
+        text-decoration: underline;
+        color: #000;
+    }
+
+    /* Show URLs for external links */
+    a[href^="http"]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+        font-weight: normal;
+    }
+
+    /* Don't show URLs for internal links */
+    a[href^="/"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    /* Page breaks */
+    h1, h2, h3, h4, h5, h6 {
+        page-break-after: avoid;
+        page-break-inside: avoid;
+    }
+
+    p, blockquote, ul, ol {
+        page-break-inside: avoid;
+    }
+
+    /* Ensure images fit on page */
+    img {
+        max-width: 100% !important;
+        page-break-inside: avoid;
+    }
+
+    /* Headings in print */
+    .content-area h1 {
+        font-size: 18pt;
+        margin-top: 12pt;
+    }
+
+    .content-area h2 {
+        font-size: 16pt;
+        margin-top: 10pt;
+    }
+
+    .content-area h3 {
+        font-size: 14pt;
+        margin-top: 8pt;
+    }
+
+    /* Remove shadows and borders */
+    .card,
+    header,
+    nav {
+        box-shadow: none;
+        border: none;
+    }
+
+    /* Blockquote in print */
+    .content-area blockquote {
+        border-left: 2px solid #000;
+        background-color: #f5f5f5;
+    }
+}
+
+/* ============================================
+   8. LEGACY HTML ELEMENT OVERRIDES
+   ============================================ */
+
+/* Override old FONT tags (if not cleaned by script) */
+font {
+    font-family: inherit !important;
+}
+
+font[color="navy"],
+font[color="blue"] {
+    color: var(--btp-primary) !important;
+}
+
+font[color="gold"],
+font[color="golden"] {
+    color: var(--btp-gold) !important;
+}
+
+/* Override CENTER tags */
+center {
+    text-align: center;
+    display: block;
+}
+
+/* Old TABLE elements - ensure they don't break layout */
+.content-area table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+    overflow-x: auto;
+    display: block;
+}
+
+.content-area table td,
+.content-area table th {
+    padding: 0.5rem;
+}
+
+.content-area table th {
+    font-weight: 600;
+    text-align: left;
+}
+
+/* Legacy alignment classes */
+.text-left {
+    text-align: left !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.text-right {
+    text-align: right !important;
+}
+
+/* Legacy layout tables */
+table[border="0"] {
+    border: none;
+}
+
+/* Override deprecated attributes */
+*[align="center"] {
+    text-align: center;
+}
+
+*[align="right"] {
+    text-align: right;
+}
+
+*[align="left"] {
+    text-align: left;
+}
+
+/* ============================================
+   9. UTILITY CLASSES
+   ============================================ */
+
+/* Text utilities */
+.text-gold {
+    color: var(--btp-gold);
+}
+
+.text-primary {
+    color: var(--btp-primary);
+}
+
+.text-secondary {
+    color: var(--btp-secondary);
+}
+
+/* Background utilities */
+.bg-highlight {
+    background-color: #fef3c7;
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+}
+
+/* Spacing utilities */
+.mb-0 { margin-bottom: 0 !important; }
+.mb-1 { margin-bottom: 0.25rem !important; }
+.mb-2 { margin-bottom: 0.5rem !important; }
+.mb-3 { margin-bottom: 0.75rem !important; }
+.mb-4 { margin-bottom: 1rem !important; }
+
+/* Focus visible for accessibility */
+*:focus-visible {
+    outline: 2px solid var(--btp-primary);
+    outline-offset: 2px;
+}
+
+/* Screen reader only */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.sr-only:focus,
+.sr-only:active {
+    position: static;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+}
+
+/* ============================================
+   10. ANIMATION & TRANSITIONS
+   ============================================ */
+
+/* Smooth transitions */
+a, button, .card {
+    transition: all 0.2s ease-in-out;
+}
+
+/* Hover effects */
+.card:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Focus animations */
+@keyframes focusPulse {
+    0%, 100% { box-shadow: 0 0 0 2px var(--btp-primary); }
+    50% { box-shadow: 0 0 0 4px var(--btp-primary); }
+}
+
+/* ============================================
+   END OF STYLESHEET
+   ============================================ */

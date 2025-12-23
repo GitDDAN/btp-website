@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bible Reader - King James Version">
+    <title id="page-title">Bible Reader | Bible Teaching Program</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': {
+                            '50': '#f0f7ff',
+                            '100': '#e0effe',
+                            '600': '#006fc7',
+                            '700': '#0058a2',
+                            '800': '#004a85',
+                            '900': '#003d6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .pdf-canvas-container {
+            display: flex;
+            justify-content: center;
+            background: #525659;
+            min-height: 600px;
+            padding: 2rem;
+            overflow: auto;
+        }
+        #pdf-canvas {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+            background: white;
+            max-width: 100%;
+            height: auto;
+        }
+        .loading-spinner {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #0058a2;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .sidebar-link {
+            transition: all 0.2s ease;
+        }
+        .sidebar-link:hover {
+            transform: translateX(4px);
+        }
+        .sidebar-link.active {
+            background: rgba(217, 119, 6, 0.1);
+            border-left: 3px solid #d97706;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-6">
+                    <a href="/" class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-primary-700 text-white rounded-lg flex items-center justify-center font-bold text-lg">
+                            BTP
+                        </div>
+                        <div class="hidden md:block">
+                            <div class="font-bold text-lg text-gray-900">Bible Teaching Program</div>
+                            <div class="text-xs text-gray-600">Biblical Education & Courses</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button onclick="window.history.back()" class="text-sm font-medium text-gray-700 hover:text-primary-700 transition">← Back</button>
+                    <a href="/" class="text-sm font-medium text-gray-700 hover:text-primary-700 transition">Home</a>
+                    </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumbs -->
+    <div class="bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <nav id="breadcrumbs" class="flex items-center gap-2 text-sm flex-wrap">
+                <a href="/" class="text-gray-600 hover:text-primary-700 transition">Home</a>
+                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+                <a href="/bible.html" class="text-gray-600 hover:text-primary-700 transition">Bible (KJV)</a>
+                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+                <span id="breadcrumb-testament" class="text-gray-600"></span>
+                <svg id="breadcrumb-arrow-2" class="w-4 h-4 text-gray-400 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+                <a id="breadcrumb-section-link" href="#" class="text-gray-600 hover:text-primary-700 transition hidden"></a>
+                <svg id="breadcrumb-arrow-3" class="w-4 h-4 text-gray-400 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+                <span id="breadcrumb-book" class="text-gray-900 font-medium"></span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- PDF Controls Bar -->
+    <div class="bg-white border-b border-gray-200 sticky top-16 z-40">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex items-center justify-between flex-wrap gap-4">
+                <!-- Left: Document Info -->
+                <div class="flex items-center gap-4">
+                    <div id="book-icon" class="w-10 h-10 bg-amber-50 rounded-lg flex items-center justify-center">
+                        <span class="text-xl">📖</span>
+                    </div>
+                    <div>
+                        <h1 id="book-title" class="text-base font-bold text-gray-900">Loading...</h1>
+                        <p id="book-subtitle" class="text-xs text-gray-600">King James Version</p>
+                    </div>
+                </div>
+
+                <!-- Center: Navigation Controls -->
+                <div class="flex items-center gap-2 bg-gray-100 rounded-lg p-1">
+                    <button id="prev-page" class="px-3 py-2 rounded-md hover:bg-white transition disabled:opacity-50 disabled:cursor-not-allowed" title="Previous Page">
+                        <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                    </button>
+                    <div class="flex items-center gap-2 px-3">
+                        <span class="text-sm text-gray-700">Page</span>
+                        <input id="page-num" type="number" min="1" value="1" class="w-12 px-2 py-1 text-center border border-gray-300 rounded text-sm">
+                        <span class="text-sm text-gray-600">of <span id="page-count">-</span></span>
+                    </div>
+                    <button id="next-page" class="px-3 py-2 rounded-md hover:bg-white transition disabled:opacity-50 disabled:cursor-not-allowed" title="Next Page">
+                        <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Right: Zoom & Actions -->
+                <div class="flex items-center gap-2">
+                    <div class="flex items-center gap-1 bg-gray-100 rounded-lg p-1">
+                        <button id="zoom-out" class="px-3 py-2 rounded-md hover:bg-white transition" title="Zoom Out">
+                            <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM13 10H7"/>
+                            </svg>
+                        </button>
+                        <span id="zoom-level" class="text-sm font-medium text-gray-700 px-2 min-w-[60px] text-center">100%</span>
+                        <button id="zoom-in" class="px-3 py-2 rounded-md hover:bg-white transition" title="Zoom In">
+                            <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <button onclick="window.print()" class="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+                        </svg>
+                        <span class="hidden sm:inline">Print</span>
+                    </button>
+                    <a id="download-btn" href="#" download class="px-4 py-2 bg-primary-700 text-white rounded-lg text-sm font-medium hover:bg-primary-800 transition flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                        </svg>
+                        <span class="hidden sm:inline">Download</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content with Sidebar -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div class="flex flex-col lg:flex-row gap-6">
+
+            <!-- Sidebar -->
+            <aside class="lg:w-64 flex-shrink-0">
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-4 sticky top-36">
+                    <h3 id="sidebar-title" class="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                        <span>📚</span> Related Books
+                    </h3>
+                    <nav id="sidebar-nav" class="space-y-1">
+                        <!-- Populated by JavaScript -->
+                    </nav>
+
+                    <!-- Section Navigation -->
+                    <div class="mt-6 pt-4 border-t border-gray-200">
+                        <h4 class="text-xs font-semibold text-gray-500 uppercase mb-3">Browse</h4>
+                        <div class="space-y-2">
+                            <a href="/bibleot.html" class="block text-sm text-gray-600 hover:text-amber-700 transition">Old Testament</a>
+                            <a href="/biblent.html" class="block text-sm text-gray-600 hover:text-primary-700 transition">New Testament</a>
+                            <a href="/bible.html" class="block text-sm text-gray-600 hover:text-primary-700 transition">Bible Home</a>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- PDF Viewer -->
+            <main class="flex-1">
+                <div class="pdf-canvas-container rounded-xl overflow-hidden">
+                    <!-- Loading State -->
+                    <div id="loading" class="flex flex-col items-center justify-center gap-4">
+                        <div class="loading-spinner"></div>
+                        <p class="text-white text-sm">Loading PDF...</p>
+                    </div>
+
+                    <!-- PDF Canvas -->
+                    <canvas id="pdf-canvas"></canvas>
+
+                    <!-- Error State -->
+                    <div id="error-state" class="hidden bg-white rounded-xl p-12 text-center max-w-md">
+                        <div class="w-20 h-20 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-10 h-10 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-3">Unable to Load PDF</h2>
+                        <p class="text-gray-600 mb-6">There was an error loading this Bible book.</p>
+                        <a href="/bible.html" class="inline-flex items-center gap-2 px-6 py-3 bg-primary-700 text-white rounded-lg font-medium hover:bg-primary-800 transition">
+                            Back to Bible
+                        </a>
+                    </div>
+
+                    <!-- No Book Selected State -->
+                    <div id="select-state" class="hidden bg-white rounded-xl p-12 text-center max-w-lg">
+                        <div class="w-20 h-20 bg-amber-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <span class="text-4xl">📖</span>
+                        </div>
+                        <h2 class="text-2xl font-bold text-gray-900 mb-3">Bible Reader</h2>
+                        <p class="text-gray-600 mb-6">Select a book from the Bible to start reading the King James Version.</p>
+                        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                            <a href="/bibleot.html" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-amber-600 text-white rounded-lg font-medium hover:bg-amber-700 transition">
+                                <span>📜</span> Old Testament
+                            </a>
+                            <a href="/biblent.html" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary-700 text-white rounded-lg font-medium hover:bg-primary-800 transition">
+                                <span>✝️</span> New Testament
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div class="text-center md:text-left">
+                    <div class="flex items-center justify-center md:justify-start gap-3 mb-4">
+                        <div class="w-10 h-10 bg-primary-700 text-white rounded-lg flex items-center justify-center font-bold">
+                            BTP
+                        </div>
+                        <span class="font-bold text-xl text-white">Bible Teaching Program</span>
+                    </div>
+                    <p class="text-gray-400">Equipping believers worldwide through biblical teaching</p>
+                </div>
+                <div class="text-center">
+                    <h4 class="font-semibold text-white mb-4">Quick Links</h4>
+                    <div class="space-y-2">
+                        <a href="/courses.html" class="block text-gray-400 hover:text-white transition">Courses</a>
+                        <a href="/dailyverses.html" class="block text-gray-400 hover:text-white transition">Daily Verses</a>
+                        <a href="/books.html" class="block text-gray-400 hover:text-white transition">Books</a>
+                        <a href="/bible.html" class="block text-gray-400 hover:text-white transition">Bible</a>
+                    </div>
+                </div>
+                <div id="daily-verse-container" class="text-center md:text-right"></div>
+            </div>
+            <div class="border-t border-gray-800 pt-6 text-center">
+                <p class="text-sm text-gray-500">&copy; 2025 Bible Teaching Program. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set PDF.js worker
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+        // Bible book data
+        var bibleData = {
+            // Old Testament sections
+            pentateuch: {
+                name: 'Pentateuch',
+                page: '/biblepen.html',
+                testament: 'Old Testament',
+                testamentPage: '/bibleot.html',
+                books: [
+                    { id: 'genkjvwd', name: 'Genesis', chapters: 50 },
+                    { id: 'exkjvwd', name: 'Exodus', chapters: 40 },
+                    { id: 'levkjvwd', name: 'Leviticus', chapters: 27 },
+                    { id: 'numkjvwd', name: 'Numbers', chapters: 36 },
+                    { id: 'deukjvwd', name: 'Deuteronomy', chapters: 34 }
+                ]
+            },
+            historical: {
+                name: 'Historical Books',
+                page: '/biblehist.html',
+                testament: 'Old Testament',
+                testamentPage: '/bibleot.html',
+                books: [
+                    { id: 'joskjvwd', name: 'Joshua', chapters: 24 },
+                    { id: 'judkjvwd', name: 'Judges', chapters: 21 },
+                    { id: 'rukjvwd', name: 'Ruth', chapters: 4 },
+                    { id: '1sakjvwd', name: '1 Samuel', chapters: 31 },
+                    { id: '2sakjvwd', name: '2 Samuel', chapters: 24 },
+                    { id: '1kikjvwd', name: '1 Kings', chapters: 22 },
+                    { id: '2kikjvwd', name: '2 Kings', chapters: 25 },
+                    { id: '1chkjvwd', name: '1 Chronicles', chapters: 29 },
+                    { id: '2chkjvwd', name: '2 Chronicles', chapters: 36 },
+                    { id: 'ezrkjvwd', name: 'Ezra', chapters: 10 },
+                    { id: 'nehkjvwd', name: 'Nehemiah', chapters: 13 },
+                    { id: 'estkjvwd', name: 'Esther', chapters: 10 }
+                ]
+            },
+            poetic: {
+                name: 'Poetic Books',
+                page: '/biblepoe.html',
+                testament: 'Old Testament',
+                testamentPage: '/bibleot.html',
+                books: [
+                    { id: 'jobkjvwd', name: 'Job', chapters: 42 },
+                    { id: 'bk1kjvwd', name: 'Psalms Book 1', chapters: 41 },
+                    { id: 'bk2kjvwd', name: 'Psalms Book 2', chapters: 31 },
+                    { id: 'bk3kjvwd', name: 'Psalms Book 3', chapters: 17 },
+                    { id: 'bk4kjvwd', name: 'Psalms Book 4', chapters: 17 },
+                    { id: 'bk5kjvwd', name: 'Psalms Book 5', chapters: 44 },
+                    { id: 'prkjvwd', name: 'Proverbs', chapters: 31 },
+                    { id: 'ecckjvwd', name: 'Ecclesiastes', chapters: 12 },
+                    { id: 'soskjvwd', name: 'Song of Solomon', chapters: 8 }
+                ]
+            },
+            major: {
+                name: 'Major Prophets',
+                page: '/biblemaj.html',
+                testament: 'Old Testament',
+                testamentPage: '/bibleot.html',
+                books: [
+                    { id: 'isakjvwd', name: 'Isaiah', chapters: 66 },
+                    { id: 'jerkjvwd', name: 'Jeremiah', chapters: 52 },
+                    { id: 'lamkjvwd', name: 'Lamentations', chapters: 5 },
+                    { id: 'ezekjvwd', name: 'Ezekiel', chapters: 48 },
+                    { id: 'dankjvwd', name: 'Daniel', chapters: 12 }
+                ]
+            },
+            minor: {
+                name: 'Minor Prophets',
+                page: '/biblemin.html',
+                testament: 'Old Testament',
+                testamentPage: '/bibleot.html',
+                books: [
+                    { id: 'hoskjvwd', name: 'Hosea', chapters: 14 },
+                    { id: 'joelkjvwd', name: 'Joel', chapters: 3 },
+                    { id: 'amkjvwd', name: 'Amos', chapters: 9 },  // actual file is amkjvwd.pdf
+                    { id: 'obkjvwd', name: 'Obadiah', chapters: 1 },
+                    { id: 'jnhkjvwd', name: 'Jonah', chapters: 4 },  // actual file is jnhkjvwd.pdf
+                    { id: 'mickjvwd', name: 'Micah', chapters: 7 },
+                    { id: 'nakjvwd', name: 'Nahum', chapters: 3 },  // actual file is nakjvwd.pdf
+                    { id: 'habkjvwd', name: 'Habakkuk', chapters: 3 },
+                    { id: 'zepkjvwd', name: 'Zephaniah', chapters: 3 },
+                    { id: 'hagkjvwd', name: 'Haggai', chapters: 2 },
+                    { id: 'zeckjvwd', name: 'Zechariah', chapters: 14 },
+                    { id: 'malkjvwd', name: 'Malachi', chapters: 4 }
+                ]
+            },
+            // New Testament
+            ntkjv: {
+                name: 'New Testament',
+                page: '/biblent.html',
+                testament: 'New Testament',
+                testamentPage: '/biblent.html',
+                books: [
+                    { id: 'mattkjvwd', name: 'Matthew', chapters: 28 },
+                    { id: 'markkjvwd', name: 'Mark', chapters: 16 },
+                    { id: 'lukekjvwd', name: 'Luke', chapters: 24 },
+                    { id: 'johnkjvwd', name: 'John', chapters: 21 },
+                    { id: 'actskjvwd', name: 'Acts', chapters: 28 },
+                    { id: 'romkjvwd', name: 'Romans', chapters: 16 },
+                    { id: '1corkjvwd', name: '1 Corinthians', chapters: 16 },
+                    { id: '2corkjvwd', name: '2 Corinthians', chapters: 13 },
+                    { id: 'galkjvwd', name: 'Galatians', chapters: 6 },
+                    { id: 'ephkjvwd', name: 'Ephesians', chapters: 6 },
+                    { id: 'philkjvwd', name: 'Philippians', chapters: 4 },
+                    { id: 'colkjvwd', name: 'Colossians', chapters: 4 },
+                    { id: '1thesskjvwd', name: '1 Thessalonians', chapters: 5 },
+                    { id: '2thesskjvwd', name: '2 Thessalonians', chapters: 3 },
+                    { id: '1timkjvwd', name: '1 Timothy', chapters: 6 },
+                    { id: '2timkjvwd', name: '2 Timothy', chapters: 4 },
+                    { id: 'tituskjvwd', name: 'Titus', chapters: 3 },
+                    { id: 'philemonkjvwd', name: 'Philemon', chapters: 1 },
+                    { id: 'hebkjvwd', name: 'Hebrews', chapters: 13 },
+                    { id: 'jameskjvwd', name: 'James', chapters: 5 },
+                    { id: '1petkjvwd', name: '1 Peter', chapters: 5 },
+                    { id: '2petkjvwd', name: '2 Peter', chapters: 3 },
+                    { id: '1johnkjvwd', name: '1 John', chapters: 5 },
+                    { id: '2johnkjvwd', name: '2 John', chapters: 1 },
+                    { id: '3johnkjvwd', name: '3 John', chapters: 1 },
+                    { id: 'judekjvwd', name: 'Jude', chapters: 1 },
+                    { id: 'revkjvwd', name: 'Revelation', chapters: 22 }
+                ]
+            }
+        };
+
+        // PDF viewer state
+        var pdfDoc = null;
+        var pageNum = 1;
+        var pageRendering = false;
+        var pageNumPending = null;
+        var scale = 1.5;
+
+        var canvas = document.getElementById('pdf-canvas');
+        var ctx = canvas.getContext('2d');
+        var loading = document.getElementById('loading');
+        var errorState = document.getElementById('error-state');
+
+        function findBookInfo(pdfPath) {
+            var filename = pdfPath.split('/').pop().replace('.pdf', '');
+            var section = null;
+            var bookInfo = null;
+
+            for (var sectionKey in bibleData) {
+                var sectionData = bibleData[sectionKey];
+                for (var i = 0; i < sectionData.books.length; i++) {
+                    if (sectionData.books[i].id === filename) {
+                        section = sectionData;
+                        section.key = sectionKey;
+                        bookInfo = sectionData.books[i];
+                        bookInfo.index = i;
+                        break;
+                    }
+                }
+                if (bookInfo) break;
+            }
+
+            return { section: section, book: bookInfo };
+        }
+
+        function updateUI(pdfPath) {
+            var info = findBookInfo(pdfPath);
+
+            if (!info.book) {
+                document.getElementById('book-title').textContent = 'Bible Book';
+                return;
+            }
+
+            var book = info.book;
+            var section = info.section;
+            var isNT = section.testament === 'New Testament';
+
+            // Update page title
+            document.getElementById('page-title').textContent = book.name + ' (KJV) | Bible Teaching Program';
+            document.getElementById('book-title').textContent = book.name;
+            document.getElementById('book-subtitle').textContent = book.chapters + ' Chapters - King James Version';
+
+            // Update breadcrumbs
+            var testamentEl = document.getElementById('breadcrumb-testament');
+            testamentEl.innerHTML = '<a href="' + section.testamentPage + '" class="text-gray-600 hover:text-primary-700 transition">' + section.testament + '</a>';
+
+            if (!isNT) {
+                document.getElementById('breadcrumb-arrow-2').classList.remove('hidden');
+                var sectionLink = document.getElementById('breadcrumb-section-link');
+                sectionLink.href = section.page;
+                sectionLink.textContent = section.name;
+                sectionLink.classList.remove('hidden');
+            }
+
+            document.getElementById('breadcrumb-arrow-3').classList.remove('hidden');
+            document.getElementById('breadcrumb-book').textContent = book.name;
+
+            // Update sidebar title
+            document.getElementById('sidebar-title').innerHTML = '<span>📚</span> ' + section.name;
+
+            // Populate sidebar navigation
+            var sidebarNav = document.getElementById('sidebar-nav');
+            sidebarNav.innerHTML = '';
+
+            section.books.forEach(function(b, idx) {
+                var isActive = b.id === book.id;
+                var folder = section.key;
+                // Psalms are in a separate folder
+                if (b.id.indexOf('bk') === 0 && b.id.indexOf('kjvwd') > 0) {
+                    folder = 'psalms';
+                }
+                var bookPath = isNT ? '/ntkjv/' + b.id + '.pdf' : '/otkjv/' + folder + '/' + b.id + '.pdf';
+
+                var link = document.createElement('a');
+                link.href = '/bible-reader.html?pdf=' + bookPath;
+                link.className = 'sidebar-link block px-3 py-2 rounded-lg text-sm ' +
+                    (isActive ? 'active bg-amber-50 text-amber-800 font-medium' : 'text-gray-700 hover:bg-gray-50');
+                link.innerHTML = '<span class="text-gray-400 mr-2">' + (idx + 1) + '.</span>' + b.name;
+                sidebarNav.appendChild(link);
+            });
+
+            // Update download button
+            document.getElementById('download-btn').href = pdfPath;
+
+            // Update icon color based on testament
+            var iconEl = document.getElementById('book-icon');
+            iconEl.className = 'w-10 h-10 rounded-lg flex items-center justify-center ' + (isNT ? 'bg-blue-50' : 'bg-amber-50');
+        }
+
+        function renderPage(num) {
+            pageRendering = true;
+
+            pdfDoc.getPage(num).then(function(page) {
+                var viewport = page.getViewport({scale: scale});
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                var renderContext = {
+                    canvasContext: ctx,
+                    viewport: viewport
+                };
+
+                var renderTask = page.render(renderContext);
+
+                renderTask.promise.then(function() {
+                    pageRendering = false;
+                    if (pageNumPending !== null) {
+                        renderPage(pageNumPending);
+                        pageNumPending = null;
+                    }
+                });
+            });
+
+            document.getElementById('page-num').value = num;
+        }
+
+        function queueRenderPage(num) {
+            if (pageRendering) {
+                pageNumPending = num;
+            } else {
+                renderPage(num);
+            }
+        }
+
+        function onPrevPage() {
+            if (pageNum <= 1) return;
+            pageNum--;
+            queueRenderPage(pageNum);
+            updateButtons();
+        }
+
+        function onNextPage() {
+            if (pageNum >= pdfDoc.numPages) return;
+            pageNum++;
+            queueRenderPage(pageNum);
+            updateButtons();
+        }
+
+        function onPageNumChange(num) {
+            if (num < 1 || num > pdfDoc.numPages) return;
+            pageNum = num;
+            queueRenderPage(pageNum);
+            updateButtons();
+        }
+
+        function onZoomIn() {
+            scale += 0.25;
+            if (scale > 3) scale = 3;
+            document.getElementById('zoom-level').textContent = Math.round(scale * 100) + '%';
+            queueRenderPage(pageNum);
+        }
+
+        function onZoomOut() {
+            scale -= 0.25;
+            if (scale < 0.5) scale = 0.5;
+            document.getElementById('zoom-level').textContent = Math.round(scale * 100) + '%';
+            queueRenderPage(pageNum);
+        }
+
+        function updateButtons() {
+            document.getElementById('prev-page').disabled = (pageNum <= 1);
+            document.getElementById('next-page').disabled = (pageNum >= pdfDoc.numPages);
+        }
+
+        function loadPDF(url) {
+            loading.classList.remove('hidden');
+            canvas.classList.add('hidden');
+            errorState.classList.add('hidden');
+
+            pdfjsLib.getDocument(url).promise.then(function(pdf) {
+                pdfDoc = pdf;
+                document.getElementById('page-count').textContent = pdf.numPages;
+
+                loading.classList.add('hidden');
+                canvas.classList.remove('hidden');
+
+                renderPage(pageNum);
+                updateButtons();
+
+            }).catch(function(error) {
+                console.error('Error loading PDF:', error);
+                loading.classList.add('hidden');
+                errorState.classList.remove('hidden');
+            });
+        }
+
+        // Event listeners
+        document.getElementById('prev-page').addEventListener('click', onPrevPage);
+        document.getElementById('next-page').addEventListener('click', onNextPage);
+        document.getElementById('zoom-in').addEventListener('click', onZoomIn);
+        document.getElementById('zoom-out').addEventListener('click', onZoomOut);
+        document.getElementById('page-num').addEventListener('change', function() {
+            onPageNumChange(parseInt(this.value));
+        });
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            var params = new URLSearchParams(window.location.search);
+            var pdfPath = params.get('pdf');
+
+            if (!pdfPath) {
+                document.getElementById('book-title').textContent = 'Select a Book';
+                document.getElementById('book-subtitle').textContent = 'Choose from Old or New Testament';
+                loading.classList.add('hidden');
+                document.getElementById('select-state').classList.remove('hidden');
+                return;
+            }
+
+            updateUI(pdfPath);
+            loadPDF(pdfPath);
+        });
+    </script>
+
+    <script src="/js/daily-verse.js"></script>
+    <script src="/js/inline-editor.js"></script>
+</body>
+</html>

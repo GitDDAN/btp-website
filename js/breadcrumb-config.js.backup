@@ -1,0 +1,446 @@
+/**
+ * Breadcrumb Configuration
+ * Maps each page to its position in the site hierarchy
+ */
+
+const breadcrumbConfig = {
+    // Home
+    '/': [
+        { title: 'Home', url: '/' }
+    ],
+    '/homepage.html': [
+        { title: 'Home', url: '/' }
+    ],
+    '/index.html': [
+        { title: 'Home', url: '/' }
+    ],
+
+    // Teaching & Courses
+    '/courses.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' }
+    ],
+
+    // Foundation Courses
+    '/foundation.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Foundation', url: '/foundation.html' }
+    ],
+    '/cfsal.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Foundation', url: '/foundation.html' },
+        { title: 'Salvation Course', url: '/salindex.html' }
+    ],
+    '/salindex.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Foundation', url: '/foundation.html' },
+        { title: 'Salvation Course', url: '/salindex.html' }
+    ],
+    '/cfeternal.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Foundation', url: '/foundation.html' },
+        { title: 'Eternal Life', url: '/cfeternal.html' }
+    ],
+    '/cfcross.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Foundation', url: '/foundation.html' },
+        { title: 'The Cross', url: '/cfcross.html' }
+    ],
+
+    // Salvation Lessons
+    '/sal1a.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Foundation', url: '/foundation.html' },
+        { title: 'Salvation Course', url: '/salindex.html' },
+        { title: 'Lesson 1', url: '/sal1a.html' }
+    ],
+    '/sal2a.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Foundation', url: '/foundation.html' },
+        { title: 'Salvation Course', url: '/salindex.html' },
+        { title: 'Lesson 2', url: '/sal2a.html' }
+    ],
+    '/sal3a.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Foundation', url: '/foundation.html' },
+        { title: 'Salvation Course', url: '/salindex.html' },
+        { title: 'Lesson 3', url: '/sal3a.html' }
+    ],
+    '/sal4a.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Foundation', url: '/foundation.html' },
+        { title: 'Salvation Course', url: '/salindex.html' },
+        { title: 'Lesson 4', url: '/sal4a.html' }
+    ],
+    '/sal5a.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Foundation', url: '/foundation.html' },
+        { title: 'Salvation Course', url: '/salindex.html' },
+        { title: 'Lesson 5', url: '/sal5a.html' }
+    ],
+    '/sal6a.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Foundation', url: '/foundation.html' },
+        { title: 'Salvation Course', url: '/salindex.html' },
+        { title: 'Lesson 6', url: '/sal6a.html' }
+    ],
+    '/sal7a.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Foundation', url: '/foundation.html' },
+        { title: 'Salvation Course', url: '/salindex.html' },
+        { title: 'Lesson 7', url: '/sal7a.html' }
+    ],
+    '/sal8a.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Foundation', url: '/foundation.html' },
+        { title: 'Salvation Course', url: '/salindex.html' },
+        { title: 'Lesson 8', url: '/sal8a.html' }
+    ],
+    '/sal9a.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Foundation', url: '/foundation.html' },
+        { title: 'Salvation Course', url: '/salindex.html' },
+        { title: 'Lesson 9', url: '/sal9a.html' }
+    ],
+    '/sal10a.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Foundation', url: '/foundation.html' },
+        { title: 'Salvation Course', url: '/salindex.html' },
+        { title: 'Lesson 10', url: '/sal10a.html' }
+    ],
+
+    // Christian Life
+    '/life.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Christian Life', url: '/life.html' }
+    ],
+
+    // Armour of God
+    '/ntarmour.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Christian Life', url: '/life.html' },
+        { title: 'Armour of God', url: '/ntarmour.html' }
+    ],
+    '/arweb.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Christian Life', url: '/life.html' },
+        { title: 'Armour of God', url: '/arweb.html' }
+    ],
+    '/armour1.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Christian Life', url: '/life.html' },
+        { title: 'Armour of God', url: '/ntarmour.html' },
+        { title: 'Lesson 1', url: '/armour1.html' }
+    ],
+    '/armour2.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Christian Life', url: '/life.html' },
+        { title: 'Armour of God', url: '/ntarmour.html' },
+        { title: 'Lesson 2', url: '/armour2.html' }
+    ],
+    '/armour3.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Christian Life', url: '/life.html' },
+        { title: 'Armour of God', url: '/ntarmour.html' },
+        { title: 'Lesson 3', url: '/armour3.html' }
+    ],
+    '/armour4.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Christian Life', url: '/life.html' },
+        { title: 'Armour of God', url: '/ntarmour.html' },
+        { title: 'Lesson 4', url: '/armour4.html' }
+    ],
+    '/armour5.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Christian Life', url: '/life.html' },
+        { title: 'Armour of God', url: '/ntarmour.html' },
+        { title: 'Lesson 5', url: '/armour5.html' }
+    ],
+    '/armour6.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Christian Life', url: '/life.html' },
+        { title: 'Armour of God', url: '/ntarmour.html' },
+        { title: 'Lesson 6', url: '/armour6.html' }
+    ],
+    '/armour7.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Christian Life', url: '/life.html' },
+        { title: 'Armour of God', url: '/ntarmour.html' },
+        { title: 'Lesson 7', url: '/armour7.html' }
+    ],
+    '/armour8.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Christian Life', url: '/life.html' },
+        { title: 'Armour of God', url: '/ntarmour.html' },
+        { title: 'Lesson 8', url: '/armour8.html' }
+    ],
+    '/armour9.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Christian Life', url: '/life.html' },
+        { title: 'Armour of God', url: '/ntarmour.html' },
+        { title: 'Lesson 9', url: '/armour9.html' }
+    ],
+    '/armour10.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Christian Life', url: '/life.html' },
+        { title: 'Armour of God', url: '/ntarmour.html' },
+        { title: 'Lesson 10', url: '/armour10.html' }
+    ],
+
+    // Other Christian Life courses
+    '/fruitweb.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Christian Life', url: '/life.html' },
+        { title: 'Fruit of the Spirit', url: '/fruitweb.html' }
+    ],
+    '/giftsweb.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Christian Life', url: '/life.html' },
+        { title: 'Gifts of the Spirit', url: '/giftsweb.html' }
+    ],
+    '/prayer2web.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Christian Life', url: '/life.html' },
+        { title: 'Prayer', url: '/prayer2web.html' }
+    ],
+    '/worship1web.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Christian Life', url: '/life.html' },
+        { title: 'Worship', url: '/worship1web.html' }
+    ],
+    '/worship2web.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Christian Life', url: '/life.html' },
+        { title: 'Worship', url: '/worship2web.html' }
+    ],
+
+    // Bible Studies
+    '/bibleot.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Old Testament', url: '/bibleot.html' }
+    ],
+    '/biblent.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'New Testament', url: '/biblent.html' }
+    ],
+    '/epistles.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'New Testament', url: '/biblent.html' },
+        { title: 'Epistles', url: '/epistles.html' }
+    ],
+
+    // Church History
+    '/histweb.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Church History', url: '/histweb.html' }
+    ],
+    '/chppt1.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Church History', url: '/histweb.html' },
+        { title: 'PowerPoint', url: '/chppt1.html' }
+    ],
+    '/chweb1.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Teaching & Courses', url: '/courses.html' },
+        { title: 'Church History', url: '/histweb.html' },
+        { title: 'Web Studies', url: '/chweb1.html' }
+    ],
+
+    // NT Verses
+    '/ntverses.html': [
+        { title: 'Home', url: '/' },
+        { title: 'NT Verses', url: '/ntverses.html' }
+    ],
+    '/romlinks.html': [
+        { title: 'Home', url: '/' },
+        { title: 'NT Verses', url: '/ntverses.html' },
+        { title: 'Romans', url: '/romlinks.html' }
+    ],
+    '/1corlinks.html': [
+        { title: 'Home', url: '/' },
+        { title: 'NT Verses', url: '/ntverses.html' },
+        { title: '1 Corinthians', url: '/1corlinks.html' }
+    ],
+    '/2corlinks.html': [
+        { title: 'Home', url: '/' },
+        { title: 'NT Verses', url: '/ntverses.html' },
+        { title: '2 Corinthians', url: '/2corlinks.html' }
+    ],
+    '/galinks.html': [
+        { title: 'Home', url: '/' },
+        { title: 'NT Verses', url: '/ntverses.html' },
+        { title: 'Galatians', url: '/galinks.html' }
+    ],
+    '/ephlinks.html': [
+        { title: 'Home', url: '/' },
+        { title: 'NT Verses', url: '/ntverses.html' },
+        { title: 'Ephesians', url: '/ephlinks.html' }
+    ],
+    '/philinks.html': [
+        { title: 'Home', url: '/' },
+        { title: 'NT Verses', url: '/ntverses.html' },
+        { title: 'Philippians', url: '/philinks.html' }
+    ],
+    '/colinks.html': [
+        { title: 'Home', url: '/' },
+        { title: 'NT Verses', url: '/ntverses.html' },
+        { title: 'Colossians', url: '/colinks.html' }
+    ],
+    '/heblinks.html': [
+        { title: 'Home', url: '/' },
+        { title: 'NT Verses', url: '/ntverses.html' },
+        { title: 'Hebrews', url: '/heblinks.html' }
+    ],
+
+    // Books & Messages
+    '/books.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Books & Messages', url: '/books.html' }
+    ],
+    '/messages.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Books & Messages', url: '/books.html' },
+        { title: 'Messages', url: '/messages.html' }
+    ],
+
+    // Verse of the Day
+    '/daily/today.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Verse of the Day', url: '/daily/today.html' }
+    ],
+    '/dvlinksjan.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Verse of the Day', url: '/daily/today.html' },
+        { title: 'January', url: '/dvlinksjan.html' }
+    ],
+    '/dvlinksfeb.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Verse of the Day', url: '/daily/today.html' },
+        { title: 'February', url: '/dvlinksfeb.html' }
+    ],
+    '/dvlinksmar.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Verse of the Day', url: '/daily/today.html' },
+        { title: 'March', url: '/dvlinksmar.html' }
+    ],
+    '/dvlinksapr.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Verse of the Day', url: '/daily/today.html' },
+        { title: 'April', url: '/dvlinksapr.html' }
+    ],
+    '/dvlinksmay.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Verse of the Day', url: '/daily/today.html' },
+        { title: 'May', url: '/dvlinksmay.html' }
+    ],
+    '/dvlinksjune.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Verse of the Day', url: '/daily/today.html' },
+        { title: 'June', url: '/dvlinksjune.html' }
+    ],
+    '/dvlinksjuly.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Verse of the Day', url: '/daily/today.html' },
+        { title: 'July', url: '/dvlinksjuly.html' }
+    ],
+    '/dvlinksaug.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Verse of the Day', url: '/daily/today.html' },
+        { title: 'August', url: '/dvlinksaug.html' }
+    ],
+    '/dvlinkssept.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Verse of the Day', url: '/daily/today.html' },
+        { title: 'September', url: '/dvlinkssept.html' }
+    ],
+    '/dvlinksoct.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Verse of the Day', url: '/daily/today.html' },
+        { title: 'October', url: '/dvlinksoct.html' }
+    ],
+    '/dvlinksnov.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Verse of the Day', url: '/daily/today.html' },
+        { title: 'November', url: '/dvlinksnov.html' }
+    ],
+    '/dvlinksdec.html': [
+        { title: 'Home', url: '/' },
+        { title: 'Verse of the Day', url: '/daily/today.html' },
+        { title: 'December', url: '/dvlinksdec.html' }
+    ]
+};
+
+/**
+ * Get breadcrumb trail for current page
+ */
+function getBreadcrumbTrail() {
+    let path = window.location.pathname;
+
+    // Normalize path
+    if (path === '' || path === '/') {
+        path = '/';
+    }
+
+    // Look up in config
+    if (breadcrumbConfig[path]) {
+        return breadcrumbConfig[path];
+    }
+
+    // Default fallback - try to infer from path
+    return [
+        { title: 'Home', url: '/' },
+        { title: getPageTitle(), url: path }
+    ];
+}
+
+/**
+ * Get page title from document or filename
+ */
+function getPageTitle() {
+    const title = document.title;
+    if (title && title !== 'Bible Teaching Program') {
+        return title.replace(' | Bible Teaching Program', '').replace('Bible Teaching Program - ', '');
+    }
+
+    const path = window.location.pathname;
+    const filename = path.split('/').pop().replace('.html', '').replace('.htm', '');
+    return filename.charAt(0).toUpperCase() + filename.slice(1).replace(/[-_]/g, ' ');
+}

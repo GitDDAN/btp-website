@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Armour - Christian Life Course">
+    <title>Armour | Christian Life Course | Bible Teaching Program</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': {
+                            '50': '#f0f7ff',
+                            '100': '#e0effe',
+                            '600': '#006fc7',
+                            '700': '#0058a2',
+                            '800': '#004a85',
+                            '900': '#003d6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .content-area {
+            font-size: 1.0625rem;
+            line-height: 1.8;
+            color: #1f2937;
+            font-family: Georgia, 'Times New Roman', serif;
+        }
+
+        .content-area h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #171717;
+        }
+
+        .content-area h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 1.75rem;
+            margin-bottom: 0.875rem;
+            color: #262626;
+        }
+
+        .content-area h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #404040;
+        }
+
+        .content-area p {
+            margin-bottom: 1rem;
+        }
+
+        .content-area ul, .content-area ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-area li {
+            margin-bottom: 0.5rem;
+        }
+
+        .content-area blockquote {
+            border-left: 4px solid #0058a2;
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #525252;
+        }
+
+        .content-area table {
+            width: 100%;
+            margin: 1.5rem 0;
+            border-collapse: collapse;
+        }
+
+        .content-area table td, .content-area table th {
+            padding: 0.75rem;
+            border: 1px solid #e5e5e5;
+        }
+
+        .content-area img {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0;
+            border-radius: 0.5rem;
+        }
+
+        /* Professional styling for numbered lists */
+        .content-area .numbered-item {
+            margin-left: 0;
+            padding-left: 0;
+            margin-bottom: 1.25rem;
+            margin-top: 1rem;
+            line-height: 1.8;
+        }
+
+        /* Styled number for lists */
+        .content-area .list-number {
+            display: inline;
+            color: #004a85;
+            font-weight: 700;
+            margin-right: 0.5rem;
+            font-size: 1rem;
+        }
+
+        /* Professional styling for bullet points */
+        .content-area .bullet-item {
+            margin-left: 0;
+            padding-left: 2rem;
+            position: relative;
+            margin-bottom: 0.875rem;
+            line-height: 1.75;
+        }
+
+        .content-area .bullet-item::before {
+            content: "•";
+            position: absolute;
+            left: 0.5rem;
+            color: #006fc7;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Scripture reference highlighting */
+        .content-area .scripture-ref {
+            font-weight: 600;
+            color: #0058a2;
+            font-style: italic;
+        }
+
+        /* Section headers styling */
+        .content-area .section-header {
+            display: inline;
+            color: #1f2937;
+            font-size: 1.0625rem;
+            font-weight: 700;
+        }
+
+        /* Roman numeral list items */
+        .content-area .roman-item {
+            margin-left: 0;
+            padding-left: 0;
+            margin-bottom: 1rem;
+            margin-top: 0.75rem;
+            line-height: 1.75;
+        }
+
+        /* Styled Roman numerals */
+        .content-area .roman-number {
+            display: inline;
+            color: #004a85;
+            font-weight: 700;
+            margin-right: 0.5rem;
+            font-size: 1rem;
+            font-style: normal;
+        }
+
+        /* Better paragraph spacing */
+        .content-area p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-6">
+                    <a href="/" class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-primary-700 text-white rounded-lg flex items-center justify-center font-bold text-lg">
+                            BTP
+                        </div>
+                        <div class="hidden md:block">
+                            <div class="font-bold text-lg text-gray-900">Bible Teaching Program</div>
+                            <div class="text-xs text-gray-600">Biblical Education & Courses</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="/christian_life_course.html" class="text-sm font-medium text-gray-700 hover:text-primary-700 transition">← Back to Christian Life Course</a>
+                    </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Lesson Header -->
+    <section class="bg-gradient-to-br from-green-600 via-green-700 to-green-800 text-white py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Breadcrumb -->
+            <div class="flex items-center gap-2 text-sm text-white text-opacity-80 mb-4">
+                <a href="/" class="hover:text-white transition">Home</a>
+                <span>›</span>
+                <a href="/category/teaching-courses.html" class="hover:text-white transition">Teaching & Courses</a>
+                <span>›</span>
+                <a href="/christian_life_course.html" class="hover:text-white transition">Christian Life Course</a>
+                
+                <span>›</span>
+                <span class="text-white">Armour</span>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <div class="w-14 h-14 bg-white bg-opacity-20 backdrop-blur-sm rounded-xl flex items-center justify-center text-2xl">
+                    🌱
+                </div>
+                <div>
+                    <div class="text-sm text-white text-opacity-80 mb-1">Christian Life Course</div>
+                    <h1 class="text-2xl md:text-3xl font-bold">Armour</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+
+            <!-- Main Column -->
+            <div class="lg:col-span-3 space-y-6">
+                <!-- Lesson Content with PDF Viewer -->
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    
+
+                    <!-- Content Tab -->
+                    <div id="contentSection" class="p-8">
+                        <article class="content-area">
+<div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 mb-6 border-2 border-blue-200">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 bg-primary-600 text-white rounded-lg flex items-center justify-center flex-shrink-0 text-xl">
+ 📖
+ </div>
+<div class="flex-1">
+<div class="text-xs text-primary-600 font-medium mb-1">The Armour ofGod(Ephesians6:10-18)</div>
+<div class="text-sm text-gray-600"><span class="font-semibold">Scripture:</span> <span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Ephesians
+6:10-11</span></span></span></span></span></span></span></span></span></span></span></span></span> 'Finally, my brethren, be strong
+in the Lord, and in the power of his might. Put on the whole armour of God, that you may be able to stand against
+the wiles of the devil.'</div>
+</div>
+</div>
+</div>
+<p class="Mso Normal text-right"><a href="../../../../arweb.html"><span><span class="text-primary">Course index</span></span></a></p>
+<p class="Mso Normal"><b><span lang="EN-GB">Christians
+in Spiritual Warfare</span></b></p>
+<p class="Mso Normal"><b><span lang="EN-GB">Lesson Title:</span></b><span lang="EN-GB"> Put on the
+complete armour</span></p>
+<p class="Mso Normal"><b><span lang="EN-GB">Theme:</span></b> It is essential to put on the complete armour of God.</p>
+<p class="Mso Normal"><b><span lang="EN-GB">Details concerning
+the Roman armour:</span></b></p>
+<p class="Mso Normal"><span lang="EN-GB"><span>1.</span></span><span lang="EN-GB">Scripture puts the armour into two groups.</span></p>
+<p class="Mso Normal bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item"><span lang="EN-GB"><span>-</span></span><span lang="EN-GB">The first group is fixed to the body; </span></p>
+<p class="Mso Normal bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item"><span lang="EN-GB"><span>-</span></span><span lang="EN-GB">the second group is moveable.</span></p>
+<p class="Mso Normal"><span lang="EN-GB"><span>2.</span></span><span lang="EN-GB">The fixed pieces are </span></p>
+<p class="Mso Normal bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item"><span lang="EN-GB"><span>-</span></span><span lang="EN-GB">The Belt, </span></p>
+<p class="Mso Normal bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item"><span lang="EN-GB"><span>-</span></span><span lang="EN-GB">The Breastplate and</span></p>
+<p class="Mso Normal bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item"><span lang="EN-GB"><span>-</span></span><span lang="EN-GB">The Shoes.</span></p>
+<p class="Mso Normal"><span lang="EN-GB"><span>3.</span></span><span lang="EN-GB">The moveable pieces are </span></p>
+<p class="Mso Normal bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item"><span lang="EN-GB"><span>-</span></span><span lang="EN-GB">The Shield, </span></p>
+<p class="Mso Normal bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item"><span lang="EN-GB"><span>-</span></span><span lang="EN-GB">The Helmet and </span></p>
+<p class="Mso Normal bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item"><span lang="EN-GB"><span>-</span></span><span lang="EN-GB">The Sword.</span></p>
+<p class="Mso Normal"><span lang="EN-GB"><span>4.</span></span><span lang="EN-GB">The Roman soldier had more armour than Paul
+mentioned, </span></p>
+<p class="Mso Normal bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item"><span lang="EN-GB"><span>-</span></span><i><span lang="EN-GB">The <span class="Spell E">Pillum</span></span></i><span lang="EN-GB"> was a long throwing spear.</span></p>
+<p class="Mso Normal bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item"><span lang="EN-GB"><span>-</span></span><span lang="EN-GB">The solder also had a dagger.</span></p>
+<p class="Mso Normal"><span lang="EN-GB"><span>5.</span></span><span lang="EN-GB">The armour Paul mentioned was necessary in close
+combat fighting with the enemy.</span></p>
+<p class="Mso Normal bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item"><span lang="EN-GB"><span>-</span></span><span lang="EN-GB">We cannot keep our distance in spiritual
+warfare.</span></p>
+<p class="Mso Normal bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item"><span lang="EN-GB"><span>-</span></span><span lang="EN-GB">We cannot rely on the skill of others </span></p>
+<p class="Mso Normal bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item"><span lang="EN-GB"><span>-</span></span><span lang="EN-GB">We must be ready to wrestle against the enemy
+ourselves. </span></p>
+<p class="Mso Normal"><span lang="EN-GB"><span>6.</span></span><span lang="EN-GB">An army fights together, but </span></p>
+<ul type="disc">
+<li class="Mso Normal"><span lang="EN-GB">a soldier who cannot use the armour will soon
+ be defeated in the battle. </span></li>
+</ul>
+<p class="Mso Normal"><b class="section-header section-header section-header section-header section-header section-header section-header section-header section-header section-header section-header section-header section-header"><span lang="EN-GB">Introduction:</span></b><span lang="EN-GB"> Personal fight - needs all the armour for
+close combat.</span></p>
+<ul type="disc">
+<li class="Mso Normal"><span lang="EN-GB">Put on the 'whole armour'. Paul uses the Greek word '<span class="Spell E"><i>panoplia</i></span>'
+ meaning complete armour. It comes
+ from two Greek words 'pas' meaning 'all' and '<span class="Spell E"><i>hoplon</i></span>' meaning
+ 'weapon'.(literally 'all the
+ weaponry'). It is necessary to put
+ on the whole armour of God.A weak
+ area gives opportunity for the enemy.</span></li>
+</ul>
+<ul type="disc">
+<li class="Mso Normal"><span lang="EN-GB">No mention of the javelin or the dagger. We fight as an army but the kind of
+ armour we must have is for close combat fighting. The javelin not mentioned. This is used in long distance fighting.
+ The armour does not mention the dagger, which a Roman soldier had attached
+ to his belt. This was for stabbing
+ deceitfully in the back. The armour
+ of God does not use deceit, craftiness, or cunning. This is carnality. </span></li>
+</ul>
+<ul type="disc">
+<li class="Mso Normal"><span lang="EN-GB">In the 1st century, Jewish Zealots called the <span class="Spell E">Sicarii</span> used to fight the Romans by using a dagger to
+ stab in the back in big crowds. They were usually able to flee because of the panic that followed
+ the stabbing. The historian
+ Josephus hated them and considered that their actions were the reason for
+ the destruction of </span><span lang="EN-GB">Jerusalem</span><span lang="EN-GB"> in AD 70.</span></li>
+</ul>
+<ul type="disc">
+<li class="Mso Normal"><span lang="EN-GB">Only weapon of attack that is mentioned is the
+ sword. This needed to be used
+ skilfully.</span></li>
+</ul>
+<p class="Mso Normal"><b><span lang="EN-GB">Introductory
+Story:</span></b><span lang="EN-GB">The Maori <span class="Spell E">Hauhau</span> warriors</span></p>
+<ul type="disc">
+<li class="Mso Normal"><span lang="EN-GB">Not
+ only must the Christian soldier put the armour on, he or she must be
+ certain to wear the right armour. Having faith in the wrong armour will not protect us.</span></li>
+</ul>
+<ul type="disc">
+<li class="Mso Normal"><span lang="EN-GB">A
+ soldier is in great danger when not protected against the enemy even if
+ the soldier shows great courage through faith in their own
+ protection.</span></li>
+</ul>
+<p class="Mso Normal"><span lang="EN-GB">During the New Zealand Maori Wars of the 1860s, a Maori
+by the name of Te <span class="Spell E">Ua</span>
+<span class="Spell E">Haumene</span> claimed that the angel Gabriel had visited
+him in 1862, and that it had been revealed to him by the angel that bullets
+could not harm a warrior who shouted the words "<span class="Spell E">Pai</span>
+<span class="Spell E">Marire</span>, <span class="Spell E">hau</span>, <span class="Spell E">hau</span>!" (or "<span class="Spell E">hapa</span>, <span class="Spell E">hapa</span>!").</span></p>
+<p class="Mso Normal"><span lang="EN-GB">Those who followed Te <span class="Spell E">Ua</span> <span class="Spell E">Haumene</span> were known as the <span class="Spell E">Hauhau</span>
+warriors (1864-65). They believed that
+God had chosen them as His special people and because of this He had provided a
+way for them to be supernaturally protected from the enemy. </span></p>
+<p class="Mso Normal"><span lang="EN-GB">The <span class="Spell E">Hauhau</span> warriors had
+great courage and were incredibly daring because they had no fear of the
+enemys weapons. But their belief was
+wrong and despite their sincerity and bravery they were any easy enemy to
+defeat.</span></p>
+<p class="Mso Body Text"><span lang="EN-GB">The
+error of <span class="Spell E">Haumene's</span> teaching was seen on </span><span lang="EN-GB">May 14, 1864</span><span lang="EN-GB"> when 120 <span class="Spell E">Hau</span> <span class="Spell E">Hau</span> warriors moved without
+fear towards the enemy guns on </span><span class="Spell E"><span lang="EN-GB">Moutoa</span></span><span lang="EN-GB">Island</span><span lang="EN-GB">. Within minutes 80 of them lay dead or injured
+and the rest ran away.</span></p>
+<p class="Mso Normal"><span lang="EN-GB">The teaching of Te <span class="Spell E">Ua</span> <span class="Spell E">Haumene</span> deceived the <span class="Spell E">Hauhau</span>
+warriors because it provided them with a false hope. Their armour was only the words "<span class="Spell E">Pai</span> <span class="Spell E">Marire</span>, <span class="Spell E">hau</span>,
+<span class="Spell E">hau</span>!" but the words had no power (</span><span lang="EN-GB">1 Corinthians </span><span lang="EN-GB">4:20</span><span lang="EN-GB">). </span></p>
+<p class="Mso Normal"><span lang="EN-GB">We must wear the right armour in order to stand
+against the attacks of the enemy. If we do not wear the right armour then we
+can be very sincere in our beliefs but we will still be defeated.</span></p>
+<p class="Mso Normal"><b><span lang="EN-GB">Main Points:</span></b></p>
+<p class="Mso Normal"><span lang="EN-GB"><span>1.</span></span><span lang="EN-GB">The armour of God requires a
+close relationship with Christ.</span></p>
+<p class="Mso Normal"><b><span lang="EN-GB">Putting on the whole armour
+(panoply) of God means putting on Christ,</span></b><span lang="EN-GB">Romans 13:14But put ye on the Lord
+Jesus Christ, and make not provision for the flesh, to fulfil the lusts
+thereof.</span></p>
+<p class="Mso Body Text"><span lang="EN-GB">Every piece of armour reveals Christ.</span></p>
+<p class="Mso Normal"><span lang="EN-GB">The fixed parts of the armour:</span></p>
+<p class="Mso Normal"><span lang="EN-GB"><span>a)</span></span><span lang="EN-GB">The belt of truth. </span></p>
+<p class="Mso Normal bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item"><span lang="EN-GB"><span>-</span></span><span lang="EN-GB">The doctrine (teaching) of Christ.</span><span lang="EN-GB"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">2 John 1:9</span></span></span></span></span></span></span></span></span></span></span></span></span>, Whosoever <span class="Spell E">transgresseth</span>, and <span class="Spell E">abideth</span> not in the doctrine of Christ, hath not God. He
+that <span class="Spell E">abideth</span> in the doctrine of Christ, he hath both
+the Father and the Son.</span></p>
+<p class="Mso Normal bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item"><span lang="EN-GB"><span>-</span></span><span lang="EN-GB">The word of Christ, </span><span lang="EN-GB"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Colossians 3:16</span></span></span></span></span></span></span></span></span></span></span></span></span>,Let the word of Christ dwell in you richly
+in all wisdom; teaching and admonishing one another in psalms and hymns and
+spiritual songs, singing with grace in your hearts to the Lord.</span></p>
+<p class="Mso Normal"><span lang="EN-GB"><span>b)</span></span><span lang="EN-GB">The breastplate of righteousness. </span></p>
+<p class="Mso Normal bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item"><span lang="EN-GB"><span>-</span></span><span lang="EN-GB">The righteousness of Christ, </span><span lang="EN-GB"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">2 Corinthians 5:21</span></span></span></span></span></span></span></span></span></span></span></span></span></span><span lang="EN-GB">.</span></p>
+<p class="Mso Normal"><span lang="EN-GB"><span>c)</span></span><span lang="EN-GB">The shoes of the preparation of the gospel of peace
+</span></p>
+<p class="Mso Normal bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item bullet-item"><span lang="EN-GB"><span>-</span></span><span lang="EN-GB">Christ is our peace, </span><span lang="EN-GB"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Ephesians 2:14</span></span></span></span></span></span></span></span></span></span></span></span></span></span><span lang="EN-GB">.</span></p>
+<p class="Mso Normal"><span lang="EN-GB">The believer must stand firm on Christ with the
+fixed pieces of armour. They must never
+be taken off.</span></p>
+<p class="Mso Normal"><span lang="EN-GB">But then there are the moveable parts of the
+armour. The believer does not have these
+on all the time, but he or she must always be ready to use them.</span></p>
+<ul type="disc">
+<li class="Mso Normal"><span lang="EN-GB">Taking
+ up Faith as a Shield - The shield protects the soldier from attacks that
+ come from the outside. Nothing can
+ stop the believer who holds the shield of faith, </span><span lang="EN-GB">Hebrews 11</span><span lang="EN-GB">.</span></li>
+<li class="Mso Normal"><span lang="EN-GB">Taking
+ up Salvation as a Helmet - to cover our minds. The attacks from inside. The helmet protects the believer from
+ attacks that are upon the mind. We
+ must know who we are in Christ.</span></li>
+<li class="Mso Normal"><span lang="EN-GB">Taking
+ up the word of God as a sword. The
+ sword of the Spirit to attack and defend. The sword is taken from the belt. The believer must use the word of God with skill in order to
+ overcome the words of the enemy, </span><span lang="EN-GB"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Revelation 12:15</span></span></span></span></span></span></span></span></span></span></span></span></span></span><span lang="EN-GB">.</span></li>
+</ul>
+<b><span lang="EN-GB">People who are in ministry must be careful to put on
+Christ </span></b>
+<p class="Mso Normal"><span lang="EN-GB">If a person does not keep the
+armour on then the devil has an opportunity to destroy the persons life and
+ministry.</span><span lang="EN-GB">No armour leads to tragic
+consequences.</span></p>
+<p class="Mso Normal"><b><span lang="EN-GB">Personal Story:</span></b><span lang="EN-GB">Leader in Church
+who was building many up in Christ. Appeared to be a strong Christian, with a good Christian wife who was
+his helper in the ministry, and a teenage daughter. Suddenly heard that he had left
+his wife to live with a younger woman.</span></p>
+<p class="Mso Normal"><span lang="EN-GB">Family destroyed, ministry
+destroyed, testimony destroyed.</span></p>
+<p class="Mso Normal"><span lang="EN-GB">He did not have the armour of
+God on.</span></p>
+<p class="Mso Normal"><span lang="EN-GB"><b>Some who confess to be
+Christians have never put the armour on.</b></span></p>
+<ul type="disc">
+<li class="Mso Normal"><span lang="EN-GB">They have no armour because they have never
+ received Jesus Christ as their Lord and Saviour. Paul told the <span class="Spell E">Philippian</span> jailor that he must </span><span lang="EN-GB">'Believe on the Lord Jesus Christ', Acts </span><span lang="EN-GB">16:31</span><span lang="EN-GB">. On the road to Damascus
+ Paul's first question after meeting with Jesus was </span><span lang="EN-GB">Lord
+ what would you have me to do? <span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Acts 9:6</span></span></span></span></span></span></span></span></span></span></span></span></span>.</span></li>
+</ul>
+<ul type="disc">
+<li class="Mso Normal"><span lang="EN-GB">They have no armour because they have never known
+ conversion and repentance. Conversion means 'to turn around'. Receiving Christ is a 180 degree turn. We cannot put on the armour if we still
+ love the world. There must be repentance. What does repentance mean? Repentance does not mean being sorry; it means having a complete
+ change of thinking. It is a new
+ mind.A person who is born again thinks
+ differently from an unsaved person.</span></li>
+</ul>
+<ul type="disc">
+<li class="Mso Normal"><span lang="EN-GB">They have no armour because they are more concerned
+ with the affairs of life than following Christ. It isn't always bad things that separate
+ us from Christ.(</span><span lang="EN-GB">Luke
+ 17: 26-33</span><span lang="EN-GB">) where Jesus said </span><span lang="EN-GB">'...as
+ it was in the days of Noah, so shall it be also in the days of the Son of
+ man.' (<span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Luke 17:26</span></span></span></span></span></span></span></span></span></span></span></span></span>)</span><span lang="EN-GB">. Jesus didn't mention immorality.</span><span lang="EN-GB">'Likewise also as
+ it was in the days of </span><span lang="EN-GB">Lot</span><span lang="EN-GB">; they did eat,
+ they drank, they bought, they sold, they planted, they built<span class="Gram E">;</span>' (<span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Luke 17:28</span></span></span></span></span></span></span></span></span></span></span></span></span>)</span><span lang="EN-GB">. What is wrong with
+ 'eating, drinking, buying, selling, planting and building'? Nothing, but it is living for these
+ things that is wrong. This is
+ idolatry. Christ must be
+ everything. Love not the world.</span></li>
+</ul>
+<p class="Mso Normal"><span lang="EN-GB"><span>2.</span></span><span lang="EN-GB">The armour of God requires
+watchfulness at all times. Being
+prepared for the warfare means always keeping the armour on.</span></p>
+<p class="Mso Normal"><b><span lang="EN-GB">Story:</span></b><span lang="EN-GB">Police woman in </span><span lang="EN-GB">London</span><span lang="EN-GB"> who was killed on </span><span lang="EN-GB">October 24, 1997</span><span lang="EN-GB">. She took off her body armour but
+when she broke down the door of a flat she was stabbed in the chest. Full time
+- armour must be on all the time.</span></p>
+<ul type="disc">
+<li class="Mso Normal"><span lang="EN-GB">The enemy will strike when we least expect. The time we are at ease is the time of
+ greatest danger. David was led into
+ sin one evening when he arose from bed and walked on the roof of his
+ palace.</span><span lang="EN-GB"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">2 Samuel 11:2</span></span></span></span></span></span></span></span></span></span></span></span></span>.</span><span lang="EN-GB">He was not
+ prepared - the sin happened quickly. The consequences were disastrous.</span></li>
+</ul>
+<p class="Mso Normal"><b><span lang="EN-GB">Story:</span></b><span lang="EN-GB">The danger of not being
+properly prepared.</span></p>
+<p class="Mso Normal"><span lang="EN-GB">The </span><span lang="EN-GB">Battle</span><span lang="EN-GB"> of the Bulge
+(December 1944)Allies were not<b> </b>ready when the German army tried to
+break through the allied forces in order to gain a negotiated settlement. The enemy was eventually defeated but the
+allies suffered 80,000 casualties. Many
+of these casualties could have been prevented if the allies had been prepared
+for the attack of the enemy, <span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Amos 6:1</span></span></span></span></span></span></span></span></span></span></span></span></span>.<span> 'Woe to them <i>that are</i> at ease
+in </span></span><span lang="EN-GB">Zion</span><span lang="EN-GB">, and trust in the </span><span lang="EN-GB">mountain</span><span lang="EN-GB"> of </span><span lang="EN-GB">Samaria</span><span lang="EN-GB">, <i>which are</i> named chief of the nations, to whom the house of </span><span lang="EN-GB">Israel</span><span lang="EN-GB"> came!'</span></p>
+<ul type="disc">
+<li class="Mso Normal"><span lang="EN-GB">Great danger can come through the words of other
+ believers.</span><span lang="EN-GB"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Matthew 16:22-23</span></span></span></span></span></span></span></span></span></span></span></span></span></span><span lang="EN-GB"> Peter suggested that Jesus should take an easier
+ road than the cross. The Lord
+ recognised the voice of the devil. We must </span><span lang="EN-GB">'prove all things' 1 Thessalonians </span><span lang="EN-GB">5:21</span><span lang="EN-GB">. Always check.<b>Bible
+ Story</b>:</span><span lang="EN-GB">1 Kings 13</span><span lang="EN-GB">. The prophet withstood the anger of the king but
+ he was deceived by a person who said he was also a prophet. </span></li>
+</ul>
+<p class="Mso Normal"><span lang="EN-GB"><span>3.</span></span><span lang="EN-GB">The armour of God requires
+discipleship. The believer to be skilful
+in using the armour.</span></p>
+<ul type="disc">
+<li class="Mso Normal"><span lang="EN-GB">Every believer is called to discipleship.A disciple is a learner. We are learning to be like Jesus. It takes skill to stand against the
+ devil. Look at Jesus when he was
+ tempted. He skilfully handled the
+ scriptures to defeat the devil.</span><span lang="EN-GB"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Matthew
+ 4:1-11</span></span></span></span></span></span></span></span></span></span></span></span></span></span><span lang="EN-GB">. When
+ the religious leaders came against Jesus to deny the resurrection, He
+ skilfully used the word of God to defeat them. </span><span lang="EN-GB"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Matthew 22:29-33</span></span></span></span></span></span></span></span></span></span></span></span></span></span><span lang="EN-GB">.</span></li>
+</ul>
+<ul type="disc">
+<li class="Mso Normal"><span lang="EN-GB">The devil works with craftiness. It takes skill to defeat him. Those who do not have the armour become
+ an easy prey for the devil. We are
+ to be sober and vigilant in resisting the devil.</span><span lang="EN-GB"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">1 Peter 5:8</span></span></span></span></span></span></span></span></span></span></span></span></span> 'Be
+ sober, be vigilant; because your adversary the devil, as a roaring lion, <span class="Spell E">walketh</span> about, seeking whom he may devour:Whom resist <span class="Spell E">stedfast</span> in the faith, knowing that the same afflictions are accomplished in your
+ brethren that are in the world.'</span></li>
+</ul>
+<ul type="disc">
+<li class="Mso Normal"><span lang="EN-GB">Every believer has the power to overcome temptation. Gods word says that He will not allow
+ the believer to be tempted beyond that which he or she is able to
+ resist.</span><span lang="EN-GB"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">1 Corinthians
+ 10:13</span></span></span></span></span></span></span></span></span></span></span></span></span>,There hath no temptation
+ taken you but such as is common to man: but God is faithful, who will not
+ suffer you to be tempted above that ye are able; but will with the
+ temptation also make a way to escape, that ye may be able to bear
+ it.</span><span lang="EN-GB">We have the armour of God to make us victorious in all things.</span></li>
+</ul>
+<p class="Mso Normal"><span lang="EN-GB"><span>4.</span></span><span lang="EN-GB">The armour of God must be put
+on with courage, </span><span lang="EN-GB"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Revelation 12:11</span></span></span></span></span></span></span></span></span></span></span></span></span></span><span lang="EN-GB">.</span></p>
+<ul type="disc">
+<li class="Mso Normal"><span lang="EN-GB">The battlefield is not a place for those who are
+ weak in heart. People march for
+ peace because they do not want to see their young people being
+ killed. They have no heart for the
+ fight and consider the war not worth the loss of life. It can be the same in the church. When a Christian is active he or she
+ will become a target. Those who
+ have no heart for the fight will turn away from facing difficulties and trials.
+ </span></li>
+</ul>
+<p class="Mso Normal"><span lang="EN-GB">When we serve the Lord, we
+will encounter the enemy. Those who do not
+preach the Gospel will not face the same conflict. If we do not have a heart for the fight then
+we will preach a watered down gospel. Paul told Timothy, </span></p>
+<p class="Mso Normal"><span>Preach
+the word; be instant in season, out of season; reprove, rebuke, exhort with all
+longsuffering and doctrine.</span><span lang="EN-GB"> (2 Timothy 4:</span><span>2)</span></p>
+<p class="Mso Normal"><span lang="EN-GB">Preach the Word</span></p>
+<ul type="disc">
+<li class="Mso Normal"><span lang="EN-GB">When we have a heart for Christian warfare then we
+ can rejoice in trials and persecution. Things may appear to go wrong when we make our stand for
+ Christ. The boldness of Stephen
+ before the Jewish council, the Sanhedrin, caused problems for the whole
+ Church (</span><span lang="EN-GB">Acts 7</span><span lang="EN-GB">). The church was scattered, </span><span lang="EN-GB">Acts 8</span><span lang="EN-GB">. But we do
+ not read of anyone complaining. Instead they went everywhere talking about Jesus.</span></li>
+</ul>
+<ul type="disc">
+<li class="Mso Normal"><span lang="EN-GB">When we are filled with the Holy Spirit then we
+ will be filled with boldness (</span><span lang="EN-GB">Acts </span><span lang="EN-GB">4:31</span><span lang="EN-GB">), great joy (</span><span lang="EN-GB">Acts </span><span lang="EN-GB">13:52</span><span lang="EN-GB">) and with courage (</span><span lang="EN-GB"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Acts 4:8</span></span></span></span></span></span></span></span></span></span></span></span></span></span><span lang="EN-GB">). The filling of the Spirit
+ is associated with being filled with the word of God, and rejoicing in the
+ Lord, (</span><span lang="EN-GB">Ephesians </span><span lang="EN-GB">5:18</span><span lang="EN-GB">-20</span><span lang="EN-GB">). </span></li>
+</ul>
+<p class="Mso Normal"><b><span lang="EN-GB">Summary:</span></b></p>
+<p class="Mso Normal"><span lang="EN-GB">It is necessary to </span></p>
+<p class="Mso Normal"><span lang="EN-GB"><span>1.</span></span><span lang="EN-GB">put on the complete armour.</span></p>
+<p class="Mso Normal"><span lang="EN-GB"><span>2.</span></span><span lang="EN-GB">be ready with the complete
+armour.</span></p>
+<p class="Mso Normal"><span lang="EN-GB"><span>3.</span></span><span lang="EN-GB">learn to be skilful in
+wearing the armour.</span></p>
+<p class="Mso Normal"><span lang="EN-GB"><span>4.</span></span><span lang="EN-GB">be courageous in order to
+stand against the enemy.</span></p>
+</article>
+                    </div>
+
+                    
+                </div>
+
+                <script>
+                    function showTab(tab) {
+                        const contentSection = document.getElementById('contentSection');
+                        const pdfSection = document.getElementById('pdfSection');
+                        const contentTab = document.getElementById('contentTab');
+                        const pdfTab = document.getElementById('pdfTab');
+
+                        if (tab === 'content') {
+                            contentSection.classList.remove('hidden');
+                            pdfSection.classList.add('hidden');
+                            contentTab.classList.add('border-primary-700', 'text-primary-700');
+                            contentTab.classList.remove('border-transparent');
+                            pdfTab.classList.remove('border-primary-700', 'text-primary-700');
+                            pdfTab.classList.add('border-transparent');
+                        } else {
+                            contentSection.classList.add('hidden');
+                            pdfSection.classList.remove('hidden');
+                            pdfTab.classList.add('border-primary-700', 'text-primary-700');
+                            pdfTab.classList.remove('border-transparent');
+                            contentTab.classList.remove('border-primary-700', 'text-primary-700');
+                            contentTab.classList.add('border-transparent');
+                        }
+                    }
+
+                    // Set content tab as active by default
+                    document.addEventListener('DOMContentLoaded', function() {
+                        showTab('content');
+                    });
+                </script>
+
+                <!-- Lesson Navigation -->
+                <div class="bg-gradient-to-r from-green-50 to-green-100 rounded-xl p-6 border-2 border-green-200">
+                    <div class="flex items-center justify-between flex-wrap gap-4">
+                        <button onclick="window.history.back()" class="flex items-center gap-2 px-6 py-3 bg-white border-2 border-gray-300 rounded-lg font-medium text-gray-700 hover:bg-gray-50 hover:border-gray-400 transition">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                            </svg>
+                            <span>Previous Lesson</span>
+                        </button>
+
+                        <a href="/christian_life_course.html" class="flex items-center gap-2 px-6 py-3 bg-primary-700 text-white rounded-lg font-medium hover:bg-primary-800 transition">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 10h16M4 14h16M4 18h16"/>
+                            </svg>
+                            <span>All Christian Life Course Lessons</span>
+                        </a>
+
+                        <div class="text-sm text-gray-600 italic">
+                            💡 Tip: PDFs open in new tabs so you don't lose your place
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-6">
+
+                <!-- Course Info -->
+                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 bg-green-50 rounded-lg flex items-center justify-center text-xl">
+                            🌱
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-gray-900">Course</h3>
+                            <p class="text-xs text-gray-600">Christian Life Course</p>
+                        </div>
+                    </div>
+                    <a href="/christian_life_course.html" class="block w-full px-4 py-2 bg-primary-700 text-white text-center rounded-lg font-medium hover:bg-primary-800 transition text-sm">
+                        View All Lessons
+                    </a>
+                </div>
+
+                
+
+                
+
+                <!-- Quick Links -->
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 border border-blue-200">
+                    <h3 class="font-bold text-lg text-gray-900 mb-3">More Courses</h3>
+                    <p class="text-sm text-gray-600 mb-4">Explore our other biblical courses</p>
+                    <a href="/category/teaching-courses.html" class="inline-flex items-center gap-2 px-4 py-2 bg-primary-700 text-white rounded-lg font-medium hover:bg-primary-800 transition text-sm">
+                        <span>All Courses</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <div class="flex items-center justify-center gap-3 mb-4">
+                    <div class="w-10 h-10 bg-primary-700 text-white rounded-lg flex items-center justify-center font-bold">
+                        BTP
+                    </div>
+                    <span class="font-bold text-xl text-white">Bible Teaching Program</span>
+                </div>
+                <p class="text-gray-400 mb-6">Equipping believers worldwide through biblical teaching</p>
+                <p class="text-sm text-gray-500">&copy; 2025 Bible Teaching Program. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/inline-editor.js"></script>
+</body>
+</html>

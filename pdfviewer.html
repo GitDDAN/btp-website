@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PDF Viewer - Bible Teaching Program">
+    <title>PDF Viewer | Bible Teaching Program</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': {
+                            '50': '#f0f7ff',
+                            '100': '#e0effe',
+                            '600': '#006fc7',
+                            '700': '#0058a2',
+                            '800': '#004a85',
+                            '900': '#003d6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="/css/shared-styles.css">
+    <style id="dynamicTheme">
+        /* Default theme - will be overwritten by JavaScript */
+        .theme-header { background: linear-gradient(to bottom right, #006fc7, #0058a2, #004a85); }
+        .theme-toolbar { background: linear-gradient(to right, #006fc7, #0058a2); }
+        .theme-accent-bg { background-color: #e0effe; }
+        .theme-accent-text { color: #0058a2; }
+        .theme-accent-border { border-color: #0058a2; }
+        .theme-button { background-color: #0058a2; }
+        .theme-button:hover { background-color: #004a85; }
+        .theme-light-bg { background-color: #f0f7ff; }
+        .theme-light-border { border-color: #e0effe; }
+        .theme-spinner { border-color: #e0effe; border-top-color: #006fc7; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="/" class="flex items-center gap-3">
+                    <div id="navLogo" class="w-10 h-10 bg-primary-700 text-white rounded-lg flex items-center justify-center font-bold text-lg">BTP</div>
+                    <div class="hidden md:block">
+                        <div class="font-bold text-lg text-gray-900">Bible Teaching Program</div>
+                        <div class="text-xs text-gray-600">Biblical Education & Courses</div>
+                    </div>
+                </a>
+                <div class="flex items-center gap-4">
+                    <a href="/courses.html" class="text-sm font-medium text-gray-700 hover:text-primary-700 transition">Courses</a>
+                    <a href="/" class="text-sm font-medium text-gray-700 hover:text-primary-700 transition">Home</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PDF Header -->
+    <section id="pageHeader" class="theme-header text-white py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-2 text-sm text-white text-opacity-80 mb-3">
+                <a href="/" class="hover:text-white transition">Home</a>
+                <span>></span>
+                <span id="pdfBreadcrumb" class="text-white">Document</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="w-14 h-14 bg-white bg-opacity-20 backdrop-blur-sm rounded-xl flex items-center justify-center text-2xl">
+                    <span id="headerIcon">&#128196;</span>
+                </div>
+                <div>
+                    <div id="courseLabel" class="text-sm text-white text-opacity-80 mb-1">PDF Document</div>
+                    <h1 id="pdfTitle" class="text-xl md:text-2xl font-bold">Loading...</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+            <!-- PDF Viewer Column -->
+            <div class="lg:col-span-3">
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                    <!-- PDF Viewer Header -->
+                    <div id="pdfToolbar" class="theme-toolbar p-4 flex items-center justify-between flex-wrap gap-3">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 bg-white bg-opacity-20 rounded-lg flex items-center justify-center">
+                                &#128196;
+                            </div>
+                            <div>
+                                <div class="font-semibold text-white">PDF Viewer</div>
+                                <div id="pdfPageInfo" class="text-xs text-white text-opacity-80">Loading...</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <a id="pdfFullscreen" href="#" target="_blank" class="px-3 py-2 bg-white bg-opacity-10 hover:bg-opacity-20 text-white text-sm rounded-lg transition backdrop-blur-sm flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+                                Fullscreen
+                            </a>
+                            <a id="pdfDownload" href="#" download class="px-3 py-2 bg-white text-gray-700 text-sm rounded-lg font-medium hover:bg-gray-100 transition flex items-center gap-1">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                                Download
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- PDF Controls -->
+                    <div class="bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between flex-wrap gap-3">
+                        <div class="flex items-center gap-2">
+                            <button id="pdfPrevPage" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                                </svg>
+                            </button>
+                            <span class="text-sm text-gray-600 min-w-[100px] text-center">
+                                Page <span id="pdfCurrentPage" class="font-semibold text-gray-900">1</span> of <span id="pdfTotalPages" class="font-semibold text-gray-900">-</span>
+                            </span>
+                            <button id="pdfNextPage" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <button id="pdfZoomOut" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM13 10H7"/>
+                                </svg>
+                            </button>
+                            <span class="text-sm text-gray-600 min-w-[60px] text-center">
+                                <span id="pdfZoomLevel" class="font-semibold text-gray-900">100</span>%
+                            </span>
+                            <button id="pdfZoomIn" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/>
+                                </svg>
+                            </button>
+                            <button id="pdfFitWidth" class="px-3 py-1.5 theme-accent-bg theme-accent-text text-xs font-medium rounded-lg transition hover:opacity-80">
+                                Fit Width
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- PDF Canvas Container -->
+                    <div class="bg-gray-100" style="height: calc(100vh - 340px); min-height: 500px; overflow: auto;">
+                        <div id="pdfCanvasContainer" class="py-8 text-center">
+                            <div id="pdfLoading" class="py-20">
+                                <div class="w-12 h-12 border-4 theme-spinner rounded-full animate-spin mx-auto mb-4"></div>
+                                <p class="text-gray-600">Loading PDF...</p>
+                            </div>
+                            <canvas id="pdfCanvas" class="shadow-2xl mx-auto hidden"></canvas>
+                            <div id="pdfError" class="hidden py-20">
+                                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                                <p class="text-gray-900 font-medium mb-2">Unable to load PDF</p>
+                                <p class="text-gray-600 text-sm mb-4">The PDF file could not be loaded.</p>
+                                <a id="pdfDirectLink" href="#" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 theme-button text-white rounded-lg font-medium transition">
+                                    Open PDF Directly
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Back Navigation -->
+                <div class="mt-6 text-center">
+                    <button onclick="window.history.back()" class="inline-flex items-center gap-2 theme-accent-text hover:opacity-80 font-medium transition">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                        Go Back
+                    </button>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="space-y-6">
+                <!-- Document Info -->
+                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div id="sidebarIcon" class="w-10 h-10 theme-light-bg rounded-lg flex items-center justify-center text-xl">&#128196;</div>
+                        <div>
+                            <h3 class="font-bold text-gray-900">Document</h3>
+                            <p id="sidebarFileName" class="text-xs text-gray-600">PDF</p>
+                        </div>
+                    </div>
+                    <div class="space-y-2 text-sm">
+                        <div class="flex justify-between">
+                            <span class="text-gray-500">Pages:</span>
+                            <span id="sidebarPages" class="font-medium text-gray-900">-</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div id="navigationBox" class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+                    <h3 class="font-bold text-gray-900 mb-4">Navigation</h3>
+                    <div class="space-y-2">
+                        <button onclick="window.history.back()" id="goBackBtn" class="w-full flex items-center gap-3 px-4 py-3 theme-light-bg theme-accent-text rounded-lg hover:opacity-80 transition text-left">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17l-5-5m0 0l5-5m-5 5h12"/></svg>
+                            <div>
+                                <span class="font-medium block">Go Back</span>
+                                <span id="referrerText" class="text-xs opacity-80">Return to previous page</span>
+                            </div>
+                        </button>
+                        <a id="parentLink" href="#" class="hidden items-center gap-3 px-4 py-3 bg-gray-50 text-gray-700 rounded-lg hover:bg-gray-100 transition">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
+                            <span id="parentLinkText" class="font-medium">Parent Folder</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+                    <h3 class="font-bold text-gray-900 mb-4">Quick Actions</h3>
+                    <div class="space-y-2">
+                        <a id="sidebarDownload" href="#" download class="flex items-center gap-3 px-4 py-3 theme-light-bg theme-accent-text rounded-lg hover:opacity-80 transition">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                            <span class="font-medium">Download PDF</span>
+                        </a>
+                        <a id="sidebarFullscreen" href="#" target="_blank" class="flex items-center gap-3 px-4 py-3 bg-gray-50 text-gray-700 rounded-lg hover:bg-gray-100 transition">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+                            <span class="font-medium">Open Fullscreen</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Browse More -->
+                <div id="exploreBox" class="theme-light-bg rounded-xl p-6 theme-light-border border">
+                    <h3 class="font-bold text-gray-900 mb-2">Explore More</h3>
+                    <p class="text-sm text-gray-600 mb-4">Browse our teaching resources</p>
+                    <a href="/courses.html" class="inline-flex items-center gap-2 px-4 py-2 theme-button text-white rounded-lg font-medium transition text-sm">
+                        View Courses
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="flex items-center justify-center gap-3 mb-4">
+                <div id="footerLogo" class="w-10 h-10 bg-primary-700 text-white rounded-lg flex items-center justify-center font-bold">BTP</div>
+                <span class="font-bold text-xl text-white">Bible Teaching Program</span>
+            </div>
+            <p class="text-sm text-gray-500">&copy; 2025 Bible Teaching Program</p>
+        </div>
+    </footer>
+
+    <!-- PDF.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+
+        // Get PDF URL from query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const pdfUrl = urlParams.get('pdf') || '';
+
+        // Course mappings with color themes
+        const courseMap = {
+            // Church History - Amber/Gold
+            'ch/': {
+                name: 'Church History',
+                link: '/chweb.html',
+                category: 'Church History',
+                icon: '&#9962;',
+                colors: {
+                    primary: '#d97706',    // amber-600
+                    dark: '#b45309',       // amber-700
+                    darker: '#92400e',     // amber-800
+                    light: '#fef3c7',      // amber-100
+                    lighter: '#fffbeb'     // amber-50
+                }
+            },
+            // Jews and Romans - Red
+            'jewish': {
+                name: 'Jews and Romans',
+                link: '/jhweb1.html',
+                category: 'Bible History',
+                icon: '&#128220;',
+                colors: {
+                    primary: '#dc2626',    // red-600
+                    dark: '#b91c1c',       // red-700
+                    darker: '#991b1b',     // red-800
+                    light: '#fee2e2',      // red-100
+                    lighter: '#fef2f2'     // red-50
+                }
+            },
+            // Holiness, Healing & Pentecost - Rose
+            'hhp': {
+                name: 'Holiness, Healing & Pentecost',
+                link: '/hhpweb.html',
+                category: 'Church History',
+                icon: '&#128293;',
+                colors: {
+                    primary: '#e11d48',    // rose-600
+                    dark: '#be123c',       // rose-700
+                    darker: '#9f1239',     // rose-800
+                    light: '#ffe4e6',      // rose-100
+                    lighter: '#fff1f2'     // rose-50
+                }
+            },
+            // Modern Missions - Teal
+            'mm/': {
+                name: 'History of Modern Missions',
+                link: '/mmweb.html',
+                category: 'Church History',
+                icon: '&#127758;',
+                colors: {
+                    primary: '#0d9488',    // teal-600
+                    dark: '#0f766e',       // teal-700
+                    darker: '#115e59',     // teal-800
+                    light: '#ccfbf1',      // teal-100
+                    lighter: '#f0fdfa'     // teal-50
+                }
+            },
+            // Old Testament History - Orange
+            'ot/': {
+                name: 'Old Testament History',
+                link: '/otweb1.html',
+                category: 'Bible History',
+                icon: '&#128214;',
+                colors: {
+                    primary: '#ea580c',    // orange-600
+                    dark: '#c2410c',       // orange-700
+                    darker: '#9a3412',     // orange-800
+                    light: '#ffedd5',      // orange-100
+                    lighter: '#fff7ed'     // orange-50
+                }
+            },
+            // Armour of God - Purple
+            'armour': {
+                name: 'Armour of God',
+                link: '/arweb.html',
+                category: 'Christian Life',
+                icon: '&#128737;',
+                colors: {
+                    primary: '#9333ea',    // purple-600
+                    dark: '#7c3aed',       // purple-700
+                    darker: '#6b21a8',     // purple-800
+                    light: '#f3e8ff',      // purple-100
+                    lighter: '#faf5ff'     // purple-50
+                }
+            },
+            // Prayer/HTP - Indigo
+            'prayer': {
+                name: 'Prayer',
+                link: '/prayer/pindx.html',
+                category: 'Prayer',
+                icon: '&#128591;',
+                colors: {
+                    primary: '#4f46e5',    // indigo-600
+                    dark: '#4338ca',       // indigo-700
+                    darker: '#3730a3',     // indigo-800
+                    light: '#e0e7ff',      // indigo-100
+                    lighter: '#eef2ff'     // indigo-50
+                }
+            },
+            // Floods - Blue
+            'floods': {
+                name: 'The Floods',
+                link: '/floods/floodsindex.htm',
+                category: 'Bible History',
+                icon: '&#127754;',
+                colors: {
+                    primary: '#2563eb',    // blue-600
+                    dark: '#1d4ed8',       // blue-700
+                    darker: '#1e40af',     // blue-800
+                    light: '#dbeafe',      // blue-100
+                    lighter: '#eff6ff'     // blue-50
+                }
+            },
+            // Greek & Hebrew - Indigo
+            'alphabets': {
+                name: 'Greek & Hebrew Alphabets',
+                link: '/alphabets.html',
+                category: 'Languages',
+                icon: '&#945;',
+                colors: {
+                    primary: '#4f46e5',    // indigo-600
+                    dark: '#4338ca',       // indigo-700
+                    darker: '#3730a3',     // indigo-800
+                    light: '#e0e7ff',      // indigo-100
+                    lighter: '#eef2ff'     // indigo-50
+                }
+            },
+            // Higher Calling - Sky Blue
+            'hc/': {
+                name: 'Higher Calling',
+                link: '/hc/hcindex.html',
+                category: 'Books',
+                icon: '&#128218;',
+                colors: {
+                    primary: '#0284c7',    // sky-600
+                    dark: '#0369a1',       // sky-700
+                    darker: '#075985',     // sky-800
+                    light: '#e0f2fe',      // sky-100
+                    lighter: '#f0f9ff'     // sky-50
+                }
+            },
+            // The Cross - Red
+            'cross': {
+                name: 'The Cross',
+                link: '/btp/foundation/cross.html',
+                category: 'Foundation',
+                icon: '&#10013;',
+                colors: {
+                    primary: '#dc2626',    // red-600
+                    dark: '#b91c1c',       // red-700
+                    darker: '#991b1b',     // red-800
+                    light: '#fee2e2',      // red-100
+                    lighter: '#fef2f2'     // red-50
+                }
+            },
+            // Salvation - Green
+            'salvation': {
+                name: 'Salvation',
+                link: '/btp/foundation/salvation.html',
+                category: 'Foundation',
+                icon: '&#127793;',
+                colors: {
+                    primary: '#16a34a',    // green-600
+                    dark: '#15803d',       // green-700
+                    darker: '#166534',     // green-800
+                    light: '#dcfce7',      // green-100
+                    lighter: '#f0fdf4'     // green-50
+                }
+            },
+            // Eternal Life - Amber
+            'eternal': {
+                name: 'Eternal Life',
+                link: '/btp/foundation/eternal.html',
+                category: 'Foundation',
+                icon: '&#9728;',
+                colors: {
+                    primary: '#d97706',    // amber-600
+                    dark: '#b45309',       // amber-700
+                    darker: '#92400e',     // amber-800
+                    light: '#fef3c7',      // amber-100
+                    lighter: '#fffbeb'     // amber-50
+                }
+            },
+            // Fruit of the Spirit - Emerald
+            'fruit': {
+                name: 'Fruit of the Spirit',
+                link: '/fruitweb.html',
+                category: 'Christian Life',
+                icon: '&#127815;',
+                colors: {
+                    primary: '#059669',    // emerald-600
+                    dark: '#047857',       // emerald-700
+                    darker: '#065f46',     // emerald-800
+                    light: '#d1fae5',      // emerald-100
+                    lighter: '#ecfdf5'     // emerald-50
+                }
+            },
+            // Gifts of the Spirit - Violet
+            'gift': {
+                name: 'Gifts of the Spirit',
+                link: '/giftsweb.html',
+                category: 'Christian Life',
+                icon: '&#127873;',
+                colors: {
+                    primary: '#7c3aed',    // violet-600
+                    dark: '#6d28d9',       // violet-700
+                    darker: '#5b21b6',     // violet-800
+                    light: '#ede9fe',      // violet-100
+                    lighter: '#f5f3ff'     // violet-50
+                }
+            },
+            // Worship - Pink
+            'worship': {
+                name: 'Worship',
+                link: '/worshipweb.html',
+                category: 'Christian Life',
+                icon: '&#127932;',
+                colors: {
+                    primary: '#db2777',    // pink-600
+                    dark: '#be185d',       // pink-700
+                    darker: '#9d174d',     // pink-800
+                    light: '#fce7f3',      // pink-100
+                    lighter: '#fdf2f8'     // pink-50
+                }
+            },
+            // NTC - Teal
+            'ntc': {
+                name: 'New Testament Church',
+                link: '/clntc.html',
+                category: 'Christian Life',
+                icon: '&#9962;',
+                colors: {
+                    primary: '#0d9488',    // teal-600
+                    dark: '#0f766e',       // teal-700
+                    darker: '#115e59',     // teal-800
+                    light: '#ccfbf1',      // teal-100
+                    lighter: '#f0fdfa'     // teal-50
+                }
+            },
+            // Greek Words - Purple
+            'greek': {
+                name: 'Greek Word Studies',
+                link: '/greekweb.html',
+                category: 'Languages',
+                icon: '&#937;',
+                colors: {
+                    primary: '#9333ea',    // purple-600
+                    dark: '#7c3aed',       // purple-700
+                    darker: '#6b21a8',     // purple-800
+                    light: '#f3e8ff',      // purple-100
+                    lighter: '#faf5ff'     // purple-50
+                }
+            },
+        };
+
+        // Default blue theme
+        const defaultColors = {
+            primary: '#006fc7',
+            dark: '#0058a2',
+            darker: '#004a85',
+            light: '#e0effe',
+            lighter: '#f0f7ff'
+        };
+
+        // Apply theme colors
+        function applyTheme(colors) {
+            const styleEl = document.getElementById('dynamicTheme');
+            styleEl.textContent = `
+                .theme-header { background: linear-gradient(to bottom right, ${colors.primary}, ${colors.dark}, ${colors.darker}); }
+                .theme-toolbar { background: linear-gradient(to right, ${colors.primary}, ${colors.dark}); }
+                .theme-accent-bg { background-color: ${colors.light}; }
+                .theme-accent-text { color: ${colors.dark}; }
+                .theme-accent-border { border-color: ${colors.dark}; }
+                .theme-button { background-color: ${colors.dark}; }
+                .theme-button:hover { background-color: ${colors.darker}; }
+                .theme-light-bg { background-color: ${colors.lighter}; }
+                .theme-light-border { border-color: ${colors.light}; }
+                .theme-spinner { border-color: ${colors.light}; border-top-color: ${colors.primary}; }
+            `;
+
+            // Also update nav logo and footer logo
+            document.getElementById('navLogo').style.backgroundColor = colors.dark;
+            document.getElementById('footerLogo').style.backgroundColor = colors.dark;
+        }
+
+        // Update page elements with PDF info
+        function updatePageInfo() {
+            const fileName = pdfUrl.split('/').pop() || 'Document';
+            const displayName = fileName.replace('.pdf', '').replace(/_/g, ' ').replace(/-/g, ' ').replace(/^\d+/, '');
+
+            // Detect course from path
+            const pathLower = pdfUrl.toLowerCase();
+            let course = null;
+            for (let key in courseMap) {
+                if (pathLower.includes(key)) {
+                    course = courseMap[key];
+                    break;
+                }
+            }
+
+            // Apply theme colors
+            if (course && course.colors) {
+                applyTheme(course.colors);
+                document.getElementById('headerIcon').innerHTML = course.icon;
+                document.getElementById('courseLabel').textContent = course.name;
+            } else {
+                applyTheme(defaultColors);
+            }
+
+            // Update breadcrumb with course info
+            const breadcrumbEl = document.getElementById('pdfBreadcrumb');
+            if (course) {
+                breadcrumbEl.innerHTML = '<a href="/courses.html" class="hover:text-white">Courses</a> <span class="mx-2">></span> <a href="' + course.link + '" class="hover:text-white">' + course.name + '</a> <span class="mx-2">></span> <span class="text-white">' + displayName + '</span>';
+            } else {
+                breadcrumbEl.textContent = displayName;
+            }
+
+            document.getElementById('pdfTitle').textContent = displayName.charAt(0).toUpperCase() + displayName.slice(1);
+            document.getElementById('sidebarFileName').textContent = fileName;
+            document.title = displayName + ' | Bible Teaching Program';
+
+            // Update download and fullscreen links
+            document.getElementById('pdfDownload').href = pdfUrl;
+            document.getElementById('pdfFullscreen').href = pdfUrl;
+            document.getElementById('pdfDirectLink').href = pdfUrl;
+            document.getElementById('sidebarDownload').href = pdfUrl;
+            document.getElementById('sidebarFullscreen').href = pdfUrl;
+
+            // Use course mapping for parent link
+            const parentLink = document.getElementById('parentLink');
+            const parentLinkText = document.getElementById('parentLinkText');
+            if (course) {
+                parentLink.href = course.link;
+                parentLinkText.textContent = course.name;
+                parentLink.classList.remove('hidden');
+                parentLink.classList.add('flex');
+            }
+
+            // Update referrer text if available
+            if (document.referrer) {
+                try {
+                    const refUrl = new URL(document.referrer);
+                    const refPath = refUrl.pathname;
+                    const refName = refPath.split('/').pop().replace('.html', '').replace('.htm', '').replace(/_/g, ' ').replace(/-/g, ' ');
+                    if (refName) {
+                        document.getElementById('referrerText').textContent = 'Back to ' + refName;
+                    }
+                } catch(e) {}
+            }
+        }
+
+        updatePageInfo();
+
+        // PDF.js variables
+        let pdfDoc = null;
+        let pageNum = 1;
+        let pageRendering = false;
+        let pageNumPending = null;
+        let scale = 1.5;
+        const canvas = document.getElementById('pdfCanvas');
+        const ctx = canvas.getContext('2d');
+
+        function renderPage(num) {
+            pageRendering = true;
+            pdfDoc.getPage(num).then(function(page) {
+                const viewport = page.getViewport({scale: scale});
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                const renderContext = {
+                    canvasContext: ctx,
+                    viewport: viewport
+                };
+
+                const renderTask = page.render(renderContext);
+                renderTask.promise.then(function() {
+                    pageRendering = false;
+                    if (pageNumPending !== null) {
+                        renderPage(pageNumPending);
+                        pageNumPending = null;
+                    }
+                });
+            });
+
+            document.getElementById('pdfCurrentPage').textContent = num;
+            document.getElementById('pdfPrevPage').disabled = (num <= 1);
+            document.getElementById('pdfNextPage').disabled = (num >= pdfDoc.numPages);
+        }
+
+        function queueRenderPage(num) {
+            if (pageRendering) {
+                pageNumPending = num;
+            } else {
+                renderPage(num);
+            }
+        }
+
+        function onPrevPage() {
+            if (pageNum <= 1) return;
+            pageNum--;
+            queueRenderPage(pageNum);
+        }
+
+        function onNextPage() {
+            if (pageNum >= pdfDoc.numPages) return;
+            pageNum++;
+            queueRenderPage(pageNum);
+        }
+
+        function updateZoom() {
+            document.getElementById('pdfZoomLevel').textContent = Math.round(scale * 100);
+            queueRenderPage(pageNum);
+        }
+
+        function onZoomIn() {
+            scale += 0.25;
+            updateZoom();
+        }
+
+        function onZoomOut() {
+            if (scale <= 0.5) return;
+            scale -= 0.25;
+            updateZoom();
+        }
+
+        function onFitWidth() {
+            const container = document.getElementById('pdfCanvasContainer');
+            pdfDoc.getPage(pageNum).then(function(page) {
+                const viewport = page.getViewport({scale: 1});
+                scale = (container.clientWidth - 100) / viewport.width;
+                updateZoom();
+            });
+        }
+
+        // Event listeners
+        document.getElementById('pdfPrevPage').addEventListener('click', onPrevPage);
+        document.getElementById('pdfNextPage').addEventListener('click', onNextPage);
+        document.getElementById('pdfZoomIn').addEventListener('click', onZoomIn);
+        document.getElementById('pdfZoomOut').addEventListener('click', onZoomOut);
+        document.getElementById('pdfFitWidth').addEventListener('click', onFitWidth);
+
+        // Load PDF
+        if (pdfUrl) {
+            pdfjsLib.getDocument(pdfUrl).promise.then(function(pdfDoc_) {
+                pdfDoc = pdfDoc_;
+                document.getElementById('pdfTotalPages').textContent = pdfDoc.numPages;
+                document.getElementById('pdfPageInfo').textContent = pdfDoc.numPages + ' pages';
+                document.getElementById('sidebarPages').textContent = pdfDoc.numPages;
+
+                // Hide loading, show canvas
+                document.getElementById('pdfLoading').classList.add('hidden');
+                document.getElementById('pdfCanvas').classList.remove('hidden');
+
+                // Default to Fit Width
+                const container = document.getElementById('pdfCanvasContainer');
+                pdfDoc.getPage(1).then(function(page) {
+                    const viewport = page.getViewport({scale: 1});
+                    scale = (container.clientWidth - 100) / viewport.width;
+                    document.getElementById('pdfZoomLevel').textContent = Math.round(scale * 100);
+                    renderPage(pageNum);
+                });
+            }).catch(function(error) {
+                console.error('Error loading PDF:', error);
+                document.getElementById('pdfLoading').classList.add('hidden');
+                document.getElementById('pdfError').classList.remove('hidden');
+                document.getElementById('pdfPageInfo').textContent = 'Error loading PDF';
+            });
+        } else {
+            document.getElementById('pdfLoading').classList.add('hidden');
+            document.getElementById('pdfError').classList.remove('hidden');
+            document.getElementById('pdfPageInfo').textContent = 'No PDF specified';
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') onPrevPage();
+            if (e.key === 'ArrowRight') onNextPage();
+            if (e.key === '+' || e.key === '=') onZoomIn();
+            if (e.key === '-') onZoomOut();
+        });
+    </script>
+</body>
+</html>

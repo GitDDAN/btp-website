@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Old Testament - King James Version. Browse the 39 books from Genesis to Malachi.">
+    <title>Old Testament | Bible Teaching Program</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': {
+                            '50': '#f0f7ff',
+                            '100': '#e0effe',
+                            '600': '#006fc7',
+                            '700': '#0058a2',
+                            '800': '#004a85',
+                            '900': '#003d6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-6">
+                    <a href="/" class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-primary-700 text-white rounded-lg flex items-center justify-center font-bold text-lg">
+                            BTP
+                        </div>
+                        <div class="hidden md:block">
+                            <div class="font-bold text-lg text-gray-900">Bible Teaching Program</div>
+                            <div class="text-xs text-gray-600">Biblical Education & Courses</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <button onclick="window.history.back()" class="text-sm font-medium text-gray-700 hover:text-primary-700 transition">← Back</button>
+                    <a href="/" class="text-sm font-medium text-gray-700 hover:text-primary-700 transition">Home</a>
+                    </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumbs -->
+    <div class="bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+            <nav class="flex items-center gap-2 text-sm flex-wrap">
+                <a href="/" class="text-gray-600 hover:text-primary-700 transition">Home</a>
+                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+                <a href="/bible.html" class="text-gray-600 hover:text-primary-700 transition">Bible (KJV)</a>
+                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+                <span class="text-gray-900 font-medium">Old Testament</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="bg-gradient-to-br from-amber-600 via-amber-700 to-amber-800 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center gap-4">
+                <div class="w-16 h-16 bg-white bg-opacity-20 backdrop-blur-sm rounded-xl flex items-center justify-center text-3xl">
+                    📜
+                </div>
+                <div>
+                    <h1 class="text-3xl md:text-4xl font-bold">Old Testament</h1>
+                    <p class="text-lg text-amber-100 mt-1">39 Books from Genesis to Malachi (KJV)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- Introduction -->
+        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200 mb-8">
+            <p class="text-gray-700 leading-relaxed">
+                The Old Testament contains 39 books organized into five categories: the Pentateuch (Law),
+                Historical Books, Poetic Books, Major Prophets, and Minor Prophets. Each book is available
+                as a PDF for reading and study.
+            </p>
+        </div>
+
+        <!-- Category Cards -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Pentateuch -->
+            <a href="/biblepen.html" class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-amber-400 hover:shadow-xl transition-all group">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-14 h-14 bg-amber-50 rounded-lg flex items-center justify-center text-2xl group-hover:bg-amber-100 transition">
+                        📖
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 group-hover:text-amber-700 transition">Pentateuch</h3>
+                        <span class="text-sm text-gray-500">5 Books</span>
+                    </div>
+                </div>
+                <p class="text-gray-600 text-sm mb-4">The Law of Moses - Genesis, Exodus, Leviticus, Numbers, Deuteronomy</p>
+                <div class="flex items-center text-amber-700 font-semibold text-sm">
+                    <span>Browse Books</span>
+                    <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Historical Books -->
+            <a href="/biblehist.html" class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-amber-400 hover:shadow-xl transition-all group">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-14 h-14 bg-amber-50 rounded-lg flex items-center justify-center text-2xl group-hover:bg-amber-100 transition">
+                        🏛️
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 group-hover:text-amber-700 transition">Historical Books</h3>
+                        <span class="text-sm text-gray-500">12 Books</span>
+                    </div>
+                </div>
+                <p class="text-gray-600 text-sm mb-4">Joshua through Esther - The history of Israel and God's people</p>
+                <div class="flex items-center text-amber-700 font-semibold text-sm">
+                    <span>Browse Books</span>
+                    <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Poetic Books -->
+            <a href="/biblepoe.html" class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-amber-400 hover:shadow-xl transition-all group">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-14 h-14 bg-amber-50 rounded-lg flex items-center justify-center text-2xl group-hover:bg-amber-100 transition">
+                        🎵
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 group-hover:text-amber-700 transition">Poetic Books</h3>
+                        <span class="text-sm text-gray-500">5 Books</span>
+                    </div>
+                </div>
+                <p class="text-gray-600 text-sm mb-4">Job, Psalms, Proverbs, Ecclesiastes, Song of Solomon - Wisdom literature</p>
+                <div class="flex items-center text-amber-700 font-semibold text-sm">
+                    <span>Browse Books</span>
+                    <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Major Prophets -->
+            <a href="/biblemaj.html" class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-amber-400 hover:shadow-xl transition-all group">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-14 h-14 bg-amber-50 rounded-lg flex items-center justify-center text-2xl group-hover:bg-amber-100 transition">
+                        📢
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 group-hover:text-amber-700 transition">Major Prophets</h3>
+                        <span class="text-sm text-gray-500">5 Books</span>
+                    </div>
+                </div>
+                <p class="text-gray-600 text-sm mb-4">Isaiah, Jeremiah, Lamentations, Ezekiel, Daniel - Extended prophetic works</p>
+                <div class="flex items-center text-amber-700 font-semibold text-sm">
+                    <span>Browse Books</span>
+                    <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- Minor Prophets -->
+            <a href="/biblemin.html" class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-amber-400 hover:shadow-xl transition-all group">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-14 h-14 bg-amber-50 rounded-lg flex items-center justify-center text-2xl group-hover:bg-amber-100 transition">
+                        📣
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 group-hover:text-amber-700 transition">Minor Prophets</h3>
+                        <span class="text-sm text-gray-500">12 Books</span>
+                    </div>
+                </div>
+                <p class="text-gray-600 text-sm mb-4">Hosea through Malachi - Shorter prophetic books with powerful messages</p>
+                <div class="flex items-center text-amber-700 font-semibold text-sm">
+                    <span>Browse Books</span>
+                    <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- New Testament Link -->
+            <a href="/biblent.html" class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-6 shadow-md border border-blue-200 hover:border-blue-400 hover:shadow-xl transition-all group">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-14 h-14 bg-blue-100 rounded-lg flex items-center justify-center text-2xl group-hover:bg-blue-200 transition">
+                        📘
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-900 group-hover:text-blue-700 transition">New Testament</h3>
+                        <span class="text-sm text-gray-500">27 Books</span>
+                    </div>
+                </div>
+                <p class="text-gray-600 text-sm mb-4">Matthew through Revelation - The life of Christ and the early church</p>
+                <div class="flex items-center text-blue-700 font-semibold text-sm">
+                    <span>Browse New Testament</span>
+                    <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- Back to Bible -->
+        <div class="mt-8 text-center">
+            <a href="/bible.html" class="inline-flex items-center gap-2 text-amber-700 hover:text-amber-800 font-medium transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+                Back to Bible Home
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <div class="lg:col-span-1">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 bg-primary-600 text-white rounded-xl flex items-center justify-center font-bold text-lg shadow-lg">BTP</div>
+                        <div>
+                            <div class="font-bold text-xl text-white">Bible Teaching</div>
+                            <div class="text-sm text-gray-400">Program</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Equipping believers worldwide with sound biblical teaching and resources for spiritual growth and ministry.</p>
+                    <div class="flex items-center gap-2 text-sm">
+                        <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+                        <span class="text-gray-400">Serving since 1985</span>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-6 text-lg">Resources</h4>
+                    <ul class="space-y-4">
+                        <li><a href="/bible.html" class="flex items-center gap-3 text-gray-400 hover:text-white transition group"><span class="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center group-hover:bg-primary-600 transition"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></span><span>Bible</span></a></li>
+                        <li><a href="/books.html" class="flex items-center gap-3 text-gray-400 hover:text-white transition group"><span class="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center group-hover:bg-primary-600 transition"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg></span><span>Books</span></a></li>
+                        <li><a href="/courses.html" class="flex items-center gap-3 text-gray-400 hover:text-white transition group"><span class="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center group-hover:bg-primary-600 transition"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></span><span>Courses</span></a></li>
+                        <li><a href="/dailyverses.html" class="flex items-center gap-3 text-gray-400 hover:text-white transition group"><span class="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center group-hover:bg-primary-600 transition"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></span><span>Daily Verses</span></a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-6 text-lg">Bible</h4>
+                    <ul class="space-y-3">
+                        <li><a href="/bibleot.html" class="text-gray-400 hover:text-white transition">Old Testament</a></li>
+                        <li><a href="/biblent.html" class="text-gray-400 hover:text-white transition">New Testament</a></li>
+                        <li><a href="/biblepen.html" class="text-gray-400 hover:text-white transition">Pentateuch</a></li>
+                        <li><a href="/biblehist.html" class="text-gray-400 hover:text-white transition">Historical Books</a></li>
+                        <li><a href="/biblepoe.html" class="text-gray-400 hover:text-white transition">Poetic Books</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white mb-6 text-lg">Today's Verse</h4>
+                    <div id="daily-verse-container" class="bg-gray-800 rounded-lg p-4 border border-gray-700"></div>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                    <p class="text-sm text-gray-500">&copy; 2025 Bible Teaching Program. All rights reserved.</p>
+                    <div class="flex items-center gap-6 text-sm">
+                        <a href="/" class="text-gray-500 hover:text-gray-300 transition">Home</a>
+                        <a href="/bible.html" class="text-gray-500 hover:text-gray-300 transition">Bible</a>
+                        <a href="/courses.html" class="text-gray-500 hover:text-gray-300 transition">Courses</a>
+                        <a href="/dailyverses.html" class="text-gray-500 hover:text-gray-300 transition">Daily Verses</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/daily-verse.js"></script>
+    <script src="/js/inline-editor.js"></script>
+</body>
+</html>
