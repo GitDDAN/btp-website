@@ -477,9 +477,34 @@ function closeMobileMenu() {
     document.body.style.overflow = '';
 }
 function toggleMobileAccordion(section) {
-    const content = document.getElementById(section + '-content');
-    const arrow = document.getElementById(section + '-arrow');
-    content.classList.toggle('open');
-    arrow.classList.toggle('open');
+    var content = document.getElementById(section + '-content');
+    var arrow = document.getElementById(section + '-arrow');
+
+    // Close other accordions first
+    var allContents = document.querySelectorAll('.mobile-accordion-content');
+    var allArrows = document.querySelectorAll('.mobile-accordion-arrow');
+
+    allContents.forEach(function(el) {
+        if (el.id !== section + '-content') {
+            el.style.maxHeight = '0';
+            el.classList.remove('open');
+        }
+    });
+    allArrows.forEach(function(el) {
+        if (el.id !== section + '-arrow') {
+            el.classList.remove('open');
+        }
+    });
+
+    // Toggle current accordion
+    if (content.classList.contains('open')) {
+        content.style.maxHeight = '0';
+        content.classList.remove('open');
+        arrow.classList.remove('open');
+    } else {
+        content.style.maxHeight = content.scrollHeight + 'px';
+        content.classList.add('open');
+        arrow.classList.add('open');
+    }
 }
 </script>
