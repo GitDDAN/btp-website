@@ -27,8 +27,36 @@
         footerPath: '/components/footer.html',
         faviconPath: '/favicon.svg',
         brandCssPath: '/css/brand.css',
-        dailyVersePath: '/js/daily-verse.js'
+        dailyVersePath: '/js/daily-verse.js',
+        // Google Analytics - UPDATE THIS ID TO CHANGE TRACKING
+        gaTrackingId: 'G-09FW4XY50E'
     };
+
+    // =========================================
+    // GOOGLE ANALYTICS INJECTION
+    // =========================================
+
+    function injectGoogleAnalytics() {
+        if (!CONFIG.gaTrackingId) return;
+
+        // Skip if already loaded
+        if (window.gtag) return;
+
+        // Load gtag.js
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=' + CONFIG.gaTrackingId;
+        document.head.appendChild(script);
+
+        // Initialize gtag
+        window.dataLayer = window.dataLayer || [];
+        window.gtag = function() { dataLayer.push(arguments); };
+        gtag('js', new Date());
+        gtag('config', CONFIG.gaTrackingId);
+    }
+
+    // Load GA immediately
+    injectGoogleAnalytics();
 
     // =========================================
     // SCROLL MANAGEMENT
