@@ -29,7 +29,7 @@
         brandCssPath: '/css/brand.css',
         dailyVersePath: '/js/daily-verse.js',
         // Google Analytics - UPDATE THIS ID TO CHANGE TRACKING
-        gaTrackingId: 'G-09FW4XY50E'
+        gaTrackingId: 'G-2B24Z400JN'
     };
 
     // =========================================
