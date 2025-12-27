@@ -1,812 +1,1079 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bible Teaching Program - Biblical education, courses, and resources for spiritual growth. Equipping believers worldwide.">
-    <title>Bible Teaching Program | Biblical Education & Courses</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
+<html class="scroll-smooth" lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-09FW4XY50E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-09FW4XY50E');
+</script>
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Bible Teaching Program - A free digital seminary equipping believers worldwide with sound biblical teaching. Courses, classic authors, KJV Bible, and daily Scripture." name="description"/>
+<title>Bible Teaching Program | Free Biblical Courses &amp; Resources</title><meta content="website" property="og:type"/><meta content="https://bibleteachingprogram.org/" property="og:url"/><meta content="Bible Teaching Program | Free Biblical Courses &amp; Resources" property="og:title"/><meta content="Bible Teaching Program - A free digital seminary equipping believers worldwide with sound biblical teaching. Courses, classic authors, KJV Bible, and daily Scripture." property="og:description"/><meta content="https://bibleteachingprogram.org/images/hero-banner.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Bible Teaching Program | Free Biblical Courses &amp; Resources" name="twitter:title"/><meta content="Bible Teaching Program - A free digital seminary equipping believers worldwide with sound biblical teaching. Courses, classic authors, KJV Bible, and daily Scripture." name="twitter:description"/><meta content="https://bibleteachingprogram.org/images/hero-banner.png" name="twitter:image"/>
+<!-- Open Graph / Social Sharing -->
+
+<!-- JSON-LD Schema Markup -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Bible Teaching Program",
+    "alternateName": "BTP",
+    "url": "https://bibleteachingprogram.org",
+    "logo": "https://bibleteachingprogram.org/images/hero-banner.png",
+    "description": "A free digital seminary equipping believers worldwide with sound biblical teaching through structured courses, classic Christian literature, and daily Scripture.",
+    "sameAs": [],
+    "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "GB"
+    },
+    "areaServed": "Worldwide",
+    "foundingDate": "1984",
+    "knowsAbout": ["Bible Study", "Christian Education", "Biblical Courses", "Theology"],
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Biblical Courses",
+        "itemListElement": [
+            {
+                "@type": "Course",
+                "name": "Foundation Courses",
+                "description": "Courses covering Salvation, The Cross, and the Son of God"
+            },
+            {
+                "@type": "Course",
+                "name": "Christian Life Courses",
+                "description": "Courses on spiritual growth including Prayer, Worship, and Spiritual Gifts"
+            }
+        ]
+    }
+}
+</script>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind with Brand Colors -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'primary': {
-                            '50': '#f0f7ff',
-                            '100': '#e0effe',
-                            '600': '#006fc7',
-                            '700': '#0058a2',
-                            '800': '#004a85',
-                            '900': '#003d6e',
-                        }
+                        'ancient-ink': '#1C1D37',
+                        'heritage-gold': '#CBA378',
+                        'living-sage': '#7F9A83',
+                        'parchment': '#F9F7F2',
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'Georgia', 'serif'],
                     }
                 }
             }
         }
     </script>
-    <link rel="stylesheet" href="/css/components.css">
+<link href="/css/brand.css" rel="stylesheet"/>
 </head>
-<body class="bg-gray-50">
-
-    <!-- Navigation placeholder - loaded by components.js -->
-    <div id="nav-placeholder"></div>
-
-    <!-- Hero Slider -->
-    <section class="relative overflow-hidden">
-        <div id="heroSlider" class="relative">
-            <!-- Slides Container -->
-            <div class="slides-container">
-
-                <!-- Slide 1: Christmas Message Video -->
-                <div class="slide active bg-gradient-to-br from-red-700 via-red-800 to-green-900 text-white py-6 sm:py-10 lg:py-14 relative">
-                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-                        <div class="grid lg:grid-cols-2 gap-5 lg:gap-10 items-center">
-                            <div class="text-center lg:text-left">
-                                <div class="inline-flex items-center gap-2 px-3 py-1 bg-white bg-opacity-20 rounded-full text-xs mb-3 sm:mb-5">
-                                    <span class="text-base sm:text-lg">&#127775;</span>
-                                    <span>Christmas 2025</span>
-                                </div>
-                                <h1 class="text-xl sm:text-3xl lg:text-5xl font-bold mb-3 sm:mb-5 leading-tight">
-                                    The Christmas Story<br>
-                                    <span class="text-amber-300">Matthew 2:23</span>
-                                </h1>
-                                <p class="text-xs sm:text-base text-white text-opacity-90 mb-4 sm:mb-5 leading-relaxed max-w-md mx-auto lg:mx-0">
-                                    "And he came and dwelt in a city called Nazareth: that it might be fulfilled which was spoken by the prophets."
-                                </p>
-                                <a href="/christmas-message.html" class="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-red-700 rounded-xl font-semibold hover:bg-amber-100 transition shadow-lg text-sm">
-                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                    Watch Message
-                                </a>
-                            </div>
-                            <!-- Mobile Video Thumbnail -->
-                            <div class="mt-4 lg:mt-0">
-                                <a href="/christmas-message.html" class="block bg-black bg-opacity-30 rounded-xl sm:rounded-2xl p-2 sm:p-4 border border-white border-opacity-20">
-                                    <div class="aspect-video bg-gray-900 rounded-lg overflow-hidden relative">
-                                        <img src="/images/christmas-thumbnail.png" alt="Christmas Message" class="w-full h-full object-cover">
-                                        <div class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
-                                            <div class="w-12 h-12 sm:w-16 sm:h-16 bg-red-600 rounded-full flex items-center justify-center shadow-xl">
-                                                <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 2: Welcome / Today's Verse -->
-                <div class="slide bg-gradient-to-br from-primary-700 via-primary-800 to-primary-900 text-white py-6 sm:py-10 lg:py-14 relative">
-                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-                        <div class="grid lg:grid-cols-2 gap-5 lg:gap-10 items-center">
-                            <div class="text-center lg:text-left">
-                                <div class="inline-flex items-center gap-2 px-3 py-1 bg-white bg-opacity-20 rounded-full text-xs mb-3 sm:mb-5">
-                                    <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-                                    <span>Equipping believers worldwide</span>
-                                </div>
-                                <h1 class="text-xl sm:text-3xl lg:text-5xl font-bold mb-3 sm:mb-5 leading-tight">
-                                    Biblical Teaching for<br>
-                                    <span class="text-sky-300">Spiritual Growth</span>
-                                </h1>
-                                <p class="text-xs sm:text-base text-white text-opacity-90 mb-4 max-w-md mx-auto lg:mx-0">
-                                    Free courses, books, and daily devotionals rooted in Scripture.
-                                </p>
-                                <a href="/courses.html" class="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-primary-700 rounded-xl font-semibold hover:bg-gray-100 transition shadow-lg text-sm">
+<body class="bg-parchment">
+<!-- Navigation (loaded from component) -->
+<div id="nav-placeholder"></div>
+<!-- Hero Carousel -->
+<section class="relative overflow-hidden bg-ancient-ink" id="hero-carousel">
+<!-- Slides Container -->
+<div class="hero-slides relative h-[500px] sm:h-[550px] lg:h-[600px]">
+<!-- Slide 1: Welcome / Courses -->
+<div class="hero-slide absolute inset-0 flex items-center opacity-100 z-10 transition-all duration-700" data-slide="0">
+<div class="absolute inset-0 bg-gradient-to-br from-ancient-ink via-ancient-ink to-[#2a2b4a]"></div>
+<div class="absolute inset-0 opacity-5">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<defs><pattern height="8" id="grid1" patternunits="userSpaceOnUse" width="8">
+<path d="M 8 0 L 0 0 0 8" fill="none" stroke="white" stroke-width="0.3"></path>
+</pattern></defs>
+<rect fill="url(#grid1)" height="100" width="100"></rect>
+</svg>
+</div>
+<div class="absolute -top-20 -right-20 w-96 h-96 bg-heritage-gold rounded-full blur-3xl" style="animation: glow-float 10s ease-in-out infinite;"></div>
+<div class="absolute -bottom-20 -left-20 w-80 h-80 bg-living-sage rounded-full blur-3xl" style="animation: glow-float-reverse 12s ease-in-out infinite;"></div>
+<div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+<div class="grid lg:grid-cols-2 gap-8 items-center">
+<div class="text-center lg:text-left">
+<p class="text-heritage-gold text-sm font-medium tracking-widest uppercase mb-4 animate-fade-in">Welcome to</p>
+<h1 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-white leading-tight mb-6">
+                                Bible Teaching Program
+                            </h1>
+<p class="text-xl sm:text-2xl text-gray-300 mb-4 leading-relaxed">
+                                A free digital seminary equipping believers worldwide
+                            </p>
+<p class="text-gray-400 mb-8 max-w-lg">
+                                20+ courses, 100+ lessons, classic Christian books, and daily devotions. No cost. No registration.
+                            </p>
+<div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+<a class="btn-glossy-gold px-8 py-4 text-ancient-ink rounded-lg font-semibold text-lg" href="/courses.html">
                                     Browse Courses
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
                                 </a>
-                            </div>
-                            <!-- Today's Verse Card - Visible on all screens -->
-                            <div class="mt-4 lg:mt-0 bg-white bg-opacity-10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-white border-opacity-20">
-                                <div class="flex items-center gap-2 mb-2 sm:mb-3">
-                                    <span class="text-lg sm:text-2xl">📖</span>
-                                    <span class="font-semibold text-white text-opacity-90 text-sm">Today's Verse</span>
-                                </div>
-                                <div id="hero-verse-container">
-                                    <p id="hero-verse-text" class="text-sm sm:text-lg italic text-white mb-2 sm:mb-3 leading-relaxed">"Loading today's verse..."</p>
-                                    <p id="hero-verse-ref" class="text-sky-300 font-semibold text-xs sm:text-sm">—</p>
-                                </div>
-                                <a href="/dailyverses.html" class="inline-flex items-center gap-1 mt-3 sm:mt-4 text-xs text-white text-opacity-80 hover:text-opacity-100 transition">
-                                    View Calendar
-                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+<a class="px-8 py-4 border border-gray-500 text-gray-300 rounded-lg font-medium text-lg hover:border-heritage-gold hover:text-heritage-gold transition" href="#get-started">
+                                    Get Started
                                 </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 3: Teaching Courses -->
-                <div class="slide bg-gradient-to-br from-emerald-600 via-emerald-700 to-teal-800 text-white py-6 sm:py-10 lg:py-14 relative">
-                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-                        <div class="grid lg:grid-cols-2 gap-5 lg:gap-10 items-center">
-                            <div class="text-center lg:text-left">
-                                <div class="inline-flex items-center gap-2 px-3 py-1 bg-white bg-opacity-20 rounded-full text-xs mb-3 sm:mb-5">
-                                    <span class="text-base sm:text-lg">📚</span>
-                                    <span>20+ Free Courses</span>
-                                </div>
-                                <h2 class="text-xl sm:text-3xl lg:text-5xl font-bold mb-3 sm:mb-5 leading-tight">
-                                    Structured Learning<br>
-                                    <span class="text-emerald-200">For Every Believer</span>
-                                </h2>
-                                <p class="text-xs sm:text-base text-white text-opacity-90 mb-4 max-w-md mx-auto lg:mx-0">
-                                    Foundation courses on salvation and the cross, to advanced studies in Greek and church history.
+</div>
+</div>
+<div class="hidden lg:flex justify-center">
+<a class="relative p-3 group" href="/courses.html">
+<!-- Decorative glow behind image -->
+<div class="absolute inset-0 bg-heritage-gold/20 rounded-2xl blur-xl transition-all duration-300 group-hover:bg-heritage-gold/30"></div>
+<img alt="Bible Teaching Program - Open Bible with tablet showing courses" class="relative w-auto h-72 rounded-xl shadow-2xl object-cover transition-all duration-300 group-hover:scale-[1.02]" src="/images/hero-banner.png"/>
+<!-- Corner accents -->
+<div class="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-heritage-gold rounded-tl-lg transition-all duration-300 group-hover:w-9 group-hover:h-9"></div>
+<div class="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-heritage-gold rounded-tr-lg transition-all duration-300 group-hover:w-9 group-hover:h-9"></div>
+<div class="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-heritage-gold rounded-bl-lg transition-all duration-300 group-hover:w-9 group-hover:h-9"></div>
+<div class="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-heritage-gold rounded-br-lg transition-all duration-300 group-hover:w-9 group-hover:h-9"></div>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Slide 2: Daily Verses -->
+<div class="hero-slide absolute inset-0 flex items-center opacity-0 z-0 transition-all duration-700" data-slide="1">
+<div class="absolute inset-0 bg-gradient-to-br from-living-sage via-living-sage to-[#5a7a5e]"></div>
+<div class="absolute inset-0 opacity-10">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 60 60">
+<defs><pattern height="20" id="dots" patternunits="userSpaceOnUse" width="20">
+<circle cx="10" cy="10" fill="white" r="1.5"></circle>
+</pattern></defs>
+<rect fill="url(#dots)" height="60" width="60"></rect>
+</svg>
+</div>
+<div class="absolute -top-16 -right-16 w-72 h-72 bg-white rounded-full blur-3xl" style="animation: glow-float 11s ease-in-out infinite;"></div>
+<div class="absolute -bottom-24 -left-24 w-64 h-64 bg-emerald-300 rounded-full blur-3xl" style="animation: glow-float-reverse 14s ease-in-out infinite;"></div>
+<div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+<div class="grid lg:grid-cols-2 gap-8 items-center">
+<div class="text-center lg:text-left">
+<p class="text-white/80 text-sm font-medium tracking-widest uppercase mb-4">Daily Encouragement</p>
+<h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-white leading-tight mb-6">
+                                Scripture for Every Day
+                            </h2>
+<p class="text-xl text-white/90 mb-4 leading-relaxed">
+                                Start each morning with God's Word
+                            </p>
+<p class="text-white/70 mb-8 max-w-lg">
+                                300+ daily devotions organized by monthly themes. Each verse includes reflections, prayers, and practical applications.
+                            </p>
+<div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+<a class="bg-white text-living-sage px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/90 transition shadow-lg" href="/dailyverses.html">
+                                    View Today's Verse
+                                </a>
+<a class="px-8 py-4 border border-white/50 text-white rounded-lg font-medium text-lg hover:bg-white/10 transition" href="/dailyverses.html#calendar">
+                                    Browse Calendar
+                                </a>
+</div>
+</div>
+<div class="hidden lg:flex justify-center">
+<a class="group bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 max-w-sm transition-all duration-300 hover:bg-white/15 hover:border-white/40 hover:scale-[1.02]" href="/dailyverses.html">
+<p class="text-white/60 text-sm mb-3 transition-all duration-300 group-hover:text-white/80">Today's Verse</p>
+<p class="font-serif text-2xl text-white italic leading-relaxed mb-4 transition-all duration-300 group-hover:scale-[1.01]">
+                                    "Thy word is a lamp unto my feet, and a light unto my path."
                                 </p>
-                                <a href="/courses.html" class="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-emerald-700 rounded-xl font-semibold hover:bg-gray-100 transition shadow-lg text-sm">
-                                    View Courses
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+<p class="text-heritage-gold font-medium transition-all duration-300 group-hover:text-white">— Psalm 119:105</p>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Slide 3: Classic Books -->
+<div class="hero-slide absolute inset-0 flex items-center opacity-0 z-0 transition-all duration-700" data-slide="2">
+<div class="absolute inset-0 bg-gradient-to-br from-[#2C1810] via-[#3D2317] to-[#4A2C1A]"></div>
+<div 0="" 2000="" 80="" 80\"="" class="absolute inset-0 opacity-10" http:="" style="background-image: url('data:image/svg+xml,&lt;svg xmlns=\" svg\"="" viewbox='\"0' www.w3.org=""><path 0h80v80h0z\"="" d='\"M0' fill='\"none\"/'><path 0v80m0="" 0v80m40="" 0v80m60="" 20h80m0="" 40h80m0="" 60h80\"="" d='\"M20' opacity='\"0.3\"/' stroke='\"%23fff\"' stroke-width='\"0.5\"'>');"&gt;</path></path></div>
+<div class="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-black/30 to-transparent"></div>
+<div class="absolute -top-20 -left-20 w-80 h-80 bg-amber-600 rounded-full blur-3xl" style="animation: glow-float 13s ease-in-out infinite;"></div>
+<div class="absolute -bottom-16 -right-16 w-72 h-72 bg-orange-400 rounded-full blur-3xl" style="animation: glow-float-reverse 11s ease-in-out infinite;"></div>
+<div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+<div class="grid lg:grid-cols-2 gap-8 items-center">
+<div class="text-center lg:text-left">
+<p class="text-heritage-gold text-sm font-medium tracking-widest uppercase mb-4">Timeless Wisdom</p>
+<h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-white leading-tight mb-6">
+                                Classic Christian Authors
+                            </h2>
+<p class="text-xl text-gray-300 mb-4 leading-relaxed">
+                                Writings from great men of faith
+                            </p>
+<p class="text-gray-400 mb-8 max-w-lg">
+                                John Bunyan, John Newton, William Gurnall, R.A. Torrey, and more. Fully digitized and free to read online.
+                            </p>
+<div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+<a class="btn-glossy-gold px-8 py-4 text-ancient-ink rounded-lg font-semibold text-lg" href="/books.html">
+                                    Explore Books
                                 </a>
-                            </div>
-                            <!-- Course Cards - Visible on all screens -->
-                            <div class="mt-4 lg:mt-0 grid grid-cols-2 gap-2 sm:gap-3">
-                                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 border border-white border-opacity-20">
-                                    <div class="text-xl sm:text-2xl mb-1">🏛️</div>
-                                    <h3 class="font-bold text-xs sm:text-sm">Foundation</h3>
-                                    <p class="text-xs text-white text-opacity-70 hidden sm:block">Cross, Salvation</p>
-                                </div>
-                                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 border border-white border-opacity-20">
-                                    <div class="text-xl sm:text-2xl mb-1">🌱</div>
-                                    <h3 class="font-bold text-xs sm:text-sm">Christian Life</h3>
-                                    <p class="text-xs text-white text-opacity-70 hidden sm:block">Prayer, Worship</p>
-                                </div>
-                                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 border border-white border-opacity-20">
-                                    <div class="text-xl sm:text-2xl mb-1">📜</div>
-                                    <h3 class="font-bold text-xs sm:text-sm">Studies</h3>
-                                    <p class="text-xs text-white text-opacity-70 hidden sm:block">Greek, History</p>
-                                </div>
-                                <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 border border-white border-opacity-20">
-                                    <div class="text-xl sm:text-2xl mb-1">⚔️</div>
-                                    <h3 class="font-bold text-xs sm:text-sm">Armour</h3>
-                                    <p class="text-xs text-white text-opacity-70 hidden sm:block">Spiritual Warfare</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 4: Daily Verses -->
-                <div class="slide bg-gradient-to-br from-amber-500 via-orange-600 to-red-700 text-white py-6 sm:py-10 lg:py-14 relative">
-                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-                        <div class="grid lg:grid-cols-2 gap-5 lg:gap-10 items-center">
-                            <div class="text-center lg:text-left">
-                                <div class="inline-flex items-center gap-2 px-3 py-1 bg-white bg-opacity-20 rounded-full text-xs mb-3 sm:mb-5">
-                                    <span class="text-base sm:text-lg">📅</span>
-                                    <span>365 Days of Scripture</span>
-                                </div>
-                                <h2 class="text-xl sm:text-3xl lg:text-5xl font-bold mb-3 sm:mb-5 leading-tight">
-                                    Daily Verses<br>
-                                    <span class="text-amber-200">& Devotionals</span>
-                                </h2>
-                                <p class="text-xs sm:text-base text-white text-opacity-90 mb-4 max-w-md mx-auto lg:mx-0">
-                                    Start each day with God's Word. Scripture and devotional thoughts for every day.
-                                </p>
-                                <a href="/dailyverses.html" class="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-orange-700 rounded-xl font-semibold hover:bg-gray-100 transition shadow-lg text-sm">
-                                    View Calendar
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+<a class="px-8 py-4 border border-heritage-gold/50 text-heritage-gold rounded-lg font-medium text-lg hover:bg-heritage-gold/10 transition" href="/books/john-bunyan/index.html">
+                                    Pilgrim's Progress
                                 </a>
-                            </div>
-                            <!-- Verse Card - Visible on all screens -->
-                            <div class="mt-4 lg:mt-0 bg-white bg-opacity-10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-white border-opacity-20 text-center">
-                                <div class="text-3xl sm:text-5xl mb-2 sm:mb-3">📖</div>
-                                <p class="text-sm sm:text-xl italic mb-2 sm:mb-3">"Thy word is a lamp unto my feet, and a light unto my path."</p>
-                                <p class="text-amber-200 font-semibold text-xs sm:text-sm">— Psalm 119:105</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 5: Higher Calling Book -->
-                <div class="slide bg-gradient-to-br from-sky-600 via-sky-700 to-indigo-800 text-white py-6 sm:py-10 lg:py-14 relative">
-                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-                        <div class="grid lg:grid-cols-2 gap-5 lg:gap-10 items-center">
-                            <div class="text-center lg:text-left">
-                                <div class="inline-flex items-center gap-2 px-3 py-1 bg-white bg-opacity-20 rounded-full text-xs mb-3 sm:mb-5">
-                                    <span class="text-base sm:text-lg">⭐</span>
-                                    <span>Featured Book</span>
-                                </div>
-                                <h2 class="text-xl sm:text-3xl lg:text-5xl font-bold mb-3 sm:mb-5 leading-tight">
-                                    The Higher Calling<br>
-                                    <span class="text-sky-200">To Worship</span>
-                                </h2>
-                                <p class="text-xs sm:text-base text-white text-opacity-90 mb-2 sm:mb-3">
-                                    "The Father is seeking worshippers" — John 4:23
-                                </p>
-                                <p class="hidden sm:block text-white text-opacity-80 mb-4 max-w-md mx-auto lg:mx-0 text-sm">
-                                    A 15-chapter exploration of what it means to be a true worshipper.
-                                </p>
-                                <a href="/hc/hcindex.html" class="inline-flex items-center gap-2 px-5 py-2.5 bg-white text-sky-700 rounded-xl font-semibold hover:bg-gray-100 transition shadow-lg text-sm">
-                                    Read Book
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+</div>
+</div>
+<div class="hidden lg:grid grid-cols-2 gap-4 max-w-md">
+<a class="group bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 transition-all duration-300 hover:bg-white/20 hover:border-heritage-gold/50 hover:scale-105" href="/books/john-bunyan/index.html" style="animation: cardDrop 0.6s ease-out 0.1s both;">
+<img alt="John Bunyan" class="w-24 h-24 rounded-full object-cover border-2 border-heritage-gold mx-auto mb-3 transition-transform duration-300 group-hover:scale-110" src="/images/authors/john-bunyan.jpg"/>
+<p class="text-white text-sm text-center font-medium transition-colors duration-300 group-hover:text-heritage-gold">John Bunyan</p>
+</a>
+<a class="group bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 transition-all duration-300 hover:bg-white/20 hover:border-heritage-gold/50 hover:scale-105" href="/books/john-newton/index.html" style="animation: cardDrop 0.6s ease-out 0.25s both;">
+<img alt="John Newton" class="w-24 h-24 rounded-full object-cover border-2 border-heritage-gold mx-auto mb-3 transition-transform duration-300 group-hover:scale-110" src="/images/authors/john-newton.jpg"/>
+<p class="text-white text-sm text-center font-medium transition-colors duration-300 group-hover:text-heritage-gold">John Newton</p>
+</a>
+<a class="group bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 transition-all duration-300 hover:bg-white/20 hover:border-heritage-gold/50 hover:scale-105" href="/books/william-gurnall/index.html" style="animation: cardDrop 0.6s ease-out 0.4s both;">
+<img alt="William Gurnall" class="w-24 h-24 rounded-full object-cover border-2 border-heritage-gold mx-auto mb-3 transition-transform duration-300 group-hover:scale-110" src="/images/authors/william-gurnall.jpg"/>
+<p class="text-white text-sm text-center font-medium transition-colors duration-300 group-hover:text-heritage-gold">Wm. Gurnall</p>
+</a>
+<a class="group bg-white/10 backdrop-blur rounded-xl p-5 border border-white/10 transition-all duration-300 hover:bg-white/20 hover:border-heritage-gold/50 hover:scale-105" href="/books/ra-torrey/index.html" style="animation: cardDrop 0.6s ease-out 0.55s both;">
+<img alt="R.A. Torrey" class="w-24 h-24 rounded-full object-cover border-2 border-heritage-gold mx-auto mb-3 transition-transform duration-300 group-hover:scale-110" src="/images/authors/ra-torrey.jpg"/>
+<p class="text-white text-sm text-center font-medium transition-colors duration-300 group-hover:text-heritage-gold">R.A. Torrey</p>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Slide 4: Armour of God Course -->
+<div class="hero-slide absolute inset-0 flex items-center opacity-0 z-0 transition-all duration-700" data-slide="3">
+<div class="absolute inset-0 bg-gradient-to-br from-[#2d1b4e] via-[#3d2563] to-[#4a2c7a]"></div>
+<div class="absolute inset-0 opacity-10">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<defs><pattern height="20" id="shield" patternunits="userSpaceOnUse" width="20">
+<path d="M10 2 L18 6 L18 12 L10 18 L2 12 L2 6 Z" fill="none" stroke="white" stroke-width="0.5"></path>
+</pattern></defs>
+<rect fill="url(#shield)" height="100" width="100"></rect>
+</svg>
+</div>
+<div class="absolute -top-20 -right-20 w-80 h-80 bg-purple-400 rounded-full blur-3xl" style="animation: glow-float 12s ease-in-out infinite;"></div>
+<div class="absolute -bottom-20 -left-20 w-72 h-72 bg-violet-500 rounded-full blur-3xl" style="animation: glow-float-reverse 14s ease-in-out infinite;"></div>
+<div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+<div class="grid lg:grid-cols-2 gap-8 items-center">
+<div class="text-center lg:text-left">
+<p class="text-purple-300 text-sm font-medium tracking-widest uppercase mb-4">Christian Life Course</p>
+<h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-white leading-tight mb-6">
+                                The Armour of God
+                            </h2>
+<p class="text-xl text-gray-300 mb-4 leading-relaxed">
+                                Stand firm in spiritual warfare
+                            </p>
+<p class="text-gray-400 mb-8 max-w-lg">
+                                10 in-depth lessons based on Ephesians 6 exploring every piece of the believer's armour—truth, righteousness, the gospel, faith, salvation, and the Word.
+                            </p>
+<div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+<a class="bg-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-purple-700 transition shadow-lg" href="/courses/christian-life/armour-of-god/index.html">
+                                    Start This Course
                                 </a>
-                            </div>
-                            <!-- Book Cover - Visible on all screens -->
-                            <div class="mt-4 lg:mt-0 flex justify-center">
-                                <div class="relative">
-                                    <img src="/images/higher-calling-cover.png" alt="The Higher Calling to Worship" class="w-44 sm:w-56 lg:w-72 rounded-lg shadow-2xl">
-                                    <div class="absolute -bottom-2 -right-2 sm:-bottom-3 sm:-right-3 bg-white rounded-lg shadow-lg px-2 py-1 sm:px-3 sm:py-2 text-center">
-                                        <div class="text-sky-600 font-bold text-xs sm:text-sm">15 Chapters</div>
-                                        <div class="text-xs text-gray-500 hidden sm:block">Free Online</div>
-                                    </div>
+<a class="px-8 py-4 border border-gray-500 text-gray-300 rounded-lg font-medium text-lg hover:border-white hover:text-white transition" href="/courses.html#christian-life">
+                                    All Christian Life Courses
+                                </a>
+</div>
+</div>
+<div class="hidden lg:flex justify-center">
+<a class="relative group" href="/courses/christian-life/armour-of-god/index.html">
+<div class="w-64 h-80 bg-gradient-to-br from-purple-600 to-purple-800 rounded-2xl shadow-2xl flex items-center justify-center transition-all duration-300 group-hover:scale-[1.03] group-hover:shadow-purple-500/30 group-hover:shadow-3xl">
+<div class="text-center text-white p-6">
+<svg class="w-20 h-20 mx-auto mb-4 text-white transition-transform duration-300 group-hover:scale-110" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+</svg>
+<h3 class="font-serif text-2xl mb-2 transition-colors duration-300 group-hover:text-purple-200">Armour of God</h3>
+<p class="text-white/80 text-sm">10 Lessons</p>
+<p class="text-white/60 text-xs mt-2">Ephesians 6:10-18</p>
+</div>
+</div>
+<div class="absolute bottom-4 left-0 bg-white/10 backdrop-blur px-4 py-2 rounded-lg text-white text-sm border border-white/20 transition-all duration-300 group-hover:bg-white/20 group-hover:border-purple-300/40">
+                                    Christian Life Course
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Slide 5: Latest Message -->
+<div class="hero-slide absolute inset-0 flex items-center opacity-0 z-0 transition-all duration-700" data-slide="4">
+<div class="absolute inset-0 bg-gradient-to-br from-ancient-ink via-[#252747] to-[#1a1b30]"></div>
+<div class="absolute inset-0 opacity-5">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<defs><pattern height="15" id="play" patternunits="userSpaceOnUse" width="15">
+<polygon fill="none" points="6,3 12,7.5 6,12" stroke="white" stroke-width="0.5"></polygon>
+</pattern></defs>
+<rect fill="url(#play)" height="100" width="100"></rect>
+</svg>
+</div>
+<div class="absolute -top-20 -right-20 w-80 h-80 bg-red-600 rounded-full blur-3xl" style="animation: glow-float 12s ease-in-out infinite;"></div>
+<div class="absolute -bottom-20 -left-20 w-72 h-72 bg-heritage-gold rounded-full blur-3xl" style="animation: glow-float-reverse 14s ease-in-out infinite;"></div>
+<div class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+<div class="grid lg:grid-cols-2 gap-8 items-center">
+<div class="text-center lg:text-left">
+<p class="text-red-400 text-sm font-medium tracking-widest uppercase mb-4">Latest Message</p>
+<h2 class="font-serif text-4xl sm:text-5xl lg:text-6xl text-white leading-tight mb-6">
+                            The Christmas Story
+                        </h2>
+<p class="text-xl text-heritage-gold mb-2 leading-relaxed">
+                            Matthew 2:23
+                        </p>
+<p class="text-gray-400 mb-8 max-w-lg">
+                            "The Son of God became of no significance to overcome evil and to bring salvation for all those who put their trust in Him."
+                        </p>
+<div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+<a class="bg-red-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-red-700 transition shadow-lg flex items-center gap-2" href="/messages/christmas-2025.html">
+<svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+                                Watch Message
+                            </a>
+<a class="px-8 py-4 border border-gray-500 text-gray-300 rounded-lg font-medium text-lg hover:border-heritage-gold hover:text-heritage-gold transition" href="/messages/">
+                                All Messages
+                            </a>
+</div>
+</div>
+<div class="hidden lg:flex justify-center">
+<a class="relative group" href="/messages/christmas-2025.html">
+<div class="absolute -inset-4 bg-gradient-to-r from-red-600 to-heritage-gold rounded-2xl blur-2xl opacity-30 group-hover:opacity-50 transition"></div>
+<div class="relative rounded-2xl overflow-hidden shadow-2xl">
+<img alt="The Christmas Story" class="w-[500px] aspect-video object-cover" src="https://img.youtube.com/vi/qr2UckCjCbQ/maxresdefault.jpg"/>
+<div class="absolute inset-0 bg-black/30 flex items-center justify-center group-hover:bg-black/40 transition">
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition">
+<svg class="w-6 h-6 text-red-600 ml-1" fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+</div>
+<div class="absolute top-3 left-3 px-3 py-1 bg-red-600 text-white text-xs font-medium rounded-full">
+                                    Christmas 2025
+                                </div>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Navigation Dots -->
+<div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20 flex items-center gap-3">
+<button aria-label="Slide 1" class="hero-dot w-3 h-3 rounded-full bg-white transition-all duration-300" data-slide="0"></button>
+<button aria-label="Slide 2" class="hero-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300" data-slide="1"></button>
+<button aria-label="Slide 3" class="hero-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300" data-slide="2"></button>
+<button aria-label="Slide 4" class="hero-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300" data-slide="3"></button>
+<button aria-label="Slide 5" class="hero-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white/60 transition-all duration-300" data-slide="4"></button>
+</div>
+<!-- Arrow Navigation -->
+<button aria-label="Previous slide" class="hero-prev absolute left-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur flex items-center justify-center text-white transition-all duration-300 border border-white/20">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+<button aria-label="Next slide" class="hero-next absolute right-4 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur flex items-center justify-center text-white transition-all duration-300 border border-white/20">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+<!-- Progress Bar -->
+<div class="absolute bottom-0 left-0 right-0 h-1 bg-white/10 z-20">
+<div class="hero-progress h-full bg-heritage-gold transition-all duration-100" style="width: 0%"></div>
+</div>
+</section>
+<style>
+        .hero-slide {
+            transform: translateX(0);
+        }
+        .hero-slide.slide-left {
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+        .hero-slide.slide-right {
+            opacity: 0;
+            transform: translateX(100%);
+        }
+        .hero-slide.active {
+            opacity: 1;
+            transform: translateX(0);
+            z-index: 10;
+        }
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fade-in 0.6s ease-out;
+        }
 
-            </div>
+        /* Mobile: hide arrows, show swipe hint */
+        @media (max-width: 640px) {
+            .hero-prev, .hero-next {
+                display: none;
+            }
+        }
 
-            <!-- Navigation Arrows - Hidden on mobile -->
-            <button onclick="prevSlide()" class="hidden sm:flex absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white bg-opacity-20 hover:bg-opacity-40 rounded-full items-center justify-center text-white transition z-10">
-                <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
-            </button>
-            <button onclick="nextSlide()" class="hidden sm:flex absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-white bg-opacity-20 hover:bg-opacity-40 rounded-full items-center justify-center text-white transition z-10">
-                <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-            </button>
-
-            <!-- Dots Navigation -->
-            <div class="absolute bottom-6 sm:bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10">
-                <button onclick="goToSlide(0)" class="slider-dot active w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition"></button>
-                <button onclick="goToSlide(1)" class="slider-dot w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition"></button>
-                <button onclick="goToSlide(2)" class="slider-dot w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition"></button>
-                <button onclick="goToSlide(3)" class="slider-dot w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition"></button>
-                <button onclick="goToSlide(4)" class="slider-dot w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition"></button>
-            </div>
-        </div>
-
-        <style>
-            .slides-container {
-                position: relative;
-                overflow: hidden;
-                height: 480px; /* Fixed height on mobile */
-            }
-            @media (min-width: 640px) {
-                .slides-container {
-                    height: 440px; /* Tablet */
-                }
-            }
-            @media (min-width: 1024px) {
-                .slides-container {
-                    height: 480px; /* Desktop */
-                }
-            }
-            @media (min-width: 1280px) {
-                .slides-container {
-                    height: 520px; /* Large desktop */
-                }
-            }
-            .slide {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
+        /* Subtle background animations */
+        @keyframes glow-float {
+            0% { transform: translate(0, 0); opacity: 0.08; }
+            50% { transform: translate(30px, -25px); opacity: 0.12; }
+            100% { transform: translate(0, 0); opacity: 0.08; }
+        }
+        @keyframes glow-float-reverse {
+            0% { transform: translate(0, 0); opacity: 0.08; }
+            50% { transform: translate(-25px, 30px); opacity: 0.12; }
+            100% { transform: translate(0, 0); opacity: 0.08; }
+        }
+        @keyframes glow-pulse {
+            0%, 100% { transform: scale(1); opacity: 0.04; }
+            50% { transform: scale(1.15); opacity: 0.08; }
+        }
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes cardDrop {
+            0% {
                 opacity: 0;
-                visibility: hidden;
-                transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
-                display: flex;
-                align-items: flex-start;
-                padding-top: 20px;
-                padding-bottom: 40px; /* Space for navigation dots */
+                transform: translateY(-30px) rotate(-8deg) scale(0.9);
             }
-            @media (min-width: 640px) {
-                .slide {
-                    align-items: center;
-                    padding-top: 0;
-                    padding-bottom: 50px;
-                }
-            }
-            .slide > div { width: 100%; }
-            .slide.active {
+            60% {
                 opacity: 1;
-                visibility: visible;
+                transform: translateY(5px) rotate(2deg) scale(1.02);
             }
-            .slider-dot.active { background-color: white; }
-        </style>
-    </section>
-
-    <!-- Quick Stats Bar -->
-    <section class="bg-white border-b border-gray-200 py-4 sm:py-6">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-4 gap-2 sm:gap-6 text-center">
-                <div class="p-2 sm:p-0">
-                    <div class="text-xl sm:text-3xl font-bold text-primary-700">20+</div>
-                    <div class="text-[10px] sm:text-sm text-gray-600">Courses</div>
-                </div>
-                <div class="p-2 sm:p-0">
-                    <div class="text-xl sm:text-3xl font-bold text-primary-700">300+</div>
-                    <div class="text-[10px] sm:text-sm text-gray-600">Verses</div>
-                </div>
-                <div class="p-2 sm:p-0">
-                    <div class="text-xl sm:text-3xl font-bold text-primary-700">66</div>
-                    <div class="text-[10px] sm:text-sm text-gray-600">Books</div>
-                </div>
-                <div class="p-2 sm:p-0">
-                    <div class="text-xl sm:text-3xl font-bold text-primary-700">40</div>
-                    <div class="text-[10px] sm:text-sm text-gray-600">Years</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Four Main Sections -->
-    <section class="py-10 sm:py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-8 sm:mb-14">
-                <span class="inline-block px-3 py-1 sm:px-4 sm:py-1.5 bg-gray-100 text-gray-600 rounded-full text-xs sm:text-sm font-semibold mb-3 sm:mb-4">START HERE</span>
-                <h2 class="text-2xl sm:text-4xl font-bold text-gray-900 mb-2 sm:mb-4">Explore Our Resources</h2>
-                <p class="text-gray-600 text-sm sm:text-lg max-w-2xl mx-auto">Everything you need for personal study, group teaching, or ministry development</p>
-            </div>
-
-            <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-8">
-                <!-- Bible -->
-                <a href="/bible.html" class="group relative bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-8 shadow-lg shadow-amber-500/5 border border-gray-100 hover:shadow-2xl hover:shadow-amber-500/10 hover:-translate-y-2 transition-all duration-300 overflow-hidden">
-                    <div class="absolute top-0 right-0 w-20 sm:w-32 h-20 sm:h-32 bg-gradient-to-br from-amber-100 to-orange-100 rounded-full -translate-y-1/2 translate-x-1/2 opacity-50 group-hover:opacity-100 transition"></div>
-                    <div class="relative">
-                        <div class="w-10 h-10 sm:w-16 sm:h-16 bg-gradient-to-br from-amber-400 to-orange-500 text-white rounded-xl sm:rounded-2xl flex items-center justify-center text-xl sm:text-3xl mb-3 sm:mb-6 shadow-lg shadow-amber-500/30 group-hover:scale-110 transition-transform">
-                            📖
-                        </div>
-                        <h3 class="text-sm sm:text-xl font-bold text-gray-900 mb-1 sm:mb-3">KJV Bible</h3>
-                        <p class="text-gray-500 text-xs sm:text-sm mb-3 sm:mb-6 leading-relaxed hidden sm:block">Complete Old & New Testament organized by section</p>
-                        <div class="flex items-center gap-1 sm:gap-2 text-amber-600 font-semibold text-xs sm:text-sm group-hover:gap-3 transition-all">
-                            <span>Read</span>
-                            <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Courses -->
-                <a href="/courses.html" class="group relative bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-8 shadow-lg shadow-blue-500/5 border border-gray-100 hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2 transition-all duration-300 overflow-hidden">
-                    <div class="absolute top-0 right-0 w-20 sm:w-32 h-20 sm:h-32 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-full -translate-y-1/2 translate-x-1/2 opacity-50 group-hover:opacity-100 transition"></div>
-                    <div class="relative">
-                        <div class="w-10 h-10 sm:w-16 sm:h-16 bg-gradient-to-br from-blue-500 to-indigo-600 text-white rounded-xl sm:rounded-2xl flex items-center justify-center text-xl sm:text-3xl mb-3 sm:mb-6 shadow-lg shadow-blue-500/30 group-hover:scale-110 transition-transform">
-                            📚
-                        </div>
-                        <h3 class="text-sm sm:text-xl font-bold text-gray-900 mb-1 sm:mb-3">Courses</h3>
-                        <p class="text-gray-500 text-xs sm:text-sm mb-3 sm:mb-6 leading-relaxed hidden sm:block">Foundation, Christian Life, and General Studies programs</p>
-                        <div class="flex items-center gap-1 sm:gap-2 text-blue-600 font-semibold text-xs sm:text-sm group-hover:gap-3 transition-all">
-                            <span>View</span>
-                            <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Books & Messages -->
-                <a href="/books.html" class="group relative bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-8 shadow-lg shadow-purple-500/5 border border-gray-100 hover:shadow-2xl hover:shadow-purple-500/10 hover:-translate-y-2 transition-all duration-300 overflow-hidden">
-                    <div class="absolute top-0 right-0 w-20 sm:w-32 h-20 sm:h-32 bg-gradient-to-br from-purple-100 to-violet-100 rounded-full -translate-y-1/2 translate-x-1/2 opacity-50 group-hover:opacity-100 transition"></div>
-                    <div class="relative">
-                        <div class="w-10 h-10 sm:w-16 sm:h-16 bg-gradient-to-br from-purple-500 to-violet-600 text-white rounded-xl sm:rounded-2xl flex items-center justify-center text-xl sm:text-3xl mb-3 sm:mb-6 shadow-lg shadow-purple-500/30 group-hover:scale-110 transition-transform">
-                            📕
-                        </div>
-                        <h3 class="text-sm sm:text-xl font-bold text-gray-900 mb-1 sm:mb-3">Books</h3>
-                        <p class="text-gray-500 text-xs sm:text-sm mb-3 sm:mb-6 leading-relaxed hidden sm:block">Classic authors, testimonies, and teaching messages</p>
-                        <div class="flex items-center gap-1 sm:gap-2 text-purple-600 font-semibold text-xs sm:text-sm group-hover:gap-3 transition-all">
-                            <span>Browse</span>
-                            <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                        </div>
-                    </div>
-                </a>
-
-                <!-- Daily Verses -->
-                <a href="/dailyverses.html" class="group relative bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-8 shadow-lg shadow-emerald-500/5 border border-gray-100 hover:shadow-2xl hover:shadow-emerald-500/10 hover:-translate-y-2 transition-all duration-300 overflow-hidden">
-                    <div class="absolute top-0 right-0 w-20 sm:w-32 h-20 sm:h-32 bg-gradient-to-br from-emerald-100 to-green-100 rounded-full -translate-y-1/2 translate-x-1/2 opacity-50 group-hover:opacity-100 transition"></div>
-                    <div class="relative">
-                        <div class="w-10 h-10 sm:w-16 sm:h-16 bg-gradient-to-br from-emerald-500 to-green-600 text-white rounded-xl sm:rounded-2xl flex items-center justify-center text-xl sm:text-3xl mb-3 sm:mb-6 shadow-lg shadow-emerald-500/30 group-hover:scale-110 transition-transform">
-                            📅
-                        </div>
-                        <h3 class="text-sm sm:text-xl font-bold text-gray-900 mb-1 sm:mb-3">Verses</h3>
-                        <p class="text-gray-500 text-xs sm:text-sm mb-3 sm:mb-6 leading-relaxed hidden sm:block">Scripture calendar with devotional content for each day</p>
-                        <div class="flex items-center gap-1 sm:gap-2 text-emerald-600 font-semibold text-xs sm:text-sm group-hover:gap-3 transition-all">
-                            <span>View</span>
-                            <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Featured Book: Higher Calling -->
-    <section class="bg-gradient-to-br from-sky-600 to-sky-800 py-10 sm:py-16 relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-64 sm:w-96 h-64 sm:h-96 bg-white opacity-5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div class="grid lg:grid-cols-2 gap-6 sm:gap-12 items-center">
-                <div class="text-white text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-white bg-opacity-20 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6">
-                        <span>⭐</span>
-                        <span>Featured Book</span>
-                    </div>
-                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4">The Higher Calling to Worship</h2>
-                    <p class="text-base sm:text-xl text-sky-200 mb-1 sm:mb-2">"The Father is seeking worshippers"</p>
-                    <p class="text-sky-100 text-sm sm:text-base mb-4 sm:mb-6">by Steve Dulwich</p>
-                    <p class="text-white text-opacity-90 text-sm sm:text-base mb-6 sm:mb-8 leading-relaxed hidden sm:block">
-                        A 15-chapter exploration of what it means to be a true worshipper. Discover the Father's heart for those who worship Him in spirit and in truth.
-                    </p>
-                    <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start">
-                        <a href="/hc/hcindex.html" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 bg-white text-sky-700 rounded-xl font-semibold hover:bg-sky-50 transition shadow-lg text-sm sm:text-base">
-                            Read the Book
-                            <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                        </a>
-                        <a href="/hc/hcintro.html" class="inline-flex items-center justify-center gap-2 px-5 py-2.5 sm:px-6 sm:py-3 bg-transparent text-white rounded-xl font-semibold hover:bg-white hover:bg-opacity-10 transition border-2 border-white border-opacity-50 text-sm sm:text-base">
-                            Introduction
-                        </a>
-                    </div>
-                </div>
-                <div class="hidden lg:flex justify-center">
-                    <div class="relative">
-                        <img src="/images/higher-calling-cover.png" alt="The Higher Calling to Worship book cover" class="w-64 rounded-lg shadow-2xl transform hover:scale-105 transition duration-300">
-                        <div class="absolute -bottom-4 -right-4 bg-white rounded-xl shadow-lg px-4 py-2 text-center">
-                            <div class="text-sky-600 font-bold">15 Chapters</div>
-                            <div class="text-xs text-gray-500">Free Online</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Classic Christian Authors -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
-        <div class="text-center mb-6 sm:mb-12">
-            <h2 class="text-xl sm:text-3xl font-bold text-gray-900 mb-2 sm:mb-3">Classic Christian Authors</h2>
-            <p class="text-gray-600 text-sm sm:text-base">Timeless writings from great men of faith</p>
-        </div>
-
-        <div class="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-6">
-            <a href="/btp/message/newton letters/index.html" class="card-hover bg-white rounded-lg sm:rounded-xl p-2 sm:p-6 text-center border border-gray-200 hover:shadow-lg hover:border-amber-300">
-                <img src="/images/authors/john-newton.jpg" alt="John Newton" class="w-10 h-10 sm:w-16 sm:h-16 rounded-full object-cover mx-auto mb-2 sm:mb-4 border-2 border-amber-200 shadow-md">
-                <h3 class="font-bold text-gray-900 text-xs sm:text-base">Newton</h3>
-                <p class="text-[10px] sm:text-xs text-gray-500 mt-0.5 sm:mt-1 hidden sm:block">Letters</p>
-            </a>
-            <a href="/bunyan.html" class="card-hover bg-white rounded-lg sm:rounded-xl p-2 sm:p-6 text-center border border-gray-200 hover:shadow-lg hover:border-purple-300">
-                <img src="/images/authors/john-bunyan.jpg" alt="John Bunyan" class="w-10 h-10 sm:w-16 sm:h-16 rounded-full object-cover mx-auto mb-2 sm:mb-4 border-2 border-purple-200 shadow-md">
-                <h3 class="font-bold text-gray-900 text-xs sm:text-base">Bunyan</h3>
-                <p class="text-[10px] sm:text-xs text-gray-500 mt-0.5 sm:mt-1 hidden sm:block">Pilgrim's Progress</p>
-            </a>
-            <a href="/luther.html" class="card-hover bg-white rounded-lg sm:rounded-xl p-2 sm:p-6 text-center border border-gray-200 hover:shadow-lg hover:border-orange-300">
-                <img src="/images/authors/martin-luther.jpg" alt="Martin Luther" class="w-10 h-10 sm:w-16 sm:h-16 rounded-full object-cover mx-auto mb-2 sm:mb-4 border-2 border-orange-200 shadow-md">
-                <h3 class="font-bold text-gray-900 text-xs sm:text-base">Luther</h3>
-                <p class="text-[10px] sm:text-xs text-gray-500 mt-0.5 sm:mt-1 hidden sm:block">Reformation</p>
-            </a>
-            <a href="/gurnall/index.html" class="card-hover bg-white rounded-lg sm:rounded-xl p-2 sm:p-6 text-center border border-gray-200 hover:shadow-lg hover:border-red-300">
-                <img src="/images/authors/william-gurnall.jpg" alt="William Gurnall" class="w-10 h-10 sm:w-16 sm:h-16 rounded-full object-cover mx-auto mb-2 sm:mb-4 border-2 border-red-200 shadow-md">
-                <h3 class="font-bold text-gray-900 text-xs sm:text-base">Gurnall</h3>
-                <p class="text-[10px] sm:text-xs text-gray-500 mt-0.5 sm:mt-1 hidden sm:block">Armour</p>
-            </a>
-            <a href="/prayer/torrey/htp.html" class="card-hover bg-white rounded-lg sm:rounded-xl p-2 sm:p-6 text-center border border-gray-200 hover:shadow-lg hover:border-yellow-300 col-span-3 sm:col-span-1 max-w-[140px] sm:max-w-none mx-auto sm:mx-0">
-                <img src="/images/authors/ra-torrey.jpg" alt="R.A. Torrey" class="w-10 h-10 sm:w-16 sm:h-16 rounded-full object-cover mx-auto mb-2 sm:mb-4 border-2 border-yellow-200 shadow-md">
-                <h3 class="font-bold text-gray-900 text-xs sm:text-base">Torrey</h3>
-                <p class="text-[10px] sm:text-xs text-gray-500 mt-0.5 sm:mt-1 hidden sm:block">How to Pray</p>
-            </a>
-        </div>
-
-        <div class="text-center mt-6 sm:mt-8">
-            <a href="/books.html" class="inline-flex items-center gap-2 text-primary-700 font-medium hover:text-primary-800 text-sm sm:text-base">
-                View All Books
-                <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-            </a>
-        </div>
-    </section>
-
-    <!-- Featured Mission Story -->
-    <section class="bg-gradient-to-br from-teal-50 to-cyan-50 py-10 sm:py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid lg:grid-cols-2 gap-6 sm:gap-12 items-center">
-                <div class="text-center lg:text-left">
-                    <div class="inline-flex items-center gap-2 px-3 py-1.5 sm:px-4 sm:py-2 bg-teal-100 text-teal-700 rounded-full text-xs sm:text-sm font-medium mb-4 sm:mb-6">
-                        <span>🌍</span>
-                        <span>Mission Story</span>
-                    </div>
-                    <h2 class="text-xl sm:text-3xl font-bold text-gray-900 mb-2 sm:mb-4">Mission to the Faroe Islands (1862)</h2>
-                    <p class="text-gray-700 text-sm sm:text-base mb-4 sm:mb-6 leading-relaxed hidden sm:block">
-                        The inspiring story of Isaac Sharp and Asbjorn Kloster's 8-week mission to all 17 inhabited islands of the Faroes. During April-June 1862, one third of the entire population attended their meetings.
-                    </p>
-                    <div class="bg-white rounded-lg sm:rounded-xl p-3 sm:p-4 border border-teal-200 mb-4 sm:mb-6">
-                        <div class="grid grid-cols-3 gap-2 sm:gap-4 text-center">
-                            <div>
-                                <div class="text-xl sm:text-2xl font-bold text-teal-700">17</div>
-                                <div class="text-[10px] sm:text-xs text-gray-600">Islands</div>
-                            </div>
-                            <div>
-                                <div class="text-xl sm:text-2xl font-bold text-teal-700">8</div>
-                                <div class="text-[10px] sm:text-xs text-gray-600">Weeks</div>
-                            </div>
-                            <div>
-                                <div class="text-xl sm:text-2xl font-bold text-teal-700">1/3</div>
-                                <div class="text-[10px] sm:text-xs text-gray-600">Population</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start">
-                        <a href="/is/isjournal.html" class="inline-flex items-center justify-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 bg-teal-600 text-white rounded-lg font-medium hover:bg-teal-700 transition text-sm sm:text-base">
-                            Read Journal
-                        </a>
-                        <a href="/is/index.html" class="inline-flex items-center justify-center gap-2 px-4 py-2 sm:px-5 sm:py-2.5 bg-white text-teal-700 border border-teal-300 rounded-lg font-medium hover:bg-teal-50 transition text-sm sm:text-base">
-                            Day by Day
-                        </a>
-                    </div>
-                </div>
-                <div class="hidden lg:block">
-                    <div class="relative rounded-2xl shadow-xl overflow-hidden">
-                        <img src="/is/dalur.jpg" alt="Faroe Islands - Dalur Village" class="w-full h-80 object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-transparent"></div>
-                        <div class="absolute top-0 right-0 p-6 text-white text-right">
-                            <blockquote class="italic mb-2">
-                                "The Lord opened doors on every island."
-                            </blockquote>
-                            <p class="text-teal-200 font-medium text-sm">— Isaac Sharp, 1862</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Course Programs -->
-    <section class="bg-gradient-to-b from-gray-50 to-white py-10 sm:py-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-8 sm:mb-14">
-                <span class="inline-block px-3 py-1 sm:px-4 sm:py-1.5 bg-primary-100 text-primary-700 rounded-full text-xs sm:text-sm font-semibold mb-3 sm:mb-4">LEARN & GROW</span>
-                <h2 class="text-2xl sm:text-4xl font-bold text-gray-900 mb-2 sm:mb-4">Teaching Programs</h2>
-                <p class="text-gray-600 text-sm sm:text-lg max-w-2xl mx-auto">Structured courses for personal study or group teaching</p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8">
-                <!-- Foundation -->
-                <div class="group bg-white rounded-2xl sm:rounded-3xl shadow-xl shadow-blue-500/10 border border-gray-100 overflow-hidden hover:shadow-2xl hover:shadow-blue-500/20 hover:-translate-y-2 transition-all duration-300">
-                    <div class="bg-gradient-to-br from-blue-500 via-blue-600 to-indigo-700 text-white p-4 sm:p-8 relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-20 sm:w-32 h-20 sm:h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-                        <div class="relative flex sm:block items-center gap-3">
-                            <div class="w-10 h-10 sm:w-14 sm:h-14 bg-white/20 backdrop-blur rounded-xl sm:rounded-2xl flex items-center justify-center text-xl sm:text-3xl sm:mb-4">🏛️</div>
-                            <div>
-                                <h3 class="text-lg sm:text-2xl font-bold">Foundation</h3>
-                                <p class="text-blue-100 text-xs sm:text-base sm:mt-2">Essential foundations</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-4 sm:p-8">
-                        <ul class="space-y-2 sm:space-y-4 mb-4 sm:mb-8">
-                            <li class="flex items-center gap-2 sm:gap-4">
-                                <span class="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-lg sm:rounded-xl flex items-center justify-center text-xs sm:text-sm font-bold shadow-lg shadow-blue-500/30">✓</span>
-                                <span class="text-gray-700 font-medium text-xs sm:text-base">The Cross</span>
-                            </li>
-                            <li class="flex items-center gap-2 sm:gap-4">
-                                <span class="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-lg sm:rounded-xl flex items-center justify-center text-xs sm:text-sm font-bold shadow-lg shadow-blue-500/30">✓</span>
-                                <span class="text-gray-700 font-medium text-xs sm:text-base">Salvation</span>
-                            </li>
-                            <li class="flex items-center gap-2 sm:gap-4">
-                                <span class="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-blue-500 to-blue-600 text-white rounded-lg sm:rounded-xl flex items-center justify-center text-xs sm:text-sm font-bold shadow-lg shadow-blue-500/30">✓</span>
-                                <span class="text-gray-700 font-medium text-xs sm:text-base">Eternal Life</span>
-                            </li>
-                        </ul>
-                        <a href="/btp/foundation.html" class="block w-full text-center px-4 py-2.5 sm:px-6 sm:py-3.5 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-lg sm:rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-500/40 text-sm sm:text-base">
-                            Start
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Christian Life -->
-                <div class="group bg-white rounded-2xl sm:rounded-3xl shadow-xl shadow-green-500/10 border border-gray-100 overflow-hidden hover:shadow-2xl hover:shadow-green-500/20 hover:-translate-y-2 transition-all duration-300">
-                    <div class="bg-gradient-to-br from-green-500 via-green-600 to-emerald-700 text-white p-4 sm:p-8 relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-20 sm:w-32 h-20 sm:h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-                        <div class="relative flex sm:block items-center gap-3">
-                            <div class="w-10 h-10 sm:w-14 sm:h-14 bg-white/20 backdrop-blur rounded-xl sm:rounded-2xl flex items-center justify-center text-xl sm:text-3xl sm:mb-4">🌱</div>
-                            <div>
-                                <h3 class="text-lg sm:text-2xl font-bold">Christian Life</h3>
-                                <p class="text-green-100 text-xs sm:text-base sm:mt-2">Practical living</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-4 sm:p-8">
-                        <ul class="space-y-2 sm:space-y-4 mb-4 sm:mb-8">
-                            <li class="flex items-center gap-2 sm:gap-4">
-                                <span class="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-green-500 to-green-600 text-white rounded-lg sm:rounded-xl flex items-center justify-center text-xs sm:text-sm font-bold shadow-lg shadow-green-500/30">✓</span>
-                                <span class="text-gray-700 font-medium text-xs sm:text-base">Worship & Prayer</span>
-                            </li>
-                            <li class="flex items-center gap-2 sm:gap-4">
-                                <span class="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-green-500 to-green-600 text-white rounded-lg sm:rounded-xl flex items-center justify-center text-xs sm:text-sm font-bold shadow-lg shadow-green-500/30">✓</span>
-                                <span class="text-gray-700 font-medium text-xs sm:text-base">Fruit of Spirit</span>
-                            </li>
-                            <li class="flex items-center gap-2 sm:gap-4">
-                                <span class="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-green-500 to-green-600 text-white rounded-lg sm:rounded-xl flex items-center justify-center text-xs sm:text-sm font-bold shadow-lg shadow-green-500/30">✓</span>
-                                <span class="text-gray-700 font-medium text-xs sm:text-base">Gifts & Missions</span>
-                            </li>
-                        </ul>
-                        <a href="/btp/life.html" class="block w-full text-center px-4 py-2.5 sm:px-6 sm:py-3.5 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-lg sm:rounded-xl font-semibold hover:from-green-700 hover:to-emerald-700 transition-all shadow-lg shadow-green-500/30 hover:shadow-xl hover:shadow-green-500/40 text-sm sm:text-base">
-                            Explore
-                        </a>
-                    </div>
-                </div>
-
-                <!-- General Studies -->
-                <div class="group bg-white rounded-2xl sm:rounded-3xl shadow-xl shadow-purple-500/10 border border-gray-100 overflow-hidden hover:shadow-2xl hover:shadow-purple-500/20 hover:-translate-y-2 transition-all duration-300">
-                    <div class="bg-gradient-to-br from-purple-500 via-purple-600 to-violet-700 text-white p-4 sm:p-8 relative overflow-hidden">
-                        <div class="absolute top-0 right-0 w-20 sm:w-32 h-20 sm:h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
-                        <div class="relative flex sm:block items-center gap-3">
-                            <div class="w-10 h-10 sm:w-14 sm:h-14 bg-white/20 backdrop-blur rounded-xl sm:rounded-2xl flex items-center justify-center text-xl sm:text-3xl sm:mb-4">📜</div>
-                            <div>
-                                <h3 class="text-lg sm:text-2xl font-bold">General Studies</h3>
-                                <p class="text-purple-100 text-xs sm:text-base sm:mt-2">Topics & history</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-4 sm:p-8">
-                        <ul class="space-y-2 sm:space-y-4 mb-4 sm:mb-8">
-                            <li class="flex items-center gap-2 sm:gap-4">
-                                <span class="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-lg sm:rounded-xl flex items-center justify-center text-xs sm:text-sm font-bold shadow-lg shadow-purple-500/30">✓</span>
-                                <span class="text-gray-700 font-medium text-xs sm:text-base">Greek Words</span>
-                            </li>
-                            <li class="flex items-center gap-2 sm:gap-4">
-                                <span class="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-lg sm:rounded-xl flex items-center justify-center text-xs sm:text-sm font-bold shadow-lg shadow-purple-500/30">✓</span>
-                                <span class="text-gray-700 font-medium text-xs sm:text-base">Church History</span>
-                            </li>
-                            <li class="flex items-center gap-2 sm:gap-4">
-                                <span class="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-br from-purple-500 to-purple-600 text-white rounded-lg sm:rounded-xl flex items-center justify-center text-xs sm:text-sm font-bold shadow-lg shadow-purple-500/30">✓</span>
-                                <span class="text-gray-700 font-medium text-xs sm:text-base">Alphabets</span>
-                            </li>
-                        </ul>
-                        <a href="/btp/message.html" class="block w-full text-center px-4 py-2.5 sm:px-6 sm:py-3.5 bg-gradient-to-r from-purple-600 to-violet-600 text-white rounded-lg sm:rounded-xl font-semibold hover:from-purple-700 hover:to-violet-700 transition-all shadow-lg shadow-purple-500/30 hover:shadow-xl hover:shadow-purple-500/40 text-sm sm:text-base">
-                            View
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Ministry Philosophy -->
-    <section class="relative bg-gradient-to-br from-slate-900 via-primary-900 to-slate-900 py-10 sm:py-20 overflow-hidden">
-        <div class="absolute inset-0 opacity-30">
-            <div class="absolute top-10 sm:top-20 left-10 sm:left-20 w-48 sm:w-72 h-48 sm:h-72 bg-primary-500 rounded-full filter blur-3xl"></div>
-            <div class="absolute bottom-10 sm:bottom-20 right-10 sm:right-20 w-64 sm:w-96 h-64 sm:h-96 bg-blue-500 rounded-full filter blur-3xl"></div>
-        </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div class="max-w-3xl mx-auto text-center mb-8 sm:mb-14">
-                <span class="inline-block px-3 py-1 sm:px-4 sm:py-1.5 bg-white/10 text-white/80 rounded-full text-xs sm:text-sm font-semibold mb-3 sm:mb-4 backdrop-blur">OUR HEART</span>
-                <h2 class="text-2xl sm:text-4xl font-bold text-white mb-2 sm:mb-4">Our Ministry Philosophy</h2>
-                <p class="text-white/70 text-sm sm:text-lg">We believe in teaching the Word of God with grace, truth, and love</p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 max-w-4xl mx-auto">
-                <div class="bg-white/10 backdrop-blur-lg rounded-xl sm:rounded-2xl p-4 sm:p-8 border border-white/20 shadow-2xl">
-                    <div class="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
-                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-lg sm:rounded-xl flex items-center justify-center text-xl sm:text-2xl shadow-lg">⭐</div>
-                        <h3 class="font-bold text-base sm:text-xl text-white">We Believe In...</h3>
-                    </div>
-                    <ul class="space-y-2 sm:space-y-3 text-sm sm:text-base">
-                        <li class="flex items-center gap-2 sm:gap-3 text-white/90"><span class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-sky-400 rounded-full"></span> Church without walls</li>
-                        <li class="flex items-center gap-2 sm:gap-3 text-white/90"><span class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-sky-400 rounded-full"></span> Worship without rituals</li>
-                        <li class="flex items-center gap-2 sm:gap-3 text-white/90"><span class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-sky-400 rounded-full"></span> Truth without compromise</li>
-                        <li class="flex items-center gap-2 sm:gap-3 text-white/90"><span class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-sky-400 rounded-full"></span> Love without prejudice</li>
-                        <li class="flex items-center gap-2 sm:gap-3 text-white/90"><span class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-sky-400 rounded-full"></span> Grace without merit</li>
-                        <li class="flex items-center gap-2 sm:gap-3 text-white/90"><span class="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-sky-400 rounded-full"></span> Salvation without works</li>
-                    </ul>
-                </div>
-                <div class="bg-white/10 backdrop-blur-lg rounded-xl sm:rounded-2xl p-4 sm:p-8 border border-white/20 shadow-2xl">
-                    <div class="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
-                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-rose-400 to-red-500 rounded-lg sm:rounded-xl flex items-center justify-center text-xl sm:text-2xl shadow-lg">❤️</div>
-                        <h3 class="font-bold text-base sm:text-xl text-white">Ministry Qualification</h3>
-                    </div>
-                    <p class="text-white/80 italic leading-relaxed text-sm sm:text-lg">
-                        "The most important qualification for ministry is <span class="text-sky-300 font-semibold">love for Christ</span>,
-                        <span class="text-sky-300 font-semibold">love for His word</span>,
-                        <span class="text-sky-300 font-semibold">love for His people</span>, and
-                        <span class="text-sky-300 font-semibold">love for the lost</span>."
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer placeholder - loaded by components.js -->
-    <div id="footer-placeholder"></div>
-
-    <script src="/js/daily-verse.js"></script>
-    <script src="/js/components.js"></script>
-    <script>
-        // Hero Slider
-        var currentSlide = 0;
-        var totalSlides = 5;
-        var autoSlideInterval;
-
-        function showSlide(index) {
-            var slides = document.querySelectorAll('.slide');
-            var dots = document.querySelectorAll('.slider-dot');
-
-            if (index >= totalSlides) index = 0;
-            if (index < 0) index = totalSlides - 1;
-
-            slides.forEach(function(slide, i) {
-                slide.classList.remove('active');
-                if (i === index) slide.classList.add('active');
-            });
-
-            dots.forEach(function(dot, i) {
-                dot.classList.remove('active');
-                if (i === index) dot.classList.add('active');
-            });
-
-            currentSlide = index;
-        }
-
-        function nextSlide() {
-            showSlide(currentSlide + 1);
-            resetAutoSlide();
-        }
-
-        function prevSlide() {
-            showSlide(currentSlide - 1);
-            resetAutoSlide();
-        }
-
-        function goToSlide(index) {
-            showSlide(index);
-            resetAutoSlide();
-        }
-
-        function startAutoSlide() {
-            autoSlideInterval = setInterval(function() {
-                showSlide(currentSlide + 1);
-            }, 10000);
-        }
-
-        function resetAutoSlide() {
-            clearInterval(autoSlideInterval);
-            startAutoSlide();
-        }
-
-        // Touch swipe support for mobile
-        var touchStartX = 0;
-        var touchEndX = 0;
-        var minSwipeDistance = 50;
-
-        function handleSwipe() {
-            var swipeDistance = touchEndX - touchStartX;
-            if (Math.abs(swipeDistance) > minSwipeDistance) {
-                if (swipeDistance > 0) {
-                    prevSlide(); // Swipe right = previous
-                } else {
-                    nextSlide(); // Swipe left = next
-                }
+            80% {
+                transform: translateY(-2px) rotate(-1deg) scale(1);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) rotate(0) scale(1);
             }
         }
-
-        // Start auto-slide on page load
+    </style>
+<!-- Today's Verse Bar -->
+<a class="block bg-white border-b border-gray-200 py-6" href="/dailyverses.html">
+<div class="max-w-4xl mx-auto px-4 text-center">
+<p class="text-heritage-gold text-xs font-medium tracking-wide uppercase mb-2">Today's Verse</p>
+<p class="text-ancient-ink font-serif text-lg sm:text-xl italic" id="hero-verse-text">
+                "Trust in the LORD with all thine heart; and lean not unto thine own understanding."
+            </p>
+<p class="text-heritage-gold text-sm font-medium mt-2" id="hero-verse-ref">— Proverbs 3:5</p>
+</div>
+</a>
+<!-- What We Offer -->
+<section class="py-16 sm:py-20">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-12">
+<p class="text-living-sage text-sm font-medium tracking-wide uppercase mb-2">What We Offer</p>
+<h2 class="font-serif text-3xl sm:text-4xl text-ancient-ink mb-4">Everything You Need for Biblical Study</h2>
+<p class="text-gray-600 max-w-2xl mx-auto">Whether you're a new believer, a seasoned teacher, or somewhere in between—find resources to deepen your walk with God.</p>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Courses -->
+<a class="group bg-white rounded-2xl p-6 border border-gray-200 hover:border-heritage-gold hover:shadow-xl transition-all" href="/courses.html">
+<div class="w-14 h-14 bg-ancient-ink rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+<span class="text-heritage-gold">📚</span>
+</div>
+<h3 class="font-serif text-xl text-ancient-ink mb-2">20+ Bible Courses</h3>
+<p class="text-gray-600 text-sm mb-4">Structured lessons on doctrine, Christian living, church history, and biblical languages.</p>
+<ul class="text-xs text-gray-500 space-y-1 mb-4">
+<li>• The Cross &amp; Salvation</li>
+<li>• Armour of God</li>
+<li>• Greek Word Studies</li>
+</ul>
+<span class="text-heritage-gold font-medium text-sm group-hover:underline">Browse Courses →</span>
+</a>
+<!-- Books -->
+<a class="group bg-white rounded-2xl p-6 border border-gray-200 hover:border-heritage-gold hover:shadow-xl transition-all" href="/books.html">
+<div class="w-14 h-14 bg-heritage-gold/20 rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+<span>📕</span>
+</div>
+<h3 class="font-serif text-xl text-ancient-ink mb-2">Classic Christian Books</h3>
+<p class="text-gray-600 text-sm mb-4">Timeless writings from great men of faith—fully digitized and free to read online.</p>
+<ul class="text-xs text-gray-500 space-y-1 mb-4">
+<li>• John Bunyan's works</li>
+<li>• John Newton's letters</li>
+<li>• William Gurnall</li>
+</ul>
+<span class="text-heritage-gold font-medium text-sm group-hover:underline">Explore Books →</span>
+</a>
+<!-- Bible -->
+<a class="group bg-white rounded-2xl p-6 border border-gray-200 hover:border-heritage-gold hover:shadow-xl transition-all" href="/bible.html">
+<div class="w-14 h-14 bg-amber-50 rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+<span>📖</span>
+</div>
+<h3 class="font-serif text-xl text-ancient-ink mb-2">KJV Bible</h3>
+<p class="text-gray-600 text-sm mb-4">The complete King James Version—all 66 books organized by testament and section.</p>
+<ul class="text-xs text-gray-500 space-y-1 mb-4">
+<li>• Old &amp; New Testament</li>
+<li>• Read online or PDF</li>
+<li>• Easy navigation</li>
+</ul>
+<span class="text-heritage-gold font-medium text-sm group-hover:underline">Read Bible →</span>
+</a>
+<!-- Daily Verses -->
+<a class="group bg-white rounded-2xl p-6 border border-gray-200 hover:border-heritage-gold hover:shadow-xl transition-all" href="/dailyverses.html">
+<div class="w-14 h-14 bg-living-sage/20 rounded-xl flex items-center justify-center text-2xl mb-4 group-hover:scale-110 transition-transform">
+<span>📅</span>
+</div>
+<h3 class="font-serif text-xl text-ancient-ink mb-2">Daily Verses</h3>
+<p class="text-gray-600 text-sm mb-4">A curated Scripture for every day of the year—with devotional thoughts and prayers.</p>
+<ul class="text-xs text-gray-500 space-y-1 mb-4">
+<li>• 300+ daily devotions</li>
+<li>• Monthly themes</li>
+<li>• Bookmark your favorites</li>
+</ul>
+<span class="text-heritage-gold font-medium text-sm group-hover:underline">View Calendar →</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Latest Messages -->
+<section class="py-16 sm:py-20 bg-white border-b border-gray-100">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-10 gap-4">
+<div>
+<p class="text-red-600 text-sm font-medium tracking-wide uppercase mb-2">From the Pulpit</p>
+<h2 class="font-serif text-3xl sm:text-4xl text-ancient-ink">Latest Messages</h2>
+</div>
+<a class="inline-flex items-center gap-2 text-heritage-gold font-medium hover:underline" href="/messages/">
+                    View All Messages
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Featured: Christmas Message -->
+<a class="group md:col-span-2 lg:col-span-2 bg-gradient-to-br from-ancient-ink to-[#2a2b4a] rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition" href="/messages/christmas-2025.html">
+<div class="grid md:grid-cols-2 h-full">
+<div class="relative aspect-video md:aspect-auto">
+<img alt="The Christmas Story" class="w-full h-full object-cover" src="https://img.youtube.com/vi/qr2UckCjCbQ/maxresdefault.jpg"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition flex items-center justify-center">
+<div class="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition">
+<svg class="w-5 h-5 text-red-600 ml-0.5" fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+</div>
+<span class="absolute top-3 left-3 px-3 py-1 bg-red-600 text-white text-xs font-medium rounded-full flex items-center gap-1">
+<span class="text-heritage-gold">★</span> Christmas 2025
+                            </span>
+</div>
+<div class="p-6 md:p-8 flex flex-col justify-center text-white">
+<span class="text-xs text-gray-400 uppercase tracking-wide mb-2">Featured Message</span>
+<h3 class="font-serif text-2xl font-bold mb-2 group-hover:text-heritage-gold transition">The Christmas Story</h3>
+<p class="text-heritage-gold font-medium text-sm mb-3">Matthew 2:23</p>
+<p class="text-gray-300 text-sm leading-relaxed line-clamp-3">The Son of God became of no significance to overcome evil and to bring salvation for all those who put their trust in Him.</p>
+<div class="mt-4 flex items-center gap-2 text-xs text-gray-400">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                                Steve Dulwich
+                            </div>
+</div>
+</div>
+</a>
+<!-- John 9 Message -->
+<a class="group bg-white rounded-2xl border border-gray-200 overflow-hidden hover:border-heritage-gold hover:shadow-lg transition" href="/messages/john9-sermon.html">
+<div class="relative aspect-video">
+<img alt="John 9 Sermon" class="w-full h-full object-cover" src="https://img.youtube.com/vi/CcCdo4RybtA/maxresdefault.jpg"/>
+<div class="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition flex items-center justify-center">
+<div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition">
+<svg class="w-4 h-4 text-ancient-ink ml-0.5" fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+</div>
+<span class="absolute top-3 left-3 px-2 py-1 bg-ancient-ink text-white text-xs font-medium rounded">
+                            Gospel of John
+                        </span>
+</div>
+<div class="p-5">
+<h3 class="font-bold text-ancient-ink mb-1 group-hover:text-heritage-gold transition">Jesus Heals the Man Born Blind</h3>
+<p class="text-heritage-gold text-sm font-medium mb-2">John 9:1-41</p>
+<p class="text-gray-600 text-sm line-clamp-2">A powerful message about faith, light, and the transforming power of Christ.</p>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- Who Is This For? -->
+<section class="bg-parchment py-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-12">
+<p class="text-heritage-gold text-sm font-medium tracking-wide uppercase mb-2">Who Is This For?</p>
+<h2 class="font-serif text-3xl sm:text-4xl text-ancient-ink mb-4">Resources for Every Stage of Faith</h2>
+</div>
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="text-center p-6">
+<div class="w-16 h-16 bg-parchment rounded-full flex items-center justify-center text-3xl mx-auto mb-4">🌱</div>
+<h3 class="font-semibold text-ancient-ink mb-2">New Believers</h3>
+<p class="text-gray-600 text-sm">Start with our Foundation courses to build a solid understanding of salvation, the cross, and who Jesus is.</p>
+</div>
+<div class="text-center p-6">
+<div class="w-16 h-16 bg-parchment rounded-full flex items-center justify-center text-3xl mx-auto mb-4">📖</div>
+<h3 class="font-semibold text-ancient-ink mb-2">Personal Study</h3>
+<p class="text-gray-600 text-sm">Deepen your understanding with daily verses, classic Christian authors, and in-depth courses on prayer and worship.</p>
+</div>
+<div class="text-center p-6">
+<div class="w-16 h-16 bg-parchment rounded-full flex items-center justify-center text-3xl mx-auto mb-4">👥</div>
+<h3 class="font-semibold text-ancient-ink mb-2">Group Leaders</h3>
+<p class="text-gray-600 text-sm">Use our structured courses for small groups, Bible studies, or Sunday school classes. Downloadable PDFs included.</p>
+</div>
+<div class="text-center p-6">
+<div class="w-16 h-16 bg-parchment rounded-full flex items-center justify-center text-3xl mx-auto mb-4">🎓</div>
+<h3 class="font-semibold text-ancient-ink mb-2">Pastors &amp; Teachers</h3>
+<p class="text-gray-600 text-sm">Greek word studies, church history, and original teaching materials to enrich your ministry and sermon preparation.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Get Started Section -->
+<section class="py-16 sm:py-20 bg-parchment" id="get-started">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-12">
+<p class="text-living-sage text-sm font-medium tracking-wide uppercase mb-2">How to Begin</p>
+<h2 class="font-serif text-3xl sm:text-4xl text-ancient-ink mb-4">Choose Your Path</h2>
+<p class="text-gray-600 max-w-xl mx-auto">Not sure where to start? Here are our most popular starting points.</p>
+</div>
+<div class="grid md:grid-cols-3 gap-8">
+<!-- Path 1: Foundation -->
+<div class="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg transition">
+<div class="bg-ancient-ink text-white p-6">
+<div class="text-heritage-gold text-sm font-medium mb-2">Recommended for New Believers</div>
+<h3 class="font-serif text-2xl">Start with the Foundations</h3>
+</div>
+<div class="p-6">
+<p class="text-gray-600 mb-6">Begin with "The Cross" course—10 lessons on the central message of the Bible and what Christ accomplished for us.</p>
+<a class="block w-full text-center bg-heritage-gold text-ancient-ink py-3 rounded-lg font-semibold hover:bg-heritage-gold/90 transition" href="/courses/foundation/the-cross/index.html">
+                            Start The Cross Course
+                        </a>
+</div>
+</div>
+<!-- Path 2: Daily Devotion -->
+<div class="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg transition">
+<div class="bg-living-sage text-white p-6">
+<div class="text-white/80 text-sm font-medium mb-2">For Daily Encouragement</div>
+<h3 class="font-serif text-2xl">Read Today's Verse</h3>
+</div>
+<div class="p-6">
+<p class="text-gray-600 mb-6">Get a fresh Scripture each day with devotional thoughts. Perfect for starting your morning with God's Word.</p>
+<a class="block w-full text-center bg-living-sage text-white py-3 rounded-lg font-semibold hover:bg-living-sage/90 transition" href="/dailyverses.html">
+                            View Daily Verses
+                        </a>
+</div>
+</div>
+<!-- Path 3: Browse All -->
+<div class="bg-white rounded-2xl overflow-hidden border border-gray-200 hover:shadow-lg transition">
+<div class="bg-heritage-gold text-ancient-ink p-6">
+<div class="text-ancient-ink/70 text-sm font-medium mb-2">For Experienced Students</div>
+<h3 class="font-serif text-2xl">Explore All Courses</h3>
+</div>
+<div class="p-6">
+<p class="text-gray-600 mb-6">Browse our full library of 20+ courses across doctrine, Christian living, history, and biblical languages.</p>
+<a class="block w-full text-center bg-ancient-ink text-white py-3 rounded-lg font-semibold hover:bg-ancient-ink/90 transition" href="/courses.html">
+                            Browse All Courses
+                        </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Course Categories Preview -->
+<section class="py-16 sm:py-20 bg-white">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-12">
+<p class="text-heritage-gold text-sm font-medium tracking-wide uppercase mb-2">Course Categories</p>
+<h2 class="font-serif text-3xl sm:text-4xl text-ancient-ink mb-4">Structured Biblical Learning</h2>
+<p class="text-gray-600 max-w-xl mx-auto">Courses organized into four tracks—each building on the next.</p>
+</div>
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Foundation -->
+<a class="group block bg-parchment rounded-xl p-6 border border-gray-200 hover:border-heritage-gold transition" href="/courses.html#foundation">
+<div class="w-12 h-12 bg-ancient-ink text-heritage-gold rounded-lg flex items-center justify-center text-xl mb-4">🏛️</div>
+<h3 class="font-serif text-lg text-ancient-ink mb-2 group-hover:text-heritage-gold transition">Foundation</h3>
+<p class="text-gray-600 text-sm mb-3">Essential doctrines every believer should know.</p>
+<div class="text-xs text-gray-500">The Cross • Salvation • Son of God • Eternal Security</div>
+</a>
+<!-- Christian Life -->
+<a class="group block bg-parchment rounded-xl p-6 border border-gray-200 hover:border-living-sage transition" href="/courses.html#christian-life">
+<div class="w-12 h-12 bg-living-sage text-white rounded-lg flex items-center justify-center text-xl mb-4">🌱</div>
+<h3 class="font-serif text-lg text-ancient-ink mb-2 group-hover:text-living-sage transition">Christian Life</h3>
+<p class="text-gray-600 text-sm mb-3">Practical growth and spiritual disciplines.</p>
+<div class="text-xs text-gray-500">Prayer • Worship • Armour of God • Fruit of Spirit</div>
+</a>
+<!-- History -->
+<a class="group block bg-parchment rounded-xl p-6 border border-gray-200 hover:border-heritage-gold transition" href="/courses.html#history">
+<div class="w-12 h-12 bg-heritage-gold text-ancient-ink rounded-lg flex items-center justify-center text-xl mb-4">📜</div>
+<h3 class="font-serif text-lg text-ancient-ink mb-2 group-hover:text-heritage-gold transition">History</h3>
+<p class="text-gray-600 text-sm mb-3">The story of the Church through the ages.</p>
+<div class="text-xs text-gray-500">Church History • Modern Missions • Pentecostalism</div>
+</a>
+<!-- Languages -->
+<a class="group block bg-parchment rounded-xl p-6 border border-gray-200 hover:border-ancient-ink transition" href="/courses.html#languages">
+<div class="w-12 h-12 bg-gray-700 text-white rounded-lg flex items-center justify-center text-xl mb-4">🔤</div>
+<h3 class="font-serif text-lg text-ancient-ink mb-2 group-hover:text-gray-700 transition">Languages</h3>
+<p class="text-gray-600 text-sm mb-3">Greek and Hebrew word studies.</p>
+<div class="text-xs text-gray-500">Greek Words • Hebrew Alphabet • Original Meanings</div>
+</a>
+</div>
+</div>
+</section>
+<!-- Classic Authors -->
+<section class="py-16 sm:py-20 bg-parchment">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-12">
+<p class="text-heritage-gold text-sm font-medium tracking-wide uppercase mb-2">Timeless Wisdom</p>
+<h2 class="font-serif text-3xl sm:text-4xl text-ancient-ink mb-4">Classic Christian Authors</h2>
+<p class="text-gray-600">Writings from great men of faith—digitized and free to read.</p>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
+<a class="group text-center p-4 bg-white rounded-xl border border-gray-200 hover:border-heritage-gold hover:shadow-lg transition" href="/books/john-newton/index.html">
+<img alt="John Newton" class="w-20 h-20 rounded-full object-cover mx-auto mb-3 border-2 border-heritage-gold" src="/images/authors/john-newton.jpg"/>
+<h3 class="font-serif text-ancient-ink font-medium group-hover:text-heritage-gold transition">John Newton</h3>
+<p class="text-xs text-gray-500 mt-1">Letters &amp; Hymns</p>
+</a>
+<a class="group text-center p-4 bg-white rounded-xl border border-gray-200 hover:border-heritage-gold hover:shadow-lg transition" href="/books/john-bunyan/index.html">
+<img alt="John Bunyan" class="w-20 h-20 rounded-full object-cover mx-auto mb-3 border-2 border-heritage-gold" src="/images/authors/john-bunyan.jpg"/>
+<h3 class="font-serif text-ancient-ink font-medium group-hover:text-heritage-gold transition">John Bunyan</h3>
+<p class="text-xs text-gray-500 mt-1">Pilgrim's Progress</p>
+</a>
+<a class="group text-center p-4 bg-white rounded-xl border border-gray-200 hover:border-heritage-gold hover:shadow-lg transition" href="/luther.html">
+<img alt="Martin Luther" class="w-20 h-20 rounded-full object-cover mx-auto mb-3 border-2 border-heritage-gold" src="/images/authors/martin-luther.jpg"/>
+<h3 class="font-serif text-ancient-ink font-medium group-hover:text-heritage-gold transition">Martin Luther</h3>
+<p class="text-xs text-gray-500 mt-1">Reformation</p>
+</a>
+<a class="group text-center p-4 bg-white rounded-xl border border-gray-200 hover:border-heritage-gold hover:shadow-lg transition" href="/books/william-gurnall/index.html">
+<img alt="William Gurnall" class="w-20 h-20 rounded-full object-cover mx-auto mb-3 border-2 border-heritage-gold" src="/images/authors/william-gurnall.jpg"/>
+<h3 class="font-serif text-ancient-ink font-medium group-hover:text-heritage-gold transition">William Gurnall</h3>
+<p class="text-xs text-gray-500 mt-1">Christian Armour</p>
+</a>
+<a class="group text-center p-4 bg-white rounded-xl border border-gray-200 hover:border-heritage-gold hover:shadow-lg transition col-span-2 sm:col-span-1" href="/books/ra-torrey/index.html">
+<img alt="R.A. Torrey" class="w-20 h-20 rounded-full object-cover mx-auto mb-3 border-2 border-heritage-gold" src="/images/authors/ra-torrey.jpg"/>
+<h3 class="font-serif text-ancient-ink font-medium group-hover:text-heritage-gold transition">R.A. Torrey</h3>
+<p class="text-xs text-gray-500 mt-1">How to Pray</p>
+</a>
+</div>
+<div class="text-center mt-8">
+<a class="inline-flex items-center gap-2 text-heritage-gold font-medium hover:underline" href="/books.html">
+                    View All Books &amp; Authors
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+</div>
+</section>
+<!-- Featured: Higher Calling -->
+<section class="bg-ancient-ink py-16">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid lg:grid-cols-2 gap-10 items-center">
+<div class="text-center lg:text-left">
+<p class="text-heritage-gold text-sm font-medium tracking-wide uppercase mb-3">Featured Book</p>
+<h2 class="font-serif text-3xl sm:text-4xl text-white mb-3">The Higher Calling to Worship</h2>
+<p class="text-xl text-heritage-gold italic mb-2">"The Father is seeking worshippers"</p>
+<p class="text-gray-400 text-sm mb-6">by Steve Dulwich • 15 Chapters</p>
+<p class="text-gray-300 mb-8 leading-relaxed">
+                        A deep exploration of what it means to be a true worshipper. Discover the Father's heart for those who worship Him in spirit and in truth.
+                    </p>
+<div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+<a class="btn-glossy-gold px-6 py-3 text-ancient-ink rounded-lg font-medium" href="/books/higher-calling/index.html">
+                            Read Book
+                        </a>
+<a class="btn-outline px-6 py-3 border border-gray-600 text-gray-300 rounded-lg font-medium hover:border-heritage-gold hover:text-heritage-gold transition" href="/books/higher-calling/introduction.html">
+                            Read Introduction
+                        </a>
+</div>
+</div>
+<div class="hidden lg:flex justify-center">
+<img alt="The Higher Calling to Worship book cover" class="w-64 rounded-lg shadow-2xl" src="/images/higher-calling-cover.png"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Mission Story -->
+<section class="py-16 bg-white">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid lg:grid-cols-2 gap-10 items-center">
+<div class="hidden lg:block">
+<img alt="Faroe Islands landscape" class="w-full rounded-xl shadow-lg" src="/books/isaac-sharp/dalur.jpg"/>
+</div>
+<div class="text-center lg:text-left">
+<p class="text-living-sage text-sm font-medium tracking-wide uppercase mb-3">Historical Mission</p>
+<h2 class="font-serif text-3xl sm:text-4xl text-ancient-ink mb-4">Mission to the Faroe Islands</h2>
+<p class="text-gray-600 mb-6 leading-relaxed">
+                        The inspiring story of Isaac Sharp and Asbjorn Kloster's 8-week mission to all 17 inhabited Faroe Islands in 1862. One third of the entire population attended their meetings—a remarkable move of God in a remote corner of the world.
+                    </p>
+<div class="bg-parchment rounded-xl p-4 border border-gray-200 mb-6 inline-block">
+<div class="grid grid-cols-3 gap-8 text-center">
+<div>
+<div class="text-2xl font-bold text-ancient-ink">17</div>
+<div class="text-xs text-gray-500">Islands Visited</div>
+</div>
+<div>
+<div class="text-2xl font-bold text-ancient-ink">8</div>
+<div class="text-xs text-gray-500">Weeks</div>
+</div>
+<div>
+<div class="text-2xl font-bold text-ancient-ink">1862</div>
+<div class="text-xs text-gray-500">Year</div>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-4 justify-center lg:justify-start">
+<a class="bg-ancient-ink text-white px-5 py-2.5 rounded-lg font-medium hover:bg-ancient-ink/90 transition" href="/books/isaac-sharp/journal.html">
+                            Read the Journal
+                        </a>
+<a class="border border-gray-300 text-gray-700 px-5 py-2.5 rounded-lg font-medium hover:border-heritage-gold transition" href="/books/isaac-sharp/index.html">
+                            Day by Day Account
+                        </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Ministry Philosophy -->
+<section class="bg-ancient-ink py-16">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<p class="text-heritage-gold text-sm font-medium tracking-wide uppercase mb-4">Our Heart</p>
+<h2 class="font-serif text-3xl sm:text-4xl text-white mb-8">What We Believe In</h2>
+<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 text-left mb-10">
+<div class="bg-white/5 rounded-xl p-5 border border-white/10">
+<p class="text-white"><span class="text-heritage-gold">✦</span> Church without walls</p>
+</div>
+<div class="bg-white/5 rounded-xl p-5 border border-white/10">
+<p class="text-white"><span class="text-heritage-gold">✦</span> Worship without rituals</p>
+</div>
+<div class="bg-white/5 rounded-xl p-5 border border-white/10">
+<p class="text-white"><span class="text-heritage-gold">✦</span> Truth without compromise</p>
+</div>
+<div class="bg-white/5 rounded-xl p-5 border border-white/10">
+<p class="text-white"><span class="text-heritage-gold">✦</span> Love without prejudice</p>
+</div>
+<div class="bg-white/5 rounded-xl p-5 border border-white/10">
+<p class="text-white"><span class="text-heritage-gold">✦</span> Grace without merit</p>
+</div>
+<div class="bg-white/5 rounded-xl p-5 border border-white/10">
+<p class="text-white"><span class="text-heritage-gold">✦</span> Salvation without works</p>
+</div>
+</div>
+<div class="pt-8 border-t border-white/10">
+<p class="text-gray-400 italic text-lg mb-2">
+                    "The most important qualification for ministry is love—
+                </p>
+<p class="text-heritage-gold italic text-lg">
+                    love for Christ, love for His word, love for His people, and love for the lost."
+                </p>
+<p class="text-gray-500 text-sm mt-4">— Bible Teaching Program</p>
+</div>
+</div>
+</section>
+<!-- Quick Stats Bar -->
+<section class="bg-white py-10 border-t border-gray-100">
+<div class="max-w-5xl mx-auto px-4">
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
+<div>
+<div class="text-3xl font-bold text-ancient-ink">20+</div>
+<div class="text-sm text-gray-500">Bible Courses</div>
+</div>
+<div>
+<div class="text-3xl font-bold text-ancient-ink">100+</div>
+<div class="text-sm text-gray-500">Individual Lessons</div>
+</div>
+<div>
+<div class="text-3xl font-bold text-ancient-ink">300+</div>
+<div class="text-sm text-gray-500">Daily Devotions</div>
+</div>
+<div>
+<div class="text-3xl font-bold text-ancient-ink">66</div>
+<div class="text-sm text-gray-500">Bible Books</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Final CTA -->
+<section class="bg-parchment py-16">
+<div class="max-w-3xl mx-auto px-4 text-center">
+<h2 class="font-serif text-3xl text-ancient-ink mb-4">Ready to Begin?</h2>
+<p class="text-gray-600 mb-8">All resources are completely free. No registration required. Just open your Bible and start learning.</p>
+<div class="flex flex-wrap justify-center gap-4">
+<a class="bg-heritage-gold text-ancient-ink px-8 py-4 rounded-lg font-semibold hover:bg-heritage-gold/90 transition" href="/courses.html">
+                    Browse All Courses
+                </a>
+<a class="bg-ancient-ink text-white px-8 py-4 rounded-lg font-semibold hover:bg-ancient-ink/90 transition" href="/dailyverses.html">
+                    Today's Verse
+                </a>
+</div>
+</div>
+</section>
+<!-- Footer (loaded from component) -->
+<div id="footer-placeholder"></div>
+<!-- Scripts -->
+<script src="/js/components.js"></script>
+<script src="/js/daily-verse.js"></script>
+<script>
+        // Hero verse (simple rotation based on day)
         document.addEventListener('DOMContentLoaded', function() {
-            startAutoSlide();
-
-            // Add touch events to hero slider
-            var heroSlider = document.getElementById('heroSlider');
-            if (heroSlider) {
-                heroSlider.addEventListener('touchstart', function(e) {
-                    touchStartX = e.changedTouches[0].screenX;
-                }, { passive: true });
-
-                heroSlider.addEventListener('touchend', function(e) {
-                    touchEndX = e.changedTouches[0].screenX;
-                    handleSwipe();
-                }, { passive: true });
-            }
-
-            // Populate hero verse
-            var today = new Date();
-            var month = today.getMonth() + 1;
-            var day = today.getDate();
-
-            var heroVerses = [
+            var verses = [
                 { text: "Trust in the LORD with all thine heart; and lean not unto thine own understanding.", ref: "Proverbs 3:5" },
                 { text: "I can do all things through Christ which strengtheneth me.", ref: "Philippians 4:13" },
                 { text: "The LORD is my shepherd; I shall not want.", ref: "Psalm 23:1" },
                 { text: "Be still, and know that I am God.", ref: "Psalm 46:10" },
-                { text: "For God so loved the world, that he gave his only begotten Son.", ref: "John 3:16" }
+                { text: "For God so loved the world, that he gave his only begotten Son.", ref: "John 3:16" },
+                { text: "Thy word is a lamp unto my feet, and a light unto my path.", ref: "Psalm 119:105" },
+                { text: "The LORD is my light and my salvation; whom shall I fear?", ref: "Psalm 27:1" }
             ];
 
-            var verseIndex = (month + day) % heroVerses.length;
-            var verse = heroVerses[verseIndex];
+            var today = new Date();
+            var dayOfYear = Math.floor((today - new Date(today.getFullYear(), 0, 0)) / 86400000);
+            var verse = verses[dayOfYear % verses.length];
 
             document.getElementById('hero-verse-text').textContent = '"' + verse.text + '"';
             document.getElementById('hero-verse-ref').textContent = '— ' + verse.ref;
         });
+
+        // Hero Carousel
+        (function() {
+            const slides = document.querySelectorAll('.hero-slide');
+            const dots = document.querySelectorAll('.hero-dot');
+            const prevBtn = document.querySelector('.hero-prev');
+            const nextBtn = document.querySelector('.hero-next');
+            const progressBar = document.querySelector('.hero-progress');
+            const carousel = document.getElementById('hero-carousel');
+
+            let currentSlide = 0;
+            let autoPlayInterval;
+            let progressInterval;
+            let progress = 0;
+            const slideDuration = 6000; // 6 seconds per slide
+            const progressStep = 50; // Update every 50ms
+
+            function goToSlide(index, direction = 'next') {
+                if (index === currentSlide) return;
+
+                // Reset progress
+                progress = 0;
+                progressBar.style.width = '0%';
+
+                // Determine direction
+                const isNext = direction === 'next' || index > currentSlide;
+
+                // Animate out current slide
+                slides[currentSlide].classList.remove('active');
+                slides[currentSlide].style.opacity = '0';
+                slides[currentSlide].style.transform = isNext ? 'translateX(-50px)' : 'translateX(50px)';
+                slides[currentSlide].style.zIndex = '0';
+
+                // Animate in new slide
+                slides[index].style.transform = isNext ? 'translateX(50px)' : 'translateX(-50px)';
+                slides[index].style.opacity = '0';
+                slides[index].style.zIndex = '10';
+
+                // Trigger reflow
+                slides[index].offsetHeight;
+
+                // Apply transition
+                slides[index].style.transform = 'translateX(0)';
+                slides[index].style.opacity = '1';
+                slides[index].classList.add('active');
+
+                // Update dots
+                dots.forEach((dot, i) => {
+                    if (i === index) {
+                        dot.classList.remove('bg-white/40');
+                        dot.classList.add('bg-white');
+                        dot.style.transform = 'scale(1.2)';
+                    } else {
+                        dot.classList.remove('bg-white');
+                        dot.classList.add('bg-white/40');
+                        dot.style.transform = 'scale(1)';
+                    }
+                });
+
+                currentSlide = index;
+            }
+
+            function nextSlide() {
+                const next = (currentSlide + 1) % slides.length;
+                goToSlide(next, 'next');
+            }
+
+            function prevSlide() {
+                const prev = (currentSlide - 1 + slides.length) % slides.length;
+                goToSlide(prev, 'prev');
+            }
+
+            function startAutoPlay() {
+                stopAutoPlay();
+                progressInterval = setInterval(() => {
+                    progress += (progressStep / slideDuration) * 100;
+                    progressBar.style.width = Math.min(progress, 100) + '%';
+
+                    if (progress >= 100) {
+                        nextSlide();
+                    }
+                }, progressStep);
+            }
+
+            function stopAutoPlay() {
+                clearInterval(progressInterval);
+                progress = 0;
+            }
+
+            function resetAutoPlay() {
+                progress = 0;
+                progressBar.style.width = '0%';
+                startAutoPlay();
+            }
+
+            // Initialize first slide
+            slides[0].classList.add('active');
+            dots[0].style.transform = 'scale(1.2)';
+
+            // Event listeners
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                resetAutoPlay();
+            });
+
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                resetAutoPlay();
+            });
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    const direction = index > currentSlide ? 'next' : 'prev';
+                    goToSlide(index, direction);
+                    resetAutoPlay();
+                });
+            });
+
+            // Pause on hover (desktop)
+            carousel.addEventListener('mouseenter', stopAutoPlay);
+            carousel.addEventListener('mouseleave', startAutoPlay);
+
+            // Touch/swipe support for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+            const minSwipeDistance = 50;
+
+            carousel.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+                stopAutoPlay();
+            }, { passive: true });
+
+            carousel.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const swipeDistance = touchEndX - touchStartX;
+
+                if (Math.abs(swipeDistance) > minSwipeDistance) {
+                    if (swipeDistance > 0) {
+                        prevSlide();
+                    } else {
+                        nextSlide();
+                    }
+                }
+                resetAutoPlay();
+            }, { passive: true });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') {
+                    prevSlide();
+                    resetAutoPlay();
+                } else if (e.key === 'ArrowRight') {
+                    nextSlide();
+                    resetAutoPlay();
+                }
+            });
+
+            // Pause when tab is not visible
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) {
+                    stopAutoPlay();
+                } else {
+                    startAutoPlay();
+                }
+            });
+
+            // Start autoplay
+            startAutoPlay();
+        })();
     </script>
 </body>
 </html>

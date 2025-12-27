@@ -1,798 +1,665 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="New Testament - King James Version. Browse the 27 books from Matthew to Revelation.">
-    <title>New Testament | Bible Teaching Program</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
+<html class="scroll-smooth" lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-09FW4XY50E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-09FW4XY50E');
+</script>
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="New Testament - King James Version. Browse the 27 books from Matthew to Revelation." name="description"/>
+<title>New Testament | Bible Teaching Program</title><meta content="website" property="og:type"/><meta content="https://bibleteachingprogram.org/biblent.html" property="og:url"/><meta content="New Testament | Bible Teaching Program" property="og:title"/><meta content="New Testament - King James Version. Browse the 27 books from Matthew to Revelation." property="og:description"/><meta content="https://bibleteachingprogram.org/images/hero-banner.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="New Testament | Bible Teaching Program" name="twitter:title"/><meta content="New Testament - King James Version. Browse the 27 books from Matthew to Revelation." name="twitter:description"/><meta content="https://bibleteachingprogram.org/images/hero-banner.png" name="twitter:image"/>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind with Brand Colors -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'primary': {
-                            '50': '#f0f7ff',
-                            '100': '#e0effe',
-                            '600': '#006fc7',
-                            '700': '#0058a2',
-                            '800': '#004a85',
-                            '900': '#003d6e',
-                        }
+                        'ancient-ink': '#1C1D37',
+                        'heritage-gold': '#CBA378',
+                        'living-sage': '#7F9A83',
+                        'parchment': '#F9F7F2',
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'Georgia', 'serif'],
                     }
                 }
             }
         }
     </script>
+<link href="/css/brand.css" rel="stylesheet"/>
 </head>
-<body class="bg-gray-50">
-
-    <!-- Navigation -->
-    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex items-center gap-6">
-                    <a href="/" class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-primary-700 text-white rounded-lg flex items-center justify-center font-bold text-lg">
-                            BTP
-                        </div>
-                        <div class="hidden md:block">
-                            <div class="font-bold text-lg text-gray-900">Bible Teaching Program</div>
-                            <div class="text-xs text-gray-600">Biblical Education & Courses</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="flex items-center gap-4">
-                    <a href="/" class="text-sm font-medium text-gray-700 hover:text-primary-700 transition">Home</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Breadcrumbs -->
-    <div class="bg-white border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-            <nav class="flex items-center gap-2 text-sm flex-wrap">
-                <a href="/" class="text-gray-600 hover:text-primary-700 transition">Home</a>
-                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                </svg>
-                <a href="/bible.html" class="text-gray-600 hover:text-primary-700 transition">Bible (KJV)</a>
-                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                </svg>
-                <span class="text-gray-900 font-medium">New Testament</span>
-            </nav>
-        </div>
-    </div>
-
-    <!-- Hero Section -->
-    <section class="bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white py-16">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row items-center gap-8">
-                <div class="flex-1">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/15 backdrop-blur-sm rounded-full text-sm mb-4 border border-white/20">
-                        <span class="w-2 h-2 bg-green-400 rounded-full"></span>
-                        <span>27 Books Available</span>
-                    </div>
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4">The New Testament</h1>
-                    <p class="text-xl text-white/90 mb-2">King James Version</p>
-                    <p class="text-white/70 max-w-xl">
+<body class="bg-parchment">
+<!-- Navigation (loaded from component) -->
+<div id="nav-placeholder"></div>
+<!-- Breadcrumbs -->
+<div class="bg-white border-b border-gray-100">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+<nav class="flex items-center gap-2 text-sm flex-wrap">
+<a class="text-gray-600 hover:text-heritage-gold transition" href="/">Home</a>
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<a class="text-gray-600 hover:text-heritage-gold transition" href="/bible/index.html">Bible (KJV)</a>
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="text-gray-900 font-medium">New Testament</span>
+</nav>
+</div>
+</div>
+<!-- Hero Section -->
+<section class="bg-ancient-ink text-white py-16">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col lg:flex-row items-center gap-8">
+<div class="flex-1">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-white/15 backdrop-blur-sm rounded-full text-sm mb-4 border border-white/20">
+<span class="w-2 h-2 bg-green-400 rounded-full"></span>
+<span>27 Books Available</span>
+</div>
+<h1 class="text-4xl md:text-5xl font-bold mb-4">The New Testament</h1>
+<p class="text-xl text-white/90 mb-2">King James Version</p>
+<p class="text-white/70 max-w-xl">
                         The fulfillment of God's promises through Jesus Christ. From the Gospels through Revelation,
                         discover the life of Christ, the birth of the Church, and the hope of His glorious return.
                     </p>
-                </div>
-                <div class="w-32 h-32 bg-white/15 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/20 shadow-lg">
-                    <span class="text-6xl">✨</span>
-                </div>
-            </div>
-
-            <!-- Stats -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
-                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/10">
-                    <div class="text-3xl font-bold">27</div>
-                    <div class="text-sm text-white/70">Books</div>
-                </div>
-                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/10">
-                    <div class="text-3xl font-bold">260</div>
-                    <div class="text-sm text-white/70">Chapters</div>
-                </div>
-                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/10">
-                    <div class="text-3xl font-bold">7,957</div>
-                    <div class="text-sm text-white/70">Verses</div>
-                </div>
-                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/10">
-                    <div class="text-3xl font-bold">5</div>
-                    <div class="text-sm text-white/70">Categories</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Quick Jump Navigation -->
-    <div class="bg-white border-b border-gray-200 sticky top-16 z-40 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center gap-2 py-3 overflow-x-auto">
-                <span class="text-sm text-gray-500 font-medium whitespace-nowrap">Jump to:</span>
-                <a href="#gospels" class="px-3 py-1.5 bg-primary-50 text-primary-700 rounded-full text-sm font-medium hover:bg-primary-100 transition whitespace-nowrap">Gospels</a>
-                <a href="#history" class="px-3 py-1.5 bg-primary-50 text-primary-700 rounded-full text-sm font-medium hover:bg-primary-100 transition whitespace-nowrap">History</a>
-                <a href="#pauline" class="px-3 py-1.5 bg-primary-50 text-primary-700 rounded-full text-sm font-medium hover:bg-primary-100 transition whitespace-nowrap">Pauline Epistles</a>
-                <a href="#general" class="px-3 py-1.5 bg-primary-50 text-primary-700 rounded-full text-sm font-medium hover:bg-primary-100 transition whitespace-nowrap">General Epistles</a>
-                <a href="#prophecy" class="px-3 py-1.5 bg-primary-50 text-primary-700 rounded-full text-sm font-medium hover:bg-primary-100 transition whitespace-nowrap">Prophecy</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Main Content -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-
-        <!-- Gospels Section -->
-        <section id="gospels" class="mb-12 scroll-mt-32">
-            <div class="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
-                <div class="bg-gradient-to-r from-primary-50 to-primary-100 p-6 border-b border-primary-200">
-                    <div class="flex items-center gap-4">
-                        <div class="w-14 h-14 bg-primary-600 text-white rounded-xl flex items-center justify-center text-3xl shadow-md">
+</div>
+<div class="w-32 h-32 bg-white/15 backdrop-blur-sm rounded-2xl flex items-center justify-center border border-white/20 shadow-lg">
+<span class="text-6xl">✨</span>
+</div>
+</div>
+<!-- Stats -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
+<div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/10">
+<div class="text-3xl font-bold">27</div>
+<div class="text-sm text-white/70">Books</div>
+</div>
+<div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/10">
+<div class="text-3xl font-bold">260</div>
+<div class="text-sm text-white/70">Chapters</div>
+</div>
+<div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/10">
+<div class="text-3xl font-bold">7,957</div>
+<div class="text-sm text-white/70">Verses</div>
+</div>
+<div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 text-center border border-white/10">
+<div class="text-3xl font-bold">5</div>
+<div class="text-sm text-white/70">Categories</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Jump Navigation -->
+<div class="bg-white border-b border-gray-200 sticky top-16 z-40 shadow-sm">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center gap-2 py-3 overflow-x-auto">
+<span class="text-sm text-gray-500 font-medium whitespace-nowrap">Jump to:</span>
+<a class="px-3 py-1.5 bg-parchment text-heritage-gold rounded-full text-sm font-medium hover:bg-parchment transition whitespace-nowrap" href="#gospels">Gospels</a>
+<a class="px-3 py-1.5 bg-parchment text-heritage-gold rounded-full text-sm font-medium hover:bg-parchment transition whitespace-nowrap" href="#history">History</a>
+<a class="px-3 py-1.5 bg-parchment text-heritage-gold rounded-full text-sm font-medium hover:bg-parchment transition whitespace-nowrap" href="#pauline">Pauline Epistles</a>
+<a class="px-3 py-1.5 bg-parchment text-heritage-gold rounded-full text-sm font-medium hover:bg-parchment transition whitespace-nowrap" href="#general">General Epistles</a>
+<a class="px-3 py-1.5 bg-parchment text-heritage-gold rounded-full text-sm font-medium hover:bg-parchment transition whitespace-nowrap" href="#prophecy">Prophecy</a>
+</div>
+</div>
+</div>
+<!-- Main Content -->
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- Gospels Section -->
+<section class="mb-12 scroll-mt-32" id="gospels">
+<div class="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+<div class="bg-parchment p-6 border-b border-heritage-gold/30">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 bg-ancient-ink text-white rounded-xl flex items-center justify-center text-3xl shadow-md">
                             📕
                         </div>
-                        <div>
-                            <h2 class="text-2xl font-bold text-gray-900">The Gospels</h2>
-                            <p class="text-primary-700">4 Books - The Life of Christ</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <p class="text-gray-600 mb-6">
+<div>
+<h2 class="text-2xl font-bold text-gray-900">The Gospels</h2>
+<p class="text-heritage-gold">4 Books - The Life of Christ</p>
+</div>
+</div>
+</div>
+<div class="p-6">
+<p class="text-gray-600 mb-6">
                         Four unique accounts of Jesus Christ's life, ministry, death, and resurrection. Each Gospel
                         presents a distinct perspective: Matthew for the Jews, Mark for the Romans, Luke for the Greeks,
                         and John for all believers.
                     </p>
-                    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                        <a href="/bible-reader.html?pdf=/ntkjv/mattkjvwd.pdf" class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-400 hover:bg-primary-50 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-3">
-                                <div class="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                                    </svg>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-gray-900 group-hover:text-primary-700 transition">Matthew</h3>
-                                    <p class="text-xs text-gray-500 mt-0.5">28 Chapters</p>
-                                    <p class="text-xs text-primary-600 mt-1">Jesus as King</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/bible-reader.html?pdf=/ntkjv/markkjvwd.pdf" class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-400 hover:bg-primary-50 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-3">
-                                <div class="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                                    </svg>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-gray-900 group-hover:text-primary-700 transition">Mark</h3>
-                                    <p class="text-xs text-gray-500 mt-0.5">16 Chapters</p>
-                                    <p class="text-xs text-primary-600 mt-1">Jesus as Servant</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/bible-reader.html?pdf=/ntkjv/lukekjvwd.pdf" class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-400 hover:bg-primary-50 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-3">
-                                <div class="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                                    </svg>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-gray-900 group-hover:text-primary-700 transition">Luke</h3>
-                                    <p class="text-xs text-gray-500 mt-0.5">24 Chapters</p>
-                                    <p class="text-xs text-primary-600 mt-1">Jesus as Man</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/bible-reader.html?pdf=/ntkjv/johnkjvwd.pdf" class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-400 hover:bg-primary-50 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-3">
-                                <div class="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                                    </svg>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-gray-900 group-hover:text-primary-700 transition">John</h3>
-                                    <p class="text-xs text-gray-500 mt-0.5">21 Chapters</p>
-                                    <p class="text-xs text-primary-600 mt-1">Jesus as God</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- History Section -->
-        <section id="history" class="mb-12 scroll-mt-32">
-            <div class="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
-                <div class="bg-gradient-to-r from-primary-50 to-primary-100 p-6 border-b border-primary-200">
-                    <div class="flex items-center gap-4">
-                        <div class="w-14 h-14 bg-primary-600 text-white rounded-xl flex items-center justify-center text-3xl shadow-md">
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<a class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-heritage-gold hover:bg-parchment hover:shadow-md transition-all" href="/bible-reader.html?pdf=/bible/new-testament/kjv/mattkjvwd.pdf">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 bg-parchment rounded-lg flex items-center justify-center text-ancient-ink group-hover:bg-ancient-ink group-hover:text-white transition">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex-1">
+<h3 class="font-semibold text-gray-900 group-hover:text-heritage-gold transition">Matthew</h3>
+<p class="text-xs text-gray-500 mt-0.5">28 Chapters</p>
+<p class="text-xs text-ancient-ink mt-1">Jesus as King</p>
+</div>
+</div>
+</a>
+<a class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-heritage-gold hover:bg-parchment hover:shadow-md transition-all" href="/bible-reader.html?pdf=/bible/new-testament/kjv/markkjvwd.pdf">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 bg-parchment rounded-lg flex items-center justify-center text-ancient-ink group-hover:bg-ancient-ink group-hover:text-white transition">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex-1">
+<h3 class="font-semibold text-gray-900 group-hover:text-heritage-gold transition">Mark</h3>
+<p class="text-xs text-gray-500 mt-0.5">16 Chapters</p>
+<p class="text-xs text-ancient-ink mt-1">Jesus as Servant</p>
+</div>
+</div>
+</a>
+<a class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-heritage-gold hover:bg-parchment hover:shadow-md transition-all" href="/bible-reader.html?pdf=/bible/new-testament/kjv/lukekjvwd.pdf">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 bg-parchment rounded-lg flex items-center justify-center text-ancient-ink group-hover:bg-ancient-ink group-hover:text-white transition">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex-1">
+<h3 class="font-semibold text-gray-900 group-hover:text-heritage-gold transition">Luke</h3>
+<p class="text-xs text-gray-500 mt-0.5">24 Chapters</p>
+<p class="text-xs text-ancient-ink mt-1">Jesus as Man</p>
+</div>
+</div>
+</a>
+<a class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-heritage-gold hover:bg-parchment hover:shadow-md transition-all" href="/bible-reader.html?pdf=/bible/new-testament/kjv/johnkjvwd.pdf">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 bg-parchment rounded-lg flex items-center justify-center text-ancient-ink group-hover:bg-ancient-ink group-hover:text-white transition">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex-1">
+<h3 class="font-semibold text-gray-900 group-hover:text-heritage-gold transition">John</h3>
+<p class="text-xs text-gray-500 mt-0.5">21 Chapters</p>
+<p class="text-xs text-ancient-ink mt-1">Jesus as God</p>
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- History Section -->
+<section class="mb-12 scroll-mt-32" id="history">
+<div class="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+<div class="bg-parchment p-6 border-b border-heritage-gold/30">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 bg-ancient-ink text-white rounded-xl flex items-center justify-center text-3xl shadow-md">
                             🏛️
                         </div>
-                        <div>
-                            <h2 class="text-2xl font-bold text-gray-900">History</h2>
-                            <p class="text-primary-700">1 Book - The Early Church</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <p class="text-gray-600 mb-6">
+<div>
+<h2 class="text-2xl font-bold text-gray-900">History</h2>
+<p class="text-heritage-gold">1 Book - The Early Church</p>
+</div>
+</div>
+</div>
+<div class="p-6">
+<p class="text-gray-600 mb-6">
                         The Acts of the Apostles chronicles the birth and growth of the early Church, from Pentecost
                         to Paul's imprisonment in Rome. Written by Luke as a sequel to his Gospel.
                     </p>
-                    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                        <a href="/bible-reader.html?pdf=/ntkjv/actskjvwd.pdf" class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-400 hover:bg-primary-50 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-3">
-                                <div class="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                                    </svg>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-gray-900 group-hover:text-primary-700 transition">Acts</h3>
-                                    <p class="text-xs text-gray-500 mt-0.5">28 Chapters</p>
-                                    <p class="text-xs text-primary-600 mt-1">Church History</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Pauline Epistles Section -->
-        <section id="pauline" class="mb-12 scroll-mt-32">
-            <div class="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
-                <div class="bg-gradient-to-r from-primary-50 to-primary-100 p-6 border-b border-primary-200">
-                    <div class="flex items-center gap-4">
-                        <div class="w-14 h-14 bg-primary-600 text-white rounded-xl flex items-center justify-center text-3xl shadow-md">
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<a class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-heritage-gold hover:bg-parchment hover:shadow-md transition-all" href="/bible-reader.html?pdf=/bible/new-testament/kjv/actskjvwd.pdf">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 bg-parchment rounded-lg flex items-center justify-center text-ancient-ink group-hover:bg-ancient-ink group-hover:text-white transition">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex-1">
+<h3 class="font-semibold text-gray-900 group-hover:text-heritage-gold transition">Acts</h3>
+<p class="text-xs text-gray-500 mt-0.5">28 Chapters</p>
+<p class="text-xs text-ancient-ink mt-1">Church History</p>
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Pauline Epistles Section -->
+<section class="mb-12 scroll-mt-32" id="pauline">
+<div class="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+<div class="bg-parchment p-6 border-b border-heritage-gold/30">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 bg-ancient-ink text-white rounded-xl flex items-center justify-center text-3xl shadow-md">
                             ✉️
                         </div>
-                        <div>
-                            <h2 class="text-2xl font-bold text-gray-900">Pauline Epistles</h2>
-                            <p class="text-primary-700">13 Books - Letters from the Apostle Paul</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <p class="text-gray-600 mb-6">
+<div>
+<h2 class="text-2xl font-bold text-gray-900">Pauline Epistles</h2>
+<p class="text-heritage-gold">13 Books - Letters from the Apostle Paul</p>
+</div>
+</div>
+</div>
+<div class="p-6">
+<p class="text-gray-600 mb-6">
                         The letters of Paul to churches and individuals form the doctrinal foundation of Christian
                         theology. From the great treatise of Romans to the personal note to Philemon, these letters
                         guide believers in faith and practice.
                     </p>
-                    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                        <a href="/bible-reader.html?pdf=/ntkjv/romkjvwd.pdf" class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-400 hover:bg-primary-50 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-3">
-                                <div class="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                                    </svg>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-gray-900 group-hover:text-primary-700 transition">Romans</h3>
-                                    <p class="text-xs text-gray-500 mt-0.5">16 Chapters</p>
-                                    <p class="text-xs text-primary-600 mt-1">Gospel Doctrine</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/bible-reader.html?pdf=/ntkjv/1corkjvwd.pdf" class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-400 hover:bg-primary-50 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-3">
-                                <div class="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                                    </svg>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-gray-900 group-hover:text-primary-700 transition">1 Corinthians</h3>
-                                    <p class="text-xs text-gray-500 mt-0.5">16 Chapters</p>
-                                    <p class="text-xs text-primary-600 mt-1">Church Order</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/bible-reader.html?pdf=/ntkjv/2corkjvwd.pdf" class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-400 hover:bg-primary-50 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-3">
-                                <div class="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                                    </svg>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-gray-900 group-hover:text-primary-700 transition">2 Corinthians</h3>
-                                    <p class="text-xs text-gray-500 mt-0.5">13 Chapters</p>
-                                    <p class="text-xs text-primary-600 mt-1">Ministry</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/bible-reader.html?pdf=/ntkjv/galkjvwd.pdf" class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-400 hover:bg-primary-50 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-3">
-                                <div class="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                                    </svg>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-gray-900 group-hover:text-primary-700 transition">Galatians</h3>
-                                    <p class="text-xs text-gray-500 mt-0.5">6 Chapters</p>
-                                    <p class="text-xs text-primary-600 mt-1">Freedom in Christ</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/bible-reader.html?pdf=/ntkjv/ephkjvwd.pdf" class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-400 hover:bg-primary-50 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-3">
-                                <div class="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                                    </svg>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-gray-900 group-hover:text-primary-700 transition">Ephesians</h3>
-                                    <p class="text-xs text-gray-500 mt-0.5">6 Chapters</p>
-                                    <p class="text-xs text-primary-600 mt-1">The Church</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/bible-reader.html?pdf=/ntkjv/philkjvwd.pdf" class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-400 hover:bg-primary-50 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-3">
-                                <div class="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                                    </svg>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-gray-900 group-hover:text-primary-700 transition">Philippians</h3>
-                                    <p class="text-xs text-gray-500 mt-0.5">4 Chapters</p>
-                                    <p class="text-xs text-primary-600 mt-1">Joy</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/bible-reader.html?pdf=/ntkjv/colkjvwd.pdf" class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-400 hover:bg-primary-50 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-3">
-                                <div class="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                                    </svg>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-gray-900 group-hover:text-primary-700 transition">Colossians</h3>
-                                    <p class="text-xs text-gray-500 mt-0.5">4 Chapters</p>
-                                    <p class="text-xs text-primary-600 mt-1">Christ's Supremacy</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/bible-reader.html?pdf=/ntkjv/1thesskjvwd.pdf" class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-400 hover:bg-primary-50 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-3">
-                                <div class="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                                    </svg>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-gray-900 group-hover:text-primary-700 transition">1 Thessalonians</h3>
-                                    <p class="text-xs text-gray-500 mt-0.5">5 Chapters</p>
-                                    <p class="text-xs text-primary-600 mt-1">Christ's Return</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/bible-reader.html?pdf=/ntkjv/2thesskjvwd.pdf" class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-400 hover:bg-primary-50 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-3">
-                                <div class="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                                    </svg>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-gray-900 group-hover:text-primary-700 transition">2 Thessalonians</h3>
-                                    <p class="text-xs text-gray-500 mt-0.5">3 Chapters</p>
-                                    <p class="text-xs text-primary-600 mt-1">Day of the Lord</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/bible-reader.html?pdf=/ntkjv/1timkjvwd.pdf" class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-400 hover:bg-primary-50 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-3">
-                                <div class="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                                    </svg>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-gray-900 group-hover:text-primary-700 transition">1 Timothy</h3>
-                                    <p class="text-xs text-gray-500 mt-0.5">6 Chapters</p>
-                                    <p class="text-xs text-primary-600 mt-1">Church Leadership</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/bible-reader.html?pdf=/ntkjv/2timkjvwd.pdf" class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-400 hover:bg-primary-50 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-3">
-                                <div class="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                                    </svg>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-gray-900 group-hover:text-primary-700 transition">2 Timothy</h3>
-                                    <p class="text-xs text-gray-500 mt-0.5">4 Chapters</p>
-                                    <p class="text-xs text-primary-600 mt-1">Endurance</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/bible-reader.html?pdf=/ntkjv/tituskjvwd.pdf" class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-400 hover:bg-primary-50 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-3">
-                                <div class="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                                    </svg>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-gray-900 group-hover:text-primary-700 transition">Titus</h3>
-                                    <p class="text-xs text-gray-500 mt-0.5">3 Chapters</p>
-                                    <p class="text-xs text-primary-600 mt-1">Sound Doctrine</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/bible-reader.html?pdf=/ntkjv/philemonkjvwd.pdf" class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-400 hover:bg-primary-50 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-3">
-                                <div class="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                                    </svg>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-gray-900 group-hover:text-primary-700 transition">Philemon</h3>
-                                    <p class="text-xs text-gray-500 mt-0.5">1 Chapter</p>
-                                    <p class="text-xs text-primary-600 mt-1">Forgiveness</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- General Epistles Section -->
-        <section id="general" class="mb-12 scroll-mt-32">
-            <div class="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
-                <div class="bg-gradient-to-r from-primary-50 to-primary-100 p-6 border-b border-primary-200">
-                    <div class="flex items-center gap-4">
-                        <div class="w-14 h-14 bg-primary-600 text-white rounded-xl flex items-center justify-center text-3xl shadow-md">
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<a class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-heritage-gold hover:bg-parchment hover:shadow-md transition-all" href="/bible-reader.html?pdf=/bible/new-testament/kjv/romkjvwd.pdf">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 bg-parchment rounded-lg flex items-center justify-center text-ancient-ink group-hover:bg-ancient-ink group-hover:text-white transition">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex-1">
+<h3 class="font-semibold text-gray-900 group-hover:text-heritage-gold transition">Romans</h3>
+<p class="text-xs text-gray-500 mt-0.5">16 Chapters</p>
+<p class="text-xs text-ancient-ink mt-1">Gospel Doctrine</p>
+</div>
+</div>
+</a>
+<a class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-heritage-gold hover:bg-parchment hover:shadow-md transition-all" href="/bible-reader.html?pdf=/bible/new-testament/kjv/1corkjvwd.pdf">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 bg-parchment rounded-lg flex items-center justify-center text-ancient-ink group-hover:bg-ancient-ink group-hover:text-white transition">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex-1">
+<h3 class="font-semibold text-gray-900 group-hover:text-heritage-gold transition">1 Corinthians</h3>
+<p class="text-xs text-gray-500 mt-0.5">16 Chapters</p>
+<p class="text-xs text-ancient-ink mt-1">Church Order</p>
+</div>
+</div>
+</a>
+<a class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-heritage-gold hover:bg-parchment hover:shadow-md transition-all" href="/bible-reader.html?pdf=/bible/new-testament/kjv/2corkjvwd.pdf">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 bg-parchment rounded-lg flex items-center justify-center text-ancient-ink group-hover:bg-ancient-ink group-hover:text-white transition">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex-1">
+<h3 class="font-semibold text-gray-900 group-hover:text-heritage-gold transition">2 Corinthians</h3>
+<p class="text-xs text-gray-500 mt-0.5">13 Chapters</p>
+<p class="text-xs text-ancient-ink mt-1">Ministry</p>
+</div>
+</div>
+</a>
+<a class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-heritage-gold hover:bg-parchment hover:shadow-md transition-all" href="/bible-reader.html?pdf=/bible/new-testament/kjv/galkjvwd.pdf">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 bg-parchment rounded-lg flex items-center justify-center text-ancient-ink group-hover:bg-ancient-ink group-hover:text-white transition">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex-1">
+<h3 class="font-semibold text-gray-900 group-hover:text-heritage-gold transition">Galatians</h3>
+<p class="text-xs text-gray-500 mt-0.5">6 Chapters</p>
+<p class="text-xs text-ancient-ink mt-1">Freedom in Christ</p>
+</div>
+</div>
+</a>
+<a class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-heritage-gold hover:bg-parchment hover:shadow-md transition-all" href="/bible-reader.html?pdf=/bible/new-testament/kjv/ephkjvwd.pdf">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 bg-parchment rounded-lg flex items-center justify-center text-ancient-ink group-hover:bg-ancient-ink group-hover:text-white transition">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex-1">
+<h3 class="font-semibold text-gray-900 group-hover:text-heritage-gold transition">Ephesians</h3>
+<p class="text-xs text-gray-500 mt-0.5">6 Chapters</p>
+<p class="text-xs text-ancient-ink mt-1">The Church</p>
+</div>
+</div>
+</a>
+<a class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-heritage-gold hover:bg-parchment hover:shadow-md transition-all" href="/bible-reader.html?pdf=/bible/new-testament/kjv/philkjvwd.pdf">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 bg-parchment rounded-lg flex items-center justify-center text-ancient-ink group-hover:bg-ancient-ink group-hover:text-white transition">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex-1">
+<h3 class="font-semibold text-gray-900 group-hover:text-heritage-gold transition">Philippians</h3>
+<p class="text-xs text-gray-500 mt-0.5">4 Chapters</p>
+<p class="text-xs text-ancient-ink mt-1">Joy</p>
+</div>
+</div>
+</a>
+<a class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-heritage-gold hover:bg-parchment hover:shadow-md transition-all" href="/bible-reader.html?pdf=/bible/new-testament/kjv/colkjvwd.pdf">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 bg-parchment rounded-lg flex items-center justify-center text-ancient-ink group-hover:bg-ancient-ink group-hover:text-white transition">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex-1">
+<h3 class="font-semibold text-gray-900 group-hover:text-heritage-gold transition">Colossians</h3>
+<p class="text-xs text-gray-500 mt-0.5">4 Chapters</p>
+<p class="text-xs text-ancient-ink mt-1">Christ's Supremacy</p>
+</div>
+</div>
+</a>
+<a class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-heritage-gold hover:bg-parchment hover:shadow-md transition-all" href="/bible-reader.html?pdf=/bible/new-testament/kjv/1thesskjvwd.pdf">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 bg-parchment rounded-lg flex items-center justify-center text-ancient-ink group-hover:bg-ancient-ink group-hover:text-white transition">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex-1">
+<h3 class="font-semibold text-gray-900 group-hover:text-heritage-gold transition">1 Thessalonians</h3>
+<p class="text-xs text-gray-500 mt-0.5">5 Chapters</p>
+<p class="text-xs text-ancient-ink mt-1">Christ's Return</p>
+</div>
+</div>
+</a>
+<a class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-heritage-gold hover:bg-parchment hover:shadow-md transition-all" href="/bible-reader.html?pdf=/bible/new-testament/kjv/2thesskjvwd.pdf">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 bg-parchment rounded-lg flex items-center justify-center text-ancient-ink group-hover:bg-ancient-ink group-hover:text-white transition">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex-1">
+<h3 class="font-semibold text-gray-900 group-hover:text-heritage-gold transition">2 Thessalonians</h3>
+<p class="text-xs text-gray-500 mt-0.5">3 Chapters</p>
+<p class="text-xs text-ancient-ink mt-1">Day of the Lord</p>
+</div>
+</div>
+</a>
+<a class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-heritage-gold hover:bg-parchment hover:shadow-md transition-all" href="/bible-reader.html?pdf=/bible/new-testament/kjv/1timkjvwd.pdf">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 bg-parchment rounded-lg flex items-center justify-center text-ancient-ink group-hover:bg-ancient-ink group-hover:text-white transition">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex-1">
+<h3 class="font-semibold text-gray-900 group-hover:text-heritage-gold transition">1 Timothy</h3>
+<p class="text-xs text-gray-500 mt-0.5">6 Chapters</p>
+<p class="text-xs text-ancient-ink mt-1">Church Leadership</p>
+</div>
+</div>
+</a>
+<a class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-heritage-gold hover:bg-parchment hover:shadow-md transition-all" href="/bible-reader.html?pdf=/bible/new-testament/kjv/2timkjvwd.pdf">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 bg-parchment rounded-lg flex items-center justify-center text-ancient-ink group-hover:bg-ancient-ink group-hover:text-white transition">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex-1">
+<h3 class="font-semibold text-gray-900 group-hover:text-heritage-gold transition">2 Timothy</h3>
+<p class="text-xs text-gray-500 mt-0.5">4 Chapters</p>
+<p class="text-xs text-ancient-ink mt-1">Endurance</p>
+</div>
+</div>
+</a>
+<a class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-heritage-gold hover:bg-parchment hover:shadow-md transition-all" href="/bible-reader.html?pdf=/bible/new-testament/kjv/tituskjvwd.pdf">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 bg-parchment rounded-lg flex items-center justify-center text-ancient-ink group-hover:bg-ancient-ink group-hover:text-white transition">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex-1">
+<h3 class="font-semibold text-gray-900 group-hover:text-heritage-gold transition">Titus</h3>
+<p class="text-xs text-gray-500 mt-0.5">3 Chapters</p>
+<p class="text-xs text-ancient-ink mt-1">Sound Doctrine</p>
+</div>
+</div>
+</a>
+<a class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-heritage-gold hover:bg-parchment hover:shadow-md transition-all" href="/bible-reader.html?pdf=/bible/new-testament/kjv/philemonkjvwd.pdf">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 bg-parchment rounded-lg flex items-center justify-center text-ancient-ink group-hover:bg-ancient-ink group-hover:text-white transition">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex-1">
+<h3 class="font-semibold text-gray-900 group-hover:text-heritage-gold transition">Philemon</h3>
+<p class="text-xs text-gray-500 mt-0.5">1 Chapter</p>
+<p class="text-xs text-ancient-ink mt-1">Forgiveness</p>
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- General Epistles Section -->
+<section class="mb-12 scroll-mt-32" id="general">
+<div class="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+<div class="bg-parchment p-6 border-b border-heritage-gold/30">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 bg-ancient-ink text-white rounded-xl flex items-center justify-center text-3xl shadow-md">
                             📨
                         </div>
-                        <div>
-                            <h2 class="text-2xl font-bold text-gray-900">General Epistles</h2>
-                            <p class="text-primary-700">8 Books - Letters to All Believers</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <p class="text-gray-600 mb-6">
+<div>
+<h2 class="text-2xl font-bold text-gray-900">General Epistles</h2>
+<p class="text-heritage-gold">8 Books - Letters to All Believers</p>
+</div>
+</div>
+</div>
+<div class="p-6">
+<p class="text-gray-600 mb-6">
                         Also called the "Catholic Epistles" (meaning universal), these letters were written to the
                         Church at large rather than specific congregations. They address practical Christian living
                         and sound doctrine.
                     </p>
-                    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                        <a href="/bible-reader.html?pdf=/ntkjv/hebkjvwd.pdf" class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-400 hover:bg-primary-50 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-3">
-                                <div class="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                                    </svg>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-gray-900 group-hover:text-primary-700 transition">Hebrews</h3>
-                                    <p class="text-xs text-gray-500 mt-0.5">13 Chapters</p>
-                                    <p class="text-xs text-primary-600 mt-1">Christ's Superiority</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/bible-reader.html?pdf=/ntkjv/jameskjvwd.pdf" class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-400 hover:bg-primary-50 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-3">
-                                <div class="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                                    </svg>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-gray-900 group-hover:text-primary-700 transition">James</h3>
-                                    <p class="text-xs text-gray-500 mt-0.5">5 Chapters</p>
-                                    <p class="text-xs text-primary-600 mt-1">Faith & Works</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/bible-reader.html?pdf=/ntkjv/1petkjvwd.pdf" class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-400 hover:bg-primary-50 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-3">
-                                <div class="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                                    </svg>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-gray-900 group-hover:text-primary-700 transition">1 Peter</h3>
-                                    <p class="text-xs text-gray-500 mt-0.5">5 Chapters</p>
-                                    <p class="text-xs text-primary-600 mt-1">Suffering</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/bible-reader.html?pdf=/ntkjv/2petkjvwd.pdf" class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-400 hover:bg-primary-50 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-3">
-                                <div class="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                                    </svg>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-gray-900 group-hover:text-primary-700 transition">2 Peter</h3>
-                                    <p class="text-xs text-gray-500 mt-0.5">3 Chapters</p>
-                                    <p class="text-xs text-primary-600 mt-1">False Teachers</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/bible-reader.html?pdf=/ntkjv/1johnkjvwd.pdf" class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-400 hover:bg-primary-50 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-3">
-                                <div class="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                                    </svg>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-gray-900 group-hover:text-primary-700 transition">1 John</h3>
-                                    <p class="text-xs text-gray-500 mt-0.5">5 Chapters</p>
-                                    <p class="text-xs text-primary-600 mt-1">God's Love</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/bible-reader.html?pdf=/ntkjv/2johnkjvwd.pdf" class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-400 hover:bg-primary-50 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-3">
-                                <div class="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                                    </svg>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-gray-900 group-hover:text-primary-700 transition">2 John</h3>
-                                    <p class="text-xs text-gray-500 mt-0.5">1 Chapter</p>
-                                    <p class="text-xs text-primary-600 mt-1">Truth & Love</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/bible-reader.html?pdf=/ntkjv/3johnkjvwd.pdf" class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-400 hover:bg-primary-50 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-3">
-                                <div class="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                                    </svg>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-gray-900 group-hover:text-primary-700 transition">3 John</h3>
-                                    <p class="text-xs text-gray-500 mt-0.5">1 Chapter</p>
-                                    <p class="text-xs text-primary-600 mt-1">Hospitality</p>
-                                </div>
-                            </div>
-                        </a>
-                        <a href="/bible-reader.html?pdf=/ntkjv/judekjvwd.pdf" class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-400 hover:bg-primary-50 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-3">
-                                <div class="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                                    </svg>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-gray-900 group-hover:text-primary-700 transition">Jude</h3>
-                                    <p class="text-xs text-gray-500 mt-0.5">1 Chapter</p>
-                                    <p class="text-xs text-primary-600 mt-1">Contend for Faith</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Prophecy Section -->
-        <section id="prophecy" class="mb-12 scroll-mt-32">
-            <div class="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
-                <div class="bg-gradient-to-r from-primary-50 to-primary-100 p-6 border-b border-primary-200">
-                    <div class="flex items-center gap-4">
-                        <div class="w-14 h-14 bg-primary-600 text-white rounded-xl flex items-center justify-center text-3xl shadow-md">
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<a class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-heritage-gold hover:bg-parchment hover:shadow-md transition-all" href="/bible-reader.html?pdf=/bible/new-testament/kjv/hebkjvwd.pdf">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 bg-parchment rounded-lg flex items-center justify-center text-ancient-ink group-hover:bg-ancient-ink group-hover:text-white transition">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex-1">
+<h3 class="font-semibold text-gray-900 group-hover:text-heritage-gold transition">Hebrews</h3>
+<p class="text-xs text-gray-500 mt-0.5">13 Chapters</p>
+<p class="text-xs text-ancient-ink mt-1">Christ's Superiority</p>
+</div>
+</div>
+</a>
+<a class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-heritage-gold hover:bg-parchment hover:shadow-md transition-all" href="/bible-reader.html?pdf=/bible/new-testament/kjv/jameskjvwd.pdf">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 bg-parchment rounded-lg flex items-center justify-center text-ancient-ink group-hover:bg-ancient-ink group-hover:text-white transition">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex-1">
+<h3 class="font-semibold text-gray-900 group-hover:text-heritage-gold transition">James</h3>
+<p class="text-xs text-gray-500 mt-0.5">5 Chapters</p>
+<p class="text-xs text-ancient-ink mt-1">Faith &amp; Works</p>
+</div>
+</div>
+</a>
+<a class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-heritage-gold hover:bg-parchment hover:shadow-md transition-all" href="/bible-reader.html?pdf=/bible/new-testament/kjv/1petkjvwd.pdf">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 bg-parchment rounded-lg flex items-center justify-center text-ancient-ink group-hover:bg-ancient-ink group-hover:text-white transition">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex-1">
+<h3 class="font-semibold text-gray-900 group-hover:text-heritage-gold transition">1 Peter</h3>
+<p class="text-xs text-gray-500 mt-0.5">5 Chapters</p>
+<p class="text-xs text-ancient-ink mt-1">Suffering</p>
+</div>
+</div>
+</a>
+<a class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-heritage-gold hover:bg-parchment hover:shadow-md transition-all" href="/bible-reader.html?pdf=/bible/new-testament/kjv/2petkjvwd.pdf">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 bg-parchment rounded-lg flex items-center justify-center text-ancient-ink group-hover:bg-ancient-ink group-hover:text-white transition">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex-1">
+<h3 class="font-semibold text-gray-900 group-hover:text-heritage-gold transition">2 Peter</h3>
+<p class="text-xs text-gray-500 mt-0.5">3 Chapters</p>
+<p class="text-xs text-ancient-ink mt-1">False Teachers</p>
+</div>
+</div>
+</a>
+<a class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-heritage-gold hover:bg-parchment hover:shadow-md transition-all" href="/bible-reader.html?pdf=/bible/new-testament/kjv/1johnkjvwd.pdf">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 bg-parchment rounded-lg flex items-center justify-center text-ancient-ink group-hover:bg-ancient-ink group-hover:text-white transition">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex-1">
+<h3 class="font-semibold text-gray-900 group-hover:text-heritage-gold transition">1 John</h3>
+<p class="text-xs text-gray-500 mt-0.5">5 Chapters</p>
+<p class="text-xs text-ancient-ink mt-1">God's Love</p>
+</div>
+</div>
+</a>
+<a class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-heritage-gold hover:bg-parchment hover:shadow-md transition-all" href="/bible-reader.html?pdf=/bible/new-testament/kjv/2johnkjvwd.pdf">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 bg-parchment rounded-lg flex items-center justify-center text-ancient-ink group-hover:bg-ancient-ink group-hover:text-white transition">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex-1">
+<h3 class="font-semibold text-gray-900 group-hover:text-heritage-gold transition">2 John</h3>
+<p class="text-xs text-gray-500 mt-0.5">1 Chapter</p>
+<p class="text-xs text-ancient-ink mt-1">Truth &amp; Love</p>
+</div>
+</div>
+</a>
+<a class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-heritage-gold hover:bg-parchment hover:shadow-md transition-all" href="/bible-reader.html?pdf=/bible/new-testament/kjv/3johnkjvwd.pdf">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 bg-parchment rounded-lg flex items-center justify-center text-ancient-ink group-hover:bg-ancient-ink group-hover:text-white transition">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex-1">
+<h3 class="font-semibold text-gray-900 group-hover:text-heritage-gold transition">3 John</h3>
+<p class="text-xs text-gray-500 mt-0.5">1 Chapter</p>
+<p class="text-xs text-ancient-ink mt-1">Hospitality</p>
+</div>
+</div>
+</a>
+<a class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-heritage-gold hover:bg-parchment hover:shadow-md transition-all" href="/bible-reader.html?pdf=/bible/new-testament/kjv/judekjvwd.pdf">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 bg-parchment rounded-lg flex items-center justify-center text-ancient-ink group-hover:bg-ancient-ink group-hover:text-white transition">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex-1">
+<h3 class="font-semibold text-gray-900 group-hover:text-heritage-gold transition">Jude</h3>
+<p class="text-xs text-gray-500 mt-0.5">1 Chapter</p>
+<p class="text-xs text-ancient-ink mt-1">Contend for Faith</p>
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Prophecy Section -->
+<section class="mb-12 scroll-mt-32" id="prophecy">
+<div class="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+<div class="bg-parchment p-6 border-b border-heritage-gold/30">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 bg-ancient-ink text-white rounded-xl flex items-center justify-center text-3xl shadow-md">
                             🔮
                         </div>
-                        <div>
-                            <h2 class="text-2xl font-bold text-gray-900">Prophecy</h2>
-                            <p class="text-primary-700">1 Book - The Revelation of Jesus Christ</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="p-6">
-                    <p class="text-gray-600 mb-6">
+<div>
+<h2 class="text-2xl font-bold text-gray-900">Prophecy</h2>
+<p class="text-heritage-gold">1 Book - The Revelation of Jesus Christ</p>
+</div>
+</div>
+</div>
+<div class="p-6">
+<p class="text-gray-600 mb-6">
                         The final book of the Bible reveals the culmination of God's plan: the return of Christ,
                         the final judgment, and the new heaven and new earth. A message of hope and victory for
                         believers throughout the ages.
                     </p>
-                    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                        <a href="/bible-reader.html?pdf=/ntkjv/revkjvwd.pdf" class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-400 hover:bg-primary-50 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-3">
-                                <div class="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition">
-                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                                    </svg>
-                                </div>
-                                <div class="flex-1">
-                                    <h3 class="font-semibold text-gray-900 group-hover:text-primary-700 transition">Revelation</h3>
-                                    <p class="text-xs text-gray-500 mt-0.5">22 Chapters</p>
-                                    <p class="text-xs text-primary-600 mt-1">Christ's Return</p>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Quick Links -->
-        <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
-            <a href="/bibleot.html" class="flex items-center gap-3 p-4 bg-white rounded-xl border border-gray-200 hover:border-amber-300 hover:shadow-md transition">
-                <span class="text-2xl">📜</span>
-                <div>
-                    <div class="font-medium text-gray-900">Old Testament</div>
-                    <div class="text-xs text-gray-500">39 Books</div>
-                </div>
-            </a>
-            <a href="/bible.html" class="flex items-center gap-3 p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-300 hover:shadow-md transition">
-                <span class="text-2xl">📖</span>
-                <div>
-                    <div class="font-medium text-gray-900">Bible Home</div>
-                    <div class="text-xs text-gray-500">All 66 Books</div>
-                </div>
-            </a>
-            <a href="/daily/ntkjv.html" class="flex items-center gap-3 p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-300 hover:shadow-md transition">
-                <span class="text-2xl">📄</span>
-                <div>
-                    <div class="font-medium text-gray-900">NT PDF Downloads</div>
-                    <div class="text-xs text-gray-500">Additional Resources</div>
-                </div>
-            </a>
-            <a href="/dailyverses.html" class="flex items-center gap-3 p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-300 hover:shadow-md transition">
-                <span class="text-2xl">📅</span>
-                <div>
-                    <div class="font-medium text-gray-900">Daily Verses</div>
-                    <div class="text-xs text-gray-500">A verse for every day</div>
-                </div>
-            </a>
-            <a href="/courses.html" class="flex items-center gap-3 p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-300 hover:shadow-md transition">
-                <span class="text-2xl">🎓</span>
-                <div>
-                    <div class="font-medium text-gray-900">Bible Courses</div>
-                    <div class="text-xs text-gray-500">Structured learning</div>
-                </div>
-            </a>
-        </div>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300">
-        <!-- Main Footer Content -->
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-
-                <!-- Brand & Mission -->
-                <div class="lg:col-span-1">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-12 h-12 bg-primary-600 text-white rounded-xl flex items-center justify-center font-bold text-lg shadow-lg">
-                            BTP
-                        </div>
-                        <div>
-                            <div class="font-bold text-xl text-white">Bible Teaching</div>
-                            <div class="text-sm text-gray-400">Program</div>
-                        </div>
-                    </div>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                        Equipping believers worldwide with sound biblical teaching and resources for spiritual growth and ministry.
-                    </p>
-                    <div class="flex items-center gap-2 text-sm">
-                        <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                        <span class="text-gray-400">Equipping believers worldwide</span>
-                    </div>
-                </div>
-
-                <!-- Resources -->
-                <div>
-                    <h4 class="font-semibold text-white mb-6 text-lg">Resources</h4>
-                    <ul class="space-y-3">
-                        <li>
-                            <a href="/bible.html" class="text-gray-400 hover:text-white transition flex items-center gap-2 group">
-                                <svg class="w-4 h-4 text-gray-600 group-hover:text-primary-400 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                                </svg>
-                                Bible (KJV)
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/books.html" class="text-gray-400 hover:text-white transition flex items-center gap-2 group">
-                                <svg class="w-4 h-4 text-gray-600 group-hover:text-primary-400 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
-                                </svg>
-                                Study Books
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/courses.html" class="text-gray-400 hover:text-white transition flex items-center gap-2 group">
-                                <svg class="w-4 h-4 text-gray-600 group-hover:text-primary-400 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/>
-                                </svg>
-                                Bible Courses
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/dailyverses.html" class="text-gray-400 hover:text-white transition flex items-center gap-2 group">
-                                <svg class="w-4 h-4 text-gray-600 group-hover:text-primary-400 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                                </svg>
-                                Daily Verses
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Bible -->
-                <div>
-                    <h4 class="font-semibold text-white mb-6 text-lg">The Bible</h4>
-                    <ul class="space-y-3">
-                        <li>
-                            <a href="/bibleot.html" class="text-gray-400 hover:text-white transition">Old Testament</a>
-                        </li>
-                        <li>
-                            <a href="/biblent.html" class="text-gray-400 hover:text-white transition">New Testament</a>
-                        </li>
-                        <li>
-                            <a href="/biblepen.html" class="text-gray-400 hover:text-white transition">Pentateuch</a>
-                        </li>
-                        <li>
-                            <a href="/biblehist.html" class="text-gray-400 hover:text-white transition">Historical Books</a>
-                        </li>
-                        <li>
-                            <a href="/biblepoe.html" class="text-gray-400 hover:text-white transition">Poetic Books</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Daily Verse -->
-                <div>
-                    <h4 class="font-semibold text-white mb-6 text-lg">Today's Verse</h4>
-                    <div id="daily-verse-container" class="bg-gray-800/50 rounded-xl p-4 border border-gray-700">
-                        <p class="text-gray-400 text-sm italic">Loading verse...</p>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- Bottom Bar -->
-        <div class="border-t border-gray-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-                    <p class="text-sm text-gray-500">
-                        &copy; 2025 Bible Teaching Program. All rights reserved.
-                    </p>
-                    <div class="flex items-center gap-6 text-sm">
-                        <a href="/" class="text-gray-500 hover:text-gray-300 transition">Home</a>
-                        <a href="/courses.html" class="text-gray-500 hover:text-gray-300 transition">Courses</a>
-                        <a href="/bible.html" class="text-gray-500 hover:text-gray-300 transition">Bible</a>
-                        <a href="/books.html" class="text-gray-500 hover:text-gray-300 transition">Books</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="/js/daily-verse.js"></script>
+<div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<a class="group p-4 bg-white rounded-xl border border-gray-200 hover:border-heritage-gold hover:bg-parchment hover:shadow-md transition-all" href="/bible-reader.html?pdf=/bible/new-testament/kjv/revkjvwd.pdf">
+<div class="flex items-start gap-3">
+<div class="w-10 h-10 bg-parchment rounded-lg flex items-center justify-center text-ancient-ink group-hover:bg-ancient-ink group-hover:text-white transition">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<div class="flex-1">
+<h3 class="font-semibold text-gray-900 group-hover:text-heritage-gold transition">Revelation</h3>
+<p class="text-xs text-gray-500 mt-0.5">22 Chapters</p>
+<p class="text-xs text-ancient-ink mt-1">Christ's Return</p>
+</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Quick Links -->
+<div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+<a class="flex items-center gap-3 p-4 bg-white rounded-xl border border-gray-200 hover:border-heritage-gold/60 hover:shadow-md transition" href="/bible/old-testament/index.html">
+<span class="text-2xl">📜</span>
+<div>
+<div class="font-medium text-gray-900">Old Testament</div>
+<div class="text-xs text-gray-500">39 Books</div>
+</div>
+</a>
+<a class="flex items-center gap-3 p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-300 hover:shadow-md transition" href="/bible/index.html">
+<span class="text-2xl">📖</span>
+<div>
+<div class="font-medium text-gray-900">Bible Home</div>
+<div class="text-xs text-gray-500">All 66 Books</div>
+</div>
+</a>
+<a class="flex items-center gap-3 p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-300 hover:shadow-md transition" href="/bible/new-testament/daily-kjv.html">
+<span class="text-2xl">📄</span>
+<div>
+<div class="font-medium text-gray-900">NT PDF Downloads</div>
+<div class="text-xs text-gray-500">Additional Resources</div>
+</div>
+</a>
+<a class="flex items-center gap-3 p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-300 hover:shadow-md transition" href="/daily-verses/index.html">
+<span class="text-2xl">📅</span>
+<div>
+<div class="font-medium text-gray-900">Daily Verses</div>
+<div class="text-xs text-gray-500">A verse for every day</div>
+</div>
+</a>
+<a class="flex items-center gap-3 p-4 bg-white rounded-xl border border-gray-200 hover:border-primary-300 hover:shadow-md transition" href="/courses/index.html">
+<span class="text-2xl">🎓</span>
+<div>
+<div class="font-medium text-gray-900">Bible Courses</div>
+<div class="text-xs text-gray-500">Structured learning</div>
+</div>
+</a>
+</div>
+</main>
+<!-- Footer (loaded from component) -->
+<div id="footer-placeholder"></div>
+<script src="/js/components.js"></script>
+<script src="/js/daily-verse.js"></script>
 </body>
 </html>

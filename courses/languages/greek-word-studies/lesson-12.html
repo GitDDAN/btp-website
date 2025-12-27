@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-09FW4XY50E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-09FW4XY50E');
+</script>
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Contention: eritheia. - General Studies" name="description"/>
+<title>Contention: eritheia. | General Studies | Bible Teaching Program</title><meta content="website" property="og:type"/><meta content="https://bibleteachingprogram.org/courses/languages/greek-word-studies/lesson-12.html" property="og:url"/><meta content="Contention: eritheia. | General Studies | Bible Teaching Program" property="og:title"/><meta content="Contention: eritheia. - General Studies" property="og:description"/><meta content="https://bibleteachingprogram.org/images/hero-banner.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Contention: eritheia. | General Studies | Bible Teaching Program" name="twitter:title"/><meta content="Contention: eritheia. - General Studies" name="twitter:description"/><meta content="https://bibleteachingprogram.org/images/hero-banner.png" name="twitter:image"/>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind with Brand Colors -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ancient-ink': '#1C1D37',
+                        'heritage-gold': '#CBA378',
+                        'living-sage': '#7F9A83',
+                        'parchment': '#F9F7F2',
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'Georgia', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+<link href="/css/brand.css" rel="stylesheet"/>
+<style>
+        .content-area {
+            font-size: 1.0625rem;
+            line-height: 1.8;
+            color: #1f2937;
+            font-family: Georgia, 'Times New Roman', serif;
+        }
+
+        .content-area h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            color: #171717;
+        }
+
+        .content-area h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 1.75rem;
+            margin-bottom: 0.875rem;
+            color: #262626;
+        }
+
+        .content-area h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #404040;
+        }
+
+        .content-area p {
+            margin-bottom: 1rem;
+        }
+
+        .content-area ul, .content-area ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .content-area li {
+            margin-bottom: 0.5rem;
+        }
+
+        .content-area blockquote {
+            border-left: 4px solid #0058a2;
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #525252;
+        }
+
+        .content-area table {
+            width: 100%;
+            margin: 1.5rem 0;
+            border-collapse: collapse;
+        }
+
+        .content-area table td, .content-area table th {
+            padding: 0.75rem;
+            border: 1px solid #e5e5e5;
+        }
+
+        .content-area img {
+            max-width: 100%;
+            height: auto;
+            margin: 1rem 0;
+            border-radius: 0.5rem;
+        }
+
+        /* Professional styling for numbered lists */
+        .content-area .numbered-item {
+            margin-left: 0;
+            padding-left: 0;
+            margin-bottom: 1.25rem;
+            margin-top: 1rem;
+            line-height: 1.8;
+        }
+
+        /* Styled number for lists */
+        .content-area .list-number {
+            display: inline;
+            color: #004a85;
+            font-weight: 700;
+            margin-right: 0.5rem;
+            font-size: 1rem;
+        }
+
+        /* Professional styling for bullet points */
+        .content-area .bullet-item {
+            margin-left: 0;
+            padding-left: 2rem;
+            position: relative;
+            margin-bottom: 0.875rem;
+            line-height: 1.75;
+        }
+
+        .content-area .bullet-item::before {
+            content: "•";
+            position: absolute;
+            left: 0.5rem;
+            color: #006fc7;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        /* Scripture reference highlighting */
+        .content-area .scripture-ref {
+            font-weight: 600;
+            color: #0058a2;
+            font-style: italic;
+        }
+
+        /* Section headers styling */
+        .content-area .section-header {
+            display: inline;
+            color: #1f2937;
+            font-size: 1.0625rem;
+            font-weight: 700;
+        }
+
+        /* Roman numeral list items */
+        .content-area .roman-item {
+            margin-left: 0;
+            padding-left: 0;
+            margin-bottom: 1rem;
+            margin-top: 0.75rem;
+            line-height: 1.75;
+        }
+
+        /* Styled Roman numerals */
+        .content-area .roman-number {
+            display: inline;
+            color: #004a85;
+            font-weight: 700;
+            margin-right: 0.5rem;
+            font-size: 1rem;
+            font-style: normal;
+        }
+
+        /* Better paragraph spacing */
+        .content-area p {
+            margin-bottom: 1rem;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body class="bg-parchment">
+<!-- Navigation (loaded from component) -->
+<div id="nav-placeholder"></div>
+<!-- Breadcrumbs -->
+<div class="bg-white border-b border-gray-100">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+<nav class="flex items-center gap-2 text-sm flex-wrap">
+<a class="text-gray-600 hover:text-heritage-gold transition" href="/">Home</a>
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<a class="text-gray-600 hover:text-heritage-gold transition" href="/courses/index.html">Courses</a>
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<a class="text-gray-600 hover:text-heritage-gold transition" href="/courses/languages/index.html">Languages</a>
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<a class="text-gray-600 hover:text-heritage-gold transition" href="/courses/languages/greek-word-studies/index.html">Greek Word Studies</a>
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="text-gray-900 font-medium">Lesson 12</span>
+</nav>
+</div>
+</div>
+<!-- Lesson Header -->
+<section class="bg-ancient-ink text-white py-8">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 bg-white bg-opacity-20 backdrop-blur-sm rounded-xl flex items-center justify-center text-2xl">
+                    📚
+                </div>
+<div>
+<div class="text-sm text-white text-opacity-80 mb-1">General Studies</div>
+<h1 class="text-2xl md:text-3xl font-bold">Contention: eritheia.</h1>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content -->
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+<!-- Main Column -->
+<div class="lg:col-span-3 space-y-6">
+<!-- Lesson Content with PDF Viewer -->
+<div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+<!-- Content Tab -->
+<div class="p-8" id="contentSection">
+<article class="content-area">
+<div class="bg-parchment rounded-xl p-6 mb-6 border-2 border-heritage-gold/30">
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 bg-ancient-ink text-white rounded-lg flex items-center justify-center flex-shrink-0 text-xl">
+ 📖
+ </div>
+<div class="flex-1">
+<div class="text-sm text-gray-600"><span class="font-semibold">Scripture:</span> <span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Philippians 1:16-17</span></span></span></span></span></span></span></span></span>,Someindeed preach Christ even of envy and strife; and some also of good will: The
+one preach Christ of contention (eritheia), not
+sincerely, supposing to add affliction to my bonds:But the other of love (agape), knowing that I
+am set for thedefenceof the gospel.</div>
+</div>
+</div>
+</div>
+<p></p><p class="MsoNormal"><b>Greek Word Studies (2)</b></p>
+<p class="MsoNormal"><b>Advanced Level</b></p>
+<p class="MsoNormal"><b><span>Lesson Title:Contention <span class="SpellE">Eritheia</span></span></b></p>
+<p class="MsoNormal"><b class="section-header section-header section-header section-header section-header section-header section-header section-header section-header section-header"><span>Introduction:</span></b><span><b>Meaning of <span class="SpellE">eritheia</span>
+(contentious).</b></span></p>
+<p class="MsoNormal"><span><span class="SpellE">Eritheia</span> describes a contentious person who desires to promote
+self interest.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">An ambitious; self seeking; and self elevating
+motive will produce strife and contention <span class="SpellE">eritheia</span>.</span></p>
+<p class="MsoNormal"><span>See daily verse <a href="/daily-verses/september/day-26.html" target="_blank"><span class="text-primary">Freedom from the need to elevate self. (<span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Philippians 2:3</span></span></span></span></span></span></span></span></span></span>)</span></a></span></p>
+<br/>
+<p class="MsoNormal"><span>The word
+is derived from <span class="GramE"><span class="SpellE">erithos</span> meaning</span>
+a hireling or one who is hired for <span class="SpellE">labour</span>.</span></p>
+<p class="MsoNormal"><span>The
+association of being hired and contention comes through selfish ambitions.</span></p>
+<p class="MsoNormal"><span><span class="SpellE">Eritheia</span> was u</span><span class="SpellE"><span lang="EN-GB">sed</span></span><span lang="EN-GB"> in Ancient Greek to describe one
+who sought to gain political power wrongfully.</span></p>
+<p class="MsoNormal numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item"><span class="list-number">1)</span><span class="list-number"></span>It
+denoted a person who was led by a self seeking and ambitious motive.</p>
+<p class="MsoNormal numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item"><span lang="EN-GB">2)One
+who was willing to use wrong means to gain political <span class="GramE">power.</span>
+</span></p>
+<p class="MsoNormal"><span>In<span class="scripture-ref">
+<span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Philippians 1:15-17</span></span></span></span></span></span></span></span></span></span>, Paul describes two kinds of people one preaches Christ
+of contention (<span class="SpellE">eritheia</span>) and the other preaches
+Christ of love (agape).</span></p>
+<p class="MsoNormal"><span>One
+preaches Christ in order to promote self interest.</span></p>
+<p class="MsoNormal"><span>The
+other preaches Christ because the love of Christ compels them to do so. See also <span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">2 Corinthians 5:14</span></span></span></span></span></span></span></span></span></span>.</span></p>
+<p class="MsoNormal"><b><span>Examples:</span></b></p>
+<p class="MsoNormal"><b><span>Motivated by love</span></b></p>
+<p class="MsoNormal"><b><span>Romanian Prison Ministry</span></b></p>
+<p class="MsoNormal"><span>When we
+were in the prison a staff member asked us why do you come?</span></p>
+<p class="MsoNormal"><span>It can
+be hard for people to understand why we want to travel so far to do something
+that does not earn us money.</span></p>
+<p class="MsoNormal"><span>The
+greatest joy in preaching the gospel is to see men and women come to new life
+in Christ. It is the love of Christ that motivates us.</span></p>
+<p class="MsoNormal"><b><span>Motivated by contention</span></b></p>
+<p class="MsoNormal"><span lang="EN-GB">In the western world a person who leads a local
+church with a large congregation will receive respect within the community.</span></p>
+<p class="MsoNormal"><span class="GramE"><span lang="EN-GB">The bigger the ministry;
+the greater the respect.</span></span></p>
+<p class="MsoNormal"><span lang="EN-GB">People can become envious and seek to gain this
+respect for <span class="GramE">themselves</span>.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Leaders need followers. They will then seek followers out of the
+congregation.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">This is how many local churches have split.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Contention will also
+arise in a church congregation when leaders ignore the needs of the people and use their position to
+promote themselves as leaders.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Leaders in local churches sometimes cause
+contention by criticising those who do not follow their self elevating plans of
+leadership</span></p>
+<p class="MsoNormal"><span lang="EN-GB">A person driven by self interest will produce
+contention.</span></p>
+<p class="MsoNormal"><span lang="EN-GB"><span class="SpellE">Eritheia</span> will
+elevate self and does not seek the glory of God.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Contentions arise when success is placed above
+truth.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">It is better to be a failure following after
+truth than to be successful following error.</span></p>
+<p class="MsoNormal"><b><span lang="EN-GB">Christian
+TV elevates personalities.</span></b></p>
+<p class="MsoNormal"><span lang="EN-GB">TV evangelists are regarded as celebrities. </span></p>
+<p class="MsoNormal"><span lang="EN-GB">Contentious personalities are followed because
+of Christian TV.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">But following them can also destroy lives.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Money - large sums of money can be raised
+through the media by TV evangelists, and often this is done by a wrong
+interpretation of scripture.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Many Christians accept their wrong teachings
+because they preach salvation through Christ.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">But when Christian ministry is a performance in
+front of a camera then it is easy for a person to be contentious off camera (in
+private).</span></p>
+<p class="MsoNormal"><b><span lang="EN-GB">Christian TV fundraising.</span></b></p>
+<p class="MsoNormal"><span lang="EN-GB">Some years ago I was watching a Christian TV channel at the start of a fund raising week.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Just as the fund raising was about to begin a prophecy was given warning against using scripture to get money out of God's people.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">I wondered how the channel could go ahead with the fund raising event after giving this tremendous prophecy live on air.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Later it was announced that the person who had given the prophecy had to go back to the UK
+to finish writing a book.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">The fund raising event then continued as planned and much finance was raised by the very means that the prophecy had warned them against.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Christian television is a great blessing but the ends do not justify the means. If the desire for success is leading then truth will become the casualty of expedience.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">In contrast to being driven by <span class="SpellE">eritheia</span>, a Christian leader should:</span></p>
+<p class="MsoNormal numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item"><span class="list-number">1)</span><span class="list-number"></span>Seek
+an eternal inheritance to win Christ.</p>
+<p class="MsoNormal numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item"><span class="list-number">2)</span><span class="list-number"></span>Live a
+life in the Spirit.</p>
+<p class="MsoNormal numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item"><span class="list-number">3)</span><span class="list-number"></span>Follow
+the wisdom from above.</p>
+<p class="MsoNormal numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item"><span class="list-number">4)</span><span class="list-number"></span>Preach
+Christ with pure motives in love.</p>
+<p class="MsoNormal numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item"><span class="list-number">5)</span><span class="list-number"></span>Walk
+in humility</p>
+<p class="MsoNormal"><b><span lang="EN-GB">Main
+Points</span></b></p>
+<p class="MsoNormal"><b><span lang="EN-GB">1. Seeking an eternal inheritance to win
+Christ.</span></b></p>
+<p class="MsoNormal"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Romans 2:7-9</span></span></span></span></span></span></span></span></span></span>, <span lang="EN-GB">To them who by patient continuance in well doing seek for glory and
+honour and immortality, eternal life:But unto them that are contentious (<span class="SpellE">eritheia</span>)
+, and do not obey the truth, but obey unrighteousness, indignation and
+wrath,Tribulation and anguish, upon every
+soul of man that doeth evil, of the Jew first, and also of the Gentile;</span></p>
+<p class="MsoNormal"><b>Contrast between those who seek eternal life from those who are
+contentious (do not obey the truth).</b></p>
+<p class="MsoNormal"><span>Patience
+ remaining steadfast under trial (<span class="SpellE">hupomone</span>)</span></p>
+<p class="MsoNormal"><span>Well
+doing doing good works (<span class="SpellE">agathos</span>) without seeking
+any self benefit.</span></p>
+<p class="MsoNormal"><span class="GramE"><span>Looking to an eternal inheritance glory, <span class="SpellE">honour</span>, immortality, eternal life.</span></span></p>
+<p class="MsoNormal"><b><span>Seeking the things that are eternal not
+because we earn it but because by grace we have received it.</span></b></p>
+<p class="MsoNormal"><span>Not
+elevating self seeking the glory of the Lord.</span></p>
+<p class="MsoNormal"><span>Not
+suspicious of others people who seek their own objectives are always
+suspicious of what others are doing.</span></p>
+<p class="MsoNormal"><span>Not
+motivated by the acclaim of people seeking to be in His will.</span></p>
+<p class="MsoNormal"><span>Not competitive
+ resting in the plan and purpose of God.</span></p>
+<p class="MsoNormal"><span>Not
+covetous knowing who we are in Christ.<span class="GramE">Trusting His promises.</span></span></p>
+<p class="MsoNormal"><b><span lang="EN-GB">Seeking an
+eternal inheritance</span></b></p>
+<p class="MsoNormal"><span lang="EN-GB">In the Christian life there is a place where we
+must turn around.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">When I first became a Christian I sought to
+serve Christ with my life.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">It was many years later when I learnt that
+serving Christ can be motivated by selfish ambition.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">The goal of a successful ministry is a selfish
+ambition.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">The goal we should seek is to win Christ<span class="GramE">..</span></span></p>
+<p class="MsoNormal"><b><span>The only thing that is important is to be in
+His will</span></b></p>
+<p class="MsoNormal"><span>Howard
+Carter (1891-1971) was one of the pioneers of the Assemblies of God in Great Britain.</span></p>
+<p class="MsoNormal"><span>He
+adopted these words as the motto of his life:</span></p>
+<p class="MsoNormal"><i><span>Let me never lose the all-important truth
+that to be in thy will is better than success, and grant that I may ever love <span class="GramE">Thyself</span> more than Thy service.</span></i></p>
+<p class="MsoNormal"><b><span>Personal Testimony: Running for the prize of
+High Calling of God in Christ Jesus</span></b></p>
+<p class="MsoNormal"><span lang="EN-GB"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Philippians 3:14</span></span></span></span></span></span></span></span></span></span>, I press toward the mark for the prize of the high
+calling of God in Christ Jesus.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">I will never forget one meeting when I preached
+on running for the prize to prisoners in Romania.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">I spoke on how it is not the things that are
+behind that are important now. We may
+have messed things up in the past but what is important now is that we run for
+the prize.</span></p>
+<p class="MsoNormal"><span>It was
+so exciting because the men were listening intensely.</span></p>
+<p class="MsoNormal"><span>There
+was a great response to the message.</span></p>
+<p class="MsoNormal"><span>One
+prisoner was eager to speak with me afterwards.</span></p>
+<p class="MsoNormal"><span>He told
+me his mum was a Christian. Then he said
+four years ago I began running for the prize.</span></p>
+<p class="MsoNormal"><b><span>2. Living life in the Spirit</span></b></p>
+<p class="MsoNormal"><b><span>Contrast between the fruit of the Spirit and
+the works of the flesh.</span></b></p>
+<p class="MsoNormal"><b><span>It is one of the works of the flesh 
+seditions.</span></b></p>
+<p class="MsoNormal"><span><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Galatians
+5:19-21</span></span></span></span></span></span></span></span></span></span>,Now the works of the flesh are
+manifest, which are these; Adultery, fornication, uncleanness,
+lasciviousness,Idolatry, witchcraft,
+hatred, variance, emulations, wrath, strife, seditions (<span class="SpellE">eritheia</span>),
+heresies,<span class="SpellE">Envyings</span>,
+murders, drunkenness, <span class="SpellE">revellings</span>, and such like:</span></p>
+<p class="MsoNormal"><span lang="EN-GB"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">2 Corinthians 12:20</span></span></span></span></span></span></span></span></span></span>,
+For I fear, lest, when I come, I shall not find you such as I would, and <i>that</i>
+I shall be found unto you such as you would not: lest <i>there be</i> debates, <span class="SpellE">envyings</span>, wraths, <span class="SpellE">strifes</span> (<span class="SpellE">eritheia</span>), <span class="SpellE">backbitings</span>,
+whisperings, swellings, tumults:</span></p>
+<p class="MsoNormal"><b><span lang="EN-GB">Seeking to live in the
+Spirit</span></b></p>
+<p class="MsoNormal"><span>The
+works of the flesh seek to gratify selfish desire.</span></p>
+<p class="MsoNormal"><span>Sexual
+desire to gratify lust sensual pleasure</span></p>
+<p class="MsoNormal"><span>Spiritual
+desires that seek to promote selfish goals (for instance a football player
+making the sign of the cross (superstition).</span></p>
+<p class="MsoNormal"><span>A good
+cause can also be motivated by the need to gratify selfish desires.</span></p>
+<p class="MsoNormal"><b><span>When a person is motivated by self then the
+works of the flesh will be controlling.</span></b></p>
+<p class="MsoNormal"><span>Social
+interaction </span></p>
+<p class="MsoNormal"><span>The
+desire for selfish ambition fulfilled through aggression - elevating self</span></p>
+<p class="MsoNormal"><span>The
+desire for pleasure fulfilled through intoxication.</span></p>
+<p class="MsoNormal"><b><span>Story:Prisoner strengthening his fingers using a rosary when we held our
+meeting.</span></b></p>
+<p class="MsoNormal"><span>When we
+held our meeting in a prison in Romania, I saw that during the meeting a man
+was using his fingers to move the beads on a rosary.</span></p>
+<p class="MsoNormal"><span>Not
+everyone who attends our meetings in the prison <span class="GramE">are</span>
+thinking about spiritual things.</span></p>
+<p class="MsoNormal"><span>We
+always tell the prisoners that we do not come to preach religion or to promote
+a particular church, but to tell them about a person, Jesus.</span></p>
+<p class="MsoNormal"><span>I was
+later told that it was likely that the man was using the rosary to strengthen
+the muscles in his fingers so he could steal by pick pocketing.</span></p>
+<p class="MsoNormal"><b><span>When a person walks in the Spirit then love
+(Gr. agape) is in control.</span></b></p>
+<p class="MsoNormal"><b><span>Paul was motivated by the love of Christ.</span></b><span lang="EN-GB">For the love of Christ constrains us;</span><span>
+(<span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">2 Corinthians 5:14</span></span></span></span></span></span></span></span></span></span>)</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Constrains (Gr. <span class="SpellE">sunecho</span>) means to hold
+together.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">The love of Christ held everything together in Pauls ministry.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">He did not seek self glory or self elevation.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">The love of Christ was guiding; leading; controlling.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Love will always seek the welfare of others.</span></p>
+<p class="MsoNormal"><b class="section-header section-header section-header section-header section-header section-header section-header section-header section-header section-header"><span lang="EN-GB">Illustration:William Booth.</span></b></p>
+<p class="MsoNormal"><span lang="EN-GB">At the end of one year William Booth was asked to send a message for all
+serving in the Salvation Army.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Sending the message by telegraph was expensive and the charge was per
+word.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">William Booth just wrote down one word to send.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">The word was 'others'.</span></p>
+<p class="MsoNormal"><b><span lang="EN-GB">The only thing that is
+important is serving the Lord with agape love</span></b></p>
+<p class="MsoNormal"><span lang="EN-GB">Hudson Taylor wrote that if he had a thousand lives he would have given
+them all to China
+ motivated by love.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Charles Wesley wrote the great hymn O for a thousand tongues to sing my
+great Redeemers praise.<span class="GramE">Worship.</span></span></p>
+<p class="MsoNormal"><span lang="EN-GB">When the Lord calls someone to work in a certain area He will fill the
+person with love for that nation and people.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Love will grow and mature.</span></p>
+<p class="MsoNormal"><b><span lang="EN-GB">3. Following the wisdom that is from above. </span></b><span lang="EN-GB">(<span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">James 3:13-18</span></span></span></span></span></span></span></span></span></span>).</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Earthly wisdom causes strife <span class="SpellE">eritheia</span><b>. </b></span></p>
+<p class="MsoNormal"><span lang="EN-GB"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">James 3:14</span></span></span></span></span></span></span></span></span></span>, But if you have bitter envying and strife (<span class="SpellE">eritheia</span>) in your hearts, glory not, and lie not against
+the truth.</span></p>
+<p class="MsoNormal"><span lang="EN-GB"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">James 3:16</span></span></span></span></span></span></span></span></span></span>, For where envying and strife (<span class="SpellE">eritheia</span>)
+<i>is</i>, there <i>is</i> confusion and every evil work.</span></p>
+<p class="MsoNormal"><b><span lang="EN-GB">Self seeking is wisdom
+that is earthly, sensual, <span class="GramE">demonic</span>. (<span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">James 3:15</span></span></span></span></span></span></span></span></span></span>)</span></b></p>
+<p class="MsoNormal"><span lang="EN-GB">Earthly wisdom based upon earthly things. (<span class="GramE">on</span>
+the earth)</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Sensual wisdom based upon animal instinct (having breath)</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Demonic wisdom based upon things <span class="GramE">evil(</span>demonic)</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Church leadership that is based upon this kind of wisdom will produce
+confusion and every evil work (<span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">James 3:16</span></span></span></span></span></span></span></span></span></span>)</span></p>
+<p class="MsoNormal"><b><span lang="EN-GB">Wisdom that is from
+above</span></b></p>
+<p class="MsoNormal"><span lang="EN-GB">James 3:17But the wisdom that is
+from above is first pure, then peaceable, gentle, and easy to be <span class="SpellE">intreated</span>, full of mercy and good fruits, without
+partiality, and without hypocrisy.</span></p>
+<p class="MsoNormal"><span class="GramE"><span lang="EN-GB">Pure (<span class="SpellE">hagnos</span>) free from everything
+that is carnal.</span></span></p>
+<p class="MsoNormal"><span lang="EN-GB">Peaceable (<span class="SpellE">eirenikos</span>) loving peace</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Gentle (<span class="SpellE">epieikos</span>) mild in manner</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Easy to be <span class="SpellE">intreated</span> (<span class="SpellE">eupeithos</span>)
+ a person who is easily persuaded (willing to yield)</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Full of mercy (<span class="SpellE">eleos</span>) showing kindness to
+those in need. </span></p>
+<p class="MsoNormal"><span lang="EN-GB">Good fruits (<span class="SpellE">agathos</span> <span class="SpellE">karpos</span>)
+ good that is beneficial to others; fruit produce. It is action on behalf others that comes from
+the life of Christ in us.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Without partiality (<span class="SpellE">adiakritos</span>) without
+regard to persons</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Without hypocrisy (<span class="SpellE">anupokritos</span>) without
+pretence</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Church leadership that is based upon this kind of wisdom will produce
+peace (<span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">James 3:18</span></span></span></span></span></span></span></span></span></span>)</span></p>
+<p class="MsoNormal"><b class="section-header section-header section-header section-header section-header section-header section-header section-header section-header section-header"><span lang="EN-GB">Illustration:Seeing the wrong side of Christian ministry.</span></b></p>
+<p class="MsoNormal"><span lang="EN-GB">It is so great to be with people who are easy to approach and who
+do not get angry when questions are asked.</span></p>
+<p><span lang="DA">When I first became a Christian I
+expected all Christian leaders to be like this. But when I began to be
+involved in ministry I saw that sometimes a completely different side of
+Christian leadership is seen. I began to realise that leaders can be motivated
+by the works of the flesh rather than the fruit of the Spirit. It was confusing
+to me as a young Christian that someone could preach the gospel in a very
+professional manner and yet be totally in bondage to 'self'. Leaders who are
+not led of the Spirit are not gentle or easy to talk to. </span></p>
+<p class="MsoNormal"><span lang="EN-GB">A disciple is a learner.<span class="GramE">A person who is learning to be like Christ.</span></span></p>
+<p class="MsoNormal"><span lang="EN-GB">We all make mistakes in the learning process.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Sometimes these mistakes involve the way we act and speak to others.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">But we learn and we change. </span></p>
+<p class="MsoNormal"><span lang="EN-GB">Sometimes the Lord has to humble us to bring us to the place where we
+are willing to follow the wisdom that is from above.</span></p>
+<p><span lang="DA">What I have noticed regarding the
+wrong side of Christian leadership is that leaders who promote themselves are
+not willing to change. They will always criticise others for speaking against
+them, but are never willing to listen to any form of constructive criticism
+concerning their leadership. Good leadership will listen, discuss and change
+when necessary.</span></p>
+<p class="MsoNormal"><b><span>4. Preaching Christ with pure motives in love.</span></b></p>
+<p class="MsoNormal"><b><span>Paul was in prison.</span></b><span> So that my bonds in Christ are manifest in all the
+palace, and in all other places; (<span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Philippians 1:13</span></span></span></span></span></span></span></span></span></span>)</span></p>
+<p class="MsoNormal"><span>Paul did
+not have freedom to preach outside the prison but because of his imprisonment
+the Roman officials, soldiers, and people outside were hearing the message of
+salvation through Christ.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Pauls imprisonment had brought great interest
+in the gospel and this had given the believers boldness to preach Christ.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">But </span><span>Christ was being
+preached by people with entirely different motives.</span></p>
+<p class="MsoNormal"><span class="GramE"><b><span>Same gospel 
+different motives.</span></b></span></p>
+<p class="MsoNormal"><span><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Philippians
+1:16</span></span></span></span></span></span></span></span></span></span>, <span class="GramE">The</span>
+one preach Christ of contention (<span class="SpellE">eritheia</span>), not
+sincerely, supposing to add affliction to my bonds:</span></p>
+<p class="MsoNormal"><span lang="EN-GB"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Philippians 1:17</span></span></span></span></span></span></span></span></span></span><span class="GramE">,But</span> the other of
+love (agape), knowing that I am set for the defence of the gospel.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Preaching Christ of contention <span class="GramE">pretence</span>; without sincerity; elevating
+self</span></p>
+<p class="MsoNormal"><span class="GramE"><span lang="EN-GB">Preaching Christ of love truth; sincerity;
+glorifying the Lord.</span></span></p>
+<p class="MsoNormal"><b><span>Pauls affliction</span></b></p>
+<p class="MsoNormal"><span>His
+heart was filled with concern for the people.</span></p>
+<p class="MsoNormal"><span>His
+affliction concerned the contention that motivated the preaching they were
+not preaching in truth; they were not an example to follow; they were self
+seeking.</span></p>
+<p class="MsoNormal"><span>They
+sought to hurt Paul because he was not able to be there to teach the
+Philippians.</span></p>
+<p class="MsoNormal"><b><span>Paul rejoiced that Christ was preached.</span></b></p>
+<p class="MsoNormal"><span class="GramE"><span>Philippians 1:</span><span lang="EN-GB">18, What then?</span></span><span lang="EN-GB"> <span class="GramE">notwithstanding</span>,
+every way, whether in pretence, or in truth, Christ is preached; and I therein
+do rejoice, yea, and will rejoice.</span></p>
+<p class="MsoNormal"><span>It is
+better that Christ is preached with a wrong motive than that Christ is not
+preached at all.</span></p>
+<p class="MsoNormal"><b><span>Personal Testimony:Sometimes it has been difficult to watch
+things that happen within the local Church.</span></b></p>
+<p class="MsoNormal"><span>Leaders
+can become so obsessed with leading that they do not allow anyone else to do
+anything.</span></p>
+<p class="MsoNormal"><span>Leaders
+should produce leaders and ministries should produce ministries.</span></p>
+<p class="MsoNormal"><span>But even
+if a local church which is evangelical is led by a person with wrong motives,
+if Christ is preached then we can rejoice.</span></p>
+<p class="MsoNormal"><span>We do
+not however have to follow the persons leadership.</span></p>
+<p class="MsoNormal"><b><span>5. Walk in humility.</span></b></p>
+<p class="MsoNormal"><b><span>The way of strife is overcome by the way of
+humility.</span></b></p>
+<p class="MsoNormal"><span lang="EN-GB"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Philippians 2:3</span></span></span></span></span></span></span></span></span></span>, <i>Let</i> nothing <i>be done</i> through strife (<span class="SpellE">eritheia</span>) or vainglory; but in lowliness of mind (<span class="SpellE">tapeinophrosune</span>) let each <span class="GramE">esteem</span> other
+better than themselves.</span></p>
+<p class="MsoNormal"><b><span>Lowliness of mind</span></b></p>
+<p class="MsoNormal"><span class="GramE"><span>Two Greek words <span class="SpellE">tapeinos</span>
+meaning not being raised far from the ground and <span class="SpellE">phren</span>
+meaning the perception of heart and the mind.</span></span></p>
+<p class="MsoNormal"><span>Lowliness
+of mind means keeping a low perception of ourselves.</span></p>
+<p class="MsoNormal"><span>This goes
+against popular teaching today that always seeks to raise self esteem.</span></p>
+<p class="MsoNormal"><span>Yet for the
+Christian, it is the life of Christ who dwells in us (<span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref"><span class="scripture-ref">Colossians 1:27</span></span></span></span></span></span></span></span></span></span>).</span></p>
+<p class="MsoNormal"><span>Lowliness
+of mind is to esteem ourselves in Christ not in ourselves.</span></p>
+<p class="MsoNormal"><span>I am
+nothing, Christ is everything.</span></p>
+<p class="MsoNormal"><span>I do not
+need to promote myself because in Christ I have everything.</span></p>
+<p class="MsoNormal"><span>This
+means I am free to take the lowest place because Christ has lifted me to the
+highest place.</span></p>
+<p class="MsoNormal"><b><span>Paul tells us to let the mind of Christ be in
+<span class="GramE">us<span>(</span></span></span></b><span class="SpellE"><span>Phillipians</span></span><span> 2:5)</span></p>
+<p class="MsoNormal"><span>The
+eternal Son of God was willing to humble Himself and become a servant and die
+upon the cross.</span></p>
+<p class="MsoNormal"><span>Now as
+Man He has been exalted to the highest place Jesus Christ is Lord.</span></p>
+<p class="MsoNormal"><span>He
+represents me.</span></p>
+<p class="MsoNormal"><span>Now I am
+seated in heavenly places with Christ.</span></p>
+<p class="MsoNormal"><span>I do not
+have to seek for position; or praise of man; or success, for in Christ I have
+everything.</span></p>
+<p class="MsoNormal"><b><span>Summary:</span></b></p>
+<p class="MsoNormal"><b><span>Leadership must always be with right motives</span></b></p>
+<p class="MsoNormal numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item"><span class="list-number">1)</span><span class="list-number"></span>Our
+eyes should be on our eternal inheritance</p>
+<p class="MsoNormal numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item"><span class="list-number">2)</span><span class="list-number"></span>Our lives
+should produce the fruit of the Holy Spirit.</p>
+<p class="MsoNormal numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item"><span class="list-number">3)</span><span class="list-number"></span>We
+must follow the wisdom from above that produces peace.</p>
+<p class="MsoNormal numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item"><span class="list-number">4)</span><span class="list-number"></span>We
+must preach Christ out of love.</p>
+<p class="MsoNormal numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item numbered-item"><span class="list-number">5)</span><span class="list-number"></span>We
+must walk in lowliness of mind because in Christ I have everything.</p>
+<p class="MsoNormal"><b><span lang="EN-GB">An extreme
+case</span></b><span lang="EN-GB">:</span></p>
+<p class="MsoNormal"><b><span lang="EN-GB">Story: The
+dangers of following a contentious man.</span></b></p>
+<p class="MsoNormal"><span class="GramE"><b><span lang="EN-GB">The Jonestown tragedy in November 1978.</span></b></span></p>
+<p class="MsoNormal"><span lang="EN-GB">A US congressman was murdered along
+with others when they investigated what was happening in Jonestown. </span></p>
+<p class="MsoNormal"><span lang="EN-GB">The followers of Jim Jones and their children
+(over 900 people altogether) died when they drank poison in the communion.</span></p>
+<p class="MsoNormal"><span lang="EN-GB">Jim Jones was a contentious man <span class="SpellE">eritheia</span>. His
+followers were deceived by his words.</span></p>
+</article>
+</div>
+</div>
+<script>
+                    function showTab(tab) {
+                        const contentSection = document.getElementById('contentSection');
+                        const pdfSection = document.getElementById('pdfSection');
+                        const contentTab = document.getElementById('contentTab');
+                        const pdfTab = document.getElementById('pdfTab');
+
+                        if (tab === 'content') {
+                            contentSection.classList.remove('hidden');
+                            pdfSection.classList.add('hidden');
+                            contentTab.classList.add('border-primary-700', 'text-primary-700');
+                            contentTab.classList.remove('border-transparent');
+                            pdfTab.classList.remove('border-primary-700', 'text-primary-700');
+                            pdfTab.classList.add('border-transparent');
+                        } else {
+                            contentSection.classList.add('hidden');
+                            pdfSection.classList.remove('hidden');
+                            pdfTab.classList.add('border-primary-700', 'text-primary-700');
+                            pdfTab.classList.remove('border-transparent');
+                            contentTab.classList.remove('border-primary-700', 'text-primary-700');
+                            contentTab.classList.add('border-transparent');
+                        }
+                    }
+
+                    // Set content tab as active by default
+                    document.addEventListener('DOMContentLoaded', function() {
+                        showTab('content');
+                    });
+                </script>
+<!-- Lesson Navigation -->
+<div class="bg-parchment rounded-xl p-6 border-2 border-heritage-gold/30">
+<div class="flex items-center justify-between flex-wrap gap-4">
+<button class="flex items-center gap-2 px-6 py-3 bg-white border-2 border-gray-300 rounded-lg font-medium text-gray-700 hover:bg-parchment hover:border-gray-400 transition" onclick="window.history.back()">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Previous Lesson</span>
+</button>
+<a class="flex items-center gap-2 px-6 py-3 bg-ancient-ink text-white rounded-lg font-medium hover:bg-primary-800 transition" href="/courses.html">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 6h16M4 10h16M4 14h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>All General Studies Lessons</span>
+</a>
+<div class="text-sm text-gray-600 italic">
+                            💡 Tip: PDFs open in new tabs so you don't lose your place
+                        </div>
+</div>
+</div>
+</div>
+<!-- Sidebar -->
+<div class="space-y-6">
+<!-- Course Info -->
+<div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 bg-heritage-gold/10 rounded-lg flex items-center justify-center text-xl">
+                            📚
+                        </div>
+<div>
+<h3 class="font-bold text-gray-900">Course</h3>
+<p class="text-xs text-gray-600">General Studies</p>
+</div>
+</div>
+<a class="block w-full px-4 py-2 bg-ancient-ink text-white text-center rounded-lg font-medium hover:bg-primary-800 transition text-sm" href="/courses.html">
+                        View All Lessons
+                    </a>
+</div>
+<!-- PDF Version -->
+<div class="bg-parchment rounded-xl p-6 border border-heritage-gold/30">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 bg-heritage-gold text-white rounded-lg flex items-center justify-center text-xl">
+                            📄
+                        </div>
+<div>
+<h3 class="font-bold text-gray-900">PDF Version</h3>
+<p class="text-xs text-gray-600">Download or print this lesson</p>
+</div>
+</div>
+<a class="block w-full px-4 py-2 bg-heritage-gold text-white text-center rounded-lg font-medium hover:bg-heritage-gold transition text-sm" href="/pdfviewer.html?pdf=/courses/languages/greek-word-studies/greekweb2/eritheia.pdf">
+                        View PDF
+                    </a>
+</div>
+<!-- Quick Links -->
+<div class="bg-parchment rounded-xl p-6 border border-heritage-gold/30">
+<h3 class="font-bold text-lg text-gray-900 mb-3">More Courses</h3>
+<p class="text-sm text-gray-600 mb-4">Explore our other biblical courses</p>
+<a class="inline-flex items-center gap-2 px-4 py-2 bg-ancient-ink text-white rounded-lg font-medium hover:bg-primary-800 transition text-sm" href="/courses/index.html">
+<span>All Courses</span>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (loaded from component) -->
+<div id="footer-placeholder"></div>
+<script src="/js/components.js"></script>
+</body>
+</html>

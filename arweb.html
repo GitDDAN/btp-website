@@ -1,358 +1,320 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+
+<html class="scroll-smooth" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ten comprehensive lessons on the Christian Armour - equipping believers to stand against spiritual attacks">
-    <title>The Armour of God | Bible Teaching Program</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-09FW4XY50E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-09FW4XY50E');
+</script>
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Ten comprehensive lessons on the Christian Armour - equipping believers to stand against spiritual attacks" name="description"/>
+<title>The Armour of God | Bible Teaching Program</title><meta content="website" property="og:type"/><meta content="https://bibleteachingprogram.org/arweb.html" property="og:url"/><meta content="The Armour of God | Bible Teaching Program" property="og:title"/><meta content="Ten comprehensive lessons on the Christian Armour - equipping believers to stand against spiritual attacks" property="og:description"/><meta content="https://bibleteachingprogram.org/images/hero-banner.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="The Armour of God | Bible Teaching Program" name="twitter:title"/><meta content="Ten comprehensive lessons on the Christian Armour - equipping believers to stand against spiritual attacks" name="twitter:description"/><meta content="https://bibleteachingprogram.org/images/hero-banner.png" name="twitter:image"/>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind with Brand Colors -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'primary': {
-                            '50': '#f0f7ff',
-                            '100': '#e0effe',
-                            '600': '#006fc7',
-                            '700': '#0058a2',
-                            '800': '#004a85',
-                            '900': '#003d6e',
-                        }
+                        'ancient-ink': '#1C1D37',
+                        'heritage-gold': '#CBA378',
+                        'living-sage': '#7F9A83',
+                        'parchment': '#F9F7F2',
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'Georgia', 'serif'],
                     }
                 }
             }
         }
     </script>
-    <style>
+<link href="/css/brand.css" rel="stylesheet"/>
+<style>
         .lesson-card { transition: all 0.2s ease; }
         .lesson-card:hover { transform: translateY(-2px); }
     </style>
 </head>
-<body class="bg-gray-50">
-
-    <!-- Navigation -->
-    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex items-center gap-6">
-                    <a href="/" class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-primary-700 text-white rounded-lg flex items-center justify-center font-bold text-lg">BTP</div>
-                        <div class="hidden md:block">
-                            <div class="font-bold text-lg text-gray-900">Bible Teaching Program</div>
-                            <div class="text-xs text-gray-600">Biblical Education & Courses</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="flex items-center gap-4">
-                    <a href="/courses.html" class="text-sm font-medium text-gray-700 hover:text-primary-700 transition">&#8592; All Courses</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Breadcrumb -->
-    <div class="bg-white border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-            <nav class="flex items-center gap-2 text-sm flex-wrap">
-                <a href="/" class="text-gray-600 hover:text-primary-700 transition">Home</a>
-                <span class="text-gray-400">/</span>
-                <a href="/courses.html" class="text-gray-600 hover:text-primary-700 transition">Courses</a>
-                <span class="text-gray-400">/</span>
-                <a href="/christian_life_course.html" class="text-gray-600 hover:text-primary-700 transition">Christian Life Course</a>
-                <span class="text-gray-400">/</span>
-                <span class="text-gray-900 font-medium">The Armour of God</span>
-            </nav>
-        </div>
-    </div>
-
-    <!-- Course Header -->
-    <section class="bg-gradient-to-br from-purple-600 via-purple-700 to-purple-800 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center gap-4 mb-4">
-                <div class="w-16 h-16 bg-white bg-opacity-20 backdrop-blur-sm rounded-xl flex items-center justify-center text-3xl">&#128737;</div>
-                <div>
-                    <div class="flex items-center gap-3 mb-2">
-                        <span class="px-3 py-1 bg-white bg-opacity-20 backdrop-blur-sm rounded-full text-xs font-medium">Course</span>
-                        <span class="px-3 py-1 bg-white bg-opacity-20 backdrop-blur-sm rounded-full text-xs font-medium">10 Lessons</span>
-                    </div>
-                    <h1 class="text-3xl md:text-4xl font-bold">The Armour of God</h1>
-                </div>
-            </div>
-            <p class="text-lg text-white text-opacity-90 max-w-3xl">Equipping believers to stand against spiritual attacks - Ephesians 6</p>
-        </div>
-    </section>
-
-    <!-- Main Content -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-
-            <!-- Main Column -->
-            <div class="lg:col-span-2 space-y-8">
-
-                <!-- Course Description -->
-                <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200">
-                    <h2 class="text-2xl font-bold text-gray-900 mb-4">About This Course</h2>
-                    <p class="text-gray-700 leading-relaxed mb-4">
+<body class="bg-parchment">
+<!-- Navigation (loaded from component) -->
+<div id="nav-placeholder"></div>
+<!-- Breadcrumb -->
+<div class="bg-white border-b border-gray-100">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+<nav class="flex items-center gap-2 text-sm flex-wrap">
+<a class="text-gray-600 hover:text-heritage-gold transition" href="/">Home</a>
+<span class="text-gray-400">/</span>
+<a class="text-gray-600 hover:text-heritage-gold transition" href="/courses/index.html">Courses</a>
+<span class="text-gray-400">/</span>
+<a class="text-gray-600 hover:text-heritage-gold transition" href="/courses/christian-life/index.html">Christian Life Course</a>
+<span class="text-gray-400">/</span>
+<span class="text-gray-900 font-medium">The Armour of God</span>
+</nav>
+</div>
+</div>
+<!-- Course Header -->
+<section class="bg-ancient-ink text-white py-12">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-16 h-16 bg-white bg-opacity-20 backdrop-blur-sm rounded-xl flex items-center justify-center text-3xl">🛡</div>
+<div>
+<div class="flex items-center gap-3 mb-2">
+<span class="px-3 py-1 bg-white bg-opacity-20 backdrop-blur-sm rounded-full text-xs font-medium">Course</span>
+<span class="px-3 py-1 bg-white bg-opacity-20 backdrop-blur-sm rounded-full text-xs font-medium">10 Lessons</span>
+</div>
+<h1 class="text-3xl md:text-4xl font-bold">The Armour of God</h1>
+</div>
+</div>
+<p class="text-lg text-white text-opacity-90 max-w-3xl">Equipping believers to stand against spiritual attacks - Ephesians 6</p>
+</div>
+</section>
+<!-- Main Content -->
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Main Column -->
+<div class="lg:col-span-2 space-y-8">
+<!-- Course Description -->
+<div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200">
+<h2 class="text-2xl font-bold text-gray-900 mb-4">About This Course</h2>
+<p class="text-gray-700 leading-relaxed mb-4">
                         Ten comprehensive lessons on the Christian Armour from Ephesians 6. These studies are especially
                         suitable for teaching young people on the essential need of being equipped to stand against the
                         attacks of the devil.
                     </p>
-                    <div class="bg-purple-50 border-l-4 border-purple-600 p-4 rounded-r-lg">
-                        <p class="text-gray-700 font-medium">Course Focus</p>
-                        <p class="text-sm text-gray-600 mt-1">Young Christians and experienced leaders all need to be ready at all times, equipped with every piece of armour. Satan seeks opportunity to destroy our testimony, our marriage, or our ministry.</p>
-                    </div>
-                </div>
-
-                <!-- Lessons List -->
-                <div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200">
-                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Course Lessons</h2>
-
-                    <div class="space-y-3">
-
-                        <div class="lesson-card p-5 border-2 border-gray-200 rounded-lg hover:border-purple-500 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 bg-purple-100 text-purple-700 rounded-lg flex items-center justify-center font-bold flex-shrink-0">1</div>
-                                <div class="flex-1">
-                                    <a href="/armour1.html" class="font-semibold text-lg text-gray-900 mb-1 hover:text-purple-700">Put on the whole armour (panoply) of God</a>
-                                    <p class="text-sm text-gray-600">Be ready at all times equipped with every piece of armour</p>
-                                    <div class="flex gap-2 mt-2">
-                                        <a href="/pdfviewer.html?pdf=/btp/life/armour/armourweb/aog1.pdf" class="inline-flex items-center gap-1 px-2 py-1 bg-red-50 text-red-700 rounded text-xs font-medium hover:bg-red-100">📄 Notes</a>
-                                        <a href="/pdfviewer.html?pdf=/btp/life/armour/armourppt/armour1.pdf" class="inline-flex items-center gap-1 px-2 py-1 bg-purple-50 text-purple-700 rounded text-xs font-medium hover:bg-purple-100">📊 Slides</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="lesson-card p-5 border-2 border-gray-200 rounded-lg hover:border-purple-500 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 bg-purple-100 text-purple-700 rounded-lg flex items-center justify-center font-bold flex-shrink-0">2</div>
-                                <div class="flex-1">
-                                    <a href="/armour2.html" class="font-semibold text-lg text-gray-900 mb-1 hover:text-purple-700">Beware of worldly substitutes</a>
-                                    <p class="text-sm text-gray-600">We need to be strong in the Lord and in the power of His might</p>
-                                    <div class="flex gap-2 mt-2">
-                                        <a href="/pdfviewer.html?pdf=/btp/life/armour/armourweb/aog2.pdf" class="inline-flex items-center gap-1 px-2 py-1 bg-red-50 text-red-700 rounded text-xs font-medium hover:bg-red-100">📄 Notes</a>
-                                        <a href="/pdfviewer.html?pdf=/btp/life/armour/armourppt/armour2.pdf" class="inline-flex items-center gap-1 px-2 py-1 bg-purple-50 text-purple-700 rounded text-xs font-medium hover:bg-purple-100">📊 Slides</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="lesson-card p-5 border-2 border-gray-200 rounded-lg hover:border-purple-500 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 bg-purple-100 text-purple-700 rounded-lg flex items-center justify-center font-bold flex-shrink-0">3</div>
-                                <div class="flex-1">
-                                    <a href="/armour3.html" class="font-semibold text-lg text-gray-900 mb-1 hover:text-purple-700">Beware the wiles of the devil</a>
-                                    <p class="text-sm text-gray-600">Satan uses bait to trap people - beware of his schemes</p>
-                                    <div class="flex gap-2 mt-2">
-                                        <a href="/pdfviewer.html?pdf=/btp/life/armour/armourweb/aog3.pdf" class="inline-flex items-center gap-1 px-2 py-1 bg-red-50 text-red-700 rounded text-xs font-medium hover:bg-red-100">📄 Notes</a>
-                                        <a href="/pdfviewer.html?pdf=/btp/life/armour/armourppt/armour3.pdf" class="inline-flex items-center gap-1 px-2 py-1 bg-purple-50 text-purple-700 rounded text-xs font-medium hover:bg-purple-100">📊 Slides</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="lesson-card p-5 border-2 border-gray-200 rounded-lg hover:border-purple-500 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 bg-purple-100 text-purple-700 rounded-lg flex items-center justify-center font-bold flex-shrink-0">4</div>
-                                <div class="flex-1">
-                                    <a href="/armour4.html" class="font-semibold text-lg text-gray-900 mb-1 hover:text-purple-700">Stand fast in the liberty of Christ</a>
-                                    <p class="text-sm text-gray-600">The devil seeks opportunity to bring us into bondage</p>
-                                    <div class="flex gap-2 mt-2">
-                                        <a href="/pdfviewer.html?pdf=/btp/life/armour/armourweb/aog4.pdf" class="inline-flex items-center gap-1 px-2 py-1 bg-red-50 text-red-700 rounded text-xs font-medium hover:bg-red-100">📄 Notes</a>
-                                        <a href="/pdfviewer.html?pdf=/btp/life/armour/armourppt/armour4.pdf" class="inline-flex items-center gap-1 px-2 py-1 bg-purple-50 text-purple-700 rounded text-xs font-medium hover:bg-purple-100">📊 Slides</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="lesson-card p-5 border-2 border-gray-200 rounded-lg hover:border-purple-500 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 bg-purple-100 text-purple-700 rounded-lg flex items-center justify-center font-bold flex-shrink-0">5</div>
-                                <div class="flex-1">
-                                    <a href="/armour5.html" class="font-semibold text-lg text-gray-900 mb-1 hover:text-purple-700">The Belt of Truth</a>
-                                    <p class="text-sm text-gray-600">The truth of God's word must be fastened like a belt to our lives</p>
-                                    <div class="flex gap-2 mt-2">
-                                        <a href="/pdfviewer.html?pdf=/btp/life/armour/armourweb/aog5.pdf" class="inline-flex items-center gap-1 px-2 py-1 bg-red-50 text-red-700 rounded text-xs font-medium hover:bg-red-100">📄 Notes</a>
-                                        <a href="/pdfviewer.html?pdf=/btp/life/armour/armourppt/armour5.pdf" class="inline-flex items-center gap-1 px-2 py-1 bg-purple-50 text-purple-700 rounded text-xs font-medium hover:bg-purple-100">📊 Slides</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="lesson-card p-5 border-2 border-gray-200 rounded-lg hover:border-purple-500 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 bg-purple-100 text-purple-700 rounded-lg flex items-center justify-center font-bold flex-shrink-0">6</div>
-                                <div class="flex-1">
-                                    <a href="/armour6.html" class="font-semibold text-lg text-gray-900 mb-1 hover:text-purple-700">The Breastplate of Righteousness</a>
-                                    <p class="text-sm text-gray-600">Trusting in the righteousness of Christ alone</p>
-                                    <div class="flex gap-2 mt-2">
-                                        <a href="/pdfviewer.html?pdf=/btp/life/armour/armourweb/aog6.pdf" class="inline-flex items-center gap-1 px-2 py-1 bg-red-50 text-red-700 rounded text-xs font-medium hover:bg-red-100">📄 Notes</a>
-                                        <a href="/pdfviewer.html?pdf=/btp/life/armour/armourppt/armour6.pdf" class="inline-flex items-center gap-1 px-2 py-1 bg-purple-50 text-purple-700 rounded text-xs font-medium hover:bg-purple-100">📊 Slides</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="lesson-card p-5 border-2 border-gray-200 rounded-lg hover:border-purple-500 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 bg-purple-100 text-purple-700 rounded-lg flex items-center justify-center font-bold flex-shrink-0">7</div>
-                                <div class="flex-1">
-                                    <a href="/armour7.html" class="font-semibold text-lg text-gray-900 mb-1 hover:text-purple-700">The Shoes of the Gospel</a>
-                                    <p class="text-sm text-gray-600">Standing firm - wrong shoes will provide no grip on the ground</p>
-                                    <div class="flex gap-2 mt-2">
-                                        <a href="/pdfviewer.html?pdf=/btp/life/armour/armourweb/aog7.pdf" class="inline-flex items-center gap-1 px-2 py-1 bg-red-50 text-red-700 rounded text-xs font-medium hover:bg-red-100">📄 Notes</a>
-                                        <a href="/pdfviewer.html?pdf=/btp/life/armour/armourppt/armour7.pdf" class="inline-flex items-center gap-1 px-2 py-1 bg-purple-50 text-purple-700 rounded text-xs font-medium hover:bg-purple-100">📊 Slides</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="lesson-card p-5 border-2 border-gray-200 rounded-lg hover:border-purple-500 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 bg-purple-100 text-purple-700 rounded-lg flex items-center justify-center font-bold flex-shrink-0">8</div>
-                                <div class="flex-1">
-                                    <a href="/armour8.html" class="font-semibold text-lg text-gray-900 mb-1 hover:text-purple-700">The Shield of Faith</a>
-                                    <p class="text-sm text-gray-600">The first piece of armour that the Christian must take up</p>
-                                    <div class="flex gap-2 mt-2">
-                                        <a href="/pdfviewer.html?pdf=/btp/life/armour/armourppt/armour8.pdf" class="inline-flex items-center gap-1 px-2 py-1 bg-purple-50 text-purple-700 rounded text-xs font-medium hover:bg-purple-100">📊 Slides</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="lesson-card p-5 border-2 border-gray-200 rounded-lg hover:border-purple-500 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 bg-purple-100 text-purple-700 rounded-lg flex items-center justify-center font-bold flex-shrink-0">9</div>
-                                <div class="flex-1">
-                                    <a href="/armour9.html" class="font-semibold text-lg text-gray-900 mb-1 hover:text-purple-700">The Helmet of Salvation</a>
-                                    <p class="text-sm text-gray-600">The helmet protects the mind from depression and discouragement</p>
-                                    <div class="flex gap-2 mt-2">
-                                        <a href="/pdfviewer.html?pdf=/btp/life/armour/armourppt/armour9.pdf" class="inline-flex items-center gap-1 px-2 py-1 bg-purple-50 text-purple-700 rounded text-xs font-medium hover:bg-purple-100">📊 Slides</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="lesson-card p-5 border-2 border-gray-200 rounded-lg hover:border-purple-500 hover:shadow-md transition-all">
-                            <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 bg-purple-100 text-purple-700 rounded-lg flex items-center justify-center font-bold flex-shrink-0">10</div>
-                                <div class="flex-1">
-                                    <a href="/armour10.html" class="font-semibold text-lg text-gray-900 mb-1 hover:text-purple-700">The Sword of the Spirit</a>
-                                    <p class="text-sm text-gray-600">The sword is taken from the belt and must be used with great skill</p>
-                                    <div class="flex gap-2 mt-2">
-                                        <a href="/pdfviewer.html?pdf=/btp/life/armour/armourppt/armour10.pdf" class="inline-flex items-center gap-1 px-2 py-1 bg-purple-50 text-purple-700 rounded text-xs font-medium hover:bg-purple-100">📊 Slides</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Sidebar -->
-            <div class="space-y-6">
-
-                <!-- Quick Info -->
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
-                    <h3 class="font-bold text-lg text-gray-900 mb-4">Course Information</h3>
-                    <div class="space-y-3">
-                        <div class="flex items-center gap-3 text-sm">
-                            <div class="w-8 h-8 bg-purple-50 rounded-lg flex items-center justify-center">&#128218;</div>
-                            <div>
-                                <div class="font-medium text-gray-900">10 Lessons</div>
-                                <div class="text-xs text-gray-600">Complete curriculum</div>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-3 text-sm">
-                            <div class="w-8 h-8 bg-purple-50 rounded-lg flex items-center justify-center">&#9989;</div>
-                            <div>
-                                <div class="font-medium text-gray-900">Self-paced</div>
-                                <div class="text-xs text-gray-600">Study at your own speed</div>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-3 text-sm">
-                            <div class="w-8 h-8 bg-purple-50 rounded-lg flex items-center justify-center">&#128214;</div>
-                            <div>
-                                <div class="font-medium text-gray-900">Scripture-based</div>
-                                <div class="text-xs text-gray-600">Ephesians 6:10-18</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Download Resources -->
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
-                    <h3 class="font-bold text-lg text-gray-900 mb-4">Download Resources</h3>
-                    <p class="text-sm text-gray-600 mb-4">PDF notes and PowerPoint presentations for each lesson</p>
-                    <div class="space-y-2">
-                        <a href="/btp/life/armour/armourppt.html" class="flex items-center gap-3 p-3 bg-purple-50 hover:bg-purple-100 rounded-lg border border-purple-200 transition group">
-                            <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center text-xl group-hover:bg-purple-200 transition">
+<div class="bg-parchment border-l-4 border-heritage-gold p-4 rounded-r-lg">
+<p class="text-gray-700 font-medium">Course Focus</p>
+<p class="text-sm text-gray-600 mt-1">Young Christians and experienced leaders all need to be ready at all times, equipped with every piece of armour. Satan seeks opportunity to destroy our testimony, our marriage, or our ministry.</p>
+</div>
+</div>
+<!-- Lessons List -->
+<div class="bg-white rounded-xl p-8 shadow-sm border border-gray-200">
+<h2 class="text-2xl font-bold text-gray-900 mb-6">Course Lessons</h2>
+<div class="space-y-3">
+<div class="lesson-card p-5 border-2 border-gray-200 rounded-lg hover:border-heritage-gold hover:shadow-md transition-all">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 bg-parchment text-heritage-gold rounded-lg flex items-center justify-center font-bold flex-shrink-0">1</div>
+<div class="flex-1">
+<a class="font-semibold text-lg text-gray-900 mb-1 hover:text-heritage-gold" href="/courses/christian-life/armour-of-god/lesson-1.html">Put on the whole armour (panoply) of God</a>
+<p class="text-sm text-gray-600">Be ready at all times equipped with every piece of armour</p>
+<div class="flex gap-2 mt-2">
+<a class="inline-flex items-center gap-1 px-2 py-1 bg-parchment text-heritage-gold rounded text-xs font-medium hover:bg-parchment" href="/pdfviewer.html?pdf=/courses/christian-life/armour/armourweb/aog1.pdf">📄 Notes</a>
+<a class="inline-flex items-center gap-1 px-2 py-1 bg-parchment text-heritage-gold rounded text-xs font-medium hover:bg-parchment" href="/pdfviewer.html?pdf=/courses/christian-life/armour/armourppt/armour1.pdf">📊 Slides</a>
+</div>
+</div>
+</div>
+</div>
+<div class="lesson-card p-5 border-2 border-gray-200 rounded-lg hover:border-heritage-gold hover:shadow-md transition-all">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 bg-parchment text-heritage-gold rounded-lg flex items-center justify-center font-bold flex-shrink-0">2</div>
+<div class="flex-1">
+<a class="font-semibold text-lg text-gray-900 mb-1 hover:text-heritage-gold" href="/courses/christian-life/armour-of-god/lesson-2.html">Beware of worldly substitutes</a>
+<p class="text-sm text-gray-600">We need to be strong in the Lord and in the power of His might</p>
+<div class="flex gap-2 mt-2">
+<a class="inline-flex items-center gap-1 px-2 py-1 bg-parchment text-heritage-gold rounded text-xs font-medium hover:bg-parchment" href="/pdfviewer.html?pdf=/courses/christian-life/armour/armourweb/aog2.pdf">📄 Notes</a>
+<a class="inline-flex items-center gap-1 px-2 py-1 bg-parchment text-heritage-gold rounded text-xs font-medium hover:bg-parchment" href="/pdfviewer.html?pdf=/courses/christian-life/armour/armourppt/armour2.pdf">📊 Slides</a>
+</div>
+</div>
+</div>
+</div>
+<div class="lesson-card p-5 border-2 border-gray-200 rounded-lg hover:border-heritage-gold hover:shadow-md transition-all">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 bg-parchment text-heritage-gold rounded-lg flex items-center justify-center font-bold flex-shrink-0">3</div>
+<div class="flex-1">
+<a class="font-semibold text-lg text-gray-900 mb-1 hover:text-heritage-gold" href="/courses/christian-life/armour-of-god/lesson-3.html">Beware the wiles of the devil</a>
+<p class="text-sm text-gray-600">Satan uses bait to trap people - beware of his schemes</p>
+<div class="flex gap-2 mt-2">
+<a class="inline-flex items-center gap-1 px-2 py-1 bg-parchment text-heritage-gold rounded text-xs font-medium hover:bg-parchment" href="/pdfviewer.html?pdf=/courses/christian-life/armour/armourweb/aog3.pdf">📄 Notes</a>
+<a class="inline-flex items-center gap-1 px-2 py-1 bg-parchment text-heritage-gold rounded text-xs font-medium hover:bg-parchment" href="/pdfviewer.html?pdf=/courses/christian-life/armour/armourppt/armour3.pdf">📊 Slides</a>
+</div>
+</div>
+</div>
+</div>
+<div class="lesson-card p-5 border-2 border-gray-200 rounded-lg hover:border-heritage-gold hover:shadow-md transition-all">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 bg-parchment text-heritage-gold rounded-lg flex items-center justify-center font-bold flex-shrink-0">4</div>
+<div class="flex-1">
+<a class="font-semibold text-lg text-gray-900 mb-1 hover:text-heritage-gold" href="/courses/christian-life/armour-of-god/lesson-4.html">Stand fast in the liberty of Christ</a>
+<p class="text-sm text-gray-600">The devil seeks opportunity to bring us into bondage</p>
+<div class="flex gap-2 mt-2">
+<a class="inline-flex items-center gap-1 px-2 py-1 bg-parchment text-heritage-gold rounded text-xs font-medium hover:bg-parchment" href="/pdfviewer.html?pdf=/courses/christian-life/armour/armourweb/aog4.pdf">📄 Notes</a>
+<a class="inline-flex items-center gap-1 px-2 py-1 bg-parchment text-heritage-gold rounded text-xs font-medium hover:bg-parchment" href="/pdfviewer.html?pdf=/courses/christian-life/armour/armourppt/armour4.pdf">📊 Slides</a>
+</div>
+</div>
+</div>
+</div>
+<div class="lesson-card p-5 border-2 border-gray-200 rounded-lg hover:border-heritage-gold hover:shadow-md transition-all">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 bg-parchment text-heritage-gold rounded-lg flex items-center justify-center font-bold flex-shrink-0">5</div>
+<div class="flex-1">
+<a class="font-semibold text-lg text-gray-900 mb-1 hover:text-heritage-gold" href="/courses/christian-life/armour-of-god/lesson-5.html">The Belt of Truth</a>
+<p class="text-sm text-gray-600">The truth of God's word must be fastened like a belt to our lives</p>
+<div class="flex gap-2 mt-2">
+<a class="inline-flex items-center gap-1 px-2 py-1 bg-parchment text-heritage-gold rounded text-xs font-medium hover:bg-parchment" href="/pdfviewer.html?pdf=/courses/christian-life/armour/armourweb/aog5.pdf">📄 Notes</a>
+<a class="inline-flex items-center gap-1 px-2 py-1 bg-parchment text-heritage-gold rounded text-xs font-medium hover:bg-parchment" href="/pdfviewer.html?pdf=/courses/christian-life/armour/armourppt/armour5.pdf">📊 Slides</a>
+</div>
+</div>
+</div>
+</div>
+<div class="lesson-card p-5 border-2 border-gray-200 rounded-lg hover:border-heritage-gold hover:shadow-md transition-all">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 bg-parchment text-heritage-gold rounded-lg flex items-center justify-center font-bold flex-shrink-0">6</div>
+<div class="flex-1">
+<a class="font-semibold text-lg text-gray-900 mb-1 hover:text-heritage-gold" href="/courses/christian-life/armour-of-god/lesson-6.html">The Breastplate of Righteousness</a>
+<p class="text-sm text-gray-600">Trusting in the righteousness of Christ alone</p>
+<div class="flex gap-2 mt-2">
+<a class="inline-flex items-center gap-1 px-2 py-1 bg-parchment text-heritage-gold rounded text-xs font-medium hover:bg-parchment" href="/pdfviewer.html?pdf=/courses/christian-life/armour/armourweb/aog6.pdf">📄 Notes</a>
+<a class="inline-flex items-center gap-1 px-2 py-1 bg-parchment text-heritage-gold rounded text-xs font-medium hover:bg-parchment" href="/pdfviewer.html?pdf=/courses/christian-life/armour/armourppt/armour6.pdf">📊 Slides</a>
+</div>
+</div>
+</div>
+</div>
+<div class="lesson-card p-5 border-2 border-gray-200 rounded-lg hover:border-heritage-gold hover:shadow-md transition-all">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 bg-parchment text-heritage-gold rounded-lg flex items-center justify-center font-bold flex-shrink-0">7</div>
+<div class="flex-1">
+<a class="font-semibold text-lg text-gray-900 mb-1 hover:text-heritage-gold" href="/courses/christian-life/armour-of-god/lesson-7.html">The Shoes of the Gospel</a>
+<p class="text-sm text-gray-600">Standing firm - wrong shoes will provide no grip on the ground</p>
+<div class="flex gap-2 mt-2">
+<a class="inline-flex items-center gap-1 px-2 py-1 bg-parchment text-heritage-gold rounded text-xs font-medium hover:bg-parchment" href="/pdfviewer.html?pdf=/courses/christian-life/armour/armourweb/aog7.pdf">📄 Notes</a>
+<a class="inline-flex items-center gap-1 px-2 py-1 bg-parchment text-heritage-gold rounded text-xs font-medium hover:bg-parchment" href="/pdfviewer.html?pdf=/courses/christian-life/armour/armourppt/armour7.pdf">📊 Slides</a>
+</div>
+</div>
+</div>
+</div>
+<div class="lesson-card p-5 border-2 border-gray-200 rounded-lg hover:border-heritage-gold hover:shadow-md transition-all">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 bg-parchment text-heritage-gold rounded-lg flex items-center justify-center font-bold flex-shrink-0">8</div>
+<div class="flex-1">
+<a class="font-semibold text-lg text-gray-900 mb-1 hover:text-heritage-gold" href="/courses/christian-life/armour-of-god/lesson-8.html">The Shield of Faith</a>
+<p class="text-sm text-gray-600">The first piece of armour that the Christian must take up</p>
+<div class="flex gap-2 mt-2">
+<a class="inline-flex items-center gap-1 px-2 py-1 bg-parchment text-heritage-gold rounded text-xs font-medium hover:bg-parchment" href="/pdfviewer.html?pdf=/courses/christian-life/armour/armourppt/armour8.pdf">📊 Slides</a>
+</div>
+</div>
+</div>
+</div>
+<div class="lesson-card p-5 border-2 border-gray-200 rounded-lg hover:border-heritage-gold hover:shadow-md transition-all">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 bg-parchment text-heritage-gold rounded-lg flex items-center justify-center font-bold flex-shrink-0">9</div>
+<div class="flex-1">
+<a class="font-semibold text-lg text-gray-900 mb-1 hover:text-heritage-gold" href="/courses/christian-life/armour-of-god/lesson-9.html">The Helmet of Salvation</a>
+<p class="text-sm text-gray-600">The helmet protects the mind from depression and discouragement</p>
+<div class="flex gap-2 mt-2">
+<a class="inline-flex items-center gap-1 px-2 py-1 bg-parchment text-heritage-gold rounded text-xs font-medium hover:bg-parchment" href="/pdfviewer.html?pdf=/courses/christian-life/armour/armourppt/armour9.pdf">📊 Slides</a>
+</div>
+</div>
+</div>
+</div>
+<div class="lesson-card p-5 border-2 border-gray-200 rounded-lg hover:border-heritage-gold hover:shadow-md transition-all">
+<div class="flex items-start gap-4">
+<div class="w-10 h-10 bg-parchment text-heritage-gold rounded-lg flex items-center justify-center font-bold flex-shrink-0">10</div>
+<div class="flex-1">
+<a class="font-semibold text-lg text-gray-900 mb-1 hover:text-heritage-gold" href="/courses/christian-life/armour-of-god/lesson-10.html">The Sword of the Spirit</a>
+<p class="text-sm text-gray-600">The sword is taken from the belt and must be used with great skill</p>
+<div class="flex gap-2 mt-2">
+<a class="inline-flex items-center gap-1 px-2 py-1 bg-parchment text-heritage-gold rounded text-xs font-medium hover:bg-parchment" href="/pdfviewer.html?pdf=/courses/christian-life/armour/armourppt/armour10.pdf">📊 Slides</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Sidebar -->
+<div class="space-y-6">
+<!-- Quick Info -->
+<div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+<h3 class="font-bold text-lg text-gray-900 mb-4">Course Information</h3>
+<div class="space-y-3">
+<div class="flex items-center gap-3 text-sm">
+<div class="w-8 h-8 bg-parchment rounded-lg flex items-center justify-center">📚</div>
+<div>
+<div class="font-medium text-gray-900">10 Lessons</div>
+<div class="text-xs text-gray-600">Complete curriculum</div>
+</div>
+</div>
+<div class="flex items-center gap-3 text-sm">
+<div class="w-8 h-8 bg-parchment rounded-lg flex items-center justify-center">✅</div>
+<div>
+<div class="font-medium text-gray-900">Self-paced</div>
+<div class="text-xs text-gray-600">Study at your own speed</div>
+</div>
+</div>
+<div class="flex items-center gap-3 text-sm">
+<div class="w-8 h-8 bg-parchment rounded-lg flex items-center justify-center">📖</div>
+<div>
+<div class="font-medium text-gray-900">Scripture-based</div>
+<div class="text-xs text-gray-600">Ephesians 6:10-18</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Download Resources -->
+<div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+<h3 class="font-bold text-lg text-gray-900 mb-4">Download Resources</h3>
+<p class="text-sm text-gray-600 mb-4">PDF notes and PowerPoint presentations for each lesson</p>
+<div class="space-y-2">
+<a class="flex items-center gap-3 p-3 bg-parchment hover:bg-parchment rounded-lg border border-heritage-gold/30 transition group" href="/courses/christian-life/armour/armourppt.html">
+<div class="w-10 h-10 bg-parchment rounded-lg flex items-center justify-center text-xl group-hover:bg-heritage-gold/20 transition">
                                 📥
                             </div>
-                            <div class="flex-1">
-                                <div class="font-medium text-sm text-gray-900">All Resources</div>
-                                <div class="text-xs text-gray-500">22 PDF & PPT files</div>
-                            </div>
-                            <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                            </svg>
-                        </a>
-                        <a href="/pdfviewer.html?pdf=/btp/life/armour/armourppt/armourpictures.pdf" class="flex items-center gap-3 p-3 bg-amber-50 hover:bg-amber-100 rounded-lg border border-amber-200 transition group">
-                            <div class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center text-xl group-hover:bg-amber-200 transition">
+<div class="flex-1">
+<div class="font-medium text-sm text-gray-900">All Resources</div>
+<div class="text-xs text-gray-500">22 PDF &amp; PPT files</div>
+</div>
+<svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+<a class="flex items-center gap-3 p-3 bg-heritage-gold/10 hover:bg-heritage-gold/20 rounded-lg border border-heritage-gold/30 transition group" href="/pdfviewer.html?pdf=/courses/christian-life/armour/armourppt/armourpictures.pdf">
+<div class="w-10 h-10 bg-heritage-gold/20 rounded-lg flex items-center justify-center text-xl group-hover:bg-heritage-gold/30 transition">
                                 🖼️
                             </div>
-                            <div class="flex-1">
-                                <div class="font-medium text-sm text-gray-900">Armour Pictures</div>
-                                <div class="text-xs text-gray-500">Visual reference guide</div>
-                            </div>
-                            <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Related Courses -->
-                <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-6 border border-purple-200">
-                    <h3 class="font-bold text-lg text-gray-900 mb-3">Related Courses</h3>
-                    <div class="space-y-2">
-                        <a href="/christian_life_course.html" class="block text-sm text-gray-700 hover:text-purple-700 transition">Christian Life Course</a>
-                        <a href="/btp/life/fruit/fruitweb.html" class="block text-sm text-gray-700 hover:text-purple-700 transition">The Fruit of the Spirit</a>
-                        <a href="/prayer/pindx.html" class="block text-sm text-gray-700 hover:text-purple-700 transition">Effective Prayer</a>
-                    </div>
-                </div>
-
-                <!-- More Courses -->
-                <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-6 border border-gray-200">
-                    <h3 class="font-bold text-lg text-gray-900 mb-3">More Courses</h3>
-                    <p class="text-sm text-gray-600 mb-4">Explore our other biblical courses</p>
-                    <a href="/courses.html" class="inline-flex items-center gap-2 px-4 py-2 bg-primary-700 text-white rounded-lg font-medium hover:bg-primary-800 transition text-sm">
-                        <span>View All Courses</span>
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                        </svg>
-                    </a>
-                </div>
-
-            </div>
-
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-12 mt-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="flex items-center justify-center gap-3 mb-4">
-                <div class="w-10 h-10 bg-primary-700 text-white rounded-lg flex items-center justify-center font-bold">BTP</div>
-                <span class="font-bold text-xl text-white">Bible Teaching Program</span>
-            </div>
-            <p class="text-gray-400 mb-6">Equipping believers worldwide through biblical teaching</p>
-            <p class="text-sm text-gray-500">2025 Bible Teaching Program. All rights reserved.</p>
-        </div>
-    </footer>
+<div class="flex-1">
+<div class="font-medium text-sm text-gray-900">Armour Pictures</div>
+<div class="text-xs text-gray-500">Visual reference guide</div>
+</div>
+<svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+</div>
+</div>
+<!-- Related Courses -->
+<div class="bg-parchment rounded-xl p-6 border border-heritage-gold/30">
+<h3 class="font-bold text-lg text-gray-900 mb-3">Related Courses</h3>
+<div class="space-y-2">
+<a class="block text-sm text-gray-700 hover:text-heritage-gold transition" href="/courses/christian-life/index.html">Christian Life Course</a>
+<a class="block text-sm text-gray-700 hover:text-heritage-gold transition" href="/courses/christian-life/fruit/fruitweb.html">The Fruit of the Spirit</a>
+<a class="block text-sm text-gray-700 hover:text-heritage-gold transition" href="/courses/christian-life/prayer/resources/pindx.html">Effective Prayer</a>
+</div>
+</div>
+<!-- More Courses -->
+<div class="bg-parchment rounded-xl p-6 border border-gray-200">
+<h3 class="font-bold text-lg text-gray-900 mb-3">More Courses</h3>
+<p class="text-sm text-gray-600 mb-4">Explore our other biblical courses</p>
+<a class="inline-flex items-center gap-2 px-4 py-2 bg-ancient-ink text-white rounded-lg font-medium hover:bg-primary-800 transition text-sm" href="/courses/index.html">
+<span>View All Courses</span>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (loaded from component) -->
+<div id="footer-placeholder"></div>
+<script src="/js/components.js"></script>
 </body>
 </html>

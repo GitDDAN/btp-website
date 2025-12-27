@@ -1,495 +1,411 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Minor Prophets - Hosea through Malachi. Twelve shorter prophetic books with powerful messages (KJV).">
-    <title>Minor Prophets | Bible Teaching Program</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
+<html class="scroll-smooth" lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-09FW4XY50E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-09FW4XY50E');
+</script>
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Minor Prophets - Hosea through Malachi. Twelve shorter prophetic books with powerful messages (KJV)." name="description"/>
+<title>Minor Prophets | Bible Teaching Program</title><meta content="website" property="og:type"/><meta content="https://bibleteachingprogram.org/biblemin.html" property="og:url"/><meta content="Minor Prophets | Bible Teaching Program" property="og:title"/><meta content="Minor Prophets - Hosea through Malachi. Twelve shorter prophetic books with powerful messages (KJV)." property="og:description"/><meta content="https://bibleteachingprogram.org/images/hero-banner.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Minor Prophets | Bible Teaching Program" name="twitter:title"/><meta content="Minor Prophets - Hosea through Malachi. Twelve shorter prophetic books with powerful messages (KJV)." name="twitter:description"/><meta content="https://bibleteachingprogram.org/images/hero-banner.png" name="twitter:image"/>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind with Brand Colors -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'primary': {
-                            '50': '#f0f7ff',
-                            '100': '#e0effe',
-                            '600': '#006fc7',
-                            '700': '#0058a2',
-                            '800': '#004a85',
-                            '900': '#003d6e',
-                        }
+                        'ancient-ink': '#1C1D37',
+                        'heritage-gold': '#CBA378',
+                        'living-sage': '#7F9A83',
+                        'parchment': '#F9F7F2',
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'Georgia', 'serif'],
                     }
                 }
             }
         }
     </script>
+<link href="/css/brand.css" rel="stylesheet"/>
 </head>
-<body class="bg-gray-50">
-
-    <!-- Navigation -->
-    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex items-center gap-6">
-                    <a href="/" class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-primary-700 text-white rounded-lg flex items-center justify-center font-bold text-lg">
-                            BTP
-                        </div>
-                        <div class="hidden md:block">
-                            <div class="font-bold text-lg text-gray-900">Bible Teaching Program</div>
-                            <div class="text-xs text-gray-600">Biblical Education & Courses</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="flex items-center gap-4">
-                    <button onclick="window.history.back()" class="text-sm font-medium text-gray-700 hover:text-primary-700 transition">← Back</button>
-                    <a href="/" class="text-sm font-medium text-gray-700 hover:text-primary-700 transition">Home</a>
-                    </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Breadcrumbs -->
-    <div class="bg-white border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-            <nav class="flex items-center gap-2 text-sm flex-wrap">
-                <a href="/" class="text-gray-600 hover:text-primary-700 transition">Home</a>
-                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                </svg>
-                <a href="/bible.html" class="text-gray-600 hover:text-primary-700 transition">Bible (KJV)</a>
-                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                </svg>
-                <a href="/bibleot.html" class="text-gray-600 hover:text-primary-700 transition">Old Testament</a>
-                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                </svg>
-                <span class="text-gray-900 font-medium">Minor Prophets</span>
-            </nav>
-        </div>
-    </div>
-
-    <!-- Page Header -->
-    <section class="bg-gradient-to-br from-amber-600 via-amber-700 to-amber-800 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center gap-4">
-                <div class="w-16 h-16 bg-white bg-opacity-20 backdrop-blur-sm rounded-xl flex items-center justify-center text-3xl">
+<body class="bg-parchment">
+<!-- Navigation (loaded from component) -->
+<div id="nav-placeholder"></div>
+<!-- Breadcrumbs -->
+<div class="bg-white border-b border-gray-100">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+<nav class="flex items-center gap-2 text-sm flex-wrap">
+<a class="text-gray-600 hover:text-heritage-gold transition" href="/">Home</a>
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<a class="text-gray-600 hover:text-heritage-gold transition" href="/bible/index.html">Bible (KJV)</a>
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<a class="text-gray-600 hover:text-heritage-gold transition" href="/bible/old-testament/index.html">Old Testament</a>
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="text-gray-900 font-medium">Minor Prophets</span>
+</nav>
+</div>
+</div>
+<!-- Page Header -->
+<section class="bg-ancient-ink text-white py-12">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 bg-white bg-opacity-20 backdrop-blur-sm rounded-xl flex items-center justify-center text-3xl">
                     📣
                 </div>
-                <div>
-                    <h1 class="text-3xl md:text-4xl font-bold">Minor Prophets</h1>
-                    <p class="text-lg text-amber-100 mt-1">The Twelve - 12 Books (KJV)</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Main Content -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-
-        <!-- Introduction -->
-        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200 mb-8">
-            <p class="text-gray-700 leading-relaxed">
+<div>
+<h1 class="text-3xl md:text-4xl font-bold">Minor Prophets</h1>
+<p class="text-lg text-heritage-gold/40 mt-1">The Twelve - 12 Books (KJV)</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content -->
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- Introduction -->
+<div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200 mb-8">
+<p class="text-gray-700 leading-relaxed">
                 The Minor Prophets are called "minor" only because of their shorter length, not lesser importance.
                 These twelve books, known in Hebrew tradition as "The Twelve," span several centuries and address
                 diverse situations with messages of judgment, repentance, and restoration. Each book delivers
                 God's powerful word to His people.
             </p>
-        </div>
-
-        <!-- Books Grid -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-
-            <!-- Hosea -->
-            <a href="/bible-reader.html?pdf=/otkjv/minor/hoskjvwd.pdf" class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-amber-400 hover:shadow-xl transition-all group">
-                <div class="flex items-center gap-4 mb-4">
-                    <div class="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center group-hover:bg-amber-100 transition">
-                        <span class="text-xl font-bold text-amber-700">1</span>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-gray-900 group-hover:text-amber-700 transition">Hosea</h3>
-                        <span class="text-xs text-gray-500">14 Chapters</span>
-                    </div>
-                </div>
-                <p class="text-gray-600 text-sm mb-3">God's faithful love illustrated through Hosea's marriage to unfaithful Gomer.</p>
-                <div class="flex items-center text-amber-700 font-semibold text-sm">
-                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                    </svg>
-                    <span>Read Book</span>
-                </div>
-            </a>
-
-            <!-- Joel -->
-            <a href="/bible-reader.html?pdf=/otkjv/minor/joelkjvwd.pdf" class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-amber-400 hover:shadow-xl transition-all group">
-                <div class="flex items-center gap-4 mb-4">
-                    <div class="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center group-hover:bg-amber-100 transition">
-                        <span class="text-xl font-bold text-amber-700">2</span>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-gray-900 group-hover:text-amber-700 transition">Joel</h3>
-                        <span class="text-xs text-gray-500">3 Chapters</span>
-                    </div>
-                </div>
-                <p class="text-gray-600 text-sm mb-3">The Day of the Lord and the promise of God's Spirit poured out.</p>
-                <div class="flex items-center text-amber-700 font-semibold text-sm">
-                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                    </svg>
-                    <span>Read Book</span>
-                </div>
-            </a>
-
-            <!-- Amos -->
-            <a href="/bible-reader.html?pdf=/otkjv/minor/amkjvwd.pdf" class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-amber-400 hover:shadow-xl transition-all group">
-                <div class="flex items-center gap-4 mb-4">
-                    <div class="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center group-hover:bg-amber-100 transition">
-                        <span class="text-xl font-bold text-amber-700">3</span>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-gray-900 group-hover:text-amber-700 transition">Amos</h3>
-                        <span class="text-xs text-gray-500">9 Chapters</span>
-                    </div>
-                </div>
-                <p class="text-gray-600 text-sm mb-3">A shepherd's call for social justice and true worship.</p>
-                <div class="flex items-center text-amber-700 font-semibold text-sm">
-                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                    </svg>
-                    <span>Read Book</span>
-                </div>
-            </a>
-
-            <!-- Obadiah -->
-            <a href="/bible-reader.html?pdf=/otkjv/minor/obkjvwd.pdf" class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-amber-400 hover:shadow-xl transition-all group">
-                <div class="flex items-center gap-4 mb-4">
-                    <div class="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center group-hover:bg-amber-100 transition">
-                        <span class="text-xl font-bold text-amber-700">4</span>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-gray-900 group-hover:text-amber-700 transition">Obadiah</h3>
-                        <span class="text-xs text-gray-500">1 Chapter</span>
-                    </div>
-                </div>
-                <p class="text-gray-600 text-sm mb-3">Judgment against Edom for pride and betrayal of Israel.</p>
-                <div class="flex items-center text-amber-700 font-semibold text-sm">
-                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                    </svg>
-                    <span>Read Book</span>
-                </div>
-            </a>
-
-            <!-- Jonah -->
-            <a href="/bible-reader.html?pdf=/otkjv/minor/jnhkjvwd.pdf" class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-amber-400 hover:shadow-xl transition-all group">
-                <div class="flex items-center gap-4 mb-4">
-                    <div class="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center group-hover:bg-amber-100 transition">
-                        <span class="text-xl font-bold text-amber-700">5</span>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-gray-900 group-hover:text-amber-700 transition">Jonah</h3>
-                        <span class="text-xs text-gray-500">4 Chapters</span>
-                    </div>
-                </div>
-                <p class="text-gray-600 text-sm mb-3">A reluctant prophet learns God's compassion extends to all nations.</p>
-                <div class="flex items-center text-amber-700 font-semibold text-sm">
-                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                    </svg>
-                    <span>Read Book</span>
-                </div>
-            </a>
-
-            <!-- Micah -->
-            <a href="/bible-reader.html?pdf=/otkjv/minor/mickjvwd.pdf" class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-amber-400 hover:shadow-xl transition-all group">
-                <div class="flex items-center gap-4 mb-4">
-                    <div class="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center group-hover:bg-amber-100 transition">
-                        <span class="text-xl font-bold text-amber-700">6</span>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-gray-900 group-hover:text-amber-700 transition">Micah</h3>
-                        <span class="text-xs text-gray-500">7 Chapters</span>
-                    </div>
-                </div>
-                <p class="text-gray-600 text-sm mb-3">Justice, mercy, and humility - including Bethlehem prophecy.</p>
-                <div class="flex items-center text-amber-700 font-semibold text-sm">
-                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                    </svg>
-                    <span>Read Book</span>
-                </div>
-            </a>
-
-            <!-- Nahum -->
-            <a href="/bible-reader.html?pdf=/otkjv/minor/nakjvwd.pdf" class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-amber-400 hover:shadow-xl transition-all group">
-                <div class="flex items-center gap-4 mb-4">
-                    <div class="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center group-hover:bg-amber-100 transition">
-                        <span class="text-xl font-bold text-amber-700">7</span>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-gray-900 group-hover:text-amber-700 transition">Nahum</h3>
-                        <span class="text-xs text-gray-500">3 Chapters</span>
-                    </div>
-                </div>
-                <p class="text-gray-600 text-sm mb-3">Prophecy of Nineveh's destruction - God's vengeance on oppressors.</p>
-                <div class="flex items-center text-amber-700 font-semibold text-sm">
-                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                    </svg>
-                    <span>Read Book</span>
-                </div>
-            </a>
-
-            <!-- Habakkuk -->
-            <a href="/bible-reader.html?pdf=/otkjv/minor/habkjvwd.pdf" class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-amber-400 hover:shadow-xl transition-all group">
-                <div class="flex items-center gap-4 mb-4">
-                    <div class="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center group-hover:bg-amber-100 transition">
-                        <span class="text-xl font-bold text-amber-700">8</span>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-gray-900 group-hover:text-amber-700 transition">Habakkuk</h3>
-                        <span class="text-xs text-gray-500">3 Chapters</span>
-                    </div>
-                </div>
-                <p class="text-gray-600 text-sm mb-3">Wrestling with God's ways - "The just shall live by faith."</p>
-                <div class="flex items-center text-amber-700 font-semibold text-sm">
-                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                    </svg>
-                    <span>Read Book</span>
-                </div>
-            </a>
-
-            <!-- Zephaniah -->
-            <a href="/bible-reader.html?pdf=/otkjv/minor/zepkjvwd.pdf" class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-amber-400 hover:shadow-xl transition-all group">
-                <div class="flex items-center gap-4 mb-4">
-                    <div class="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center group-hover:bg-amber-100 transition">
-                        <span class="text-xl font-bold text-amber-700">9</span>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-gray-900 group-hover:text-amber-700 transition">Zephaniah</h3>
-                        <span class="text-xs text-gray-500">3 Chapters</span>
-                    </div>
-                </div>
-                <p class="text-gray-600 text-sm mb-3">The Day of the Lord and future restoration of a humble remnant.</p>
-                <div class="flex items-center text-amber-700 font-semibold text-sm">
-                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                    </svg>
-                    <span>Read Book</span>
-                </div>
-            </a>
-
-            <!-- Haggai -->
-            <a href="/bible-reader.html?pdf=/otkjv/minor/hagkjvwd.pdf" class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-amber-400 hover:shadow-xl transition-all group">
-                <div class="flex items-center gap-4 mb-4">
-                    <div class="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center group-hover:bg-amber-100 transition">
-                        <span class="text-xl font-bold text-amber-700">10</span>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-gray-900 group-hover:text-amber-700 transition">Haggai</h3>
-                        <span class="text-xs text-gray-500">2 Chapters</span>
-                    </div>
-                </div>
-                <p class="text-gray-600 text-sm mb-3">A call to rebuild the temple after exile - prioritizing God's house.</p>
-                <div class="flex items-center text-amber-700 font-semibold text-sm">
-                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                    </svg>
-                    <span>Read Book</span>
-                </div>
-            </a>
-
-            <!-- Zechariah -->
-            <a href="/bible-reader.html?pdf=/otkjv/minor/zeckjvwd.pdf" class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-amber-400 hover:shadow-xl transition-all group">
-                <div class="flex items-center gap-4 mb-4">
-                    <div class="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center group-hover:bg-amber-100 transition">
-                        <span class="text-xl font-bold text-amber-700">11</span>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-gray-900 group-hover:text-amber-700 transition">Zechariah</h3>
-                        <span class="text-xs text-gray-500">14 Chapters</span>
-                    </div>
-                </div>
-                <p class="text-gray-600 text-sm mb-3">Apocalyptic visions and Messianic prophecies - the coming King.</p>
-                <div class="flex items-center text-amber-700 font-semibold text-sm">
-                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                    </svg>
-                    <span>Read Book</span>
-                </div>
-            </a>
-
-            <!-- Malachi -->
-            <a href="/bible-reader.html?pdf=/otkjv/minor/malkjvwd.pdf" class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-amber-400 hover:shadow-xl transition-all group">
-                <div class="flex items-center gap-4 mb-4">
-                    <div class="w-12 h-12 bg-amber-50 rounded-lg flex items-center justify-center group-hover:bg-amber-100 transition">
-                        <span class="text-xl font-bold text-amber-700">12</span>
-                    </div>
-                    <div>
-                        <h3 class="text-lg font-bold text-gray-900 group-hover:text-amber-700 transition">Malachi</h3>
-                        <span class="text-xs text-gray-500">4 Chapters</span>
-                    </div>
-                </div>
-                <p class="text-gray-600 text-sm mb-3">The final Old Testament prophet - calling Israel to covenant faithfulness.</p>
-                <div class="flex items-center text-amber-700 font-semibold text-sm">
-                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                    </svg>
-                    <span>Read Book</span>
-                </div>
-            </a>
-
-        </div>
-
-        <!-- Study Notes PDFs -->
-        <div class="mt-12 bg-white rounded-xl p-6 shadow-sm border border-gray-200">
-            <div class="flex items-center gap-3 mb-6">
-                <div class="w-10 h-10 bg-orange-100 rounded-lg flex items-center justify-center">
-                    <span class="text-xl">📄</span>
-                </div>
-                <div>
-                    <h2 class="text-xl font-bold text-gray-900">Study Notes (PDF)</h2>
-                    <p class="text-sm text-gray-600">Downloadable study materials for each book</p>
-                </div>
-            </div>
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
-                <a href="/pdfviewer.html?pdf=/ot/minor/minorpdf/1hosea.pdf" class="flex items-center gap-2 p-3 bg-orange-50 rounded-lg hover:bg-orange-100 transition text-sm">
-                    <span class="text-orange-600">📄</span>
-                    <span class="font-medium">Hosea</span>
-                </a>
-                <a href="/pdfviewer.html?pdf=/ot/minor/minorpdf/2joel.pdf" class="flex items-center gap-2 p-3 bg-orange-50 rounded-lg hover:bg-orange-100 transition text-sm">
-                    <span class="text-orange-600">📄</span>
-                    <span class="font-medium">Joel</span>
-                </a>
-                <a href="/pdfviewer.html?pdf=/ot/minor/minorpdf/3amos.pdf" class="flex items-center gap-2 p-3 bg-orange-50 rounded-lg hover:bg-orange-100 transition text-sm">
-                    <span class="text-orange-600">📄</span>
-                    <span class="font-medium">Amos</span>
-                </a>
-                <a href="/pdfviewer.html?pdf=/ot/minor/minorpdf/4obadiah.pdf" class="flex items-center gap-2 p-3 bg-orange-50 rounded-lg hover:bg-orange-100 transition text-sm">
-                    <span class="text-orange-600">📄</span>
-                    <span class="font-medium">Obadiah</span>
-                </a>
-                <a href="/pdfviewer.html?pdf=/ot/minor/minorpdf/5jonah.pdf" class="flex items-center gap-2 p-3 bg-orange-50 rounded-lg hover:bg-orange-100 transition text-sm">
-                    <span class="text-orange-600">📄</span>
-                    <span class="font-medium">Jonah</span>
-                </a>
-                <a href="/pdfviewer.html?pdf=/ot/minor/minorpdf/6micah.pdf" class="flex items-center gap-2 p-3 bg-orange-50 rounded-lg hover:bg-orange-100 transition text-sm">
-                    <span class="text-orange-600">📄</span>
-                    <span class="font-medium">Micah</span>
-                </a>
-                <a href="/pdfviewer.html?pdf=/ot/minor/minorpdf/7nahum.pdf" class="flex items-center gap-2 p-3 bg-orange-50 rounded-lg hover:bg-orange-100 transition text-sm">
-                    <span class="text-orange-600">📄</span>
-                    <span class="font-medium">Nahum</span>
-                </a>
-                <a href="/pdfviewer.html?pdf=/ot/minor/minorpdf/8habakkuk.pdf" class="flex items-center gap-2 p-3 bg-orange-50 rounded-lg hover:bg-orange-100 transition text-sm">
-                    <span class="text-orange-600">📄</span>
-                    <span class="font-medium">Habakkuk</span>
-                </a>
-                <a href="/pdfviewer.html?pdf=/ot/minor/minorpdf/9zephaniah.pdf" class="flex items-center gap-2 p-3 bg-orange-50 rounded-lg hover:bg-orange-100 transition text-sm">
-                    <span class="text-orange-600">📄</span>
-                    <span class="font-medium">Zephaniah</span>
-                </a>
-                <a href="/pdfviewer.html?pdf=/ot/minor/minorpdf/10haggai.pdf" class="flex items-center gap-2 p-3 bg-orange-50 rounded-lg hover:bg-orange-100 transition text-sm">
-                    <span class="text-orange-600">📄</span>
-                    <span class="font-medium">Haggai</span>
-                </a>
-                <a href="/pdfviewer.html?pdf=/ot/minor/minorpdf/11zechariah.pdf" class="flex items-center gap-2 p-3 bg-orange-50 rounded-lg hover:bg-orange-100 transition text-sm">
-                    <span class="text-orange-600">📄</span>
-                    <span class="font-medium">Zechariah</span>
-                </a>
-                <a href="/pdfviewer.html?pdf=/ot/minor/minorpdf/12malachi.pdf" class="flex items-center gap-2 p-3 bg-orange-50 rounded-lg hover:bg-orange-100 transition text-sm">
-                    <span class="text-orange-600">📄</span>
-                    <span class="font-medium">Malachi</span>
-                </a>
-            </div>
-        </div>
-
-        <!-- Navigation Links -->
-        <div class="mt-12 flex flex-wrap justify-center gap-4">
-            <a href="/biblemaj.html" class="inline-flex items-center gap-2 text-amber-700 hover:text-amber-800 font-medium transition">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-                </svg>
+</div>
+<!-- Books Grid -->
+<div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- Hosea -->
+<a class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-heritage-gold hover:shadow-xl transition-all group" href="/bible-reader.html?pdf=/bible/old-testament/kjv/minor/hoskjvwd.pdf">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 bg-heritage-gold/10 rounded-lg flex items-center justify-center group-hover:bg-heritage-gold/20 transition">
+<span class="text-xl font-bold text-heritage-gold">1</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-gray-900 group-hover:text-heritage-gold transition">Hosea</h3>
+<span class="text-xs text-gray-500">14 Chapters</span>
+</div>
+</div>
+<p class="text-gray-600 text-sm mb-3">God's faithful love illustrated through Hosea's marriage to unfaithful Gomer.</p>
+<div class="flex items-center text-heritage-gold font-semibold text-sm">
+<svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Read Book</span>
+</div>
+</a>
+<!-- Joel -->
+<a class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-heritage-gold hover:shadow-xl transition-all group" href="/bible-reader.html?pdf=/bible/old-testament/kjv/minor/joelkjvwd.pdf">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 bg-heritage-gold/10 rounded-lg flex items-center justify-center group-hover:bg-heritage-gold/20 transition">
+<span class="text-xl font-bold text-heritage-gold">2</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-gray-900 group-hover:text-heritage-gold transition">Joel</h3>
+<span class="text-xs text-gray-500">3 Chapters</span>
+</div>
+</div>
+<p class="text-gray-600 text-sm mb-3">The Day of the Lord and the promise of God's Spirit poured out.</p>
+<div class="flex items-center text-heritage-gold font-semibold text-sm">
+<svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Read Book</span>
+</div>
+</a>
+<!-- Amos -->
+<a class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-heritage-gold hover:shadow-xl transition-all group" href="/bible-reader.html?pdf=/bible/old-testament/kjv/minor/amkjvwd.pdf">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 bg-heritage-gold/10 rounded-lg flex items-center justify-center group-hover:bg-heritage-gold/20 transition">
+<span class="text-xl font-bold text-heritage-gold">3</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-gray-900 group-hover:text-heritage-gold transition">Amos</h3>
+<span class="text-xs text-gray-500">9 Chapters</span>
+</div>
+</div>
+<p class="text-gray-600 text-sm mb-3">A shepherd's call for social justice and true worship.</p>
+<div class="flex items-center text-heritage-gold font-semibold text-sm">
+<svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Read Book</span>
+</div>
+</a>
+<!-- Obadiah -->
+<a class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-heritage-gold hover:shadow-xl transition-all group" href="/bible-reader.html?pdf=/bible/old-testament/kjv/minor/obkjvwd.pdf">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 bg-heritage-gold/10 rounded-lg flex items-center justify-center group-hover:bg-heritage-gold/20 transition">
+<span class="text-xl font-bold text-heritage-gold">4</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-gray-900 group-hover:text-heritage-gold transition">Obadiah</h3>
+<span class="text-xs text-gray-500">1 Chapter</span>
+</div>
+</div>
+<p class="text-gray-600 text-sm mb-3">Judgment against Edom for pride and betrayal of Israel.</p>
+<div class="flex items-center text-heritage-gold font-semibold text-sm">
+<svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Read Book</span>
+</div>
+</a>
+<!-- Jonah -->
+<a class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-heritage-gold hover:shadow-xl transition-all group" href="/bible-reader.html?pdf=/bible/old-testament/kjv/minor/jnhkjvwd.pdf">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 bg-heritage-gold/10 rounded-lg flex items-center justify-center group-hover:bg-heritage-gold/20 transition">
+<span class="text-xl font-bold text-heritage-gold">5</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-gray-900 group-hover:text-heritage-gold transition">Jonah</h3>
+<span class="text-xs text-gray-500">4 Chapters</span>
+</div>
+</div>
+<p class="text-gray-600 text-sm mb-3">A reluctant prophet learns God's compassion extends to all nations.</p>
+<div class="flex items-center text-heritage-gold font-semibold text-sm">
+<svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Read Book</span>
+</div>
+</a>
+<!-- Micah -->
+<a class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-heritage-gold hover:shadow-xl transition-all group" href="/bible-reader.html?pdf=/bible/old-testament/kjv/minor/mickjvwd.pdf">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 bg-heritage-gold/10 rounded-lg flex items-center justify-center group-hover:bg-heritage-gold/20 transition">
+<span class="text-xl font-bold text-heritage-gold">6</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-gray-900 group-hover:text-heritage-gold transition">Micah</h3>
+<span class="text-xs text-gray-500">7 Chapters</span>
+</div>
+</div>
+<p class="text-gray-600 text-sm mb-3">Justice, mercy, and humility - including Bethlehem prophecy.</p>
+<div class="flex items-center text-heritage-gold font-semibold text-sm">
+<svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Read Book</span>
+</div>
+</a>
+<!-- Nahum -->
+<a class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-heritage-gold hover:shadow-xl transition-all group" href="/bible-reader.html?pdf=/bible/old-testament/kjv/minor/nakjvwd.pdf">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 bg-heritage-gold/10 rounded-lg flex items-center justify-center group-hover:bg-heritage-gold/20 transition">
+<span class="text-xl font-bold text-heritage-gold">7</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-gray-900 group-hover:text-heritage-gold transition">Nahum</h3>
+<span class="text-xs text-gray-500">3 Chapters</span>
+</div>
+</div>
+<p class="text-gray-600 text-sm mb-3">Prophecy of Nineveh's destruction - God's vengeance on oppressors.</p>
+<div class="flex items-center text-heritage-gold font-semibold text-sm">
+<svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Read Book</span>
+</div>
+</a>
+<!-- Habakkuk -->
+<a class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-heritage-gold hover:shadow-xl transition-all group" href="/bible-reader.html?pdf=/bible/old-testament/kjv/minor/habkjvwd.pdf">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 bg-heritage-gold/10 rounded-lg flex items-center justify-center group-hover:bg-heritage-gold/20 transition">
+<span class="text-xl font-bold text-heritage-gold">8</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-gray-900 group-hover:text-heritage-gold transition">Habakkuk</h3>
+<span class="text-xs text-gray-500">3 Chapters</span>
+</div>
+</div>
+<p class="text-gray-600 text-sm mb-3">Wrestling with God's ways - "The just shall live by faith."</p>
+<div class="flex items-center text-heritage-gold font-semibold text-sm">
+<svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Read Book</span>
+</div>
+</a>
+<!-- Zephaniah -->
+<a class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-heritage-gold hover:shadow-xl transition-all group" href="/bible-reader.html?pdf=/bible/old-testament/kjv/minor/zepkjvwd.pdf">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 bg-heritage-gold/10 rounded-lg flex items-center justify-center group-hover:bg-heritage-gold/20 transition">
+<span class="text-xl font-bold text-heritage-gold">9</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-gray-900 group-hover:text-heritage-gold transition">Zephaniah</h3>
+<span class="text-xs text-gray-500">3 Chapters</span>
+</div>
+</div>
+<p class="text-gray-600 text-sm mb-3">The Day of the Lord and future restoration of a humble remnant.</p>
+<div class="flex items-center text-heritage-gold font-semibold text-sm">
+<svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Read Book</span>
+</div>
+</a>
+<!-- Haggai -->
+<a class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-heritage-gold hover:shadow-xl transition-all group" href="/bible-reader.html?pdf=/bible/old-testament/kjv/minor/hagkjvwd.pdf">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 bg-heritage-gold/10 rounded-lg flex items-center justify-center group-hover:bg-heritage-gold/20 transition">
+<span class="text-xl font-bold text-heritage-gold">10</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-gray-900 group-hover:text-heritage-gold transition">Haggai</h3>
+<span class="text-xs text-gray-500">2 Chapters</span>
+</div>
+</div>
+<p class="text-gray-600 text-sm mb-3">A call to rebuild the temple after exile - prioritizing God's house.</p>
+<div class="flex items-center text-heritage-gold font-semibold text-sm">
+<svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Read Book</span>
+</div>
+</a>
+<!-- Zechariah -->
+<a class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-heritage-gold hover:shadow-xl transition-all group" href="/bible-reader.html?pdf=/bible/old-testament/kjv/minor/zeckjvwd.pdf">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 bg-heritage-gold/10 rounded-lg flex items-center justify-center group-hover:bg-heritage-gold/20 transition">
+<span class="text-xl font-bold text-heritage-gold">11</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-gray-900 group-hover:text-heritage-gold transition">Zechariah</h3>
+<span class="text-xs text-gray-500">14 Chapters</span>
+</div>
+</div>
+<p class="text-gray-600 text-sm mb-3">Apocalyptic visions and Messianic prophecies - the coming King.</p>
+<div class="flex items-center text-heritage-gold font-semibold text-sm">
+<svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Read Book</span>
+</div>
+</a>
+<!-- Malachi -->
+<a class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-heritage-gold hover:shadow-xl transition-all group" href="/bible-reader.html?pdf=/bible/old-testament/kjv/minor/malkjvwd.pdf">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-12 h-12 bg-heritage-gold/10 rounded-lg flex items-center justify-center group-hover:bg-heritage-gold/20 transition">
+<span class="text-xl font-bold text-heritage-gold">12</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-gray-900 group-hover:text-heritage-gold transition">Malachi</h3>
+<span class="text-xs text-gray-500">4 Chapters</span>
+</div>
+</div>
+<p class="text-gray-600 text-sm mb-3">The final Old Testament prophet - calling Israel to covenant faithfulness.</p>
+<div class="flex items-center text-heritage-gold font-semibold text-sm">
+<svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Read Book</span>
+</div>
+</a>
+</div>
+<!-- Study Notes PDFs -->
+<div class="mt-12 bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+<div class="flex items-center gap-3 mb-6">
+<div class="w-10 h-10 bg-heritage-gold/20 rounded-lg flex items-center justify-center">
+<span class="text-xl">📄</span>
+</div>
+<div>
+<h2 class="text-xl font-bold text-gray-900">Study Notes (PDF)</h2>
+<p class="text-sm text-gray-600">Downloadable study materials for each book</p>
+</div>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3">
+<a class="flex items-center gap-2 p-3 bg-heritage-gold/10 rounded-lg hover:bg-heritage-gold/20 transition text-sm" href="/pdfviewer.html?pdf=/ot/minor/minorpdf/1hosea.pdf">
+<span class="text-heritage-gold">📄</span>
+<span class="font-medium">Hosea</span>
+</a>
+<a class="flex items-center gap-2 p-3 bg-heritage-gold/10 rounded-lg hover:bg-heritage-gold/20 transition text-sm" href="/pdfviewer.html?pdf=/ot/minor/minorpdf/2joel.pdf">
+<span class="text-heritage-gold">📄</span>
+<span class="font-medium">Joel</span>
+</a>
+<a class="flex items-center gap-2 p-3 bg-heritage-gold/10 rounded-lg hover:bg-heritage-gold/20 transition text-sm" href="/pdfviewer.html?pdf=/ot/minor/minorpdf/3amos.pdf">
+<span class="text-heritage-gold">📄</span>
+<span class="font-medium">Amos</span>
+</a>
+<a class="flex items-center gap-2 p-3 bg-heritage-gold/10 rounded-lg hover:bg-heritage-gold/20 transition text-sm" href="/pdfviewer.html?pdf=/ot/minor/minorpdf/4obadiah.pdf">
+<span class="text-heritage-gold">📄</span>
+<span class="font-medium">Obadiah</span>
+</a>
+<a class="flex items-center gap-2 p-3 bg-heritage-gold/10 rounded-lg hover:bg-heritage-gold/20 transition text-sm" href="/pdfviewer.html?pdf=/ot/minor/minorpdf/5jonah.pdf">
+<span class="text-heritage-gold">📄</span>
+<span class="font-medium">Jonah</span>
+</a>
+<a class="flex items-center gap-2 p-3 bg-heritage-gold/10 rounded-lg hover:bg-heritage-gold/20 transition text-sm" href="/pdfviewer.html?pdf=/ot/minor/minorpdf/6micah.pdf">
+<span class="text-heritage-gold">📄</span>
+<span class="font-medium">Micah</span>
+</a>
+<a class="flex items-center gap-2 p-3 bg-heritage-gold/10 rounded-lg hover:bg-heritage-gold/20 transition text-sm" href="/pdfviewer.html?pdf=/ot/minor/minorpdf/7nahum.pdf">
+<span class="text-heritage-gold">📄</span>
+<span class="font-medium">Nahum</span>
+</a>
+<a class="flex items-center gap-2 p-3 bg-heritage-gold/10 rounded-lg hover:bg-heritage-gold/20 transition text-sm" href="/pdfviewer.html?pdf=/ot/minor/minorpdf/8habakkuk.pdf">
+<span class="text-heritage-gold">📄</span>
+<span class="font-medium">Habakkuk</span>
+</a>
+<a class="flex items-center gap-2 p-3 bg-heritage-gold/10 rounded-lg hover:bg-heritage-gold/20 transition text-sm" href="/pdfviewer.html?pdf=/ot/minor/minorpdf/9zephaniah.pdf">
+<span class="text-heritage-gold">📄</span>
+<span class="font-medium">Zephaniah</span>
+</a>
+<a class="flex items-center gap-2 p-3 bg-heritage-gold/10 rounded-lg hover:bg-heritage-gold/20 transition text-sm" href="/pdfviewer.html?pdf=/ot/minor/minorpdf/10haggai.pdf">
+<span class="text-heritage-gold">📄</span>
+<span class="font-medium">Haggai</span>
+</a>
+<a class="flex items-center gap-2 p-3 bg-heritage-gold/10 rounded-lg hover:bg-heritage-gold/20 transition text-sm" href="/pdfviewer.html?pdf=/ot/minor/minorpdf/11zechariah.pdf">
+<span class="text-heritage-gold">📄</span>
+<span class="font-medium">Zechariah</span>
+</a>
+<a class="flex items-center gap-2 p-3 bg-heritage-gold/10 rounded-lg hover:bg-heritage-gold/20 transition text-sm" href="/pdfviewer.html?pdf=/ot/minor/minorpdf/12malachi.pdf">
+<span class="text-heritage-gold">📄</span>
+<span class="font-medium">Malachi</span>
+</a>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="mt-12 flex flex-wrap justify-center gap-4">
+<a class="inline-flex items-center gap-2 text-heritage-gold hover:text-ancient-ink font-medium transition" href="/bible/old-testament/major-prophets/index.html">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
                 Previous: Major Prophets
             </a>
-            <span class="text-gray-300">|</span>
-            <a href="/bibleot.html" class="inline-flex items-center gap-2 text-amber-700 hover:text-amber-800 font-medium transition">
+<span class="text-gray-300">|</span>
+<a class="inline-flex items-center gap-2 text-heritage-gold hover:text-ancient-ink font-medium transition" href="/bible/old-testament/index.html">
                 Old Testament
             </a>
-            <span class="text-gray-300">|</span>
-            <a href="/biblent.html" class="inline-flex items-center gap-2 text-blue-700 hover:text-blue-800 font-medium transition">
+<span class="text-gray-300">|</span>
+<a class="inline-flex items-center gap-2 text-ancient-ink hover:text-ancient-ink font-medium transition" href="/bible/new-testament/index.html">
                 New Testament
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                </svg>
-            </a>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                <div class="lg:col-span-1">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-12 h-12 bg-primary-600 text-white rounded-xl flex items-center justify-center font-bold text-lg shadow-lg">BTP</div>
-                        <div>
-                            <div class="font-bold text-xl text-white">Bible Teaching</div>
-                            <div class="text-sm text-gray-400">Program</div>
-                        </div>
-                    </div>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Equipping believers worldwide with sound biblical teaching and resources for spiritual growth and ministry.</p>
-                    <div class="flex items-center gap-2 text-sm">
-                        <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                        <span class="text-gray-400">Equipping believers worldwide</span>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="font-semibold text-white mb-6 text-lg">Resources</h4>
-                    <ul class="space-y-4">
-                        <li><a href="/bible.html" class="flex items-center gap-3 text-gray-400 hover:text-white transition group"><span class="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center group-hover:bg-primary-600 transition"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></span><span>Bible</span></a></li>
-                        <li><a href="/books.html" class="flex items-center gap-3 text-gray-400 hover:text-white transition group"><span class="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center group-hover:bg-primary-600 transition"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg></span><span>Books</span></a></li>
-                        <li><a href="/courses.html" class="flex items-center gap-3 text-gray-400 hover:text-white transition group"><span class="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center group-hover:bg-primary-600 transition"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></span><span>Courses</span></a></li>
-                        <li><a href="/dailyverses.html" class="flex items-center gap-3 text-gray-400 hover:text-white transition group"><span class="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center group-hover:bg-primary-600 transition"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></span><span>Daily Verses</span></a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold text-white mb-6 text-lg">Bible</h4>
-                    <ul class="space-y-3">
-                        <li><a href="/bibleot.html" class="text-gray-400 hover:text-white transition">Old Testament</a></li>
-                        <li><a href="/biblent.html" class="text-gray-400 hover:text-white transition">New Testament</a></li>
-                        <li><a href="/biblepen.html" class="text-gray-400 hover:text-white transition">Pentateuch</a></li>
-                        <li><a href="/biblehist.html" class="text-gray-400 hover:text-white transition">Historical Books</a></li>
-                        <li><a href="/biblepoe.html" class="text-gray-400 hover:text-white transition">Poetic Books</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold text-white mb-6 text-lg">Today's Verse</h4>
-                    <div id="daily-verse-container" class="bg-gray-800 rounded-lg p-4 border border-gray-700"></div>
-                </div>
-            </div>
-        </div>
-        <div class="border-t border-gray-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-                    <p class="text-sm text-gray-500">&copy; 2025 Bible Teaching Program. All rights reserved.</p>
-                    <div class="flex items-center gap-6 text-sm">
-                        <a href="/" class="text-gray-500 hover:text-gray-300 transition">Home</a>
-                        <a href="/bible.html" class="text-gray-500 hover:text-gray-300 transition">Bible</a>
-                        <a href="/courses.html" class="text-gray-500 hover:text-gray-300 transition">Courses</a>
-                        <a href="/dailyverses.html" class="text-gray-500 hover:text-gray-300 transition">Daily Verses</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="/js/daily-verse.js"></script>
-    <script src="/js/inline-editor.js"></script>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+</div>
+</main>
+<!-- Footer (loaded from component) -->
+<div id="footer-placeholder"></div>
+<script src="/js/components.js"></script>
+<script src="/js/daily-verse.js"></script>
 </body>
 </html>

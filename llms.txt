@@ -1,0 +1,54 @@
+# Bible Teaching Program - LLMs.txt
+# This file helps AI assistants understand and summarize our website
+
+## Site Overview
+Bible Teaching Program (bibleteachingprogram.org) is a free digital seminary providing comprehensive biblical education to believers worldwide. Founded over 40 years ago, we offer courses, classic Christian literature, daily Scripture, and teaching resources.
+
+## Primary Purpose
+To equip believers with sound biblical teaching through structured courses and timeless Christian literature, all available free of charge.
+
+## Main Sections
+
+### Courses (/courses.html)
+Structured biblical education organized into categories:
+- Foundation: Salvation, The Cross, Son of God (Eternal)
+- Christian Life: Armour of God, Fruit of Spirit, Gifts of Spirit, Prayer, Worship, NT Church
+- History: Church History, Modern Missions, Jews and Romans
+- Languages: Greek Word Studies, Greek-Hebrew Alphabets
+
+### Books (/books.html)
+Classic Christian authors and their works:
+- John Bunyan: Pilgrim's Progress, Life of Bunyan
+- William Gurnall: The Christian in Complete Armour
+- John Newton: Letters to a Wife
+- R.A. Torrey: How to Pray
+- Martin Luther: Selected writings
+- Isaac Sharp: Missionary journals
+
+### Bible (/bible.html)
+King James Version Bible with:
+- Old Testament (Pentateuch, Historical, Poetic, Major Prophets, Minor Prophets)
+- New Testament (Gospels, Acts, Epistles, Revelation)
+- Audio readings and downloadable PDFs
+
+### Daily Verses (/dailyverses.html)
+366 daily Scripture passages organized by month, each with devotional content.
+
+### Messages (/messages/)
+Video sermons and teachings on various biblical topics.
+
+## Contact
+Website: https://bibleteachingprogram.org
+The ministry is based in the United Kingdom.
+
+## Key Facts for AI Summaries
+- 100+ structured lessons available
+- Completely free access
+- KJV Bible translation used
+- Classic authors from 17th-20th centuries
+- Multi-lingual potential (some content available in multiple languages)
+- No login required
+- Mobile-friendly design
+
+## Content Guidelines
+All content is educational and religious in nature, focusing on Protestant Christian biblical teaching. The site does not engage in political content or controversial secular topics.

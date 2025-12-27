@@ -1,264 +1,260 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+
+<html class="scroll-smooth" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="PDF Viewer - Bible Teaching Program">
-    <title>PDF Viewer | Bible Teaching Program</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-09FW4XY50E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-09FW4XY50E');
+</script>
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="PDF Viewer - Bible Teaching Program" name="description"/>
+<title>PDF Viewer | Bible Teaching Program</title><meta content="website" property="og:type"/><meta content="https://bibleteachingprogram.org/pdfviewer.html" property="og:url"/><meta content="PDF Viewer | Bible Teaching Program" property="og:title"/><meta content="PDF Viewer - Bible Teaching Program" property="og:description"/><meta content="https://bibleteachingprogram.org/images/hero-banner.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="PDF Viewer | Bible Teaching Program" name="twitter:title"/><meta content="PDF Viewer - Bible Teaching Program" name="twitter:description"/><meta content="https://bibleteachingprogram.org/images/hero-banner.png" name="twitter:image"/>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind with Brand Colors -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'primary': {
-                            '50': '#f0f7ff',
-                            '100': '#e0effe',
-                            '600': '#006fc7',
-                            '700': '#0058a2',
-                            '800': '#004a85',
-                            '900': '#003d6e',
-                        }
+                        'ancient-ink': '#1C1D37',
+                        'heritage-gold': '#CBA378',
+                        'living-sage': '#7F9A83',
+                        'parchment': '#F9F7F2',
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'Georgia', 'serif'],
                     }
                 }
             }
         }
     </script>
-    <link rel="stylesheet" href="/css/shared-styles.css">
-    <style id="dynamicTheme">
-        /* Default theme - will be overwritten by JavaScript */
-        .theme-header { background: linear-gradient(to bottom right, #006fc7, #0058a2, #004a85); }
-        .theme-toolbar { background: linear-gradient(to right, #006fc7, #0058a2); }
-        .theme-accent-bg { background-color: #e0effe; }
-        .theme-accent-text { color: #0058a2; }
-        .theme-accent-border { border-color: #0058a2; }
-        .theme-button { background-color: #0058a2; }
-        .theme-button:hover { background-color: #004a85; }
-        .theme-light-bg { background-color: #f0f7ff; }
-        .theme-light-border { border-color: #e0effe; }
-        .theme-spinner { border-color: #e0effe; border-top-color: #006fc7; }
+<link href="/css/brand.css" rel="stylesheet"/>
+<link href="/css/shared-styles.css" rel="stylesheet"/>
+<style id="dynamicTheme">
+        /* Default theme - brand colors */
+        .theme-header { background: linear-gradient(to bottom right, #1C1D37, #1C1D37, rgba(28,29,55,0.9)); }
+        .theme-toolbar { background: linear-gradient(to right, #1C1D37, #1C1D37); }
+        .theme-accent-bg { background-color: rgba(203, 163, 120, 0.1); }
+        .theme-accent-text { color: #1C1D37; }
+        .theme-accent-border { border-color: #CBA378; }
+        .theme-button { background-color: #CBA378; }
+        .theme-button:hover { background-color: rgba(203, 163, 120, 0.9); }
+        .theme-light-bg { background-color: #F9F7F2; }
+        .theme-light-border { border-color: rgba(203, 163, 120, 0.3); }
+        .theme-spinner { border-color: rgba(203, 163, 120, 0.3); border-top-color: #CBA378; }
     </style>
 </head>
-<body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <a href="/" class="flex items-center gap-3">
-                    <div id="navLogo" class="w-10 h-10 bg-primary-700 text-white rounded-lg flex items-center justify-center font-bold text-lg">BTP</div>
-                    <div class="hidden md:block">
-                        <div class="font-bold text-lg text-gray-900">Bible Teaching Program</div>
-                        <div class="text-xs text-gray-600">Biblical Education & Courses</div>
-                    </div>
-                </a>
-                <div class="flex items-center gap-4">
-                    <a href="/courses.html" class="text-sm font-medium text-gray-700 hover:text-primary-700 transition">Courses</a>
-                    <a href="/" class="text-sm font-medium text-gray-700 hover:text-primary-700 transition">Home</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- PDF Header -->
-    <section id="pageHeader" class="theme-header text-white py-6">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center gap-2 text-sm text-white text-opacity-80 mb-3">
-                <a href="/" class="hover:text-white transition">Home</a>
-                <span>></span>
-                <span id="pdfBreadcrumb" class="text-white">Document</span>
-            </div>
-            <div class="flex items-center gap-4">
-                <div class="w-14 h-14 bg-white bg-opacity-20 backdrop-blur-sm rounded-xl flex items-center justify-center text-2xl">
-                    <span id="headerIcon">&#128196;</span>
-                </div>
-                <div>
-                    <div id="courseLabel" class="text-sm text-white text-opacity-80 mb-1">PDF Document</div>
-                    <h1 id="pdfTitle" class="text-xl md:text-2xl font-bold">Loading...</h1>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Main Content -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
-            <!-- PDF Viewer Column -->
-            <div class="lg:col-span-3">
-                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
-                    <!-- PDF Viewer Header -->
-                    <div id="pdfToolbar" class="theme-toolbar p-4 flex items-center justify-between flex-wrap gap-3">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 bg-white bg-opacity-20 rounded-lg flex items-center justify-center">
-                                &#128196;
+<body class="bg-parchment">
+<!-- Navigation (loaded from component) -->
+<div id="nav-placeholder"></div>
+<!-- Breadcrumbs -->
+<div class="bg-white border-b border-gray-100">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+<nav class="flex items-center gap-2 text-sm flex-wrap" id="breadcrumbNav">
+<a class="text-gray-600 hover:text-heritage-gold transition" href="/">Home</a>
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="text-gray-900 font-medium" id="pdfBreadcrumb">Document</span>
+</nav>
+</div>
+</div>
+<!-- PDF Header -->
+<section class="theme-header text-white py-6" id="pageHeader">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center gap-4">
+<div class="w-14 h-14 bg-white bg-opacity-20 backdrop-blur-sm rounded-xl flex items-center justify-center text-2xl">
+<span id="headerIcon">📄</span>
+</div>
+<div>
+<div class="text-sm text-white text-opacity-80 mb-1" id="courseLabel">PDF Document</div>
+<h1 class="text-xl md:text-2xl font-bold" id="pdfTitle">Loading...</h1>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content -->
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+<div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+<!-- PDF Viewer Column -->
+<div class="lg:col-span-3">
+<div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+<!-- PDF Viewer Header -->
+<div class="theme-toolbar p-4 flex items-center justify-between flex-wrap gap-3" id="pdfToolbar">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-white bg-opacity-20 rounded-lg flex items-center justify-center">
+                                📄
                             </div>
-                            <div>
-                                <div class="font-semibold text-white">PDF Viewer</div>
-                                <div id="pdfPageInfo" class="text-xs text-white text-opacity-80">Loading...</div>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-2">
-                            <a id="pdfFullscreen" href="#" target="_blank" class="px-3 py-2 bg-white bg-opacity-10 hover:bg-opacity-20 text-white text-sm rounded-lg transition backdrop-blur-sm flex items-center gap-1">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
+<div>
+<div class="font-semibold text-white">PDF Viewer</div>
+<div class="text-xs text-white text-opacity-80" id="pdfPageInfo">Loading...</div>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<a class="px-3 py-2 bg-white bg-opacity-10 hover:bg-opacity-20 text-white text-sm rounded-lg transition backdrop-blur-sm flex items-center gap-1" href="#" id="pdfFullscreen" target="_blank">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
                                 Fullscreen
                             </a>
-                            <a id="pdfDownload" href="#" download class="px-3 py-2 bg-white text-gray-700 text-sm rounded-lg font-medium hover:bg-gray-100 transition flex items-center gap-1">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+<a class="px-3 py-2 bg-white text-gray-700 text-sm rounded-lg font-medium hover:bg-parchment transition flex items-center gap-1" download="" href="#" id="pdfDownload">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
                                 Download
                             </a>
-                        </div>
-                    </div>
-
-                    <!-- PDF Controls -->
-                    <div class="bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between flex-wrap gap-3">
-                        <div class="flex items-center gap-2">
-                            <button id="pdfPrevPage" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-                                </svg>
-                            </button>
-                            <span class="text-sm text-gray-600 min-w-[100px] text-center">
-                                Page <span id="pdfCurrentPage" class="font-semibold text-gray-900">1</span> of <span id="pdfTotalPages" class="font-semibold text-gray-900">-</span>
+</div>
+</div>
+<!-- PDF Controls -->
+<div class="bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between flex-wrap gap-3">
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 bg-parchment hover:bg-gray-200 text-gray-700 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed" id="pdfPrevPage">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<span class="text-sm text-gray-600 min-w-[100px] text-center">
+                                Page <span class="font-semibold text-gray-900" id="pdfCurrentPage">1</span> of <span class="font-semibold text-gray-900" id="pdfTotalPages">-</span>
+</span>
+<button class="px-3 py-1.5 bg-parchment hover:bg-gray-200 text-gray-700 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed" id="pdfNextPage">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 bg-parchment hover:bg-gray-200 text-gray-700 rounded-lg transition" id="pdfZoomOut">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM13 10H7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<span class="text-sm text-gray-600 min-w-[60px] text-center">
+<span class="font-semibold text-gray-900" id="pdfZoomLevel">100</span>%
                             </span>
-                            <button id="pdfNextPage" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition disabled:opacity-50 disabled:cursor-not-allowed">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                                </svg>
-                            </button>
-                        </div>
-
-                        <div class="flex items-center gap-2">
-                            <button id="pdfZoomOut" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM13 10H7"/>
-                                </svg>
-                            </button>
-                            <span class="text-sm text-gray-600 min-w-[60px] text-center">
-                                <span id="pdfZoomLevel" class="font-semibold text-gray-900">100</span>%
-                            </span>
-                            <button id="pdfZoomIn" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg transition">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/>
-                                </svg>
-                            </button>
-                            <button id="pdfFitWidth" class="px-3 py-1.5 theme-accent-bg theme-accent-text text-xs font-medium rounded-lg transition hover:opacity-80">
+<button class="px-3 py-1.5 bg-parchment hover:bg-gray-200 text-gray-700 rounded-lg transition" id="pdfZoomIn">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<button class="px-3 py-1.5 theme-accent-bg theme-accent-text text-xs font-medium rounded-lg transition hover:opacity-80" id="pdfFitWidth">
                                 Fit Width
                             </button>
-                        </div>
-                    </div>
-
-                    <!-- PDF Canvas Container -->
-                    <div class="bg-gray-100" style="height: calc(100vh - 340px); min-height: 500px; overflow: auto;">
-                        <div id="pdfCanvasContainer" class="py-8 text-center">
-                            <div id="pdfLoading" class="py-20">
-                                <div class="w-12 h-12 border-4 theme-spinner rounded-full animate-spin mx-auto mb-4"></div>
-                                <p class="text-gray-600">Loading PDF...</p>
-                            </div>
-                            <canvas id="pdfCanvas" class="shadow-2xl mx-auto hidden"></canvas>
-                            <div id="pdfError" class="hidden py-20">
-                                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                                    <svg class="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                    </svg>
-                                </div>
-                                <p class="text-gray-900 font-medium mb-2">Unable to load PDF</p>
-                                <p class="text-gray-600 text-sm mb-4">The PDF file could not be loaded.</p>
-                                <a id="pdfDirectLink" href="#" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 theme-button text-white rounded-lg font-medium transition">
+</div>
+</div>
+<!-- PDF Canvas Container -->
+<div class="bg-parchment" style="height: calc(100vh - 340px); min-height: 500px; overflow: auto;">
+<div class="py-8 text-center" id="pdfCanvasContainer">
+<div class="py-20" id="pdfLoading">
+<div class="w-12 h-12 border-4 theme-spinner rounded-full animate-spin mx-auto mb-4"></div>
+<p class="text-gray-600">Loading PDF...</p>
+</div>
+<canvas class="shadow-2xl mx-auto hidden" id="pdfCanvas"></canvas>
+<div class="hidden py-20" id="pdfError">
+<div class="w-16 h-16 bg-parchment rounded-full flex items-center justify-center mx-auto mb-4">
+<svg class="w-8 h-8 text-heritage-gold" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<p class="text-gray-900 font-medium mb-2">Unable to load PDF</p>
+<p class="text-gray-600 text-sm mb-4">The PDF file could not be loaded.</p>
+<a class="inline-flex items-center gap-2 px-4 py-2 theme-button text-white rounded-lg font-medium transition" href="#" id="pdfDirectLink" target="_blank">
                                     Open PDF Directly
                                 </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Back Navigation -->
-                <div class="mt-6 text-center">
-                    <button onclick="window.history.back()" class="inline-flex items-center gap-2 theme-accent-text hover:opacity-80 font-medium transition">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+</div>
+</div>
+</div>
+</div>
+<!-- Back Navigation -->
+<div class="mt-6 text-center">
+<button class="inline-flex items-center gap-2 theme-accent-text hover:opacity-80 font-medium transition" onclick="window.history.back()">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
                         Go Back
                     </button>
-                </div>
-            </div>
-
-            <!-- Sidebar -->
-            <div class="space-y-6">
-                <!-- Document Info -->
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
-                    <div class="flex items-center gap-3 mb-4">
-                        <div id="sidebarIcon" class="w-10 h-10 theme-light-bg rounded-lg flex items-center justify-center text-xl">&#128196;</div>
-                        <div>
-                            <h3 class="font-bold text-gray-900">Document</h3>
-                            <p id="sidebarFileName" class="text-xs text-gray-600">PDF</p>
-                        </div>
-                    </div>
-                    <div class="space-y-2 text-sm">
-                        <div class="flex justify-between">
-                            <span class="text-gray-500">Pages:</span>
-                            <span id="sidebarPages" class="font-medium text-gray-900">-</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Navigation -->
-                <div id="navigationBox" class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
-                    <h3 class="font-bold text-gray-900 mb-4">Navigation</h3>
-                    <div class="space-y-2">
-                        <button onclick="window.history.back()" id="goBackBtn" class="w-full flex items-center gap-3 px-4 py-3 theme-light-bg theme-accent-text rounded-lg hover:opacity-80 transition text-left">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17l-5-5m0 0l5-5m-5 5h12"/></svg>
-                            <div>
-                                <span class="font-medium block">Go Back</span>
-                                <span id="referrerText" class="text-xs opacity-80">Return to previous page</span>
-                            </div>
-                        </button>
-                        <a id="parentLink" href="#" class="hidden items-center gap-3 px-4 py-3 bg-gray-50 text-gray-700 rounded-lg hover:bg-gray-100 transition">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/></svg>
-                            <span id="parentLinkText" class="font-medium">Parent Folder</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Quick Actions -->
-                <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
-                    <h3 class="font-bold text-gray-900 mb-4">Quick Actions</h3>
-                    <div class="space-y-2">
-                        <a id="sidebarDownload" href="#" download class="flex items-center gap-3 px-4 py-3 theme-light-bg theme-accent-text rounded-lg hover:opacity-80 transition">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
-                            <span class="font-medium">Download PDF</span>
-                        </a>
-                        <a id="sidebarFullscreen" href="#" target="_blank" class="flex items-center gap-3 px-4 py-3 bg-gray-50 text-gray-700 rounded-lg hover:bg-gray-100 transition">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"/></svg>
-                            <span class="font-medium">Open Fullscreen</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Browse More -->
-                <div id="exploreBox" class="theme-light-bg rounded-xl p-6 theme-light-border border">
-                    <h3 class="font-bold text-gray-900 mb-2">Explore More</h3>
-                    <p class="text-sm text-gray-600 mb-4">Browse our teaching resources</p>
-                    <a href="/courses.html" class="inline-flex items-center gap-2 px-4 py-2 theme-button text-white rounded-lg font-medium transition text-sm">
+</div>
+</div>
+<!-- Sidebar -->
+<div class="space-y-6">
+<!-- Document Info -->
+<div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 theme-light-bg rounded-lg flex items-center justify-center text-xl" id="sidebarIcon">📄</div>
+<div>
+<h3 class="font-bold text-gray-900">Document</h3>
+<p class="text-xs text-gray-600" id="sidebarFileName">PDF</p>
+</div>
+</div>
+<div class="space-y-2 text-sm">
+<div class="flex justify-between">
+<span class="text-gray-500">Pages:</span>
+<span class="font-medium text-gray-900" id="sidebarPages">-</span>
+</div>
+</div>
+</div>
+<!-- Navigation -->
+<div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200" id="navigationBox">
+<h3 class="font-bold text-gray-900 mb-4">Navigation</h3>
+<div class="space-y-2">
+<button class="w-full flex items-center gap-3 px-4 py-3 theme-light-bg theme-accent-text rounded-lg hover:opacity-80 transition text-left" id="goBackBtn" onclick="window.history.back()">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M11 17l-5-5m0 0l5-5m-5 5h12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<div>
+<span class="font-medium block">Go Back</span>
+<span class="text-xs opacity-80" id="referrerText">Return to previous page</span>
+</div>
+</button>
+<a class="hidden items-center gap-3 px-4 py-3 bg-parchment text-gray-700 rounded-lg hover:bg-parchment transition" href="#" id="parentLink">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="font-medium" id="parentLinkText">Parent Folder</span>
+</a>
+</div>
+</div>
+<!-- Quick Actions -->
+<div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+<h3 class="font-bold text-gray-900 mb-4">Quick Actions</h3>
+<div class="space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 theme-light-bg theme-accent-text rounded-lg hover:opacity-80 transition" download="" href="#" id="sidebarDownload">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="font-medium">Download PDF</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-parchment text-gray-700 rounded-lg hover:bg-parchment transition" href="#" id="sidebarFullscreen" target="_blank">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+<span class="font-medium">Open Fullscreen</span>
+</a>
+</div>
+</div>
+<!-- Related Content (populated by JS) -->
+<div class="hidden bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden" id="relatedContentBox">
+<div class="px-4 py-3 bg-parchment border-b border-heritage-gold/30">
+<h3 class="font-bold text-gray-900 text-sm" id="relatedContentTitle">Related Content</h3>
+</div>
+<div class="p-3 space-y-1 max-h-64 overflow-y-auto" id="relatedContentList">
+<!-- Populated by JavaScript -->
+</div>
+</div>
+<!-- Browse More -->
+<div class="theme-light-bg rounded-xl p-6 theme-light-border border" id="exploreBox">
+<h3 class="font-bold text-gray-900 mb-2">Explore More</h3>
+<p class="text-sm text-gray-600 mb-4">Browse our teaching resources</p>
+<a class="inline-flex items-center gap-2 px-4 py-2 theme-button text-white rounded-lg font-medium transition text-sm" href="/courses/index.html">
                         View Courses
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-12 mt-12">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <div class="flex items-center justify-center gap-3 mb-4">
-                <div id="footerLogo" class="w-10 h-10 bg-primary-700 text-white rounded-lg flex items-center justify-center font-bold">BTP</div>
-                <span class="font-bold text-xl text-white">Bible Teaching Program</span>
-            </div>
-            <p class="text-sm text-gray-500">&copy; 2025 Bible Teaching Program</p>
-        </div>
-    </footer>
-
-    <!-- PDF.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-    <script>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer (loaded from component) -->
+<div id="footer-placeholder"></div>
+<!-- PDF.js -->
+<script src="/js/components.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
         pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
         // Get PDF URL from query parameter
@@ -270,7 +266,7 @@
             // Church History - Amber/Gold
             'ch/': {
                 name: 'Church History',
-                link: '/chweb.html',
+                link: '/courses/history/church-history/index.html',
                 category: 'Church History',
                 icon: '&#9962;',
                 colors: {
@@ -284,7 +280,7 @@
             // Jews and Romans - Red
             'jewish': {
                 name: 'Jews and Romans',
-                link: '/jhweb1.html',
+                link: '/courses/history/jews-and-romans/index.html',
                 category: 'Bible History',
                 icon: '&#128220;',
                 colors: {
@@ -298,7 +294,7 @@
             // Holiness, Healing & Pentecost - Rose
             'hhp': {
                 name: 'Holiness, Healing & Pentecost',
-                link: '/hhpweb.html',
+                link: '/courses/history/holiness-healing-pentecost/index.html',
                 category: 'Church History',
                 icon: '&#128293;',
                 colors: {
@@ -312,7 +308,7 @@
             // Modern Missions - Teal
             'mm/': {
                 name: 'History of Modern Missions',
-                link: '/mmweb.html',
+                link: '/courses/history/modern-missions/index.html',
                 category: 'Church History',
                 icon: '&#127758;',
                 colors: {
@@ -326,7 +322,7 @@
             // Old Testament History - Orange
             'ot/': {
                 name: 'Old Testament History',
-                link: '/otweb1.html',
+                link: '/courses.html',
                 category: 'Bible History',
                 icon: '&#128214;',
                 colors: {
@@ -340,7 +336,7 @@
             // Armour of God - Purple
             'armour': {
                 name: 'Armour of God',
-                link: '/arweb.html',
+                link: '/courses/christian-life/armour-of-god/index.html',
                 category: 'Christian Life',
                 icon: '&#128737;',
                 colors: {
@@ -354,7 +350,7 @@
             // Prayer/HTP - Indigo
             'prayer': {
                 name: 'Prayer',
-                link: '/prayer/pindx.html',
+                link: '/courses/christian-life/prayer/index.html',
                 category: 'Prayer',
                 icon: '&#128591;',
                 colors: {
@@ -368,7 +364,7 @@
             // Floods - Blue
             'floods': {
                 name: 'The Floods',
-                link: '/floods/floodsindex.htm',
+                link: '/books/floods/index.html',
                 category: 'Bible History',
                 icon: '&#127754;',
                 colors: {
@@ -382,7 +378,7 @@
             // Greek & Hebrew - Indigo
             'alphabets': {
                 name: 'Greek & Hebrew Alphabets',
-                link: '/alphabets.html',
+                link: '/courses/languages/greek-hebrew-alphabets/index.html',
                 category: 'Languages',
                 icon: '&#945;',
                 colors: {
@@ -396,7 +392,7 @@
             // Higher Calling - Sky Blue
             'hc/': {
                 name: 'Higher Calling',
-                link: '/hc/hcindex.html',
+                link: '/books/higher-calling/index.html',
                 category: 'Books',
                 icon: '&#128218;',
                 colors: {
@@ -410,7 +406,7 @@
             // The Cross - Red
             'cross': {
                 name: 'The Cross',
-                link: '/btp/foundation/cross.html',
+                link: '/courses/foundation/the-cross/index.html',
                 category: 'Foundation',
                 icon: '&#10013;',
                 colors: {
@@ -424,7 +420,7 @@
             // Salvation - Green
             'salvation': {
                 name: 'Salvation',
-                link: '/btp/foundation/salvation.html',
+                link: '/courses/foundation/salvation/index.html',
                 category: 'Foundation',
                 icon: '&#127793;',
                 colors: {
@@ -519,6 +515,190 @@
                     lighter: '#faf5ff'     // purple-50
                 }
             },
+            // Daily NT KJV Word Studies
+            'daily/ntkjv': {
+                name: 'Daily Bible Reading',
+                link: '/bible/new-testament/daily-kjv.html',
+                category: 'Daily Reading',
+                icon: '&#128214;',
+                related: [
+                    { name: 'Ephesians Word Study', pdf: '/bible/new-testament/kjv/ephkjvwd.pdf' },
+                    { name: 'Romans Word Study', pdf: '/bible/new-testament/kjv/romkjvwd.pdf' }
+                ]
+            },
+            // NT KJV Word Studies (main collection)
+            'ntkjv': {
+                name: 'New Testament KJV',
+                link: '/bible/new-testament/kjv-pdfs.html',
+                category: 'New Testament',
+                icon: '&#128220;',
+                related: [
+                    { name: 'Matthew', pdf: '/bible/new-testament/kjv/mattkjvwd.pdf' },
+                    { name: 'Mark', pdf: '/bible/new-testament/kjv/markkjvwd.pdf' },
+                    { name: 'Luke', pdf: '/bible/new-testament/kjv/lukekjvwd.pdf' },
+                    { name: 'John', pdf: '/bible/new-testament/kjv/johnkjvwd.pdf' },
+                    { name: 'Acts', pdf: '/bible/new-testament/kjv/actskjvwd.pdf' },
+                    { name: 'Romans', pdf: '/bible/new-testament/kjv/romkjvwd.pdf' },
+                    { name: '1 Corinthians', pdf: '/bible/new-testament/kjv/1corkjvwd.pdf' },
+                    { name: '2 Corinthians', pdf: '/bible/new-testament/kjv/2corkjvwd.pdf' },
+                    { name: 'Galatians', pdf: '/bible/new-testament/kjv/galkjvwd.pdf' },
+                    { name: 'Ephesians', pdf: '/bible/new-testament/kjv/ephkjvwd.pdf' },
+                    { name: 'Philippians', pdf: '/bible/new-testament/kjv/philkjvwd.pdf' },
+                    { name: 'Colossians', pdf: '/bible/new-testament/kjv/colkjvwd.pdf' }
+                ]
+            },
+            // Isaac Sharp Journey PDFs (root level)
+            'is1.pdf': {
+                name: "Isaac Sharp's Journey",
+                link: '/books/isaac-sharp/index.html',
+                category: 'Books',
+                icon: '&#127758;',
+                related: [
+                    { name: 'Part 1 - The Faroe Islands', pdf: '/is1.pdf' },
+                    { name: 'Part 2 - The Journey Continues', pdf: '/is2.pdf' },
+                    { name: 'Part 3 - Ministry & Return', pdf: '/is3.pdf' }
+                ]
+            },
+            'is2.pdf': {
+                name: "Isaac Sharp's Journey",
+                link: '/books/isaac-sharp/index.html',
+                category: 'Books',
+                icon: '&#127758;',
+                related: [
+                    { name: 'Part 1 - The Faroe Islands', pdf: '/is1.pdf' },
+                    { name: 'Part 2 - The Journey Continues', pdf: '/is2.pdf' },
+                    { name: 'Part 3 - Ministry & Return', pdf: '/is3.pdf' }
+                ]
+            },
+            'is3.pdf': {
+                name: "Isaac Sharp's Journey",
+                link: '/books/isaac-sharp/index.html',
+                category: 'Books',
+                icon: '&#127758;',
+                related: [
+                    { name: 'Part 1 - The Faroe Islands', pdf: '/is1.pdf' },
+                    { name: 'Part 2 - The Journey Continues', pdf: '/is2.pdf' },
+                    { name: 'Part 3 - Ministry & Return', pdf: '/is3.pdf' }
+                ]
+            },
+            // Isaac Sharp /is/ folder
+            'is/': {
+                name: "Isaac Sharp's Journey",
+                link: '/books/isaac-sharp/index.html',
+                category: 'Books',
+                icon: '&#127758;'
+            },
+            // Martin Luther writings - more specific paths first!
+            'luther/onthejews/': {
+                name: 'On the Jews and Their Lies',
+                link: '/books/martin-luther/on-the-jews.html',
+                category: 'Classic Authors',
+                icon: '&#9961;',
+                colors: {
+                    primary: '#1C1D37',    // ancient-ink
+                    dark: '#15162a',
+                    darker: '#0e0f1d',
+                    light: '#e5e5eb',
+                    lighter: '#F9F7F2'     // parchment
+                },
+                related: [
+                    { name: 'Introduction', pdf: '/books/luther/onthejews/intro.pdf' },
+                    { name: 'Chapter 1', pdf: '/books/luther/onthejews/chapter1.pdf' },
+                    { name: 'Chapter 2', pdf: '/books/luther/onthejews/chapter2.pdf' },
+                    { name: 'Chapter 3', pdf: '/books/luther/onthejews/chapter3.pdf' },
+                    { name: 'Chapter 4', pdf: '/books/luther/onthejews/chapter4.pdf' },
+                    { name: 'Chapter 5', pdf: '/books/luther/onthejews/chapter5.pdf' },
+                    { name: 'Chapter 6', pdf: '/books/luther/onthejews/chapter6.pdf' },
+                    { name: 'Chapter 7', pdf: '/books/luther/onthejews/chapter7.pdf' },
+                    { name: 'Chapter 8', pdf: '/books/luther/onthejews/chapter8.pdf' },
+                    { name: 'Chapter 9', pdf: '/books/luther/onthejews/chapter9.pdf' },
+                    { name: 'Chapter 10', pdf: '/books/luther/onthejews/chapter10.pdf' },
+                    { name: 'Chapter 11', pdf: '/books/luther/onthejews/chapter11.pdf' },
+                    { name: 'Chapter 12', pdf: '/books/luther/onthejews/chapter12.pdf' },
+                    { name: 'Chapter 13', pdf: '/books/luther/onthejews/chapter13.pdf' }
+                ]
+            },
+            'luther/': {
+                name: 'Martin Luther',
+                link: '/books/martin-luther/index.html',
+                category: 'Classic Authors',
+                icon: '&#9961;',
+                colors: {
+                    primary: '#1C1D37',    // ancient-ink
+                    dark: '#15162a',
+                    darker: '#0e0f1d',
+                    light: '#e5e5eb',
+                    lighter: '#F9F7F2'     // parchment
+                }
+            },
+            'lutherjews.pdf': {
+                name: 'On the Jews and Their Lies (Complete)',
+                link: '/books/martin-luther/on-the-jews.html',
+                category: 'Classic Authors',
+                icon: '&#9961;'
+            },
+            // Jehovah Jireh - Sarah Spackman's testimony
+            'jehovahjireh.pdf': {
+                name: 'Jehovah Jireh - My Provider',
+                link: '/books/jehovah-jireh/index.html',
+                category: 'Testimonies',
+                icon: '&#128156;',
+                related: [
+                    { name: 'Part 1 - English', pdf: '/JehovahJireh.pdf' },
+                    { name: 'Part 2', pdf: '/JehovahJireh(1).pdf' },
+                    { name: 'Study Notes', pdf: '/jjmp.pdf' }
+                ]
+            },
+            'jehovahjireh(1).pdf': {
+                name: 'Jehovah Jireh - My Provider (Part 2)',
+                link: '/books/jehovah-jireh/index.html',
+                category: 'Testimonies',
+                icon: '&#128156;',
+                related: [
+                    { name: 'Part 1 - English', pdf: '/JehovahJireh.pdf' },
+                    { name: 'Part 2', pdf: '/JehovahJireh(1).pdf' },
+                    { name: 'Study Notes', pdf: '/jjmp.pdf' }
+                ]
+            },
+            'jjmp.pdf': {
+                name: 'Jehovah Jireh - Study Notes',
+                link: '/books/jehovah-jireh/index.html',
+                category: 'Testimonies',
+                icon: '&#128156;',
+                related: [
+                    { name: 'Part 1 - English', pdf: '/JehovahJireh.pdf' },
+                    { name: 'Part 2', pdf: '/JehovahJireh(1).pdf' },
+                    { name: 'Study Notes', pdf: '/jjmp.pdf' }
+                ]
+            },
+            // Psalm 104 Study
+            'psalm104': {
+                name: 'Psalm 104 Study',
+                link: '/courses.html',
+                category: 'Bible Studies',
+                icon: '&#128220;'
+            },
+            // Minor Prophets
+            'ot/minor': {
+                name: 'Minor Prophets',
+                link: '/bible/old-testament/minor-prophets/kjv.html',
+                category: 'Old Testament',
+                icon: '&#128220;',
+                related: [
+                    { name: 'Hosea', pdf: '/ot/minor/minorpdf/1hosea.pdf' },
+                    { name: 'Joel', pdf: '/ot/minor/minorpdf/2joel.pdf' },
+                    { name: 'Amos', pdf: '/ot/minor/minorpdf/3amos.pdf' },
+                    { name: 'Obadiah', pdf: '/ot/minor/minorpdf/4obadiah.pdf' },
+                    { name: 'Jonah', pdf: '/ot/minor/minorpdf/5jonah.pdf' },
+                    { name: 'Micah', pdf: '/ot/minor/minorpdf/6micah.pdf' },
+                    { name: 'Nahum', pdf: '/ot/minor/minorpdf/7nahum.pdf' },
+                    { name: 'Habakkuk', pdf: '/ot/minor/minorpdf/8habakkuk.pdf' },
+                    { name: 'Zephaniah', pdf: '/ot/minor/minorpdf/9zephaniah.pdf' },
+                    { name: 'Haggai', pdf: '/ot/minor/minorpdf/10haggai.pdf' },
+                    { name: 'Zechariah', pdf: '/ot/minor/minorpdf/11zechariah.pdf' },
+                    { name: 'Malachi', pdf: '/ot/minor/minorpdf/12malachi.pdf' }
+                ]
+            },
         };
 
         // Default blue theme
@@ -530,26 +710,8 @@
             lighter: '#f0f7ff'
         };
 
-        // Apply theme colors
-        function applyTheme(colors) {
-            const styleEl = document.getElementById('dynamicTheme');
-            styleEl.textContent = `
-                .theme-header { background: linear-gradient(to bottom right, ${colors.primary}, ${colors.dark}, ${colors.darker}); }
-                .theme-toolbar { background: linear-gradient(to right, ${colors.primary}, ${colors.dark}); }
-                .theme-accent-bg { background-color: ${colors.light}; }
-                .theme-accent-text { color: ${colors.dark}; }
-                .theme-accent-border { border-color: ${colors.dark}; }
-                .theme-button { background-color: ${colors.dark}; }
-                .theme-button:hover { background-color: ${colors.darker}; }
-                .theme-light-bg { background-color: ${colors.lighter}; }
-                .theme-light-border { border-color: ${colors.light}; }
-                .theme-spinner { border-color: ${colors.light}; border-top-color: ${colors.primary}; }
-            `;
-
-            // Also update nav logo and footer logo
-            document.getElementById('navLogo').style.backgroundColor = colors.dark;
-            document.getElementById('footerLogo').style.backgroundColor = colors.dark;
-        }
+        // Theme colors are now static brand colors defined in head style block
+        // No dynamic theme changes needed - keeps consistent brand look
 
         // Update page elements with PDF info
         function updatePageInfo() {
@@ -566,21 +728,19 @@
                 }
             }
 
-            // Apply theme colors
-            if (course && course.colors) {
-                applyTheme(course.colors);
+            // Update header with course info (theme colors are static brand colors)
+            if (course) {
                 document.getElementById('headerIcon').innerHTML = course.icon;
                 document.getElementById('courseLabel').textContent = course.name;
-            } else {
-                applyTheme(defaultColors);
             }
 
             // Update breadcrumb with course info
-            const breadcrumbEl = document.getElementById('pdfBreadcrumb');
+            const breadcrumbNav = document.getElementById('breadcrumbNav');
+            const chevronSvg = '<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>';
             if (course) {
-                breadcrumbEl.innerHTML = '<a href="/courses.html" class="hover:text-white">Courses</a> <span class="mx-2">></span> <a href="' + course.link + '" class="hover:text-white">' + course.name + '</a> <span class="mx-2">></span> <span class="text-white">' + displayName + '</span>';
+                breadcrumbNav.innerHTML = '<a href="/" class="text-gray-600 hover:text-heritage-gold transition">Home</a>' + chevronSvg + '<a href="/courses.html" class="text-gray-600 hover:text-heritage-gold transition">Courses</a>' + chevronSvg + '<a href="' + course.link + '" class="text-gray-600 hover:text-heritage-gold transition">' + course.name + '</a>' + chevronSvg + '<span class="text-gray-900 font-medium">' + displayName + '</span>';
             } else {
-                breadcrumbEl.textContent = displayName;
+                breadcrumbNav.innerHTML = '<a href="/" class="text-gray-600 hover:text-heritage-gold transition">Home</a>' + chevronSvg + '<span class="text-gray-900 font-medium">' + displayName + '</span>';
             }
 
             document.getElementById('pdfTitle').textContent = displayName.charAt(0).toUpperCase() + displayName.slice(1);
@@ -602,6 +762,27 @@
                 parentLinkText.textContent = course.name;
                 parentLink.classList.remove('hidden');
                 parentLink.classList.add('flex');
+            }
+
+            // Populate related content if available
+            if (course && course.related && course.related.length > 0) {
+                const relatedBox = document.getElementById('relatedContentBox');
+                const relatedList = document.getElementById('relatedContentList');
+                const relatedTitle = document.getElementById('relatedContentTitle');
+
+                relatedTitle.textContent = course.name;
+                relatedBox.classList.remove('hidden');
+
+                let relatedHtml = '';
+                course.related.forEach(function(item) {
+                    const isCurrentPdf = pdfUrl === item.pdf;
+                    if (isCurrentPdf) {
+                        relatedHtml += '<div class="flex items-center gap-2 py-2 px-3 bg-ancient-ink text-white rounded-lg text-sm"><span class="w-2 h-2 bg-heritage-gold rounded-full"></span><span class="font-medium">' + item.name + '</span></div>';
+                    } else {
+                        relatedHtml += '<a href="/pdfviewer.html?pdf=' + item.pdf + '" class="flex items-center gap-2 py-2 px-3 text-sm text-gray-700 hover:bg-parchment hover:text-heritage-gold rounded-lg transition"><span class="w-2 h-2 bg-gray-300 rounded-full"></span>' + item.name + '</a>';
+                    }
+                });
+                relatedList.innerHTML = relatedHtml;
             }
 
             // Update referrer text if available

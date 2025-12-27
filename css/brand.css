@@ -1,0 +1,600 @@
+/**
+ * Bible Teaching Program - Brand CSS
+ * Version: 2.0 (Centralized)
+ *
+ * "Truth without compromise. Grace without merit."
+ *
+ * This file contains ALL shared styles for the BTP website.
+ * Include this once per page instead of inline styles.
+ */
+
+/* ============================================
+   CSS VARIABLES - BRAND COLORS
+   ============================================ */
+
+:root {
+    /* Primary Brand Colors */
+    --ancient-ink: #1C1D37;
+    --heritage-gold: #CBA378;
+    --living-sage: #7F9A83;
+    --parchment: #F9F7F2;
+
+    /* Supporting Colors */
+    --warm-cream: #FAF8F5;
+    --text-dark: #1C1D37;
+    --text-muted: #6B7280;
+    --border-light: #E5E7EB;
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--parchment);
+}
+
+/* ============================================
+   BRAND COLOR UTILITIES
+   ============================================ */
+
+.bg-ancient-ink { background-color: var(--ancient-ink); }
+.bg-heritage-gold { background-color: var(--heritage-gold); }
+.bg-living-sage { background-color: var(--living-sage); }
+.bg-parchment { background-color: var(--parchment); }
+
+.text-ancient-ink { color: var(--ancient-ink); }
+.text-heritage-gold { color: var(--heritage-gold); }
+.text-living-sage { color: var(--living-sage); }
+
+.border-heritage-gold { border-color: var(--heritage-gold); }
+.border-ancient-ink { border-color: var(--ancient-ink); }
+
+/* Hover states for brand colors */
+.hover\:bg-ancient-ink:hover { background-color: var(--ancient-ink); }
+.hover\:bg-heritage-gold:hover { background-color: var(--heritage-gold); }
+.hover\:bg-parchment:hover { background-color: var(--parchment); }
+.hover\:text-heritage-gold:hover { color: var(--heritage-gold); }
+.hover\:text-ancient-ink:hover { color: var(--ancient-ink); }
+.hover\:border-heritage-gold:hover { border-color: var(--heritage-gold); }
+
+/* Group hover states for brand colors */
+.group:hover .group-hover\:bg-ancient-ink { background-color: var(--ancient-ink); }
+.group:hover .group-hover\:bg-heritage-gold { background-color: var(--heritage-gold); }
+.group:hover .group-hover\:bg-parchment { background-color: var(--parchment); }
+.group:hover .group-hover\:text-white { color: white; }
+.group:hover .group-hover\:text-heritage-gold { color: var(--heritage-gold); }
+.group:hover .group-hover\:text-ancient-ink { color: var(--ancient-ink); }
+
+/* Opacity variants for brand colors */
+.bg-heritage-gold\/10 { background-color: rgba(203, 163, 120, 0.1); }
+.bg-heritage-gold\/15 { background-color: rgba(203, 163, 120, 0.15); }
+.bg-heritage-gold\/20 { background-color: rgba(203, 163, 120, 0.2); }
+.bg-heritage-gold\/30 { background-color: rgba(203, 163, 120, 0.3); }
+.bg-ancient-ink\/90 { background-color: rgba(28, 29, 55, 0.9); }
+.bg-living-sage\/20 { background-color: rgba(127, 154, 131, 0.2); }
+.hover\:bg-heritage-gold\/90:hover { background-color: rgba(203, 163, 120, 0.9); }
+.hover\:bg-ancient-ink\/90:hover { background-color: rgba(28, 29, 55, 0.9); }
+.border-heritage-gold\/30 { border-color: rgba(203, 163, 120, 0.3); }
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+.font-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-sans {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* Content Area - Main page content styling */
+.content-area {
+    font-size: 1.0625rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+}
+
+.content-area h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--ancient-ink);
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+.content-area h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 1.75rem;
+    margin-bottom: 0.875rem;
+    color: var(--ancient-ink);
+    border-bottom: 2px solid var(--heritage-gold);
+    padding-bottom: 0.5rem;
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+.content-area h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--ancient-ink);
+    font-family: 'Playfair Display', Georgia, serif;
+}
+
+.content-area h4 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-top: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.content-area p { margin-bottom: 1rem; }
+.content-area ul, .content-area ol { margin-left: 1.5rem; margin-bottom: 1rem; }
+.content-area li { margin-bottom: 0.5rem; }
+.content-area ul { list-style-type: disc; }
+.content-area ol { list-style-type: decimal; }
+
+.content-area blockquote {
+    border-left: 4px solid var(--heritage-gold);
+    padding: 1rem 1rem 1rem 1.5rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: #525252;
+    background-color: var(--parchment);
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.content-area table { width: 100%; margin: 1.5rem 0; border-collapse: collapse; }
+.content-area th {
+    background-color: var(--ancient-ink);
+    color: white;
+    font-weight: 600;
+    text-align: left;
+    padding: 0.75rem;
+    border: 1px solid var(--ancient-ink);
+}
+.content-area td { padding: 0.75rem; border: 1px solid var(--border-light); vertical-align: top; }
+.content-area tr:nth-child(even) { background-color: var(--parchment); }
+
+.content-area img { max-width: 100%; height: auto; margin: 1rem 0; border-radius: 0.5rem; }
+
+.content-area a {
+    color: var(--heritage-gold);
+    text-decoration: underline;
+    text-decoration-color: rgba(203, 163, 120, 0.4);
+    text-underline-offset: 2px;
+}
+.content-area a:hover { color: var(--ancient-ink); text-decoration-color: var(--ancient-ink); }
+
+/* ============================================
+   GLOSSY BUTTON EFFECTS (2025 Design)
+   ============================================ */
+
+.btn-glossy {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, transparent 50%, rgba(0,0,0,0.1) 100%), var(--ancient-ink);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.1);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-glossy:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(28, 29, 55, 0.3), inset 0 1px 0 rgba(255,255,255,0.15);
+}
+.btn-glossy::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transition: left 0.6s ease;
+}
+.btn-glossy:hover::before { left: 100%; }
+
+.btn-glossy-gold {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, transparent 50%, rgba(0,0,0,0.05) 100%), var(--heritage-gold);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-glossy-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(203, 163, 120, 0.4), inset 0 1px 0 rgba(255,255,255,0.25);
+}
+.btn-glossy-gold::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.6s ease;
+}
+.btn-glossy-gold:hover::before { left: 100%; }
+
+.btn-outline {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-outline:hover {
+    border-color: var(--heritage-gold);
+    color: var(--heritage-gold);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(203, 163, 120, 0.2);
+}
+
+/* Glossy Top Button (for footer) */
+.btn-top-glossy {
+    position: relative;
+    background: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, transparent 50%, rgba(0,0,0,0.05) 100%), var(--heritage-gold);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.3);
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+.btn-top-glossy:hover {
+    box-shadow: 0 4px 12px rgba(203, 163, 120, 0.4), inset 0 1px 0 rgba(255,255,255,0.4);
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   CARD MICRO-ANIMATIONS (2025 Design)
+   ============================================ */
+
+.resource-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+}
+.resource-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    box-shadow: 0 0 40px rgba(203, 163, 120, 0.3);
+    pointer-events: none;
+}
+.resource-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 30px 60px rgba(28, 29, 55, 0.12);
+}
+.resource-card:hover::before { opacity: 1; }
+
+.card-icon {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.resource-card:hover .card-icon {
+    transform: rotate(6deg) scale(1.15);
+}
+
+.course-card {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.course-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 25px 50px rgba(28, 29, 55, 0.15);
+}
+.course-card .course-icon {
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.course-card:hover .course-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Card hover with slide effect */
+.card-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card-hover:hover {
+    transform: translateX(4px);
+    background-color: var(--parchment);
+}
+
+/* ============================================
+   FOOTER LINK ANIMATIONS
+   ============================================ */
+
+.footer-link {
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+.footer-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--heritage-gold);
+    transition: width 0.3s ease;
+}
+.footer-link:hover { color: var(--heritage-gold); }
+.footer-link:hover::after { width: 100%; }
+
+/* Social Icon Hover */
+.social-icon {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.social-icon:hover {
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 4px 12px rgba(203, 163, 120, 0.3);
+}
+
+/* ============================================
+   MEGA MENU STYLES
+   ============================================ */
+
+.nav-item { position: relative; }
+
+.nav-trigger {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0.5rem 0;
+    color: #d1d5db;
+    font-size: 0.875rem;
+    transition: color 0.2s ease;
+    cursor: pointer;
+}
+.nav-trigger:hover { color: white; }
+.nav-trigger svg {
+    width: 12px;
+    height: 12px;
+    transition: transform 0.3s ease;
+}
+.nav-item:hover .nav-trigger svg { transform: rotate(180deg); }
+
+/* Mega menu trigger (alternate class) */
+.mega-menu-trigger { position: relative; }
+.mega-menu-chevron { transition: transform 0.3s ease; }
+.mega-menu-trigger:hover .mega-menu-chevron { transform: rotate(180deg); }
+
+.mega-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 100;
+    padding-top: 1rem;
+    min-width: 500px;
+}
+.nav-item:hover .mega-menu,
+.mega-menu-trigger:hover .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+.mega-menu-content {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 25px 50px rgba(28, 29, 55, 0.15), 0 0 0 1px rgba(0,0,0,0.05);
+    overflow: hidden;
+    min-width: 600px;
+}
+.mega-menu-content.narrow { min-width: 320px; }
+
+.mega-menu-header {
+    background: linear-gradient(135deg, var(--ancient-ink) 0%, #2a2b4a 100%);
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.mega-menu-header h3 { color: white; font-size: 0.875rem; font-weight: 600; }
+.mega-menu-header a {
+    color: var(--heritage-gold);
+    font-size: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: opacity 0.2s;
+}
+.mega-menu-header a:hover { opacity: 0.8; }
+
+.mega-menu-grid { display: grid; gap: 0; }
+.mega-menu-grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+.mega-menu-grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+
+.mega-menu-col {
+    padding: 1.25rem;
+    border-right: 1px solid #f3f4f6;
+}
+.mega-menu-col:last-child { border-right: none; }
+.mega-menu-col h4 {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--heritage-gold);
+    margin-bottom: 0.75rem;
+}
+
+.mega-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    margin: 0 -0.75rem;
+    border-radius: 0.5rem;
+    color: var(--ancient-ink);
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+}
+.mega-link:hover {
+    background: var(--parchment);
+    transform: translateX(4px);
+}
+.mega-link .link-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+.mega-link:hover .link-icon { transform: scale(1.1) rotate(5deg); }
+.mega-link .link-text { display: flex; flex-direction: column; }
+.mega-link .link-title { font-weight: 500; line-height: 1.2; }
+.mega-link .link-desc { font-size: 0.75rem; color: #6b7280; line-height: 1.3; }
+
+.mega-simple-link {
+    display: block;
+    padding: 0.375rem 0;
+    color: #4b5563;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+}
+.mega-simple-link:hover {
+    color: var(--heritage-gold);
+    padding-left: 0.5rem;
+}
+
+/* Mega menu link with slide animation */
+.mega-menu-link {
+    position: relative;
+    transition: all 0.2s ease;
+}
+.mega-menu-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--heritage-gold);
+    transition: width 0.3s ease;
+}
+.mega-menu-link:hover::before { width: 12px; }
+.mega-menu-link:hover {
+    padding-left: 20px;
+    color: var(--heritage-gold);
+}
+
+/* ============================================
+   SIDEBAR ELEMENTS
+   ============================================ */
+
+.sidebar-card {
+    background-color: white;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-light);
+}
+
+.lesson-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.625rem 0.75rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.15s;
+}
+.lesson-nav-item:hover { background-color: var(--parchment); }
+.lesson-nav-item.active {
+    background-color: var(--ancient-ink);
+    color: white;
+}
+
+/* ============================================
+   SPECIAL CONTENT BOXES
+   ============================================ */
+
+.scripture-box {
+    background: linear-gradient(to bottom right, var(--parchment), #F5F0E8);
+    border: 2px solid var(--heritage-gold);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.theme-box {
+    background-color: rgba(127, 154, 131, 0.1);
+    border: 1px solid var(--living-sage);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.story-box {
+    background-color: rgba(203, 163, 120, 0.1);
+    border: 1px solid var(--heritage-gold);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 1.5rem 0;
+}
+
+.note-box {
+    background-color: rgba(203, 163, 120, 0.15);
+    border-left: 4px solid var(--heritage-gold);
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+/* ============================================
+   BREADCRUMBS
+   ============================================ */
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    flex-wrap: wrap;
+}
+.breadcrumbs a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.15s;
+}
+.breadcrumbs a:hover { color: var(--heritage-gold); }
+.breadcrumbs span { color: white; }
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* ============================================
+   WORD/OFFICE CLEANUP
+   ============================================ */
+
+.MsoNormal, .MsoBodyText, .MsoPlainText {
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+.SpellE, .GramE {
+    background: none;
+    border: none;
+}

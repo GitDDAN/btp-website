@@ -1,0 +1,673 @@
+# ============================================================
+# NETLIFY REDIRECTS FILE - Bible Teaching Program
+# ============================================================
+# Format: /old-path /new-path status-code
+# Status 301 = Permanent redirect (SEO-preserving)
+#
+# :splat = wildcard matching (captures everything after *)
+# ============================================================
+
+
+# ============================================================
+# SECTION 1: FOUNDATION COURSE LESSONS
+# Old cryptic filenames -> New SEO-friendly names
+# ============================================================
+
+# The Cross (cross -> the-cross)
+/courses/foundation/cross/cross1a.html /courses/foundation/the-cross/lesson-1.html 301
+/courses/foundation/cross/cross2a.html /courses/foundation/the-cross/lesson-2.html 301
+/courses/foundation/cross/cross3a.html /courses/foundation/the-cross/lesson-3.html 301
+/courses/foundation/cross/cross4a.html /courses/foundation/the-cross/lesson-4.html 301
+/courses/foundation/cross/cross5a.html /courses/foundation/the-cross/lesson-5.html 301
+/courses/foundation/cross/cross6.html /courses/foundation/the-cross/lesson-6.html 301
+/courses/foundation/cross/cross7.html /courses/foundation/the-cross/lesson-7.html 301
+/courses/foundation/cross/cross8a.html /courses/foundation/the-cross/lesson-8.html 301
+/courses/foundation/cross/cross9.html /courses/foundation/the-cross/lesson-9.html 301
+/courses/foundation/cross/cross10.html /courses/foundation/the-cross/lesson-10.html 301
+/courses/foundation/cross/blotout.html /courses/foundation/the-cross/lesson-3.html 301
+/courses/foundation/cross/crossweb/cross6.html /courses/foundation/the-cross/lesson-6.html 301
+/courses/foundation/cross/crossweb/cross7.html /courses/foundation/the-cross/lesson-7.html 301
+/courses/foundation/cross/crossweb/cross9.html /courses/foundation/the-cross/lesson-9.html 301
+/courses/foundation/cross/crossweb/cross10.html /courses/foundation/the-cross/lesson-10.html 301
+
+# Son of God (eternal -> son-of-god)
+/courses/foundation/eternal/e1a.html /courses/foundation/son-of-god/lesson-1.html 301
+/courses/foundation/eternal/e2a.html /courses/foundation/son-of-god/lesson-2.html 301
+/courses/foundation/eternal/e3a.html /courses/foundation/son-of-god/lesson-3.html 301
+/courses/foundation/eternal/e4a.html /courses/foundation/son-of-god/lesson-4.html 301
+/courses/foundation/eternal/e5a.html /courses/foundation/son-of-god/lesson-5.html 301
+/courses/foundation/eternal/e6a.html /courses/foundation/son-of-god/lesson-6.html 301
+/courses/foundation/eternal/e7a.html /courses/foundation/son-of-god/lesson-7.html 301
+/courses/foundation/eternal/e8a.html /courses/foundation/son-of-god/lesson-8.html 301
+/courses/foundation/eternal/e9a.html /courses/foundation/son-of-god/lesson-9.html 301
+/courses/foundation/eternal/e10a.html /courses/foundation/son-of-god/lesson-10.html 301
+/courses/foundation/eternal/2sam6.html /courses/foundation/son-of-god/lesson-6.html 301
+
+# Salvation (same folder, just filename changes)
+/courses/foundation/salvation/sal1a.html /courses/foundation/salvation/lesson-1.html 301
+/courses/foundation/salvation/sal2a.html /courses/foundation/salvation/lesson-2.html 301
+/courses/foundation/salvation/sal3a.html /courses/foundation/salvation/lesson-3.html 301
+/courses/foundation/salvation/sal4a.html /courses/foundation/salvation/lesson-4.html 301
+/courses/foundation/salvation/sal5a.html /courses/foundation/salvation/lesson-5.html 301
+/courses/foundation/salvation/sal6a.html /courses/foundation/salvation/lesson-6.html 301
+/courses/foundation/salvation/sal7a.html /courses/foundation/salvation/lesson-7.html 301
+/courses/foundation/salvation/sal8a.html /courses/foundation/salvation/lesson-8.html 301
+/courses/foundation/salvation/sal9a.html /courses/foundation/salvation/lesson-9.html 301
+/courses/foundation/salvation/sal10a.html /courses/foundation/salvation/lesson-10.html 301
+
+
+# ============================================================
+# SECTION 2: CHRISTIAN LIFE COURSE LESSONS
+# ============================================================
+
+# Armour of God (armour/armourweb -> armour-of-god)
+/courses/christian-life/armour/armourweb/armour1.html /courses/christian-life/armour-of-god/lesson-1.html 301
+/courses/christian-life/armour/armourweb/armour2.html /courses/christian-life/armour-of-god/lesson-2.html 301
+/courses/christian-life/armour/armourweb/armour3.html /courses/christian-life/armour-of-god/lesson-3.html 301
+/courses/christian-life/armour/armourweb/armour4.html /courses/christian-life/armour-of-god/lesson-4.html 301
+/courses/christian-life/armour/armourweb/armour5.html /courses/christian-life/armour-of-god/lesson-5.html 301
+/courses/christian-life/armour/armourweb/armour6.html /courses/christian-life/armour-of-god/lesson-6.html 301
+/courses/christian-life/armour/armourweb/armour7.html /courses/christian-life/armour-of-god/lesson-7.html 301
+/courses/christian-life/armour/armourweb/armour8.html /courses/christian-life/armour-of-god/lesson-8.html 301
+/courses/christian-life/armour/armourweb/armour9.html /courses/christian-life/armour-of-god/lesson-9.html 301
+/courses/christian-life/armour/armourweb/armour10.html /courses/christian-life/armour-of-god/lesson-10.html 301
+
+# Fruit of the Spirit (fruit/fruitweb -> fruit-of-spirit)
+/courses/christian-life/fruit/fruitweb/f1a.html /courses/christian-life/fruit-of-spirit/lesson-1-works-of-flesh.html 301
+/courses/christian-life/fruit/fruitweb/f2a.html /courses/christian-life/fruit-of-spirit/lesson-2-love.html 301
+/courses/christian-life/fruit/fruitweb/f3a.html /courses/christian-life/fruit-of-spirit/lesson-3-joy.html 301
+/courses/christian-life/fruit/fruitweb/f4a.html /courses/christian-life/fruit-of-spirit/lesson-4-peace.html 301
+/courses/christian-life/fruit/fruitweb/f5a.html /courses/christian-life/fruit-of-spirit/lesson-5-longsuffering.html 301
+/courses/christian-life/fruit/fruitweb/f6a.html /courses/christian-life/fruit-of-spirit/lesson-6-kindness.html 301
+/courses/christian-life/fruit/fruitweb/f7a.html /courses/christian-life/fruit-of-spirit/lesson-7-goodness.html 301
+/courses/christian-life/fruit/fruitweb/f8a.html /courses/christian-life/fruit-of-spirit/lesson-8-faith.html 301
+/courses/christian-life/fruit/fruitweb/f9a.html /courses/christian-life/fruit-of-spirit/lesson-9-meekness.html 301
+/courses/christian-life/fruit/fruitweb/f10a.html /courses/christian-life/fruit-of-spirit/lesson-10-temperance.html 301
+
+# Worship Part 1 (worship/worshipweb -> worship)
+/courses/christian-life/worship/worshipweb/w1a.html /courses/christian-life/worship/lesson-1.html 301
+/courses/christian-life/worship/worshipweb/w2a.html /courses/christian-life/worship/lesson-2.html 301
+/courses/christian-life/worship/worshipweb/w3a.html /courses/christian-life/worship/lesson-3.html 301
+/courses/christian-life/worship/worshipweb/w4a.html /courses/christian-life/worship/lesson-4.html 301
+/courses/christian-life/worship/worshipweb/w5a.html /courses/christian-life/worship/lesson-5.html 301
+/courses/christian-life/worship/worshipweb/w6a.html /courses/christian-life/worship/lesson-6.html 301
+/courses/christian-life/worship/worshipweb/w7a.html /courses/christian-life/worship/lesson-7.html 301
+/courses/christian-life/worship/worshipweb/w8a.html /courses/christian-life/worship/lesson-8.html 301
+/courses/christian-life/worship/worshipweb/w9a.html /courses/christian-life/worship/lesson-9.html 301
+/courses/christian-life/worship/worshipweb/w10a.html /courses/christian-life/worship/lesson-10.html 301
+
+# Worship Part 2 (worship2 -> worship-part-2)
+/courses/christian-life/worship2/w11a.html /courses/christian-life/worship-part-2/lesson-11.html 301
+/courses/christian-life/worship2/w12a.html /courses/christian-life/worship-part-2/lesson-12.html 301
+/courses/christian-life/worship2/w13a.html /courses/christian-life/worship-part-2/lesson-13.html 301
+/courses/christian-life/worship2/w14a.html /courses/christian-life/worship-part-2/lesson-14.html 301
+/courses/christian-life/worship2/w15a.html /courses/christian-life/worship-part-2/lesson-15.html 301
+/courses/christian-life/worship2/w16a.html /courses/christian-life/worship-part-2/lesson-16.html 301
+/courses/christian-life/worship2/w17a.html /courses/christian-life/worship-part-2/lesson-17.html 301
+
+# Prayer (prayer/prayer2 -> prayer)
+/courses/christian-life/prayer/prayer2/pf1.html /courses/christian-life/prayer/lesson-1.html 301
+/courses/christian-life/prayer/prayer2/pf2.html /courses/christian-life/prayer/lesson-2.html 301
+/courses/christian-life/prayer/prayer2/pf3.html /courses/christian-life/prayer/lesson-3.html 301
+/courses/christian-life/prayer/prayer2/pf4.html /courses/christian-life/prayer/lesson-4.html 301
+/courses/christian-life/prayer/prayer2/pf5.html /courses/christian-life/prayer/lesson-5.html 301
+/courses/christian-life/prayer/prayer2/pf6.html /courses/christian-life/prayer/lesson-6.html 301
+/courses/christian-life/prayer/prayer2/pf7.html /courses/christian-life/prayer/lesson-7.html 301
+/courses/christian-life/prayer/prayer2/pf8.html /courses/christian-life/prayer/lesson-8.html 301
+/courses/christian-life/prayer/prayer2/pf9.html /courses/christian-life/prayer/lesson-9.html 301
+/courses/christian-life/prayer/prayer2/pf10.html /courses/christian-life/prayer/lesson-10.html 301
+
+# Gifts of Spirit (gifts/giftsweb -> gifts-of-spirit)
+/courses/christian-life/gifts/giftsweb/g1.html /courses/christian-life/gifts-of-spirit/lesson-1.html 301
+/courses/christian-life/gifts/giftsweb/g2.html /courses/christian-life/gifts-of-spirit/lesson-2.html 301
+/courses/christian-life/gifts/giftsweb/g3.html /courses/christian-life/gifts-of-spirit/lesson-3.html 301
+/courses/christian-life/gifts/giftsweb/g4.html /courses/christian-life/gifts-of-spirit/lesson-4.html 301
+/courses/christian-life/gifts/giftsweb/g5.html /courses/christian-life/gifts-of-spirit/lesson-5.html 301
+/courses/christian-life/gifts/giftsweb/g6.html /courses/christian-life/gifts-of-spirit/lesson-6.html 301
+/courses/christian-life/gifts/giftsweb/g7.html /courses/christian-life/gifts-of-spirit/lesson-7.html 301
+/courses/christian-life/gifts/giftsweb/g8.html /courses/christian-life/gifts-of-spirit/lesson-8.html 301
+/courses/christian-life/gifts/giftsweb/g9.html /courses/christian-life/gifts-of-spirit/lesson-9.html 301
+/courses/christian-life/gifts/giftsweb/g10.html /courses/christian-life/gifts-of-spirit/lesson-10.html 301
+
+
+# ============================================================
+# SECTION 3: FOLDER REDIRECTS (Wildcards)
+# Old folder structures -> New SEO-friendly structures
+# ============================================================
+
+# Foundation courses - old folder names to new
+/courses/foundation/cross/* /courses/foundation/the-cross/:splat 301
+/courses/foundation/eternal/* /courses/foundation/son-of-god/:splat 301
+
+# Christian Life courses - nested web folders to parent
+/courses/christian-life/armour/armourweb/* /courses/christian-life/armour-of-god/:splat 301
+/courses/christian-life/armour/* /courses/christian-life/armour-of-god/:splat 301
+/courses/christian-life/fruit/fruitweb/* /courses/christian-life/fruit-of-spirit/:splat 301
+/courses/christian-life/fruit/* /courses/christian-life/fruit-of-spirit/:splat 301
+/courses/christian-life/gifts/giftsweb/* /courses/christian-life/gifts-of-spirit/:splat 301
+/courses/christian-life/gifts/* /courses/christian-life/gifts-of-spirit/:splat 301
+/courses/christian-life/worship/worshipweb/* /courses/christian-life/worship/:splat 301
+/courses/christian-life/worship2/* /courses/christian-life/worship-part-2/:splat 301
+/courses/christian-life/prayer/prayer2/* /courses/christian-life/prayer/:splat 301
+
+
+# ============================================================
+# SECTION 4: LEGACY BTP FOLDER STRUCTURE
+# Old /btp/ paths -> New /courses/ structure
+# ============================================================
+
+# Foundation courses
+/btp/foundation/cross/* /courses/foundation/the-cross/:splat 301
+/btp/foundation/salvation/* /courses/foundation/salvation/:splat 301
+/btp/foundation/eternal/* /courses/foundation/son-of-god/:splat 301
+
+# Christian Life courses
+/btp/life/armour/* /courses/christian-life/armour-of-god/:splat 301
+/btp/life/fruit/* /courses/christian-life/fruit-of-spirit/:splat 301
+/btp/life/gifts/* /courses/christian-life/gifts-of-spirit/:splat 301
+/btp/life/worship/* /courses/christian-life/worship/:splat 301
+/btp/life/worship2/* /courses/christian-life/worship-part-2/:splat 301
+/btp/life/church/* /courses/christian-life/new-testament-church/:splat 301
+/btp/life/prayer/* /courses/christian-life/prayer/:splat 301
+
+# Message/Study courses
+/btp/message/ch/* /courses/history/church-history/:splat 301
+/btp/message/greekwords/* /courses/languages/greek-word-studies/:splat 301
+/btp/message/missions/* /courses/history/modern-missions/:splat 301
+/btp/message/religions/* /resources/messages/religions/:splat 301
+
+
+# ============================================================
+# SECTION 5: ROOT-LEVEL LEGACY LANDING PAGES
+# Old files in root -> New course locations
+# ============================================================
+
+/cfcross.html /courses/foundation/the-cross/index.html 301
+/cfeternal.html /courses/foundation/son-of-god/index.html 301
+/cfsalvation.html /courses/foundation/salvation/index.html 301
+/arweb.html /courses/christian-life/armour-of-god/index.html 301
+/fruitweb.html /courses/christian-life/fruit-of-spirit/index.html 301
+/giftsweb.html /courses/christian-life/gifts-of-spirit/index.html 301
+/worshipweb.html /courses/christian-life/worship/index.html 301
+/greekweb.html /courses/languages/greek-word-studies/index.html 301
+/chweb.html /courses/history/church-history/index.html 301
+/mmweb.html /courses/history/modern-missions/index.html 301
+
+
+# ============================================================
+# SECTION 6: INDEX FILE REDIRECTS
+# Clean up /folder/index.html -> /folder.html patterns
+# ============================================================
+
+/books/index.html /books.html 301
+/courses/index.html /courses.html 301
+/messages/index.html /messages/ 301
+/resources/index.html /resources.html 301
+/bible/index.html /bible.html 301
+
+
+# ============================================================
+# SECTION 7: DAILY VERSES LEGACY PATHS
+# Old /dailyverses/ (no hyphen) -> New /daily-verses/ (with hyphen)
+# Old format: dvjan1.html -> New format: day-1.html
+# ============================================================
+
+# OLD FORMAT: /dailyverses/jan13/dvjan1.html -> /daily-verses/january/day-1.html
+# Note: Netlify doesn't support regex transforms, so we use specific redirects
+
+# January
+/dailyverses/jan13/dvjan1.html /daily-verses/january/day-1.html 301
+/dailyverses/jan13/dvjan2.html /daily-verses/january/day-2.html 301
+/dailyverses/jan13/dvjan3.html /daily-verses/january/day-3.html 301
+/dailyverses/jan13/dvjan4.html /daily-verses/january/day-4.html 301
+/dailyverses/jan13/dvjan5.html /daily-verses/january/day-5.html 301
+/dailyverses/jan13/dvjan6.html /daily-verses/january/day-6.html 301
+/dailyverses/jan13/dvjan7.html /daily-verses/january/day-7.html 301
+/dailyverses/jan13/dvjan8.html /daily-verses/january/day-8.html 301
+/dailyverses/jan13/dvjan9.html /daily-verses/january/day-9.html 301
+/dailyverses/jan13/dvjan10.html /daily-verses/january/day-10.html 301
+/dailyverses/jan13/dvjan11.html /daily-verses/january/day-11.html 301
+/dailyverses/jan13/dvjan12.html /daily-verses/january/day-12.html 301
+/dailyverses/jan13/dvjan13.html /daily-verses/january/day-13.html 301
+/dailyverses/jan13/dvjan14.html /daily-verses/january/day-14.html 301
+/dailyverses/jan13/dvjan15.html /daily-verses/january/day-15.html 301
+/dailyverses/jan13/dvjan16.html /daily-verses/january/day-16.html 301
+/dailyverses/jan13/dvjan17.html /daily-verses/january/day-17.html 301
+/dailyverses/jan13/dvjan18.html /daily-verses/january/day-18.html 301
+/dailyverses/jan13/dvjan19.html /daily-verses/january/day-19.html 301
+/dailyverses/jan13/dvjan20.html /daily-verses/january/day-20.html 301
+/dailyverses/jan13/dvjan21.html /daily-verses/january/day-21.html 301
+/dailyverses/jan13/dvjan22.html /daily-verses/january/day-22.html 301
+/dailyverses/jan13/dvjan23.html /daily-verses/january/day-23.html 301
+/dailyverses/jan13/dvjan24.html /daily-verses/january/day-24.html 301
+/dailyverses/jan13/dvjan25.html /daily-verses/january/day-25.html 301
+/dailyverses/jan13/dvjan26.html /daily-verses/january/day-26.html 301
+/dailyverses/jan13/dvjan27.html /daily-verses/january/day-27.html 301
+/dailyverses/jan13/dvjan28.html /daily-verses/january/day-28.html 301
+/dailyverses/jan13/dvjan29.html /daily-verses/january/day-29.html 301
+/dailyverses/jan13/dvjan30.html /daily-verses/january/day-30.html 301
+/dailyverses/jan13/dvjan31.html /daily-verses/january/day-31.html 301
+
+# February
+/dailyverses/feb13/dvfeb1.html /daily-verses/february/day-1.html 301
+/dailyverses/feb13/dvfeb2.html /daily-verses/february/day-2.html 301
+/dailyverses/feb13/dvfeb3.html /daily-verses/february/day-3.html 301
+/dailyverses/feb13/dvfeb4.html /daily-verses/february/day-4.html 301
+/dailyverses/feb13/dvfeb5.html /daily-verses/february/day-5.html 301
+/dailyverses/feb13/dvfeb6.html /daily-verses/february/day-6.html 301
+/dailyverses/feb13/dvfeb7.html /daily-verses/february/day-7.html 301
+/dailyverses/feb13/dvfeb8.html /daily-verses/february/day-8.html 301
+/dailyverses/feb13/dvfeb9.html /daily-verses/february/day-9.html 301
+/dailyverses/feb13/dvfeb10.html /daily-verses/february/day-10.html 301
+/dailyverses/feb13/dvfeb11.html /daily-verses/february/day-11.html 301
+/dailyverses/feb13/dvfeb12.html /daily-verses/february/day-12.html 301
+/dailyverses/feb13/dvfeb13.html /daily-verses/february/day-13.html 301
+/dailyverses/feb13/dvfeb14.html /daily-verses/february/day-14.html 301
+/dailyverses/feb13/dvfeb15.html /daily-verses/february/day-15.html 301
+/dailyverses/feb13/dvfeb16.html /daily-verses/february/day-16.html 301
+/dailyverses/feb13/dvfeb17.html /daily-verses/february/day-17.html 301
+/dailyverses/feb13/dvfeb18.html /daily-verses/february/day-18.html 301
+/dailyverses/feb13/dvfeb19.html /daily-verses/february/day-19.html 301
+/dailyverses/feb13/dvfeb20.html /daily-verses/february/day-20.html 301
+/dailyverses/feb13/dvfeb21.html /daily-verses/february/day-21.html 301
+/dailyverses/feb13/dvfeb22.html /daily-verses/february/day-22.html 301
+/dailyverses/feb13/dvfeb23.html /daily-verses/february/day-23.html 301
+/dailyverses/feb13/dvfeb24.html /daily-verses/february/day-24.html 301
+/dailyverses/feb13/dvfeb25.html /daily-verses/february/day-25.html 301
+/dailyverses/feb13/dvfeb26.html /daily-verses/february/day-26.html 301
+/dailyverses/feb13/dvfeb27.html /daily-verses/february/day-27.html 301
+/dailyverses/feb13/dvfeb28.html /daily-verses/february/day-28.html 301
+/dailyverses/feb13/dvfeb29.html /daily-verses/february/day-29.html 301
+
+# March
+/dailyverses/mar13/dvmar1.html /daily-verses/march/day-1.html 301
+/dailyverses/mar13/dvmar2.html /daily-verses/march/day-2.html 301
+/dailyverses/mar13/dvmar3.html /daily-verses/march/day-3.html 301
+/dailyverses/mar13/dvmar4.html /daily-verses/march/day-4.html 301
+/dailyverses/mar13/dvmar5.html /daily-verses/march/day-5.html 301
+/dailyverses/mar13/dvmar6.html /daily-verses/march/day-6.html 301
+/dailyverses/mar13/dvmar7.html /daily-verses/march/day-7.html 301
+/dailyverses/mar13/dvmar8.html /daily-verses/march/day-8.html 301
+/dailyverses/mar13/dvmar9.html /daily-verses/march/day-9.html 301
+/dailyverses/mar13/dvmar10.html /daily-verses/march/day-10.html 301
+/dailyverses/mar13/dvmar11.html /daily-verses/march/day-11.html 301
+/dailyverses/mar13/dvmar12.html /daily-verses/march/day-12.html 301
+/dailyverses/mar13/dvmar13.html /daily-verses/march/day-13.html 301
+/dailyverses/mar13/dvmar14.html /daily-verses/march/day-14.html 301
+/dailyverses/mar13/dvmar15.html /daily-verses/march/day-15.html 301
+/dailyverses/mar13/dvmar16.html /daily-verses/march/day-16.html 301
+/dailyverses/mar13/dvmar17.html /daily-verses/march/day-17.html 301
+/dailyverses/mar13/dvmar18.html /daily-verses/march/day-18.html 301
+/dailyverses/mar13/dvmar19.html /daily-verses/march/day-19.html 301
+/dailyverses/mar13/dvmar20.html /daily-verses/march/day-20.html 301
+/dailyverses/mar13/dvmar21.html /daily-verses/march/day-21.html 301
+/dailyverses/mar13/dvmar22.html /daily-verses/march/day-22.html 301
+/dailyverses/mar13/dvmar23.html /daily-verses/march/day-23.html 301
+/dailyverses/mar13/dvmar24.html /daily-verses/march/day-24.html 301
+/dailyverses/mar13/dvmar25.html /daily-verses/march/day-25.html 301
+/dailyverses/mar13/dvmar26.html /daily-verses/march/day-26.html 301
+/dailyverses/mar13/dvmar27.html /daily-verses/march/day-27.html 301
+/dailyverses/mar13/dvmar28.html /daily-verses/march/day-28.html 301
+/dailyverses/mar13/dvmar29.html /daily-verses/march/day-29.html 301
+/dailyverses/mar13/dvmar30.html /daily-verses/march/day-30.html 301
+/dailyverses/mar13/dvmar31.html /daily-verses/march/day-31.html 301
+
+# April
+/dailyverses/apr13/dvapr1.html /daily-verses/april/day-1.html 301
+/dailyverses/apr13/dvapr2.html /daily-verses/april/day-2.html 301
+/dailyverses/apr13/dvapr3.html /daily-verses/april/day-3.html 301
+/dailyverses/apr13/dvapr4.html /daily-verses/april/day-4.html 301
+/dailyverses/apr13/dvapr5.html /daily-verses/april/day-5.html 301
+/dailyverses/apr13/dvapr6.html /daily-verses/april/day-6.html 301
+/dailyverses/apr13/dvapr7.html /daily-verses/april/day-7.html 301
+/dailyverses/apr13/dvapr8.html /daily-verses/april/day-8.html 301
+/dailyverses/apr13/dvapr9.html /daily-verses/april/day-9.html 301
+/dailyverses/apr13/dvapr10.html /daily-verses/april/day-10.html 301
+/dailyverses/apr13/dvapr11.html /daily-verses/april/day-11.html 301
+/dailyverses/apr13/dvapr12.html /daily-verses/april/day-12.html 301
+/dailyverses/apr13/dvapr13.html /daily-verses/april/day-13.html 301
+/dailyverses/apr13/dvapr14.html /daily-verses/april/day-14.html 301
+/dailyverses/apr13/dvapr15.html /daily-verses/april/day-15.html 301
+/dailyverses/apr13/dvapr16.html /daily-verses/april/day-16.html 301
+/dailyverses/apr13/dvapr17.html /daily-verses/april/day-17.html 301
+/dailyverses/apr13/dvapr18.html /daily-verses/april/day-18.html 301
+/dailyverses/apr13/dvapr19.html /daily-verses/april/day-19.html 301
+/dailyverses/apr13/dvapr20.html /daily-verses/april/day-20.html 301
+/dailyverses/apr13/dvapr21.html /daily-verses/april/day-21.html 301
+/dailyverses/apr13/dvapr22.html /daily-verses/april/day-22.html 301
+/dailyverses/apr13/dvapr23.html /daily-verses/april/day-23.html 301
+/dailyverses/apr13/dvapr24.html /daily-verses/april/day-24.html 301
+/dailyverses/apr13/dvapr25.html /daily-verses/april/day-25.html 301
+/dailyverses/apr13/dvapr26.html /daily-verses/april/day-26.html 301
+/dailyverses/apr13/dvapr27.html /daily-verses/april/day-27.html 301
+/dailyverses/apr13/dvapr28.html /daily-verses/april/day-28.html 301
+/dailyverses/apr13/dvapr29.html /daily-verses/april/day-29.html 301
+/dailyverses/apr13/dvapr30.html /daily-verses/april/day-30.html 301
+
+# May
+/dailyverses/may13/dvmay1.html /daily-verses/may/day-1.html 301
+/dailyverses/may13/dvmay2.html /daily-verses/may/day-2.html 301
+/dailyverses/may13/dvmay3.html /daily-verses/may/day-3.html 301
+/dailyverses/may13/dvmay4.html /daily-verses/may/day-4.html 301
+/dailyverses/may13/dvmay5.html /daily-verses/may/day-5.html 301
+/dailyverses/may13/dvmay6.html /daily-verses/may/day-6.html 301
+/dailyverses/may13/dvmay7.html /daily-verses/may/day-7.html 301
+/dailyverses/may13/dvmay8.html /daily-verses/may/day-8.html 301
+/dailyverses/may13/dvmay9.html /daily-verses/may/day-9.html 301
+/dailyverses/may13/dvmay10.html /daily-verses/may/day-10.html 301
+/dailyverses/may13/dvmay11.html /daily-verses/may/day-11.html 301
+/dailyverses/may13/dvmay12.html /daily-verses/may/day-12.html 301
+/dailyverses/may13/dvmay13.html /daily-verses/may/day-13.html 301
+/dailyverses/may13/dvmay14.html /daily-verses/may/day-14.html 301
+/dailyverses/may13/dvmay15.html /daily-verses/may/day-15.html 301
+/dailyverses/may13/dvmay16.html /daily-verses/may/day-16.html 301
+/dailyverses/may13/dvmay17.html /daily-verses/may/day-17.html 301
+/dailyverses/may13/dvmay18.html /daily-verses/may/day-18.html 301
+/dailyverses/may13/dvmay19.html /daily-verses/may/day-19.html 301
+/dailyverses/may13/dvmay20.html /daily-verses/may/day-20.html 301
+/dailyverses/may13/dvmay21.html /daily-verses/may/day-21.html 301
+/dailyverses/may13/dvmay22.html /daily-verses/may/day-22.html 301
+/dailyverses/may13/dvmay23.html /daily-verses/may/day-23.html 301
+/dailyverses/may13/dvmay24.html /daily-verses/may/day-24.html 301
+/dailyverses/may13/dvmay25.html /daily-verses/may/day-25.html 301
+/dailyverses/may13/dvmay26.html /daily-verses/may/day-26.html 301
+/dailyverses/may13/dvmay27.html /daily-verses/may/day-27.html 301
+/dailyverses/may13/dvmay28.html /daily-verses/may/day-28.html 301
+/dailyverses/may13/dvmay29.html /daily-verses/may/day-29.html 301
+/dailyverses/may13/dvmay30.html /daily-verses/may/day-30.html 301
+/dailyverses/may13/dvmay31.html /daily-verses/may/day-31.html 301
+
+# June
+/dailyverses/jun13/dvjun1.html /daily-verses/june/day-1.html 301
+/dailyverses/jun13/dvjun2.html /daily-verses/june/day-2.html 301
+/dailyverses/jun13/dvjun3.html /daily-verses/june/day-3.html 301
+/dailyverses/jun13/dvjun4.html /daily-verses/june/day-4.html 301
+/dailyverses/jun13/dvjun5.html /daily-verses/june/day-5.html 301
+/dailyverses/jun13/dvjun6.html /daily-verses/june/day-6.html 301
+/dailyverses/jun13/dvjun7.html /daily-verses/june/day-7.html 301
+/dailyverses/jun13/dvjun8.html /daily-verses/june/day-8.html 301
+/dailyverses/jun13/dvjun9.html /daily-verses/june/day-9.html 301
+/dailyverses/jun13/dvjun10.html /daily-verses/june/day-10.html 301
+/dailyverses/jun13/dvjun11.html /daily-verses/june/day-11.html 301
+/dailyverses/jun13/dvjun12.html /daily-verses/june/day-12.html 301
+/dailyverses/jun13/dvjun13.html /daily-verses/june/day-13.html 301
+/dailyverses/jun13/dvjun14.html /daily-verses/june/day-14.html 301
+/dailyverses/jun13/dvjun15.html /daily-verses/june/day-15.html 301
+/dailyverses/jun13/dvjun16.html /daily-verses/june/day-16.html 301
+/dailyverses/jun13/dvjun17.html /daily-verses/june/day-17.html 301
+/dailyverses/jun13/dvjun18.html /daily-verses/june/day-18.html 301
+/dailyverses/jun13/dvjun19.html /daily-verses/june/day-19.html 301
+/dailyverses/jun13/dvjun20.html /daily-verses/june/day-20.html 301
+/dailyverses/jun13/dvjun21.html /daily-verses/june/day-21.html 301
+/dailyverses/jun13/dvjun22.html /daily-verses/june/day-22.html 301
+/dailyverses/jun13/dvjun23.html /daily-verses/june/day-23.html 301
+/dailyverses/jun13/dvjun24.html /daily-verses/june/day-24.html 301
+/dailyverses/jun13/dvjun25.html /daily-verses/june/day-25.html 301
+/dailyverses/jun13/dvjun26.html /daily-verses/june/day-26.html 301
+/dailyverses/jun13/dvjun27.html /daily-verses/june/day-27.html 301
+/dailyverses/jun13/dvjun28.html /daily-verses/june/day-28.html 301
+/dailyverses/jun13/dvjun29.html /daily-verses/june/day-29.html 301
+/dailyverses/jun13/dvjun30.html /daily-verses/june/day-30.html 301
+
+# July
+/dailyverses/jul13/dvjul1.html /daily-verses/july/day-1.html 301
+/dailyverses/jul13/dvjul2.html /daily-verses/july/day-2.html 301
+/dailyverses/jul13/dvjul3.html /daily-verses/july/day-3.html 301
+/dailyverses/jul13/dvjul4.html /daily-verses/july/day-4.html 301
+/dailyverses/jul13/dvjul5.html /daily-verses/july/day-5.html 301
+/dailyverses/jul13/dvjul6.html /daily-verses/july/day-6.html 301
+/dailyverses/jul13/dvjul7.html /daily-verses/july/day-7.html 301
+/dailyverses/jul13/dvjul8.html /daily-verses/july/day-8.html 301
+/dailyverses/jul13/dvjul9.html /daily-verses/july/day-9.html 301
+/dailyverses/jul13/dvjul10.html /daily-verses/july/day-10.html 301
+/dailyverses/jul13/dvjul11.html /daily-verses/july/day-11.html 301
+/dailyverses/jul13/dvjul12.html /daily-verses/july/day-12.html 301
+/dailyverses/jul13/dvjul13.html /daily-verses/july/day-13.html 301
+/dailyverses/jul13/dvjul14.html /daily-verses/july/day-14.html 301
+/dailyverses/jul13/dvjul15.html /daily-verses/july/day-15.html 301
+/dailyverses/jul13/dvjul16.html /daily-verses/july/day-16.html 301
+/dailyverses/jul13/dvjul17.html /daily-verses/july/day-17.html 301
+/dailyverses/jul13/dvjul18.html /daily-verses/july/day-18.html 301
+/dailyverses/jul13/dvjul19.html /daily-verses/july/day-19.html 301
+/dailyverses/jul13/dvjul20.html /daily-verses/july/day-20.html 301
+/dailyverses/jul13/dvjul21.html /daily-verses/july/day-21.html 301
+/dailyverses/jul13/dvjul22.html /daily-verses/july/day-22.html 301
+/dailyverses/jul13/dvjul23.html /daily-verses/july/day-23.html 301
+/dailyverses/jul13/dvjul24.html /daily-verses/july/day-24.html 301
+/dailyverses/jul13/dvjul25.html /daily-verses/july/day-25.html 301
+/dailyverses/jul13/dvjul26.html /daily-verses/july/day-26.html 301
+/dailyverses/jul13/dvjul27.html /daily-verses/july/day-27.html 301
+/dailyverses/jul13/dvjul28.html /daily-verses/july/day-28.html 301
+/dailyverses/jul13/dvjul29.html /daily-verses/july/day-29.html 301
+/dailyverses/jul13/dvjul30.html /daily-verses/july/day-30.html 301
+/dailyverses/jul13/dvjul31.html /daily-verses/july/day-31.html 301
+
+# August
+/dailyverses/aug13/dvaug1.html /daily-verses/august/day-1.html 301
+/dailyverses/aug13/dvaug2.html /daily-verses/august/day-2.html 301
+/dailyverses/aug13/dvaug3.html /daily-verses/august/day-3.html 301
+/dailyverses/aug13/dvaug4.html /daily-verses/august/day-4.html 301
+/dailyverses/aug13/dvaug5.html /daily-verses/august/day-5.html 301
+/dailyverses/aug13/dvaug6.html /daily-verses/august/day-6.html 301
+/dailyverses/aug13/dvaug7.html /daily-verses/august/day-7.html 301
+/dailyverses/aug13/dvaug8.html /daily-verses/august/day-8.html 301
+/dailyverses/aug13/dvaug9.html /daily-verses/august/day-9.html 301
+/dailyverses/aug13/dvaug10.html /daily-verses/august/day-10.html 301
+/dailyverses/aug13/dvaug11.html /daily-verses/august/day-11.html 301
+/dailyverses/aug13/dvaug12.html /daily-verses/august/day-12.html 301
+/dailyverses/aug13/dvaug13.html /daily-verses/august/day-13.html 301
+/dailyverses/aug13/dvaug14.html /daily-verses/august/day-14.html 301
+/dailyverses/aug13/dvaug15.html /daily-verses/august/day-15.html 301
+/dailyverses/aug13/dvaug16.html /daily-verses/august/day-16.html 301
+/dailyverses/aug13/dvaug17.html /daily-verses/august/day-17.html 301
+/dailyverses/aug13/dvaug18.html /daily-verses/august/day-18.html 301
+/dailyverses/aug13/dvaug19.html /daily-verses/august/day-19.html 301
+/dailyverses/aug13/dvaug20.html /daily-verses/august/day-20.html 301
+/dailyverses/aug13/dvaug21.html /daily-verses/august/day-21.html 301
+/dailyverses/aug13/dvaug22.html /daily-verses/august/day-22.html 301
+/dailyverses/aug13/dvaug23.html /daily-verses/august/day-23.html 301
+/dailyverses/aug13/dvaug24.html /daily-verses/august/day-24.html 301
+/dailyverses/aug13/dvaug25.html /daily-verses/august/day-25.html 301
+/dailyverses/aug13/dvaug26.html /daily-verses/august/day-26.html 301
+/dailyverses/aug13/dvaug27.html /daily-verses/august/day-27.html 301
+/dailyverses/aug13/dvaug28.html /daily-verses/august/day-28.html 301
+/dailyverses/aug13/dvaug29.html /daily-verses/august/day-29.html 301
+/dailyverses/aug13/dvaug30.html /daily-verses/august/day-30.html 301
+/dailyverses/aug13/dvaug31.html /daily-verses/august/day-31.html 301
+
+# September
+/dailyverses/sep13/dvsep1.html /daily-verses/september/day-1.html 301
+/dailyverses/sep13/dvsep2.html /daily-verses/september/day-2.html 301
+/dailyverses/sep13/dvsep3.html /daily-verses/september/day-3.html 301
+/dailyverses/sep13/dvsep4.html /daily-verses/september/day-4.html 301
+/dailyverses/sep13/dvsep5.html /daily-verses/september/day-5.html 301
+/dailyverses/sep13/dvsep6.html /daily-verses/september/day-6.html 301
+/dailyverses/sep13/dvsep7.html /daily-verses/september/day-7.html 301
+/dailyverses/sep13/dvsep8.html /daily-verses/september/day-8.html 301
+/dailyverses/sep13/dvsep9.html /daily-verses/september/day-9.html 301
+/dailyverses/sep13/dvsep10.html /daily-verses/september/day-10.html 301
+/dailyverses/sep13/dvsep11.html /daily-verses/september/day-11.html 301
+/dailyverses/sep13/dvsep12.html /daily-verses/september/day-12.html 301
+/dailyverses/sep13/dvsep13.html /daily-verses/september/day-13.html 301
+/dailyverses/sep13/dvsep14.html /daily-verses/september/day-14.html 301
+/dailyverses/sep13/dvsep15.html /daily-verses/september/day-15.html 301
+/dailyverses/sep13/dvsep16.html /daily-verses/september/day-16.html 301
+/dailyverses/sep13/dvsep17.html /daily-verses/september/day-17.html 301
+/dailyverses/sep13/dvsep18.html /daily-verses/september/day-18.html 301
+/dailyverses/sep13/dvsep19.html /daily-verses/september/day-19.html 301
+/dailyverses/sep13/dvsep20.html /daily-verses/september/day-20.html 301
+/dailyverses/sep13/dvsep21.html /daily-verses/september/day-21.html 301
+/dailyverses/sep13/dvsep22.html /daily-verses/september/day-22.html 301
+/dailyverses/sep13/dvsep23.html /daily-verses/september/day-23.html 301
+/dailyverses/sep13/dvsep24.html /daily-verses/september/day-24.html 301
+/dailyverses/sep13/dvsep25.html /daily-verses/september/day-25.html 301
+/dailyverses/sep13/dvsep26.html /daily-verses/september/day-26.html 301
+/dailyverses/sep13/dvsep27.html /daily-verses/september/day-27.html 301
+/dailyverses/sep13/dvsep28.html /daily-verses/september/day-28.html 301
+/dailyverses/sep13/dvsep29.html /daily-verses/september/day-29.html 301
+/dailyverses/sep13/dvsep30.html /daily-verses/september/day-30.html 301
+
+# October
+/dailyverses/oct13/dvoct1.html /daily-verses/october/day-1.html 301
+/dailyverses/oct13/dvoct2.html /daily-verses/october/day-2.html 301
+/dailyverses/oct13/dvoct3.html /daily-verses/october/day-3.html 301
+/dailyverses/oct13/dvoct4.html /daily-verses/october/day-4.html 301
+/dailyverses/oct13/dvoct5.html /daily-verses/october/day-5.html 301
+/dailyverses/oct13/dvoct6.html /daily-verses/october/day-6.html 301
+/dailyverses/oct13/dvoct7.html /daily-verses/october/day-7.html 301
+/dailyverses/oct13/dvoct8.html /daily-verses/october/day-8.html 301
+/dailyverses/oct13/dvoct9.html /daily-verses/october/day-9.html 301
+/dailyverses/oct13/dvoct10.html /daily-verses/october/day-10.html 301
+/dailyverses/oct13/dvoct11.html /daily-verses/october/day-11.html 301
+/dailyverses/oct13/dvoct12.html /daily-verses/october/day-12.html 301
+/dailyverses/oct13/dvoct13.html /daily-verses/october/day-13.html 301
+/dailyverses/oct13/dvoct14.html /daily-verses/october/day-14.html 301
+/dailyverses/oct13/dvoct15.html /daily-verses/october/day-15.html 301
+/dailyverses/oct13/dvoct16.html /daily-verses/october/day-16.html 301
+/dailyverses/oct13/dvoct17.html /daily-verses/october/day-17.html 301
+/dailyverses/oct13/dvoct18.html /daily-verses/october/day-18.html 301
+/dailyverses/oct13/dvoct19.html /daily-verses/october/day-19.html 301
+/dailyverses/oct13/dvoct20.html /daily-verses/october/day-20.html 301
+/dailyverses/oct13/dvoct21.html /daily-verses/october/day-21.html 301
+/dailyverses/oct13/dvoct22.html /daily-verses/october/day-22.html 301
+/dailyverses/oct13/dvoct23.html /daily-verses/october/day-23.html 301
+/dailyverses/oct13/dvoct24.html /daily-verses/october/day-24.html 301
+/dailyverses/oct13/dvoct25.html /daily-verses/october/day-25.html 301
+/dailyverses/oct13/dvoct26.html /daily-verses/october/day-26.html 301
+/dailyverses/oct13/dvoct27.html /daily-verses/october/day-27.html 301
+/dailyverses/oct13/dvoct28.html /daily-verses/october/day-28.html 301
+/dailyverses/oct13/dvoct29.html /daily-verses/october/day-29.html 301
+/dailyverses/oct13/dvoct30.html /daily-verses/october/day-30.html 301
+/dailyverses/oct13/dvoct31.html /daily-verses/october/day-31.html 301
+
+# November
+/dailyverses/nov13/dvnov1.html /daily-verses/november/day-1.html 301
+/dailyverses/nov13/dvnov2.html /daily-verses/november/day-2.html 301
+/dailyverses/nov13/dvnov3.html /daily-verses/november/day-3.html 301
+/dailyverses/nov13/dvnov4.html /daily-verses/november/day-4.html 301
+/dailyverses/nov13/dvnov5.html /daily-verses/november/day-5.html 301
+/dailyverses/nov13/dvnov6.html /daily-verses/november/day-6.html 301
+/dailyverses/nov13/dvnov7.html /daily-verses/november/day-7.html 301
+/dailyverses/nov13/dvnov8.html /daily-verses/november/day-8.html 301
+/dailyverses/nov13/dvnov9.html /daily-verses/november/day-9.html 301
+/dailyverses/nov13/dvnov10.html /daily-verses/november/day-10.html 301
+/dailyverses/nov13/dvnov11.html /daily-verses/november/day-11.html 301
+/dailyverses/nov13/dvnov12.html /daily-verses/november/day-12.html 301
+/dailyverses/nov13/dvnov13.html /daily-verses/november/day-13.html 301
+/dailyverses/nov13/dvnov14.html /daily-verses/november/day-14.html 301
+/dailyverses/nov13/dvnov15.html /daily-verses/november/day-15.html 301
+/dailyverses/nov13/dvnov16.html /daily-verses/november/day-16.html 301
+/dailyverses/nov13/dvnov17.html /daily-verses/november/day-17.html 301
+/dailyverses/nov13/dvnov18.html /daily-verses/november/day-18.html 301
+/dailyverses/nov13/dvnov19.html /daily-verses/november/day-19.html 301
+/dailyverses/nov13/dvnov20.html /daily-verses/november/day-20.html 301
+/dailyverses/nov13/dvnov21.html /daily-verses/november/day-21.html 301
+/dailyverses/nov13/dvnov22.html /daily-verses/november/day-22.html 301
+/dailyverses/nov13/dvnov23.html /daily-verses/november/day-23.html 301
+/dailyverses/nov13/dvnov24.html /daily-verses/november/day-24.html 301
+/dailyverses/nov13/dvnov25.html /daily-verses/november/day-25.html 301
+/dailyverses/nov13/dvnov26.html /daily-verses/november/day-26.html 301
+/dailyverses/nov13/dvnov27.html /daily-verses/november/day-27.html 301
+/dailyverses/nov13/dvnov28.html /daily-verses/november/day-28.html 301
+/dailyverses/nov13/dvnov29.html /daily-verses/november/day-29.html 301
+/dailyverses/nov13/dvnov30.html /daily-verses/november/day-30.html 301
+
+# December
+/dailyverses/dec13/dvdec1.html /daily-verses/december/day-1.html 301
+/dailyverses/dec13/dvdec2.html /daily-verses/december/day-2.html 301
+/dailyverses/dec13/dvdec3.html /daily-verses/december/day-3.html 301
+/dailyverses/dec13/dvdec4.html /daily-verses/december/day-4.html 301
+/dailyverses/dec13/dvdec5.html /daily-verses/december/day-5.html 301
+/dailyverses/dec13/dvdec6.html /daily-verses/december/day-6.html 301
+/dailyverses/dec13/dvdec7.html /daily-verses/december/day-7.html 301
+/dailyverses/dec13/dvdec8.html /daily-verses/december/day-8.html 301
+/dailyverses/dec13/dvdec9.html /daily-verses/december/day-9.html 301
+/dailyverses/dec13/dvdec10.html /daily-verses/december/day-10.html 301
+/dailyverses/dec13/dvdec11.html /daily-verses/december/day-11.html 301
+/dailyverses/dec13/dvdec12.html /daily-verses/december/day-12.html 301
+/dailyverses/dec13/dvdec13.html /daily-verses/december/day-13.html 301
+/dailyverses/dec13/dvdec14.html /daily-verses/december/day-14.html 301
+/dailyverses/dec13/dvdec15.html /daily-verses/december/day-15.html 301
+/dailyverses/dec13/dvdec16.html /daily-verses/december/day-16.html 301
+/dailyverses/dec13/dvdec17.html /daily-verses/december/day-17.html 301
+/dailyverses/dec13/dvdec18.html /daily-verses/december/day-18.html 301
+/dailyverses/dec13/dvdec19.html /daily-verses/december/day-19.html 301
+/dailyverses/dec13/dvdec20.html /daily-verses/december/day-20.html 301
+/dailyverses/dec13/dvdec21.html /daily-verses/december/day-21.html 301
+/dailyverses/dec13/dvdec22.html /daily-verses/december/day-22.html 301
+/dailyverses/dec13/dvdec23.html /daily-verses/december/day-23.html 301
+/dailyverses/dec13/dvdec24.html /daily-verses/december/day-24.html 301
+/dailyverses/dec13/dvdec25.html /daily-verses/december/day-25.html 301
+/dailyverses/dec13/dvdec26.html /daily-verses/december/day-26.html 301
+/dailyverses/dec13/dvdec27.html /daily-verses/december/day-27.html 301
+/dailyverses/dec13/dvdec28.html /daily-verses/december/day-28.html 301
+/dailyverses/dec13/dvdec29.html /daily-verses/december/day-29.html 301
+/dailyverses/dec13/dvdec30.html /daily-verses/december/day-30.html 301
+/dailyverses/dec13/dvdec31.html /daily-verses/december/day-31.html 301
+
+# Fallback wildcards for any other dailyverses paths
+/dailyverses/* /daily-verses/:splat 301
+/daily-verses/jan13/* /daily-verses/january/:splat 301
+/daily-verses/feb13/* /daily-verses/february/:splat 301
+/daily-verses/mar13/* /daily-verses/march/:splat 301
+/daily-verses/apr13/* /daily-verses/april/:splat 301
+/daily-verses/may13/* /daily-verses/may/:splat 301
+/daily-verses/jun13/* /daily-verses/june/:splat 301
+/daily-verses/jul13/* /daily-verses/july/:splat 301
+/daily-verses/aug13/* /daily-verses/august/:splat 301
+/daily-verses/sep13/* /daily-verses/september/:splat 301
+/daily-verses/oct13/* /daily-verses/october/:splat 301
+/daily-verses/nov13/* /daily-verses/november/:splat 301
+/daily-verses/dec13/* /daily-verses/december/:splat 301
+
+
+# ============================================================
+# SECTION 8: BOOKS LEGACY PATHS
+# ============================================================
+
+/books/floods/dkfloods.htm /books/floods/index.html 301
+/books/gurnall/* /gurnall/:splat 301
+/books/bunyan/* /bunyan/:splat 301
+
+
+# ============================================================
+# SECTION 9: RESOURCES LEGACY PATHS
+# ============================================================
+
+/resources/messages/message/ch.html /courses/history/church-history/index.html 301
+/resources/messages/message/greekwords.html /courses/languages/greek-word-studies/index.html 301
+/resources/messages/message/missions.html /courses/history/modern-missions/index.html 301
+/resources/messages/message/religions.html /resources/messages/religions/index.html 301
+/resources/archaeology/cyrus.html /resources/archaeology/cyrus-cylinder.html 301
+
+
+# ============================================================
+# SECTION 10: MISCELLANEOUS REDIRECTS
+# ============================================================
+
+# Modern missions lesson files
+/courses/history/modern-missions/ms1.html /courses/history/modern-missions/missionsweb/ms1.html 301
+/courses/history/modern-missions/ms2.html /courses/history/modern-missions/missionsweb/ms2.html 301
+/courses/history/modern-missions/ms3.html /courses/history/modern-missions/missionsweb/ms3.html 301
+/courses/history/modern-missions/ms5.html /courses/history/modern-missions/missionsweb/ms5.html 301
+/courses/history/modern-missions/ms6.html /courses/history/modern-missions/missionsweb/ms6.html 301
+/courses/history/modern-missions/ms7.html /courses/history/modern-missions/missionsweb/ms7.html 301
+/courses/history/modern-missions/ms8.html /courses/history/modern-missions/missionsweb/ms8.html 301
+
+# Greek word studies
+/courses/languages/greek-word-studies/greekweb/gr4a.html /courses/languages/greek-word-studies/lesson-4.html 301
+
+# Prayer resources
+/courses/christian-life/prayer/resources/torrey/htp(11).html /books/ra-torrey/chapter-11.html 301
+
+# Gifts course miscellaneous
+/courses/christian-life/gifts-of-spirit/churchill.html /courses/christian-life/gifts-of-spirit/index.html 301
+
+# Bunyan chapter
+/bunyan/ch3.html /bunyan/lobch3.html 301
+
+
+# ============================================================
+# END OF REDIRECTS FILE
+# Total: 150+ redirects covering all legacy URLs
+# ============================================================

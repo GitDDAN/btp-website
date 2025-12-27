@@ -1,32 +1,47 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Daily Bible Verses - A verse for every day of the year with devotional commentary">
-    <title>Daily Verses Calendar | Bible Teaching Program</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
+<html class="scroll-smooth" lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-09FW4XY50E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-09FW4XY50E');
+</script>
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Daily Bible Verses - A verse for every day of the year with devotional commentary" name="description"/>
+<title>Daily Verses Calendar | Bible Teaching Program</title><meta content="website" property="og:type"/><meta content="https://bibleteachingprogram.org/dailyverses.html" property="og:url"/><meta content="Daily Verses Calendar | Bible Teaching Program" property="og:title"/><meta content="Daily Bible Verses - A verse for every day of the year with devotional commentary" property="og:description"/><meta content="https://bibleteachingprogram.org/images/hero-banner.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Daily Verses Calendar | Bible Teaching Program" name="twitter:title"/><meta content="Daily Bible Verses - A verse for every day of the year with devotional commentary" name="twitter:description"/><meta content="https://bibleteachingprogram.org/images/hero-banner.png" name="twitter:image"/>
+<!-- Open Graph / Social Sharing -->
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind with Brand Colors -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'primary': {
-                            '50': '#f0f7ff',
-                            '100': '#e0effe',
-                            '600': '#006fc7',
-                            '700': '#0058a2',
-                            '800': '#004a85',
-                            '900': '#003d6e',
-                        }
+                        'ancient-ink': '#1C1D37',
+                        'heritage-gold': '#CBA378',
+                        'living-sage': '#7F9A83',
+                        'parchment': '#F9F7F2',
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'Georgia', 'serif'],
                     }
                 }
             }
         }
     </script>
-    <style>
+<link href="/css/brand.css" rel="stylesheet"/>
+<style>
         .day-cell {
             min-height: 70px;
             transition: all 0.2s ease;
@@ -83,733 +98,592 @@
             transform: translateX(4px);
         }
     </style>
-    <link rel="stylesheet" href="/css/components.css">
+<link href="/css/components.css" rel="stylesheet"/>
 </head>
-<body class="bg-slate-50">
-
-    <!-- Navigation placeholder - loaded by components.js -->
-    <div id="nav-placeholder"></div>
-
-    <!-- Dynamic Hero Banner -->
-    <section class="relative overflow-hidden">
-        <div id="hero-gradient" class="absolute inset-0" style="background: linear-gradient(135deg, #15803d 0%, #166534 50%, #14532d 100%);"></div>
-        <div class="absolute inset-0 opacity-10">
-            <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-                <defs>
-                    <pattern id="heroPattern" width="10" height="10" patternUnits="userSpaceOnUse">
-                        <circle cx="1" cy="1" r="1" fill="white"/>
-                    </pattern>
-                </defs>
-                <rect width="100" height="100" fill="url(#heroPattern)"/>
-            </svg>
-        </div>
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div class="text-center sm:text-left">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 bg-white/20 backdrop-blur rounded-full text-white/90 text-xs font-medium mb-3">
-                        <span id="hero-badge-dot" class="w-2 h-2 rounded-full bg-emerald-300"></span>
-                        <span>Daily Inspiration</span>
-                    </div>
-                    <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-2">Daily Verses Calendar</h1>
-                    <p class="text-white/80 text-sm sm:text-base">A verse for every day of the year</p>
-                </div>
-                <div id="hero-scripture-icon" class="w-16 h-16 sm:w-20 sm:h-20 bg-white/20 backdrop-blur rounded-2xl flex items-center justify-center">
-                    <span class="text-3xl sm:text-4xl">📅</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
-
-            <!-- Main Column - Calendar -->
-            <div class="lg:col-span-3 space-y-6">
-                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
-
-                    <!-- Month Header - Clean Modern Design -->
-                    <div id="month-header" class="px-6 py-6 bg-white border-b border-gray-100">
-                        <div class="flex items-center justify-between">
-                            <button id="prev-month-btn" onclick="previousMonth()" class="month-nav-btn w-10 h-10 rounded-full flex items-center justify-center transition hover:scale-110 border">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-                                </svg>
-                            </button>
-                            <div class="text-center">
-                                <h2 id="month-title" class="text-2xl md:text-3xl font-bold text-gray-900"></h2>
-                                <button id="go-today-btn" onclick="goToToday()" class="mt-1 text-sm text-gray-500 hover:underline transition">
+<body class="bg-parchment">
+<!-- Navigation placeholder - loaded by components.js -->
+<div id="nav-placeholder"></div>
+<!-- Dynamic Hero Banner -->
+<section class="relative overflow-hidden bg-gradient-to-br from-ancient-ink via-ancient-ink to-ancient-ink/90">
+<div class="absolute inset-0 opacity-5">
+<svg class="w-full h-full" preserveaspectratio="none" viewbox="0 0 100 100">
+<defs>
+<pattern height="8" id="heroPattern" patternunits="userSpaceOnUse" width="8">
+<circle cx="1" cy="1" fill="white" r="0.5"></circle>
+</pattern>
+</defs>
+<rect fill="url(#heroPattern)" height="100" width="100"></rect>
+</svg>
+</div>
+<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="text-center sm:text-left">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-heritage-gold/20 backdrop-blur rounded-full text-heritage-gold text-xs font-medium mb-3">
+<span class="w-2 h-2 rounded-full bg-heritage-gold"></span>
+<span>Daily Inspiration</span>
+</div>
+<h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white font-serif mb-2">Daily Verses Calendar</h1>
+<p class="text-white/80 text-sm sm:text-base">A verse for every day of the year</p>
+</div>
+<div class="w-16 h-16 sm:w-20 sm:h-20 bg-heritage-gold/20 backdrop-blur rounded-2xl flex items-center justify-center">
+<span class="text-3xl sm:text-4xl">📅</span>
+</div>
+</div>
+</div>
+</section>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+<!-- Main Column - Calendar -->
+<div class="lg:col-span-3 space-y-6">
+<div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+<!-- Month Header - Clean Modern Design -->
+<div class="px-6 py-6 bg-white border-b border-gray-100" id="month-header">
+<div class="flex items-center justify-between">
+<button class="month-nav-btn w-10 h-10 rounded-full flex items-center justify-center transition hover:scale-110 border" id="prev-month-btn" onclick="previousMonth()">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<div class="text-center">
+<h2 class="text-2xl md:text-3xl font-bold text-gray-900" id="month-title"></h2>
+<button class="mt-1 text-sm text-gray-500 hover:underline transition" id="go-today-btn" onclick="goToToday()">
                                     Jump to Today
                                 </button>
-                            </div>
-                            <button id="next-month-btn" onclick="nextMonth()" class="month-nav-btn w-10 h-10 rounded-full flex items-center justify-center transition hover:scale-110 border">
-                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- Month Quick Select -->
-                    <div id="month-selector" class="px-4 py-3 border-y border-gray-100 flex flex-wrap justify-center gap-1">
-                        <!-- Will be populated by JS -->
-                    </div>
-
-                    <!-- Calendar Body - Desktop Grid (hidden on mobile) -->
-                    <div class="hidden sm:block p-2 sm:p-4 md:p-6 bg-slate-50">
-                        <!-- Day Headers -->
-                        <div class="calendar-grid mb-2 sm:mb-4">
-                            <div class="day-header text-center font-semibold text-gray-400 text-xs uppercase tracking-wide py-1 sm:py-2">S</div>
-                            <div class="day-header text-center font-semibold text-gray-400 text-xs uppercase tracking-wide py-1 sm:py-2">M</div>
-                            <div class="day-header text-center font-semibold text-gray-400 text-xs uppercase tracking-wide py-1 sm:py-2">T</div>
-                            <div class="day-header text-center font-semibold text-gray-400 text-xs uppercase tracking-wide py-1 sm:py-2">W</div>
-                            <div class="day-header text-center font-semibold text-gray-400 text-xs uppercase tracking-wide py-1 sm:py-2">T</div>
-                            <div class="day-header text-center font-semibold text-gray-400 text-xs uppercase tracking-wide py-1 sm:py-2">F</div>
-                            <div class="day-header text-center font-semibold text-gray-400 text-xs uppercase tracking-wide py-1 sm:py-2">S</div>
-                        </div>
-
-                        <!-- Days Grid -->
-                        <div class="calendar-grid" id="days-container"></div>
-                    </div>
-
-                    <!-- Mobile List View (shown only on mobile) -->
-                    <div class="sm:hidden p-3 bg-slate-50 space-y-2" id="mobile-days-container">
-                        <!-- Populated by JavaScript -->
-                    </div>
-                </div>
-            </div>
-
-            <!-- Sidebar -->
-            <div class="space-y-6">
-                <!-- Today's Verse Card -->
-                <div id="today-verse-card" class="rounded-2xl p-6 shadow-sm border">
-                    <div class="text-center mb-5">
-                        <div id="today-icon" class="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-inner">
-                            <span class="text-2xl">&#9733;</span>
-                        </div>
-                        <div id="today-badge" class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-2">
+</div>
+<button class="month-nav-btn w-10 h-10 rounded-full flex items-center justify-center transition hover:scale-110 border" id="next-month-btn" onclick="nextMonth()">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+</div>
+<!-- Month Quick Select -->
+<div class="px-4 py-3 border-y border-gray-100 flex flex-wrap justify-center gap-1" id="month-selector">
+<!-- Will be populated by JS -->
+</div>
+<!-- Calendar Body - Desktop Grid (hidden on mobile) -->
+<div class="hidden sm:block p-2 sm:p-4 md:p-6 bg-slate-50">
+<!-- Day Headers -->
+<div class="calendar-grid mb-2 sm:mb-4">
+<div class="day-header text-center font-semibold text-gray-400 text-xs uppercase tracking-wide py-1 sm:py-2">S</div>
+<div class="day-header text-center font-semibold text-gray-400 text-xs uppercase tracking-wide py-1 sm:py-2">M</div>
+<div class="day-header text-center font-semibold text-gray-400 text-xs uppercase tracking-wide py-1 sm:py-2">T</div>
+<div class="day-header text-center font-semibold text-gray-400 text-xs uppercase tracking-wide py-1 sm:py-2">W</div>
+<div class="day-header text-center font-semibold text-gray-400 text-xs uppercase tracking-wide py-1 sm:py-2">T</div>
+<div class="day-header text-center font-semibold text-gray-400 text-xs uppercase tracking-wide py-1 sm:py-2">F</div>
+<div class="day-header text-center font-semibold text-gray-400 text-xs uppercase tracking-wide py-1 sm:py-2">S</div>
+</div>
+<!-- Days Grid -->
+<div class="calendar-grid" id="days-container"></div>
+</div>
+<!-- Mobile List View (shown only on mobile) -->
+<div class="sm:hidden p-3 bg-slate-50 space-y-2" id="mobile-days-container">
+<!-- Populated by JavaScript -->
+</div>
+</div>
+</div>
+<!-- Sidebar -->
+<div class="space-y-6">
+<!-- Today's Verse Card -->
+<div class="rounded-2xl p-6 shadow-sm border" id="today-verse-card">
+<div class="text-center mb-5">
+<div class="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-inner" id="today-icon">
+<span class="text-2xl">★</span>
+</div>
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-2" id="today-badge">
                             TODAY'S VERSE
                         </div>
-                        <h3 id="sidebar-verse-title" class="font-bold text-gray-900 text-lg">Loading...</h3>
-                    </div>
-                    <div id="today-quote-box" class="rounded-xl p-4 border mb-4">
-                        <p id="sidebar-verse-text" class="text-gray-700 italic text-sm leading-relaxed"></p>
-                    </div>
-                    <p id="sidebar-verse-ref" class="font-semibold text-sm text-center mb-4"></p>
-                    <a id="sidebar-verse-link" href="#" class="block w-full px-4 py-2.5 text-white text-center rounded-xl font-medium transition text-sm">
+<h3 class="font-bold text-gray-900 text-lg" id="sidebar-verse-title">Loading...</h3>
+</div>
+<div class="rounded-xl p-4 border mb-4" id="today-quote-box">
+<p class="text-gray-700 italic text-sm leading-relaxed" id="sidebar-verse-text"></p>
+</div>
+<p class="font-semibold text-sm text-center mb-4" id="sidebar-verse-ref"></p>
+<a class="block w-full px-4 py-2.5 text-white text-center rounded-xl font-medium transition text-sm" href="#" id="sidebar-verse-link">
                         Read Full Devotion
                     </a>
-                </div>
-
-                <!-- Browse by Testament -->
-                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
-                    <div class="px-5 py-4 bg-gradient-to-r from-gray-50 to-gray-100 border-b border-gray-200">
-                        <h3 class="font-bold text-gray-900">Browse Verses</h3>
-                    </div>
-                    <div class="p-4 space-y-2">
-                        <a href="/ntverses.html" class="sidebar-link flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-blue-50 transition">
-                            <span class="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center text-lg">&#128214;</span>
-                            <div>
-                                <div class="font-medium text-gray-900 text-sm">New Testament</div>
-                                <div class="text-xs text-gray-500">Matthew - Revelation</div>
-                            </div>
-                        </a>
-                        <a href="/otverses.html" class="sidebar-link flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-amber-50 transition">
-                            <span class="w-10 h-10 bg-amber-100 text-amber-600 rounded-lg flex items-center justify-center text-lg">&#128220;</span>
-                            <div>
-                                <div class="font-medium text-gray-900 text-sm">Old Testament</div>
-                                <div class="text-xs text-gray-500">Genesis - Malachi</div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Related Resources -->
-                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
-                    <div class="px-5 py-4 bg-gradient-to-r from-gray-50 to-gray-100 border-b border-gray-200">
-                        <h3 class="font-bold text-gray-900">Related Resources</h3>
-                    </div>
-                    <div class="p-4">
-                        <div class="space-y-1">
-                            <a href="/random-verse.html" class="sidebar-link flex items-center gap-3 px-3 py-2 text-purple-700 bg-purple-50 hover:bg-purple-100 rounded-lg text-sm font-medium">
-                                <span class="w-6 h-6 bg-purple-200 text-purple-700 rounded-md flex items-center justify-center text-xs">&#127922;</span>
+</div>
+<!-- Browse by Testament -->
+<div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+<div class="px-5 py-4 bg-gradient-to-r from-gray-50 to-gray-100 border-b border-gray-200">
+<h3 class="font-bold text-gray-900">Browse Verses</h3>
+</div>
+<div class="p-4 space-y-2">
+<a class="sidebar-link flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-blue-50 transition" href="/dailyverses.html">
+<span class="w-10 h-10 bg-heritage-gold/20 text-heritage-gold rounded-lg flex items-center justify-center text-lg">📅</span>
+<div>
+<div class="font-medium text-gray-900 text-sm">All Daily Verses</div>
+<div class="text-xs text-gray-500">Matthew - Revelation</div>
+</div>
+</a>
+<a class="sidebar-link flex items-center gap-3 px-3 py-3 rounded-lg hover:bg-parchment transition" href="/bible.html">
+<span class="w-10 h-10 bg-ancient-ink/20 text-ancient-ink rounded-lg flex items-center justify-center text-lg">📖</span>
+<div>
+<div class="font-medium text-gray-900 text-sm">Bible Overview</div>
+<div class="text-xs text-gray-500">Genesis - Malachi</div>
+</div>
+</a>
+</div>
+</div>
+<!-- Related Resources -->
+<div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+<div class="px-5 py-4 bg-gradient-to-r from-gray-50 to-gray-100 border-b border-gray-200">
+<h3 class="font-bold text-gray-900">Related Resources</h3>
+</div>
+<div class="p-4">
+<div class="space-y-1">
+<a class="sidebar-link flex items-center gap-3 px-3 py-2 text-heritage-gold bg-heritage-gold/10 hover:bg-heritage-gold/20 rounded-lg text-sm font-medium" href="/daily-verses/random.html">
+<span class="w-6 h-6 bg-heritage-gold/20 text-heritage-gold rounded-md flex items-center justify-center text-xs">🎲</span>
                                 Random Verse Generator
                             </a>
-                            <a href="/dailyverses/verses-by-book.html" class="sidebar-link flex items-center gap-3 px-3 py-2 text-indigo-700 bg-indigo-50 hover:bg-indigo-100 rounded-lg text-sm font-medium">
-                                <span class="w-6 h-6 bg-indigo-200 text-indigo-700 rounded-md flex items-center justify-center text-xs">&#128218;</span>
+<a class="sidebar-link flex items-center gap-3 px-3 py-2 text-living-sage bg-living-sage/10 hover:bg-living-sage/20 rounded-lg text-sm font-medium" href="/dailyverses.html">
+<span class="w-6 h-6 bg-living-sage/20 text-living-sage rounded-md flex items-center justify-center text-xs">📚</span>
                                 Browse by Book
                             </a>
-                            <a href="/bible.html" class="sidebar-link flex items-center gap-3 px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg text-sm">
-                                <span class="w-6 h-6 bg-gray-200 text-gray-600 rounded-md flex items-center justify-center text-xs">&#128214;</span>
+<a class="sidebar-link flex items-center gap-3 px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg text-sm" href="/bible/index.html">
+<span class="w-6 h-6 bg-gray-200 text-gray-600 rounded-md flex items-center justify-center text-xs">📖</span>
                                 Bible Overview
                             </a>
-                            <a href="/hc/hcindex.html" class="sidebar-link flex items-center gap-3 px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg text-sm">
-                                <span class="w-6 h-6 bg-gray-200 text-gray-600 rounded-md flex items-center justify-center text-xs">&#128213;</span>
+<a class="sidebar-link flex items-center gap-3 px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg text-sm" href="/books/higher-calling/index.html">
+<span class="w-6 h-6 bg-gray-200 text-gray-600 rounded-md flex items-center justify-center text-xs">📕</span>
                                 The Higher Calling
                             </a>
-                            <a href="/courses.html" class="sidebar-link flex items-center gap-3 px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg text-sm">
-                                <span class="w-6 h-6 bg-gray-200 text-gray-600 rounded-md flex items-center justify-center text-xs">&#128218;</span>
+<a class="sidebar-link flex items-center gap-3 px-3 py-2 text-gray-600 hover:bg-gray-50 rounded-lg text-sm" href="/courses/index.html">
+<span class="w-6 h-6 bg-gray-200 text-gray-600 rounded-md flex items-center justify-center text-xs">📚</span>
                                 Bible Courses
                             </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- How to Use -->
-                <div class="bg-slate-100 border border-slate-200 rounded-xl p-5">
-                    <div class="flex items-start gap-3">
-                        <div class="w-8 h-8 bg-slate-200 rounded-lg flex items-center justify-center flex-shrink-0">
-                            <span class="text-slate-600 text-sm">&#128161;</span>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-slate-800 text-sm mb-1">How to Use</h4>
-                            <p class="text-xs text-slate-600 leading-relaxed">Click any day to see the full verse and read the devotional commentary.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- Verse Modal -->
-    <div id="verse-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
-        <div class="bg-white rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl">
-            <div id="modal-header" class="sticky top-0 px-6 py-5 flex items-center justify-between rounded-t-2xl">
-                <h3 id="modal-date" class="text-xl font-bold text-white">January 1</h3>
-                <button onclick="closeModal()" class="text-white hover:text-gray-200 transition p-1">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                    </svg>
-                </button>
-            </div>
-            <div class="p-6">
-                <h4 id="modal-title" class="text-xl font-bold text-gray-900 mb-3"></h4>
-                <blockquote id="modal-quote" class="border-l-4 pl-4 mb-4 py-3 pr-3 rounded-r-lg">
-                    <p id="modal-text" class="text-gray-700 italic text-lg"></p>
-                </blockquote>
-                <p id="modal-reference" class="font-semibold mb-6"></p>
-                <a id="modal-link" href="#" class="inline-flex items-center gap-2 px-6 py-3 text-white rounded-lg font-medium transition">
+</div>
+</div>
+</div>
+<!-- How to Use -->
+<div class="bg-slate-100 border border-slate-200 rounded-xl p-5">
+<div class="flex items-start gap-3">
+<div class="w-8 h-8 bg-slate-200 rounded-lg flex items-center justify-center flex-shrink-0">
+<span class="text-slate-600 text-sm">💡</span>
+</div>
+<div>
+<h4 class="font-semibold text-slate-800 text-sm mb-1">How to Use</h4>
+<p class="text-xs text-slate-600 leading-relaxed">Click any day to see the full verse and read the devotional commentary.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Verse Modal -->
+<div class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4" id="verse-modal">
+<div class="bg-white rounded-2xl max-w-lg w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+<div class="sticky top-0 px-6 py-5 flex items-center justify-between rounded-t-2xl" id="modal-header">
+<h3 class="text-xl font-bold text-white" id="modal-date">January 1</h3>
+<button class="text-white hover:text-gray-200 transition p-1" onclick="closeModal()">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<div class="p-6">
+<h4 class="text-xl font-bold text-gray-900 mb-3" id="modal-title"></h4>
+<blockquote class="border-l-4 pl-4 mb-4 py-3 pr-3 rounded-r-lg" id="modal-quote">
+<p class="text-gray-700 italic text-lg" id="modal-text"></p>
+</blockquote>
+<p class="font-semibold mb-6" id="modal-reference"></p>
+<a class="inline-flex items-center gap-2 px-6 py-3 text-white rounded-lg font-medium transition" href="#" id="modal-link">
                     Read Full Devotion
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                    </svg>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer placeholder - loaded by components.js -->
-    <div id="footer-placeholder"></div>
-
-    <script src="/js/daily-verse.js"></script>
-    <script src="/js/components.js"></script>
-    <script>
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+</div>
+</div>
+</div>
+<!-- Footer placeholder - loaded by components.js -->
+<div id="footer-placeholder"></div>
+<script src="/js/daily-verse.js"></script>
+<script src="/js/components.js"></script>
+<script>
         document.addEventListener('DOMContentLoaded', function() {
             initCalendar();
             updateSidebarVerse();
-            updateHeroBanner();
         });
-
-        function updateHeroBanner() {
-            var theme = monthThemes[currentMonth];
-
-            // Update gradient background
-            document.getElementById('hero-gradient').style.background = theme.gradient;
-
-            // Update badge dot color
-            document.getElementById('hero-badge-dot').style.backgroundColor = theme.medium;
-
-            // Update scripture icon background
-            document.getElementById('hero-scripture-icon').style.backgroundColor = theme.accent;
-        }
 
         let currentMonth = new Date().getMonth() + 1;
         let currentYear = new Date().getFullYear();
 
-        // Seasonal month themes - each month has unique character
+        // Brand-consistent month themes
+        // Brand colors: Ancient Ink #1C1D37, Heritage Gold #CBA378, Living Sage #7F9A83, Parchment #F9F7F2
+        const brandTheme = {
+            gradient: 'linear-gradient(135deg, #1C1D37 0%, #2a2b4a 100%)',
+            headerBg: '#1C1D37',
+            light: '#F9F7F2',
+            medium: '#e8ddd0',
+            dark: '#1C1D37',
+            accent: '#CBA378'
+        };
+
         const monthThemes = {
-            1: { // January - Winter, New Beginnings
-                name: 'January',
-                tagline: 'A Fresh Start',
-                icon: '&#10052;', // snowflake
-                gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                headerBg: '#667eea',
-                light: '#eef2ff',
-                medium: '#c7d2fe',
-                dark: '#4338ca',
-                accent: '#6366f1'
-            },
-            2: { // February - Love, Valentine's
-                name: 'February',
-                tagline: 'Month of Love',
-                icon: '&#10084;', // heart
-                gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-                headerBg: '#ec4899',
-                light: '#fce7f3',
-                medium: '#fbcfe8',
-                dark: '#be185d',
-                accent: '#ec4899'
-            },
-            3: { // March - Spring Awakening
-                name: 'March',
-                tagline: 'Spring Awakens',
-                icon: '&#127800;', // cherry blossom
-                gradient: 'linear-gradient(135deg, #a8e6cf 0%, #88d8b0 100%)',
-                headerBg: '#10b981',
-                light: '#ecfdf5',
-                medium: '#a7f3d0',
-                dark: '#047857',
-                accent: '#10b981'
-            },
-            4: { // April - Renewal, Easter
-                name: 'April',
-                tagline: 'Season of Renewal',
-                icon: '&#127799;', // tulip
-                gradient: 'linear-gradient(135deg, #a78bfa 0%, #8b5cf6 100%)',
-                headerBg: '#8b5cf6',
-                light: '#f5f3ff',
-                medium: '#ddd6fe',
-                dark: '#6d28d9',
-                accent: '#8b5cf6'
-            },
-            5: { // May - Growth, Bloom
-                name: 'May',
-                tagline: 'In Full Bloom',
-                icon: '&#127803;', // sunflower
-                gradient: 'linear-gradient(135deg, #34d399 0%, #059669 100%)',
-                headerBg: '#059669',
-                light: '#d1fae5',
-                medium: '#6ee7b7',
-                dark: '#047857',
-                accent: '#10b981'
-            },
-            6: { // June - Summer Begins
-                name: 'June',
-                tagline: 'Summer Sunshine',
-                icon: '&#9728;', // sun
-                gradient: 'linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%)',
-                headerBg: '#f59e0b',
-                light: '#fef3c7',
-                medium: '#fde68a',
-                dark: '#b45309',
-                accent: '#f59e0b'
-            },
-            7: { // July - Peak Summer
-                name: 'July',
-                tagline: 'Summer Glory',
-                icon: '&#127774;', // sun with face
-                gradient: 'linear-gradient(135deg, #f87171 0%, #ef4444 100%)',
-                headerBg: '#ef4444',
-                light: '#fee2e2',
-                medium: '#fecaca',
-                dark: '#b91c1c',
-                accent: '#ef4444'
-            },
-            8: { // August - Late Summer
-                name: 'August',
-                tagline: 'Golden Days',
-                icon: '&#127958;', // beach
-                gradient: 'linear-gradient(135deg, #fb923c 0%, #ea580c 100%)',
-                headerBg: '#ea580c',
-                light: '#ffedd5',
-                medium: '#fed7aa',
-                dark: '#c2410c',
-                accent: '#f97316'
-            },
-            9: { // September - Early Autumn
-                name: 'September',
-                tagline: 'Harvest Begins',
-                icon: '&#127810;', // fallen leaf
-                gradient: 'linear-gradient(135deg, #14b8a6 0%, #0d9488 100%)',
-                headerBg: '#0d9488',
-                light: '#ccfbf1',
-                medium: '#99f6e4',
-                dark: '#0f766e',
-                accent: '#14b8a6'
-            },
-            10: { // October - Autumn
-                name: 'October',
-                tagline: 'Autumn Colors',
-                icon: '&#127811;', // maple leaf
-                gradient: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)',
-                headerBg: '#d97706',
-                light: '#fef3c7',
-                medium: '#fde68a',
-                dark: '#92400e',
-                accent: '#f59e0b'
-            },
-            11: { // November - Thanksgiving
-                name: 'November',
-                tagline: 'Grateful Hearts',
-                icon: '&#127807;', // herb/wheat
-                gradient: 'linear-gradient(135deg, #a855f7 0%, #7c3aed 100%)',
-                headerBg: '#7c3aed',
-                light: '#f3e8ff',
-                medium: '#e9d5ff',
-                dark: '#6b21a8',
-                accent: '#a855f7'
-            },
-            12: { // December - Christmas, Advent
-                name: 'December',
-                tagline: 'Season of Joy',
-                icon: '&#11088;', // star
-                gradient: 'linear-gradient(135deg, #16a34a 0%, #15803d 100%)',
-                headerBg: '#15803d',
-                light: '#dcfce7',
-                medium: '#bbf7d0',
-                dark: '#166534',
-                accent: '#22c55e'
-            }
+            1: { name: 'January', tagline: 'A Fresh Start', icon: '&#10052;', ...brandTheme },
+            2: { name: 'February', tagline: 'Month of Love', icon: '&#10084;', ...brandTheme },
+            3: { name: 'March', tagline: 'Spring Awakens', icon: '&#127800;', ...brandTheme },
+            4: { name: 'April', tagline: 'Season of Renewal', icon: '&#127799;', ...brandTheme },
+            5: { name: 'May', tagline: 'In Full Bloom', icon: '&#127803;', ...brandTheme },
+            6: { name: 'June', tagline: 'Summer Sunshine', icon: '&#9728;', ...brandTheme },
+            7: { name: 'July', tagline: 'Summer Glory', icon: '&#127774;', ...brandTheme },
+            8: { name: 'August', tagline: 'Golden Days', icon: '&#127958;', ...brandTheme },
+            9: { name: 'September', tagline: 'Harvest Begins', icon: '&#127810;', ...brandTheme },
+            10: { name: 'October', tagline: 'Autumn Colors', icon: '&#127811;', ...brandTheme },
+            11: { name: 'November', tagline: 'Grateful Hearts', icon: '&#127807;', ...brandTheme },
+            12: { name: 'December', tagline: 'Season of Joy', icon: '&#11088;', ...brandTheme }
         };
 
         // Verse database - All months
         const allVerses = {
             // January
-            "1-1": { title: "Running for the prize.", reference: "Philippians 3:14", text: "I press toward the mark for the prize of the high calling of God in Christ Jesus.", link: "/dailyverses/jan13/dvjan1.html" },
-            "1-2": { title: "Freedom beyond human endeavor", reference: "Galatians 5:5", text: "For we through the Spirit wait for the hope of righteousness by faith.", link: "/dailyverses/jan13/dvjan2.html" },
-            "1-3": { title: "Strengthened to encourage others.", reference: "2 Corinthians 1:4", text: "Who comforts us in all our tribulation that we may be able to comfort those who are in any trouble.", link: "/dailyverses/jan13/dvjan3.html" },
-            "1-4": { title: "The love of God gives more than we need.", reference: "1 John 3:1", text: "Behold, what manner of love the Father has bestowed upon us, that we should be called the children of God.", link: "/dailyverses/jan13/dvjan4.html" },
-            "1-5": { title: "Truth sets us apart from the world.", reference: "John 17:17", text: "Sanctify them through Your truth: Your word is truth.", link: "/dailyverses/jan13/dvjan5.html" },
-            "1-6": { title: "The power of God in us through Christ.", reference: "2 Timothy 1:10", text: "But is now made manifest by the appearing of our Saviour Jesus Christ, who has abolished death.", link: "/dailyverses/jan13/dvjan6.html" },
-            "1-7": { title: "By His power alone we live.", reference: "Ephesians 6:10", text: "Finally, my brethren, be strong in the Lord, and in the power of His might.", link: "/dailyverses/jan13/dvjan7.html" },
-            "1-8": { title: "Worthy of the gospel.", reference: "Philippians 1:27", text: "Only let your manner of life be worthy of the gospel of Christ.", link: "/dailyverses/jan13/dvjan8.html" },
-            "1-9": { title: "Christ is our peace, joy, and strength.", reference: "John 16:33", text: "In the world you shall have tribulation: but be of good cheer; I have overcome the world.", link: "/dailyverses/jan13/dvjan9.html" },
-            "1-10": { title: "Privilege and responsibility.", reference: "2 Corinthians 6:18", text: "I will be a Father to you, and you shall be My sons and daughters, says the Lord Almighty.", link: "/dailyverses/jan13/dvjan10.html" },
-            "1-11": { title: "Love and patience.", reference: "2 Thessalonians 3:5", text: "May the Lord direct your hearts into the love of God and into the patience of Christ.", link: "/dailyverses/jan13/dvjan11.html" },
-            "1-12": { title: "His expertise in the final outcome.", reference: "Philippians 1:6", text: "Being confident of this very thing, that He who began a good work in you will complete it.", link: "/dailyverses/jan13/dvjan12.html" },
-            "1-13": { title: "Seated with Him in authority.", reference: "Ephesians 2:6", text: "And has raised us up together, and made us sit together in heavenly places in Christ Jesus.", link: "/dailyverses/jan13/dvjan13.html" },
-            "1-14": { title: "The fruit of His righteousness.", reference: "James 3:18", text: "And the fruit of righteousness is sown in peace by them that make peace.", link: "/dailyverses/jan13/dvjan14.html" },
-            "1-15": { title: "True Christianity is Christ in us.", reference: "1 John 5:12", text: "He that has the Son has life; and he that has not the Son of God has not life.", link: "/dailyverses/jan13/dvjan15.html" },
-            "1-16": { title: "We preach Christ, not religion.", reference: "Mark 16:15", text: "And He said unto them, Go into all the world, and preach the gospel to every creature.", link: "/dailyverses/jan13/dvjan16.html" },
-            "1-17": { title: "Salvation is entirely in Christ.", reference: "1 Corinthians 1:30", text: "But of Him are you in Christ Jesus, who of God is made unto us wisdom, and righteousness.", link: "/dailyverses/jan13/dvjan17.html" },
-            "1-18": { title: "When we preach the word, we preach Christ.", reference: "2 Timothy 4:2", text: "Preach the word; be instant in season, out of season; reprove, rebuke, exhort.", link: "/dailyverses/jan13/dvjan18.html" },
-            "1-19": { title: "Free to serve in righteousness.", reference: "Romans 6:18", text: "Being then set free from sin, you became servants of righteousness.", link: "/dailyverses/jan13/dvjan19.html" },
-            "1-20": { title: "Walk in the new life received.", reference: "Colossians 2:6", text: "As you have therefore received Christ Jesus the Lord, so walk in Him.", link: "/dailyverses/jan13/dvjan20.html" },
-            "1-21": { title: "Faith in Christ brings us into rest.", reference: "Matthew 11:28", text: "Come unto Me, all you that labour and are heavy laden, and I will give you rest.", link: "/dailyverses/jan13/dvjan21.html" },
-            "1-22": { title: "Think as children of the King.", reference: "Romans 12:2", text: "And be not conformed to this world: but be transformed by the renewing of your mind.", link: "/dailyverses/jan13/dvjan22.html" },
-            "1-23": { title: "The harvest is ready.", reference: "John 4:35", text: "Lift up your eyes, and look on the fields; for they are white already to harvest.", link: "/dailyverses/jan13/dvjan23.html" },
-            "1-24": { title: "Freedom and joy in forgiveness.", reference: "1 Thessalonians 5:15", text: "See that no one renders evil for evil to anyone; but always follow that which is good.", link: "/dailyverses/jan13/dvjan24.html" },
-            "1-25": { title: "His glory will be seen in us.", reference: "Romans 8:18", text: "For I reckon that the sufferings of this present time are not worthy to be compared with the glory.", link: "/dailyverses/jan13/dvjan25.html" },
-            "1-26": { title: "Living for His glory.", reference: "1 Peter 2:9", text: "But you are a chosen generation, a royal priesthood, a holy nation, a peculiar people.", link: "/dailyverses/jan13/dvjan26.html" },
-            "1-27": { title: "His will is that we be like Him.", reference: "1 Thessalonians 4:3", text: "For this is the will of God, even your sanctification.", link: "/dailyverses/jan13/dvjan27.html" },
-            "1-28": { title: "Prayer in the Holy Spirit.", reference: "Ephesians 6:18", text: "Praying always with all prayer and supplication in the Spirit.", link: "/dailyverses/jan13/dvjan28.html" },
-            "1-29": { title: "Eyes focused on Christ.", reference: "1 Corinthians 16:13-14", text: "Watch, stand fast in the faith, be brave, be strong. Let all you do be done with love.", link: "/dailyverses/jan13/dvjan29.html" },
-            "1-30": { title: "One with Christ.", reference: "Colossians 1:27", text: "Christ in you, the hope of glory.", link: "/dailyverses/jan13/dvjan30.html" },
-            "1-31": { title: "Jesus calls us His friends.", reference: "John 15:14", text: "You are My friends, if you do whatsoever I command you.", link: "/dailyverses/jan13/dvjan31.html" },
+            "1-1": { title: "Running for the prize.", reference: "Philippians 3:14", text: "I press toward the mark for the prize of the high calling of God in Christ Jesus.", link: "/daily-verses/january/day-1.html" },
+            "1-2": { title: "Freedom beyond human endeavor", reference: "Galatians 5:5", text: "For we through the Spirit wait for the hope of righteousness by faith.", link: "/daily-verses/january/day-2.html" },
+            "1-3": { title: "Strengthened to encourage others.", reference: "2 Corinthians 1:4", text: "Who comforts us in all our tribulation that we may be able to comfort those who are in any trouble.", link: "/daily-verses/january/day-3.html" },
+            "1-4": { title: "The love of God gives more than we need.", reference: "1 John 3:1", text: "Behold, what manner of love the Father has bestowed upon us, that we should be called the children of God.", link: "/daily-verses/january/day-4.html" },
+            "1-5": { title: "Truth sets us apart from the world.", reference: "John 17:17", text: "Sanctify them through Your truth: Your word is truth.", link: "/daily-verses/january/day-5.html" },
+            "1-6": { title: "The power of God in us through Christ.", reference: "2 Timothy 1:10", text: "But is now made manifest by the appearing of our Saviour Jesus Christ, who has abolished death.", link: "/daily-verses/january/day-6.html" },
+            "1-7": { title: "By His power alone we live.", reference: "Ephesians 6:10", text: "Finally, my brethren, be strong in the Lord, and in the power of His might.", link: "/daily-verses/january/day-7.html" },
+            "1-8": { title: "Worthy of the gospel.", reference: "Philippians 1:27", text: "Only let your manner of life be worthy of the gospel of Christ.", link: "/daily-verses/january/day-8.html" },
+            "1-9": { title: "Christ is our peace, joy, and strength.", reference: "John 16:33", text: "In the world you shall have tribulation: but be of good cheer; I have overcome the world.", link: "/daily-verses/january/day-9.html" },
+            "1-10": { title: "Privilege and responsibility.", reference: "2 Corinthians 6:18", text: "I will be a Father to you, and you shall be My sons and daughters, says the Lord Almighty.", link: "/daily-verses/january/day-0.html" },
+            "1-11": { title: "Love and patience.", reference: "2 Thessalonians 3:5", text: "May the Lord direct your hearts into the love of God and into the patience of Christ.", link: "/daily-verses/january/day-1.html" },
+            "1-12": { title: "His expertise in the final outcome.", reference: "Philippians 1:6", text: "Being confident of this very thing, that He who began a good work in you will complete it.", link: "/daily-verses/january/day-2.html" },
+            "1-13": { title: "Seated with Him in authority.", reference: "Ephesians 2:6", text: "And has raised us up together, and made us sit together in heavenly places in Christ Jesus.", link: "/daily-verses/january/day-3.html" },
+            "1-14": { title: "The fruit of His righteousness.", reference: "James 3:18", text: "And the fruit of righteousness is sown in peace by them that make peace.", link: "/daily-verses/january/day-4.html" },
+            "1-15": { title: "True Christianity is Christ in us.", reference: "1 John 5:12", text: "He that has the Son has life; and he that has not the Son of God has not life.", link: "/daily-verses/january/day-5.html" },
+            "1-16": { title: "We preach Christ, not religion.", reference: "Mark 16:15", text: "And He said unto them, Go into all the world, and preach the gospel to every creature.", link: "/daily-verses/january/day-6.html" },
+            "1-17": { title: "Salvation is entirely in Christ.", reference: "1 Corinthians 1:30", text: "But of Him are you in Christ Jesus, who of God is made unto us wisdom, and righteousness.", link: "/daily-verses/january/day-7.html" },
+            "1-18": { title: "When we preach the word, we preach Christ.", reference: "2 Timothy 4:2", text: "Preach the word; be instant in season, out of season; reprove, rebuke, exhort.", link: "/daily-verses/january/day-8.html" },
+            "1-19": { title: "Free to serve in righteousness.", reference: "Romans 6:18", text: "Being then set free from sin, you became servants of righteousness.", link: "/daily-verses/january/day-9.html" },
+            "1-20": { title: "Walk in the new life received.", reference: "Colossians 2:6", text: "As you have therefore received Christ Jesus the Lord, so walk in Him.", link: "/daily-verses/january/day-0.html" },
+            "1-21": { title: "Faith in Christ brings us into rest.", reference: "Matthew 11:28", text: "Come unto Me, all you that labour and are heavy laden, and I will give you rest.", link: "/daily-verses/january/day-1.html" },
+            "1-22": { title: "Think as children of the King.", reference: "Romans 12:2", text: "And be not conformed to this world: but be transformed by the renewing of your mind.", link: "/daily-verses/january/day-2.html" },
+            "1-23": { title: "The harvest is ready.", reference: "John 4:35", text: "Lift up your eyes, and look on the fields; for they are white already to harvest.", link: "/daily-verses/january/day-3.html" },
+            "1-24": { title: "Freedom and joy in forgiveness.", reference: "1 Thessalonians 5:15", text: "See that no one renders evil for evil to anyone; but always follow that which is good.", link: "/daily-verses/january/day-4.html" },
+            "1-25": { title: "His glory will be seen in us.", reference: "Romans 8:18", text: "For I reckon that the sufferings of this present time are not worthy to be compared with the glory.", link: "/daily-verses/january/day-5.html" },
+            "1-26": { title: "Living for His glory.", reference: "1 Peter 2:9", text: "But you are a chosen generation, a royal priesthood, a holy nation, a peculiar people.", link: "/daily-verses/january/day-6.html" },
+            "1-27": { title: "His will is that we be like Him.", reference: "1 Thessalonians 4:3", text: "For this is the will of God, even your sanctification.", link: "/daily-verses/january/day-7.html" },
+            "1-28": { title: "Prayer in the Holy Spirit.", reference: "Ephesians 6:18", text: "Praying always with all prayer and supplication in the Spirit.", link: "/daily-verses/january/day-8.html" },
+            "1-29": { title: "Eyes focused on Christ.", reference: "1 Corinthians 16:13-14", text: "Watch, stand fast in the faith, be brave, be strong. Let all you do be done with love.", link: "/daily-verses/january/day-9.html" },
+            "1-30": { title: "One with Christ.", reference: "Colossians 1:27", text: "Christ in you, the hope of glory.", link: "/daily-verses/january/day-0.html" },
+            "1-31": { title: "Jesus calls us His friends.", reference: "John 15:14", text: "You are My friends, if you do whatsoever I command you.", link: "/daily-verses/january/day-1.html" },
             // February
-            "2-1": { title: "We grow in truth through obedience.", reference: "John 8:32", text: "And you shall know the truth, and the truth shall make you free.", link: "/dailyverses/feb13/dvfeb1.html" },
-            "2-2": { title: "The Lord is with us.", reference: "Acts 7:9", text: "But God was with him.", link: "/dailyverses/feb13/dvfeb2.html" },
-            "2-3": { title: "Follow that which is good.", reference: "3 John 11", text: "Beloved, do not follow what is evil, but that which is good.", link: "/dailyverses/feb13/dvfeb3.html" },
-            "2-4": { title: "Speaking and singing to the Lord.", reference: "Ephesians 5:19", text: "Speaking to one another in psalms and hymns and spiritual songs.", link: "/dailyverses/feb13/dvfeb4.html" },
-            "2-5": { title: "Citizens of heaven.", reference: "Ephesians 2:19", text: "Now therefore you are no more strangers and foreigners, but fellow citizens with the saints.", link: "/dailyverses/feb13/dvfeb5.html" },
-            "2-6": { title: "He will return for a cleansed people.", reference: "Hebrews 9:28", text: "Christ was offered once to bear the sins of many.", link: "/dailyverses/feb13/dvfeb6.html" },
-            "2-7": { title: "The Lord seeks for workers.", reference: "2 Timothy 2:15", text: "Be diligent to show yourself approved unto God, a workman who needs not to be ashamed.", link: "/dailyverses/feb13/dvfeb7.html" },
-            "2-8": { title: "Abundant grace.", reference: "1 Timothy 1:14", text: "And the grace of our Lord was exceeding abundant with faith and love.", link: "/dailyverses/feb13/dvfeb8.html" },
-            "2-9": { title: "Purity is Christ in us.", reference: "1 Corinthians 6:20", text: "For you are bought with a price: therefore glorify God in your body.", link: "/dailyverses/feb13/dvfeb9.html" },
-            "2-10": { title: "Unfailing love.", reference: "1 Corinthians 13:8", text: "Love never fails.", link: "/dailyverses/feb13/dvfeb10.html" },
-            "2-11": { title: "Have faith in God.", reference: "Mark 11:22", text: "And Jesus answering said unto them, Have faith in God.", link: "/dailyverses/feb13/dvfeb11.html" },
-            "2-12": { title: "We know He abides in us.", reference: "1 John 3:24", text: "And hereby we know that He abides in us, by the Spirit which He has given us.", link: "/dailyverses/feb13/dvfeb12.html" },
-            "2-13": { title: "In Christ we have newness of life.", reference: "Romans 7:6", text: "But now we are delivered from the law, that we should serve in newness of Spirit.", link: "/dailyverses/feb13/dvfeb13.html" },
-            "2-14": { title: "Keeping to the race.", reference: "Hebrews 12:1", text: "Let us run with patience the race that is set before us.", link: "/dailyverses/feb13/dvfeb14.html" },
-            "2-15": { title: "Our faith is in Christ.", reference: "2 Corinthians 5:7", text: "For we walk by faith, not by sight.", link: "/dailyverses/feb13/dvfeb15.html" },
-            "2-16": { title: "Jesus delivers us from self.", reference: "Galatians 1:4", text: "Who gave Himself for our sins, that He might deliver us from this present evil world.", link: "/dailyverses/feb13/dvfeb16.html" },
-            "2-17": { title: "In our weakness, we worship.", reference: "Hebrews 11:21", text: "By faith Jacob, when he was dying, blessed both the sons of Joseph; and worshipped.", link: "/dailyverses/feb13/dvfeb17.html" },
-            "2-18": { title: "Love increasing and overflowing.", reference: "1 Thessalonians 3:12", text: "And the Lord make you to increase and abound in love to one another.", link: "/dailyverses/feb13/dvfeb18.html" },
-            "2-19": { title: "Godliness is a lifestyle.", reference: "Titus 2:12", text: "Teaching us that we should live soberly, righteously, and godly.", link: "/dailyverses/feb13/dvfeb19.html" },
-            "2-20": { title: "Bringing His love to others.", reference: "Matthew 25:36", text: "I was sick, and you visited Me: I was in prison, and you came to Me.", link: "/dailyverses/feb13/dvfeb20.html" },
-            "2-21": { title: "United as one body.", reference: "1 Corinthians 12:25", text: "That there should be no schism in the body.", link: "/dailyverses/feb13/dvfeb21.html" },
-            "2-22": { title: "His glory; His person; His word.", reference: "Hebrews 1:3", text: "Who being the brightness of His glory, and the express image of His person.", link: "/dailyverses/feb13/dvfeb22.html" },
-            "2-23": { title: "Strong in faith.", reference: "Romans 4:20", text: "He did not doubt the promise of God through unbelief; but was strong in faith.", link: "/dailyverses/feb13/dvfeb23.html" },
-            "2-24": { title: "Spiritual blessings in Christ.", reference: "Ephesians 1:3", text: "Blessed be the God and Father of our Lord Jesus Christ.", link: "/dailyverses/feb13/dvfeb24.html" },
-            "2-25": { title: "The fruit of a godly life.", reference: "Romans 7:4", text: "That you should be married to another, even to Him who is raised from the dead.", link: "/dailyverses/feb13/dvfeb25.html" },
-            "2-26": { title: "Known of God.", reference: "1 Corinthians 8:3", text: "But if anyone love God, the same is known of Him.", link: "/dailyverses/feb13/dvfeb26.html" },
-            "2-27": { title: "Freedom is in Christ.", reference: "John 8:36", text: "If the Son therefore shall make you free, you shall be free indeed.", link: "/dailyverses/feb13/dvfeb27.html" },
-            "2-28": { title: "The fiery trial brings out gold.", reference: "1 Peter 4:12", text: "Beloved, think it not strange concerning the fiery trial which is to try you.", link: "/dailyverses/feb13/dvfeb28.html" },
+            "2-1": { title: "We grow in truth through obedience.", reference: "John 8:32", text: "And you shall know the truth, and the truth shall make you free.", link: "/daily-verses/february/day-1.html" },
+            "2-2": { title: "The Lord is with us.", reference: "Acts 7:9", text: "But God was with him.", link: "/daily-verses/february/day-2.html" },
+            "2-3": { title: "Follow that which is good.", reference: "3 John 11", text: "Beloved, do not follow what is evil, but that which is good.", link: "/daily-verses/february/day-3.html" },
+            "2-4": { title: "Speaking and singing to the Lord.", reference: "Ephesians 5:19", text: "Speaking to one another in psalms and hymns and spiritual songs.", link: "/daily-verses/february/day-4.html" },
+            "2-5": { title: "Citizens of heaven.", reference: "Ephesians 2:19", text: "Now therefore you are no more strangers and foreigners, but fellow citizens with the saints.", link: "/daily-verses/february/day-5.html" },
+            "2-6": { title: "He will return for a cleansed people.", reference: "Hebrews 9:28", text: "Christ was offered once to bear the sins of many.", link: "/daily-verses/february/day-6.html" },
+            "2-7": { title: "The Lord seeks for workers.", reference: "2 Timothy 2:15", text: "Be diligent to show yourself approved unto God, a workman who needs not to be ashamed.", link: "/daily-verses/february/day-7.html" },
+            "2-8": { title: "Abundant grace.", reference: "1 Timothy 1:14", text: "And the grace of our Lord was exceeding abundant with faith and love.", link: "/daily-verses/february/day-8.html" },
+            "2-9": { title: "Purity is Christ in us.", reference: "1 Corinthians 6:20", text: "For you are bought with a price: therefore glorify God in your body.", link: "/daily-verses/february/day-9.html" },
+            "2-10": { title: "Unfailing love.", reference: "1 Corinthians 13:8", text: "Love never fails.", link: "/daily-verses/february/day-0.html" },
+            "2-11": { title: "Have faith in God.", reference: "Mark 11:22", text: "And Jesus answering said unto them, Have faith in God.", link: "/daily-verses/february/day-1.html" },
+            "2-12": { title: "We know He abides in us.", reference: "1 John 3:24", text: "And hereby we know that He abides in us, by the Spirit which He has given us.", link: "/daily-verses/february/day-2.html" },
+            "2-13": { title: "In Christ we have newness of life.", reference: "Romans 7:6", text: "But now we are delivered from the law, that we should serve in newness of Spirit.", link: "/daily-verses/february/day-3.html" },
+            "2-14": { title: "Keeping to the race.", reference: "Hebrews 12:1", text: "Let us run with patience the race that is set before us.", link: "/daily-verses/february/day-4.html" },
+            "2-15": { title: "Our faith is in Christ.", reference: "2 Corinthians 5:7", text: "For we walk by faith, not by sight.", link: "/daily-verses/february/day-5.html" },
+            "2-16": { title: "Jesus delivers us from self.", reference: "Galatians 1:4", text: "Who gave Himself for our sins, that He might deliver us from this present evil world.", link: "/daily-verses/february/day-6.html" },
+            "2-17": { title: "In our weakness, we worship.", reference: "Hebrews 11:21", text: "By faith Jacob, when he was dying, blessed both the sons of Joseph; and worshipped.", link: "/daily-verses/february/day-7.html" },
+            "2-18": { title: "Love increasing and overflowing.", reference: "1 Thessalonians 3:12", text: "And the Lord make you to increase and abound in love to one another.", link: "/daily-verses/february/day-8.html" },
+            "2-19": { title: "Godliness is a lifestyle.", reference: "Titus 2:12", text: "Teaching us that we should live soberly, righteously, and godly.", link: "/daily-verses/february/day-9.html" },
+            "2-20": { title: "Bringing His love to others.", reference: "Matthew 25:36", text: "I was sick, and you visited Me: I was in prison, and you came to Me.", link: "/daily-verses/february/day-0.html" },
+            "2-21": { title: "United as one body.", reference: "1 Corinthians 12:25", text: "That there should be no schism in the body.", link: "/daily-verses/february/day-1.html" },
+            "2-22": { title: "His glory; His person; His word.", reference: "Hebrews 1:3", text: "Who being the brightness of His glory, and the express image of His person.", link: "/daily-verses/february/day-2.html" },
+            "2-23": { title: "Strong in faith.", reference: "Romans 4:20", text: "He did not doubt the promise of God through unbelief; but was strong in faith.", link: "/daily-verses/february/day-3.html" },
+            "2-24": { title: "Spiritual blessings in Christ.", reference: "Ephesians 1:3", text: "Blessed be the God and Father of our Lord Jesus Christ.", link: "/daily-verses/february/day-4.html" },
+            "2-25": { title: "The fruit of a godly life.", reference: "Romans 7:4", text: "That you should be married to another, even to Him who is raised from the dead.", link: "/daily-verses/february/day-5.html" },
+            "2-26": { title: "Known of God.", reference: "1 Corinthians 8:3", text: "But if anyone love God, the same is known of Him.", link: "/daily-verses/february/day-6.html" },
+            "2-27": { title: "Freedom is in Christ.", reference: "John 8:36", text: "If the Son therefore shall make you free, you shall be free indeed.", link: "/daily-verses/february/day-7.html" },
+            "2-28": { title: "The fiery trial brings out gold.", reference: "1 Peter 4:12", text: "Beloved, think it not strange concerning the fiery trial which is to try you.", link: "/daily-verses/february/day-8.html" },
             // March
-            "3-1": { title: "The Holy Spirit works with us.", reference: "Acts 15:28", text: "For it seemed good to the Holy Spirit, and to us.", link: "/dailyverses/mar13/dvmar1.html" },
-            "3-2": { title: "Christ is Lord of our life.", reference: "Acts 9:6", text: "Lord, what will You have me to do?", link: "/dailyverses/mar13/dvmar2.html" },
-            "3-3": { title: "In Jesus Christ is everything we need.", reference: "1 Corinthians 2:2", text: "For I determined not to know anything among you, save Jesus Christ, and Him crucified.", link: "/dailyverses/mar13/dvmar3.html" },
-            "3-4": { title: "Worship in the Spirit.", reference: "Philippians 3:3", text: "For we are the circumcision, who worship God in the Spirit.", link: "/dailyverses/mar13/dvmar4.html" },
-            "3-5": { title: "Ready for His return.", reference: "Luke 12:35", text: "Let your waist be girded and your lamps burning.", link: "/dailyverses/mar13/dvmar5.html" },
-            "3-6": { title: "We will never find living water in empty wells.", reference: "Revelation 22:17", text: "Let the one who thirsts come. And whoever will, let him take the water of life freely.", link: "/dailyverses/mar13/dvmar6.html" },
-            "3-7": { title: "Christ alone on the throne.", reference: "Ephesians 4:1", text: "That you walk worthy of the calling with which you are called.", link: "/dailyverses/mar13/dvmar7.html" },
-            "3-8": { title: "Everyone is called to build up.", reference: "1 Thessalonians 5:11", text: "Therefore comfort yourselves together, and edify one another.", link: "/dailyverses/mar13/dvmar8.html" },
-            "3-9": { title: "The love of Christ reaches out.", reference: "Matthew 12:20", text: "A bruised reed shall He not break, and smoking flax shall He not quench.", link: "/dailyverses/mar13/dvmar9.html" },
-            "3-10": { title: "His wisdom and knowledge.", reference: "Romans 11:33", text: "O the depth of the riches both of the wisdom and knowledge of God!", link: "/dailyverses/mar13/dvmar10.html" },
-            "3-11": { title: "Beware being led away from truth.", reference: "Colossians 2:8", text: "Beware lest any man spoil you through philosophy and vain deceit.", link: "/dailyverses/mar13/dvmar11.html" },
-            "3-12": { title: "The Mighty God became like us.", reference: "Colossians 2:9", text: "For in Him dwells all the fullness of the Godhead bodily.", link: "/dailyverses/mar13/dvmar12.html" },
-            "3-13": { title: "We are complete in Christ.", reference: "Colossians 2:10", text: "And you are complete in Him, who is the head of all principality and power.", link: "/dailyverses/mar13/dvmar13.html" },
-            "3-14": { title: "Our salvation seen by works.", reference: "Titus 3:8", text: "That those who have believed in God might be careful to maintain good works.", link: "/dailyverses/mar13/dvmar14.html" },
-            "3-15": { title: "Peace embraces the weak.", reference: "Romans 14:19", text: "Let us therefore follow after the things which make for peace.", link: "/dailyverses/mar13/dvmar15.html" },
-            "3-16": { title: "We have a hope that is certain.", reference: "Luke 21:28", text: "And when these things begin to come to pass, then look up, and lift up your heads.", link: "/dailyverses/mar13/dvmar16.html" },
-            "3-17": { title: "Everyone is essential in the body.", reference: "Romans 1:12", text: "That I may be comforted together with you by the mutual faith.", link: "/dailyverses/mar13/dvmar17.html" },
-            "3-18": { title: "Christ is our glory.", reference: "Galatians 5:26", text: "Let us not be desirous of vain glory, provoking one another.", link: "/dailyverses/mar13/dvmar18.html" },
-            "3-19": { title: "In Christ all things are turned around.", reference: "1 Corinthians 1:29", text: "That no flesh should glory in His presence.", link: "/dailyverses/mar13/dvmar19.html" },
-            "3-20": { title: "Called to live wisely.", reference: "James 3:13", text: "Who is wise and understanding among you? show by good conduct.", link: "/dailyverses/mar13/dvmar20.html" },
-            "3-21": { title: "Responding to evil with love.", reference: "Romans 12:21", text: "Be not overcome of evil, but overcome evil with good.", link: "/dailyverses/mar13/dvmar21.html" },
-            "3-22": { title: "The Lord gives us special love.", reference: "2 Corinthians 8:16", text: "But thanks be to God, who put the same earnest care into the heart of Titus for you.", link: "/dailyverses/mar13/dvmar22.html" },
-            "3-23": { title: "Serving Christ is the highest honour.", reference: "Matthew 23:11", text: "But he that is greatest among you shall be your servant.", link: "/dailyverses/mar13/dvmar23.html" },
-            "3-24": { title: "Peace in heaven.", reference: "Luke 19:38", text: "Blessed be the King who comes in the name of the Lord: peace in heaven.", link: "/dailyverses/mar13/dvmar24.html" },
-            "3-25": { title: "Love is the evidence of discipleship.", reference: "John 13:35", text: "By this shall all men know that you are My disciples, if you have love one to another.", link: "/dailyverses/mar13/dvmar25.html" },
-            "3-26": { title: "Purchased of God; set free to be holy.", reference: "Hebrews 10:14", text: "For by one offering He has perfected forever those who are sanctified.", link: "/dailyverses/mar13/dvmar26.html" },
-            "3-27": { title: "Truth is our experience in Christ.", reference: "John 18:37", text: "Everyone who is of the truth hears My voice.", link: "/dailyverses/mar13/dvmar27.html" },
-            "3-28": { title: "There is no greater friend than Jesus.", reference: "John 15:13", text: "Greater love has no man than this, that a man lay down his life for his friends.", link: "/dailyverses/mar13/dvmar28.html" },
-            "3-29": { title: "It is finished.", reference: "John 19:30", text: "When Jesus therefore had received the vinegar, He said, It is finished.", link: "/dailyverses/mar13/dvmar29.html" },
-            "3-30": { title: "Crucified with Christ and risen.", reference: "Romans 6:5", text: "For if we have been united together in the likeness of His death.", link: "/dailyverses/mar13/dvmar30.html" },
-            "3-31": { title: "The resurrection changed everything.", reference: "Luke 24:41", text: "And while they yet believed not for joy, and wondered.", link: "/dailyverses/mar13/dvmar31.html" },
+            "3-1": { title: "The Holy Spirit works with us.", reference: "Acts 15:28", text: "For it seemed good to the Holy Spirit, and to us.", link: "/daily-verses/march/day-1.html" },
+            "3-2": { title: "Christ is Lord of our life.", reference: "Acts 9:6", text: "Lord, what will You have me to do?", link: "/daily-verses/march/day-2.html" },
+            "3-3": { title: "In Jesus Christ is everything we need.", reference: "1 Corinthians 2:2", text: "For I determined not to know anything among you, save Jesus Christ, and Him crucified.", link: "/daily-verses/march/day-3.html" },
+            "3-4": { title: "Worship in the Spirit.", reference: "Philippians 3:3", text: "For we are the circumcision, who worship God in the Spirit.", link: "/daily-verses/march/day-4.html" },
+            "3-5": { title: "Ready for His return.", reference: "Luke 12:35", text: "Let your waist be girded and your lamps burning.", link: "/daily-verses/march/day-5.html" },
+            "3-6": { title: "We will never find living water in empty wells.", reference: "Revelation 22:17", text: "Let the one who thirsts come. And whoever will, let him take the water of life freely.", link: "/daily-verses/march/day-6.html" },
+            "3-7": { title: "Christ alone on the throne.", reference: "Ephesians 4:1", text: "That you walk worthy of the calling with which you are called.", link: "/daily-verses/march/day-7.html" },
+            "3-8": { title: "Everyone is called to build up.", reference: "1 Thessalonians 5:11", text: "Therefore comfort yourselves together, and edify one another.", link: "/daily-verses/march/day-8.html" },
+            "3-9": { title: "The love of Christ reaches out.", reference: "Matthew 12:20", text: "A bruised reed shall He not break, and smoking flax shall He not quench.", link: "/daily-verses/march/day-9.html" },
+            "3-10": { title: "His wisdom and knowledge.", reference: "Romans 11:33", text: "O the depth of the riches both of the wisdom and knowledge of God!", link: "/daily-verses/march/day-0.html" },
+            "3-11": { title: "Beware being led away from truth.", reference: "Colossians 2:8", text: "Beware lest any man spoil you through philosophy and vain deceit.", link: "/daily-verses/march/day-1.html" },
+            "3-12": { title: "The Mighty God became like us.", reference: "Colossians 2:9", text: "For in Him dwells all the fullness of the Godhead bodily.", link: "/daily-verses/march/day-2.html" },
+            "3-13": { title: "We are complete in Christ.", reference: "Colossians 2:10", text: "And you are complete in Him, who is the head of all principality and power.", link: "/daily-verses/march/day-3.html" },
+            "3-14": { title: "Our salvation seen by works.", reference: "Titus 3:8", text: "That those who have believed in God might be careful to maintain good works.", link: "/daily-verses/march/day-4.html" },
+            "3-15": { title: "Peace embraces the weak.", reference: "Romans 14:19", text: "Let us therefore follow after the things which make for peace.", link: "/daily-verses/march/day-5.html" },
+            "3-16": { title: "We have a hope that is certain.", reference: "Luke 21:28", text: "And when these things begin to come to pass, then look up, and lift up your heads.", link: "/daily-verses/march/day-6.html" },
+            "3-17": { title: "Everyone is essential in the body.", reference: "Romans 1:12", text: "That I may be comforted together with you by the mutual faith.", link: "/daily-verses/march/day-7.html" },
+            "3-18": { title: "Christ is our glory.", reference: "Galatians 5:26", text: "Let us not be desirous of vain glory, provoking one another.", link: "/daily-verses/march/day-8.html" },
+            "3-19": { title: "In Christ all things are turned around.", reference: "1 Corinthians 1:29", text: "That no flesh should glory in His presence.", link: "/daily-verses/march/day-9.html" },
+            "3-20": { title: "Called to live wisely.", reference: "James 3:13", text: "Who is wise and understanding among you? show by good conduct.", link: "/daily-verses/march/day-0.html" },
+            "3-21": { title: "Responding to evil with love.", reference: "Romans 12:21", text: "Be not overcome of evil, but overcome evil with good.", link: "/daily-verses/march/day-1.html" },
+            "3-22": { title: "The Lord gives us special love.", reference: "2 Corinthians 8:16", text: "But thanks be to God, who put the same earnest care into the heart of Titus for you.", link: "/daily-verses/march/day-2.html" },
+            "3-23": { title: "Serving Christ is the highest honour.", reference: "Matthew 23:11", text: "But he that is greatest among you shall be your servant.", link: "/daily-verses/march/day-3.html" },
+            "3-24": { title: "Peace in heaven.", reference: "Luke 19:38", text: "Blessed be the King who comes in the name of the Lord: peace in heaven.", link: "/daily-verses/march/day-4.html" },
+            "3-25": { title: "Love is the evidence of discipleship.", reference: "John 13:35", text: "By this shall all men know that you are My disciples, if you have love one to another.", link: "/daily-verses/march/day-5.html" },
+            "3-26": { title: "Purchased of God; set free to be holy.", reference: "Hebrews 10:14", text: "For by one offering He has perfected forever those who are sanctified.", link: "/daily-verses/march/day-6.html" },
+            "3-27": { title: "Truth is our experience in Christ.", reference: "John 18:37", text: "Everyone who is of the truth hears My voice.", link: "/daily-verses/march/day-7.html" },
+            "3-28": { title: "There is no greater friend than Jesus.", reference: "John 15:13", text: "Greater love has no man than this, that a man lay down his life for his friends.", link: "/daily-verses/march/day-8.html" },
+            "3-29": { title: "It is finished.", reference: "John 19:30", text: "When Jesus therefore had received the vinegar, He said, It is finished.", link: "/daily-verses/march/day-9.html" },
+            "3-30": { title: "Crucified with Christ and risen.", reference: "Romans 6:5", text: "For if we have been united together in the likeness of His death.", link: "/daily-verses/march/day-0.html" },
+            "3-31": { title: "The resurrection changed everything.", reference: "Luke 24:41", text: "And while they yet believed not for joy, and wondered.", link: "/daily-verses/march/day-1.html" },
             // April
-            "4-1": { title: "Jesus came so we can be like Him.", reference: "John 20:21", text: "Peace be unto you: as My Father has sent Me, even so send I you.", link: "/dailyverses/apr13/dvapr1.html" },
-            "4-2": { title: "The wisdom and knowledge of God.", reference: "Colossians 2:3", text: "In whom are hid all the treasures of wisdom and knowledge.", link: "/dailyverses/apr13/dvapr2.html" },
-            "4-3": { title: "Sealed by Christ; given the Spirit.", reference: "2 Corinthians 1:22", text: "Who has also sealed us, and given the down payment of the Spirit.", link: "/dailyverses/apr13/dvapr3.html" },
-            "4-4": { title: "Salvation is all of God.", reference: "John 6:44", text: "No man can come to Me, except the Father who has sent Me draw Him.", link: "/dailyverses/apr13/dvapr4.html" },
-            "4-5": { title: "If we desire Christ, He must be Lord.", reference: "Revelation 3:20", text: "Behold, I stand at the door, and knock.", link: "/dailyverses/apr13/dvapr5.html" },
-            "4-6": { title: "Count all things as loss for Christ.", reference: "Philippians 3:8", text: "Yea doubtless, and I count all things but loss for the excellency of the knowledge of Christ.", link: "/dailyverses/apr13/dvapr6.html" },
-            "4-7": { title: "Our righteousness must be in Christ.", reference: "Philippians 3:9", text: "And be found in Him, not having my own righteousness.", link: "/dailyverses/apr13/dvapr7.html" },
-            "4-8": { title: "The beauty of His character in us.", reference: "Philippians 3:10", text: "That I may know him, and the power of his resurrection.", link: "/dailyverses/apr13/dvapr8.html" },
-            "4-9": { title: "His resurrected life is our possession.", reference: "Philippians 3:11", text: "If by any means I might attain unto the resurrection of the dead.", link: "/dailyverses/apr13/dvapr9.html" },
-            "4-10": { title: "United with the purpose of God.", reference: "Philippians 3:12", text: "Not as though I had already attained, but I follow after.", link: "/dailyverses/apr13/dvapr10.html" },
-            "4-11": { title: "Letting go of the past.", reference: "Philippians 3:13", text: "Forgetting those things which are behind, and reaching out unto those things which are before.", link: "/dailyverses/apr13/dvapr11.html" },
-            "4-12": { title: "An effective faith.", reference: "Philemon 6", text: "That the sharing of your faith may become effective.", link: "/dailyverses/apr13/dvapr12.html" },
-            "4-13": { title: "We shall see Jesus.", reference: "Revelation 1:7", text: "Behold, He comes with clouds; and every eye shall see Him.", link: "/dailyverses/apr13/dvapr13.html" },
-            "4-14": { title: "Love for Christ seen in love for others.", reference: "1 Thessalonians 3:8", text: "For now we live, if you stand fast in the Lord.", link: "/dailyverses/apr13/dvapr14.html" },
-            "4-15": { title: "More than conquerors through His love.", reference: "Romans 8:37", text: "No, in all these things we are more than conquerors through Him that loved us.", link: "/dailyverses/apr13/dvapr15.html" },
-            "4-16": { title: "Works are evidence of living faith.", reference: "James 2:26", text: "For as the body without the spirit is dead, so faith without works is dead also.", link: "/dailyverses/apr13/dvapr16.html" },
-            "4-17": { title: "Children of the promise.", reference: "Galatians 4:28", text: "Now we, brethren, as Isaac was, are the children of promise.", link: "/dailyverses/apr13/dvapr17.html" },
-            "4-18": { title: "The love of God could not ignore wrath.", reference: "Hebrews 9:27", text: "And as it is appointed unto men once to die, but after this the judgment.", link: "/dailyverses/apr13/dvapr18.html" },
-            "4-19": { title: "Fully equipped to live for Jesus.", reference: "2 Peter 2:9", text: "The Lord knows how to deliver the godly out of temptations.", link: "/dailyverses/apr13/dvapr19.html" },
-            "4-20": { title: "There is a prize to win.", reference: "2 Corinthians 5:10", text: "For we must all appear before the judgment seat of Christ.", link: "/dailyverses/apr13/dvapr20.html" },
-            "4-21": { title: "What we think determines our growth.", reference: "1 Timothy 4:15", text: "Meditate upon these things; give yourself wholly to them.", link: "/dailyverses/apr13/dvapr21.html" },
-            "4-22": { title: "Our life is Christ; our doctrine is Christ.", reference: "1 Timothy 4:16", text: "Take heed unto yourself, and unto the doctrine.", link: "/dailyverses/apr13/dvapr22.html" },
-            "4-23": { title: "When Christ dwells in us.", reference: "Ephesians 5:3", text: "But fornication, and all uncleanness, let it not be once named among you.", link: "/dailyverses/apr13/dvapr23.html" },
-            "4-24": { title: "What we talk about shows our heart.", reference: "Ephesians 5:4", text: "Neither filthiness, nor foolish talking, but rather giving of thanks.", link: "/dailyverses/apr13/dvapr24.html" },
-            "4-25": { title: "Citizens of another kingdom.", reference: "Ephesians 5:5", text: "For this you know, that no covetous man has any inheritance in the kingdom of Christ.", link: "/dailyverses/apr13/dvapr25.html" },
-            "4-26": { title: "Lights in the world.", reference: "Ephesians 5:7", text: "Therefore do not be partakers with them.", link: "/dailyverses/apr13/dvapr26.html" },
-            "4-27": { title: "We are to be who we are in Christ.", reference: "Ephesians 5:8", text: "For you were sometimes darkness, but now are you light in the Lord.", link: "/dailyverses/apr13/dvapr27.html" },
-            "4-28": { title: "The Christian life is union with Christ.", reference: "Ephesians 5:10", text: "Proving what is acceptable unto the Lord.", link: "/dailyverses/apr13/dvapr28.html" },
-            "4-29": { title: "New life must be taught and seen.", reference: "Philippians 4:9", text: "Those things which you have learned, and received, and heard, and seen in me, do.", link: "/dailyverses/apr13/dvapr29.html" },
-            "4-30": { title: "He is our great High Priest.", reference: "Hebrews 4:14", text: "Seeing then that we have a great High Priest, Jesus the Son of God.", link: "/dailyverses/apr13/dvapr30.html" },
+            "4-1": { title: "Jesus came so we can be like Him.", reference: "John 20:21", text: "Peace be unto you: as My Father has sent Me, even so send I you.", link: "/daily-verses/april/day-1.html" },
+            "4-2": { title: "The wisdom and knowledge of God.", reference: "Colossians 2:3", text: "In whom are hid all the treasures of wisdom and knowledge.", link: "/daily-verses/april/day-2.html" },
+            "4-3": { title: "Sealed by Christ; given the Spirit.", reference: "2 Corinthians 1:22", text: "Who has also sealed us, and given the down payment of the Spirit.", link: "/daily-verses/april/day-3.html" },
+            "4-4": { title: "Salvation is all of God.", reference: "John 6:44", text: "No man can come to Me, except the Father who has sent Me draw Him.", link: "/daily-verses/april/day-4.html" },
+            "4-5": { title: "If we desire Christ, He must be Lord.", reference: "Revelation 3:20", text: "Behold, I stand at the door, and knock.", link: "/daily-verses/april/day-5.html" },
+            "4-6": { title: "Count all things as loss for Christ.", reference: "Philippians 3:8", text: "Yea doubtless, and I count all things but loss for the excellency of the knowledge of Christ.", link: "/daily-verses/april/day-6.html" },
+            "4-7": { title: "Our righteousness must be in Christ.", reference: "Philippians 3:9", text: "And be found in Him, not having my own righteousness.", link: "/daily-verses/april/day-7.html" },
+            "4-8": { title: "The beauty of His character in us.", reference: "Philippians 3:10", text: "That I may know him, and the power of his resurrection.", link: "/daily-verses/april/day-8.html" },
+            "4-9": { title: "His resurrected life is our possession.", reference: "Philippians 3:11", text: "If by any means I might attain unto the resurrection of the dead.", link: "/daily-verses/april/day-9.html" },
+            "4-10": { title: "United with the purpose of God.", reference: "Philippians 3:12", text: "Not as though I had already attained, but I follow after.", link: "/daily-verses/april/day-0.html" },
+            "4-11": { title: "Letting go of the past.", reference: "Philippians 3:13", text: "Forgetting those things which are behind, and reaching out unto those things which are before.", link: "/daily-verses/april/day-1.html" },
+            "4-12": { title: "An effective faith.", reference: "Philemon 6", text: "That the sharing of your faith may become effective.", link: "/daily-verses/april/day-2.html" },
+            "4-13": { title: "We shall see Jesus.", reference: "Revelation 1:7", text: "Behold, He comes with clouds; and every eye shall see Him.", link: "/daily-verses/april/day-3.html" },
+            "4-14": { title: "Love for Christ seen in love for others.", reference: "1 Thessalonians 3:8", text: "For now we live, if you stand fast in the Lord.", link: "/daily-verses/april/day-4.html" },
+            "4-15": { title: "More than conquerors through His love.", reference: "Romans 8:37", text: "No, in all these things we are more than conquerors through Him that loved us.", link: "/daily-verses/april/day-5.html" },
+            "4-16": { title: "Works are evidence of living faith.", reference: "James 2:26", text: "For as the body without the spirit is dead, so faith without works is dead also.", link: "/daily-verses/april/day-6.html" },
+            "4-17": { title: "Children of the promise.", reference: "Galatians 4:28", text: "Now we, brethren, as Isaac was, are the children of promise.", link: "/daily-verses/april/day-7.html" },
+            "4-18": { title: "The love of God could not ignore wrath.", reference: "Hebrews 9:27", text: "And as it is appointed unto men once to die, but after this the judgment.", link: "/daily-verses/april/day-8.html" },
+            "4-19": { title: "Fully equipped to live for Jesus.", reference: "2 Peter 2:9", text: "The Lord knows how to deliver the godly out of temptations.", link: "/daily-verses/april/day-9.html" },
+            "4-20": { title: "There is a prize to win.", reference: "2 Corinthians 5:10", text: "For we must all appear before the judgment seat of Christ.", link: "/daily-verses/april/day-0.html" },
+            "4-21": { title: "What we think determines our growth.", reference: "1 Timothy 4:15", text: "Meditate upon these things; give yourself wholly to them.", link: "/daily-verses/april/day-1.html" },
+            "4-22": { title: "Our life is Christ; our doctrine is Christ.", reference: "1 Timothy 4:16", text: "Take heed unto yourself, and unto the doctrine.", link: "/daily-verses/april/day-2.html" },
+            "4-23": { title: "When Christ dwells in us.", reference: "Ephesians 5:3", text: "But fornication, and all uncleanness, let it not be once named among you.", link: "/daily-verses/april/day-3.html" },
+            "4-24": { title: "What we talk about shows our heart.", reference: "Ephesians 5:4", text: "Neither filthiness, nor foolish talking, but rather giving of thanks.", link: "/daily-verses/april/day-4.html" },
+            "4-25": { title: "Citizens of another kingdom.", reference: "Ephesians 5:5", text: "For this you know, that no covetous man has any inheritance in the kingdom of Christ.", link: "/daily-verses/april/day-5.html" },
+            "4-26": { title: "Lights in the world.", reference: "Ephesians 5:7", text: "Therefore do not be partakers with them.", link: "/daily-verses/april/day-6.html" },
+            "4-27": { title: "We are to be who we are in Christ.", reference: "Ephesians 5:8", text: "For you were sometimes darkness, but now are you light in the Lord.", link: "/daily-verses/april/day-7.html" },
+            "4-28": { title: "The Christian life is union with Christ.", reference: "Ephesians 5:10", text: "Proving what is acceptable unto the Lord.", link: "/daily-verses/april/day-8.html" },
+            "4-29": { title: "New life must be taught and seen.", reference: "Philippians 4:9", text: "Those things which you have learned, and received, and heard, and seen in me, do.", link: "/daily-verses/april/day-9.html" },
+            "4-30": { title: "He is our great High Priest.", reference: "Hebrews 4:14", text: "Seeing then that we have a great High Priest, Jesus the Son of God.", link: "/daily-verses/april/day-0.html" },
             // May
-            "5-1": { title: "Tell others about Jesus.", reference: "Luke 14:23", text: "Go out into the highways and hedges, and compel them to come in.", link: "/dailyverses/may13/dvmay1.html" },
-            "5-2": { title: "Chosen in Christ before the foundation.", reference: "Ephesians 1:4", text: "According as He has chosen us in Him before the foundation of the world.", link: "/dailyverses/may13/dvmay2.html" },
-            "5-3": { title: "His eternal plan and purpose.", reference: "Ephesians 1:5", text: "Having predestinated us unto the adoption of children by Jesus Christ.", link: "/dailyverses/may13/dvmay3.html" },
-            "5-4": { title: "His great love towards us.", reference: "Ephesians 1:6", text: "To the praise of the glory of His grace, wherein He has made us accepted.", link: "/dailyverses/may13/dvmay4.html" },
-            "5-5": { title: "The blood of Jesus; forgiveness of sins.", reference: "Ephesians 1:7", text: "In whom we have redemption through His blood, the forgiveness of sins.", link: "/dailyverses/may13/dvmay5.html" },
-            "5-6": { title: "Recipients of His wisdom.", reference: "Ephesians 1:8", text: "Wherein He has abounded toward us in all wisdom and prudence.", link: "/dailyverses/may13/dvmay6.html" },
-            "5-7": { title: "How, why, and where redemption was won.", reference: "Ephesians 1:9", text: "Having made known unto us the mystery of His will.", link: "/dailyverses/may13/dvmay7.html" },
-            "5-8": { title: "The day we shall see Jesus.", reference: "Acts 1:11", text: "This same Jesus shall so come in like manner as you have seen Him go.", link: "/dailyverses/may13/dvmay8.html" },
-            "5-9": { title: "The day we shall see Jesus.", reference: "Ephesians 4:8", text: "When He ascended up on high, He led captivity captive, and gave gifts unto men.", link: "/dailyverses/may13/dvmay9.html" },
-            "5-10": { title: "Faithful because we are one body.", reference: "Ephesians 4:12", text: "For the perfecting of the saints, for the work of the ministry.", link: "/dailyverses/may13/dvmay10.html" },
-            "5-11": { title: "Truth is a living experience.", reference: "Ephesians 4:15", text: "But speaking the truth in love, may grow up into Him in all things.", link: "/dailyverses/may13/dvmay11.html" },
-            "5-12": { title: "Faithful because we are one body.", reference: "Ephesians 4:16", text: "From whom the whole body fitly joined together.", link: "/dailyverses/may13/dvmay12.html" },
-            "5-13": { title: "Faithful because we are one body.", reference: "Titus 1:7", text: "For an overseer must be blameless, as the steward of God.", link: "/dailyverses/may13/dvmay13.html" },
-            "5-14": { title: "Being an example of Christian character.", reference: "Titus 1:8", text: "But a lover of hospitality, a lover of good, sober, just, holy.", link: "/dailyverses/may13/dvmay14.html" },
-            "5-15": { title: "Faithful in upholding the whole truth.", reference: "Titus 1:9", text: "Holding fast the faithful word as he has been taught.", link: "/dailyverses/may13/dvmay15.html" },
-            "5-16": { title: "Christ is our provision.", reference: "1 Peter 5:7", text: "Casting all your care upon Him; for He cares for you.", link: "/dailyverses/may13/dvmay16.html" },
-            "5-17": { title: "Put on the love of Christ.", reference: "Colossians 3:14", text: "And above all these things put on love, which is the bond of perfectness.", link: "/dailyverses/may13/dvmay17.html" },
-            "5-18": { title: "The fire of the Holy Spirit.", reference: "1 Thessalonians 5:19", text: "Quench not the Spirit.", link: "/dailyverses/may13/dvmay18.html" },
-            "5-19": { title: "Do not despise prophecy.", reference: "1 Thessalonians 5:20", text: "Despise not prophesyings.", link: "/dailyverses/may13/dvmay19.html" },
-            "5-20": { title: "The love of Christ; the holiness of God.", reference: "1 Thessalonians 5:21", text: "Prove all things; hold fast that which is good.", link: "/dailyverses/may13/dvmay20.html" },
-            "5-21": { title: "Avoiding things that appear evil.", reference: "1 Thessalonians 5:22", text: "Abstain from all appearance of evil.", link: "/dailyverses/may13/dvmay21.html" },
-            "5-22": { title: "Sanctified in body, mind, and heart.", reference: "1 Thessalonians 5:23", text: "And the very God of peace sanctify you wholly.", link: "/dailyverses/may13/dvmay22.html" },
-            "5-23": { title: "A higher calling than giving.", reference: "1 Corinthians 13:3", text: "And though I bestow all my goods to feed the poor, and have not love, it profits me nothing.", link: "/dailyverses/may13/dvmay23.html" },
-            "5-24": { title: "The flesh and the Spirit.", reference: "Romans 8:5", text: "For they that are after the flesh do mind the things of the flesh.", link: "/dailyverses/may13/dvmay24.html" },
-            "5-25": { title: "Our boast is in Christ alone.", reference: "2 Corinthians 10:17", text: "But he that glories, let him glory in the Lord.", link: "/dailyverses/may13/dvmay25.html" },
-            "5-26": { title: "Scripture is inspired by God.", reference: "2 Timothy 3:16", text: "All scripture is given by inspiration of God.", link: "/dailyverses/may13/dvmay26.html" },
-            "5-27": { title: "We stand by the power of God.", reference: "1 John 4:4", text: "Greater is He that is in you, than he that is in the world.", link: "/dailyverses/may13/dvmay27.html" },
-            "5-28": { title: "Faith, hope and love.", reference: "1 Corinthians 13:13", text: "And now abides faith, hope, love, these three; but the greatest of these is love.", link: "/dailyverses/may13/dvmay28.html" },
-            "5-29": { title: "His character will never change.", reference: "2 Timothy 2:13", text: "He cannot deny Himself.", link: "/dailyverses/may13/dvmay29.html" },
-            "5-30": { title: "In Christ we are lifted higher.", reference: "Philippians 2:14", text: "Do all things without murmurings and disputings.", link: "/dailyverses/may13/dvmay30.html" },
-            "5-31": { title: "The word of life.", reference: "Philippians 2:16", text: "Holding forth the word of life.", link: "/dailyverses/may13/dvmay31.html" },
+            "5-1": { title: "Tell others about Jesus.", reference: "Luke 14:23", text: "Go out into the highways and hedges, and compel them to come in.", link: "/daily-verses/may/day-1.html" },
+            "5-2": { title: "Chosen in Christ before the foundation.", reference: "Ephesians 1:4", text: "According as He has chosen us in Him before the foundation of the world.", link: "/daily-verses/may/day-2.html" },
+            "5-3": { title: "His eternal plan and purpose.", reference: "Ephesians 1:5", text: "Having predestinated us unto the adoption of children by Jesus Christ.", link: "/daily-verses/may/day-3.html" },
+            "5-4": { title: "His great love towards us.", reference: "Ephesians 1:6", text: "To the praise of the glory of His grace, wherein He has made us accepted.", link: "/daily-verses/may/day-4.html" },
+            "5-5": { title: "The blood of Jesus; forgiveness of sins.", reference: "Ephesians 1:7", text: "In whom we have redemption through His blood, the forgiveness of sins.", link: "/daily-verses/may/day-5.html" },
+            "5-6": { title: "Recipients of His wisdom.", reference: "Ephesians 1:8", text: "Wherein He has abounded toward us in all wisdom and prudence.", link: "/daily-verses/may/day-6.html" },
+            "5-7": { title: "How, why, and where redemption was won.", reference: "Ephesians 1:9", text: "Having made known unto us the mystery of His will.", link: "/daily-verses/may/day-7.html" },
+            "5-8": { title: "The day we shall see Jesus.", reference: "Acts 1:11", text: "This same Jesus shall so come in like manner as you have seen Him go.", link: "/daily-verses/may/day-8.html" },
+            "5-9": { title: "The day we shall see Jesus.", reference: "Ephesians 4:8", text: "When He ascended up on high, He led captivity captive, and gave gifts unto men.", link: "/daily-verses/may/day-9.html" },
+            "5-10": { title: "Faithful because we are one body.", reference: "Ephesians 4:12", text: "For the perfecting of the saints, for the work of the ministry.", link: "/daily-verses/may/day-0.html" },
+            "5-11": { title: "Truth is a living experience.", reference: "Ephesians 4:15", text: "But speaking the truth in love, may grow up into Him in all things.", link: "/daily-verses/may/day-1.html" },
+            "5-12": { title: "Faithful because we are one body.", reference: "Ephesians 4:16", text: "From whom the whole body fitly joined together.", link: "/daily-verses/may/day-2.html" },
+            "5-13": { title: "Faithful because we are one body.", reference: "Titus 1:7", text: "For an overseer must be blameless, as the steward of God.", link: "/daily-verses/may/day-3.html" },
+            "5-14": { title: "Being an example of Christian character.", reference: "Titus 1:8", text: "But a lover of hospitality, a lover of good, sober, just, holy.", link: "/daily-verses/may/day-4.html" },
+            "5-15": { title: "Faithful in upholding the whole truth.", reference: "Titus 1:9", text: "Holding fast the faithful word as he has been taught.", link: "/daily-verses/may/day-5.html" },
+            "5-16": { title: "Christ is our provision.", reference: "1 Peter 5:7", text: "Casting all your care upon Him; for He cares for you.", link: "/daily-verses/may/day-6.html" },
+            "5-17": { title: "Put on the love of Christ.", reference: "Colossians 3:14", text: "And above all these things put on love, which is the bond of perfectness.", link: "/daily-verses/may/day-7.html" },
+            "5-18": { title: "The fire of the Holy Spirit.", reference: "1 Thessalonians 5:19", text: "Quench not the Spirit.", link: "/daily-verses/may/day-8.html" },
+            "5-19": { title: "Do not despise prophecy.", reference: "1 Thessalonians 5:20", text: "Despise not prophesyings.", link: "/daily-verses/may/day-9.html" },
+            "5-20": { title: "The love of Christ; the holiness of God.", reference: "1 Thessalonians 5:21", text: "Prove all things; hold fast that which is good.", link: "/daily-verses/may/day-0.html" },
+            "5-21": { title: "Avoiding things that appear evil.", reference: "1 Thessalonians 5:22", text: "Abstain from all appearance of evil.", link: "/daily-verses/may/day-1.html" },
+            "5-22": { title: "Sanctified in body, mind, and heart.", reference: "1 Thessalonians 5:23", text: "And the very God of peace sanctify you wholly.", link: "/daily-verses/may/day-2.html" },
+            "5-23": { title: "A higher calling than giving.", reference: "1 Corinthians 13:3", text: "And though I bestow all my goods to feed the poor, and have not love, it profits me nothing.", link: "/daily-verses/may/day-3.html" },
+            "5-24": { title: "The flesh and the Spirit.", reference: "Romans 8:5", text: "For they that are after the flesh do mind the things of the flesh.", link: "/daily-verses/may/day-4.html" },
+            "5-25": { title: "Our boast is in Christ alone.", reference: "2 Corinthians 10:17", text: "But he that glories, let him glory in the Lord.", link: "/daily-verses/may/day-5.html" },
+            "5-26": { title: "Scripture is inspired by God.", reference: "2 Timothy 3:16", text: "All scripture is given by inspiration of God.", link: "/daily-verses/may/day-6.html" },
+            "5-27": { title: "We stand by the power of God.", reference: "1 John 4:4", text: "Greater is He that is in you, than he that is in the world.", link: "/daily-verses/may/day-7.html" },
+            "5-28": { title: "Faith, hope and love.", reference: "1 Corinthians 13:13", text: "And now abides faith, hope, love, these three; but the greatest of these is love.", link: "/daily-verses/may/day-8.html" },
+            "5-29": { title: "His character will never change.", reference: "2 Timothy 2:13", text: "He cannot deny Himself.", link: "/daily-verses/may/day-9.html" },
+            "5-30": { title: "In Christ we are lifted higher.", reference: "Philippians 2:14", text: "Do all things without murmurings and disputings.", link: "/daily-verses/may/day-0.html" },
+            "5-31": { title: "The word of life.", reference: "Philippians 2:16", text: "Holding forth the word of life.", link: "/daily-verses/may/day-1.html" },
             // June - Content not yet available
             // July
-            "7-1": { title: "The wisdom of God made possible.", reference: "Ephesians 3:10", text: "To the intent that now unto the principalities and powers might be known the manifold wisdom of God.", link: "/dailyverses/july13/dvjuly1.html" },
-            "7-2": { title: "Boldness, assurance, and confidence.", reference: "Ephesians 3:12", text: "In whom we have boldness and access with confidence by the faith of Him.", link: "/dailyverses/july13/dvjuly2.html" },
-            "7-3": { title: "We bow our knees in worship.", reference: "Ephesians 3:14", text: "For this cause I bow my knees unto the Father of our Lord Jesus Christ.", link: "/dailyverses/july13/dvjuly3.html" },
-            "7-4": { title: "The word of God is living and powerful.", reference: "Acts 12:24", text: "But the word of God grew and multiplied.", link: "/dailyverses/july13/dvjuly4.html" },
-            "7-5": { title: "Seeking the approval of God.", reference: "John 2:24", text: "But Jesus did not commit Himself unto them, because He knew all men.", link: "/dailyverses/july13/dvjuly5.html" },
-            "7-6": { title: "The implanted word.", reference: "James 1:21", text: "Receive with meekness the implanted word, which is able to save your souls.", link: "/dailyverses/july13/dvjuly6.html" },
-            "7-7": { title: "His provision is sufficient.", reference: "Hebrews 4:9", text: "There remains therefore a rest to the people of God.", link: "/dailyverses/july13/dvjuly7.html" },
-            "7-8": { title: "His word is our need.", reference: "Matthew 22:29", text: "You do err, not knowing the scriptures, nor the power of God.", link: "/dailyverses/july13/dvjuly8.html" },
-            "7-9": { title: "Retaining an effective prayer life.", reference: "John 15:7", text: "If you abide in Me, and My words abide in you, you shall ask what you will.", link: "/dailyverses/july13/dvjuly9.html" },
-            "7-10": { title: "The simplicity that is in Christ.", reference: "2 Corinthians 11:3", text: "Lest your minds should be corrupted from the simplicity that is in Christ.", link: "/dailyverses/july13/dvjuly10.html" },
-            "7-11": { title: "Our love for Christ is known by obedience.", reference: "John 14:23", text: "If a man love Me, he will keep My words.", link: "/dailyverses/july13/dvjuly11.html" },
-            "7-12": { title: "Experiencing the presence of God.", reference: "John 14:23", text: "Jesus answered and said unto him, If a man love Me, he will keep My words.", link: "/dailyverses/july13/dvjuly12.html" },
-            "7-13": { title: "He shall come to be glorified.", reference: "2 Thessalonians 1:10", text: "When He shall come to be glorified in His saints.", link: "/dailyverses/july13/dvjuly13.html" },
-            "7-14": { title: "His life; His righteousness; His Spirit.", reference: "Revelation 3:18", text: "I counsel you to buy of Me gold tried in the fire, that you may be rich.", link: "/dailyverses/july13/dvjuly14.html" },
-            "7-15": { title: "We are known by the words we speak.", reference: "Colossians 4:6", text: "Let your speech always be with grace, seasoned with salt.", link: "/dailyverses/july13/dvjuly15.html" },
-            "7-16": { title: "In Christ the impossible is reality.", reference: "Luke 18:27", text: "The things which are impossible with men are possible with God.", link: "/dailyverses/july13/dvjuly16.html" },
-            "7-17": { title: "The Lord's heart yearns for His people.", reference: "Romans 8:28", text: "And we know that all things work together for good to them that love God.", link: "/dailyverses/july13/dvjuly17.html" },
-            "7-18": { title: "Peace will be our experience.", reference: "Romans 15:33", text: "Now the God of peace be with you all. Amen.", link: "/dailyverses/july13/dvjuly18.html" },
-            "7-19": { title: "Jesus Christ is the meaning and purpose.", reference: "Revelation 18:17", text: "For in one hour so great riches is come to nought.", link: "/dailyverses/july13/dvjuly19.html" },
-            "7-20": { title: "We are citizens of another kingdom.", reference: "Colossians 1:13", text: "Who has delivered us from the power of darkness.", link: "/dailyverses/july13/dvjuly20.html" },
-            "7-21": { title: "Purity of thought is a precious gift.", reference: "Titus 1:15", text: "Unto the pure all things are pure.", link: "/dailyverses/july13/dvjuly21.html" },
-            "7-22": { title: "We rejoice for all that Jesus has done.", reference: "Philippians 4:4", text: "Rejoice in the Lord at all times: and again I say, Rejoice.", link: "/dailyverses/july13/dvjuly22.html" },
-            "7-23": { title: "There is a crown to be won.", reference: "Revelation 3:11", text: "Behold, I come quickly: hold that fast which you have.", link: "/dailyverses/july13/dvjuly23.html" },
-            "7-24": { title: "Our riches are in Christ.", reference: "2 Corinthians 8:9", text: "For you know the grace of our Lord Jesus Christ, that, though He was rich, yet for your sake He became poor.", link: "/dailyverses/july13/dvjuly24.html" },
-            "7-25": { title: "Love for Christ is seen by a devout life.", reference: "Acts 10:2", text: "A devout man, and one who feared God with all his house.", link: "/dailyverses/july13/dvjuly25.html" },
-            "7-26": { title: "If we love the Lord we follow good.", reference: "1 Peter 3:13", text: "And who is he that will harm you, if you be followers of that which is good?", link: "/dailyverses/july13/dvjuly26.html" },
-            "7-27": { title: "The gospel is power of God.", reference: "2 Timothy 3:5", text: "Having a form of godliness, but denying the power thereof.", link: "/dailyverses/july13/dvjuly27.html" },
-            "7-28": { title: "Blessing others because we are blessed.", reference: "1 Peter 3:9", text: "Not rendering evil for evil, but contrariwise blessing.", link: "/dailyverses/july13/dvjuly28.html" },
-            "7-29": { title: "Our perfection is in Christ.", reference: "2 Corinthians 13:11", text: "Be perfect, be of good comfort, be of one mind, live in peace.", link: "/dailyverses/july13/dvjuly29.html" },
-            "7-30": { title: "The way of faith unites us with Christ.", reference: "Hebrews 11:6", text: "But without faith it is impossible to please Him.", link: "/dailyverses/july13/dvjuly30.html" },
-            "7-31": { title: "Riches alone will not stop a person.", reference: "Mark 10:23", text: "How hardly shall they that have riches enter into the kingdom of God!", link: "/dailyverses/july13/dvjuly31.html" },
+            "7-1": { title: "The wisdom of God made possible.", reference: "Ephesians 3:10", text: "To the intent that now unto the principalities and powers might be known the manifold wisdom of God.", link: "/daily-verses/july/day-1.html" },
+            "7-2": { title: "Boldness, assurance, and confidence.", reference: "Ephesians 3:12", text: "In whom we have boldness and access with confidence by the faith of Him.", link: "/daily-verses/july/day-2.html" },
+            "7-3": { title: "We bow our knees in worship.", reference: "Ephesians 3:14", text: "For this cause I bow my knees unto the Father of our Lord Jesus Christ.", link: "/daily-verses/july/day-3.html" },
+            "7-4": { title: "The word of God is living and powerful.", reference: "Acts 12:24", text: "But the word of God grew and multiplied.", link: "/daily-verses/july/day-4.html" },
+            "7-5": { title: "Seeking the approval of God.", reference: "John 2:24", text: "But Jesus did not commit Himself unto them, because He knew all men.", link: "/daily-verses/july/day-5.html" },
+            "7-6": { title: "The implanted word.", reference: "James 1:21", text: "Receive with meekness the implanted word, which is able to save your souls.", link: "/daily-verses/july/day-6.html" },
+            "7-7": { title: "His provision is sufficient.", reference: "Hebrews 4:9", text: "There remains therefore a rest to the people of God.", link: "/daily-verses/july/day-7.html" },
+            "7-8": { title: "His word is our need.", reference: "Matthew 22:29", text: "You do err, not knowing the scriptures, nor the power of God.", link: "/daily-verses/july/day-8.html" },
+            "7-9": { title: "Retaining an effective prayer life.", reference: "John 15:7", text: "If you abide in Me, and My words abide in you, you shall ask what you will.", link: "/daily-verses/july/day-9.html" },
+            "7-10": { title: "The simplicity that is in Christ.", reference: "2 Corinthians 11:3", text: "Lest your minds should be corrupted from the simplicity that is in Christ.", link: "/daily-verses/july/day-0.html" },
+            "7-11": { title: "Our love for Christ is known by obedience.", reference: "John 14:23", text: "If a man love Me, he will keep My words.", link: "/daily-verses/july/day-1.html" },
+            "7-12": { title: "Experiencing the presence of God.", reference: "John 14:23", text: "Jesus answered and said unto him, If a man love Me, he will keep My words.", link: "/daily-verses/july/day-2.html" },
+            "7-13": { title: "He shall come to be glorified.", reference: "2 Thessalonians 1:10", text: "When He shall come to be glorified in His saints.", link: "/daily-verses/july/day-3.html" },
+            "7-14": { title: "His life; His righteousness; His Spirit.", reference: "Revelation 3:18", text: "I counsel you to buy of Me gold tried in the fire, that you may be rich.", link: "/daily-verses/july/day-4.html" },
+            "7-15": { title: "We are known by the words we speak.", reference: "Colossians 4:6", text: "Let your speech always be with grace, seasoned with salt.", link: "/daily-verses/july/day-5.html" },
+            "7-16": { title: "In Christ the impossible is reality.", reference: "Luke 18:27", text: "The things which are impossible with men are possible with God.", link: "/daily-verses/july/day-6.html" },
+            "7-17": { title: "The Lord's heart yearns for His people.", reference: "Romans 8:28", text: "And we know that all things work together for good to them that love God.", link: "/daily-verses/july/day-7.html" },
+            "7-18": { title: "Peace will be our experience.", reference: "Romans 15:33", text: "Now the God of peace be with you all. Amen.", link: "/daily-verses/july/day-8.html" },
+            "7-19": { title: "Jesus Christ is the meaning and purpose.", reference: "Revelation 18:17", text: "For in one hour so great riches is come to nought.", link: "/daily-verses/july/day-9.html" },
+            "7-20": { title: "We are citizens of another kingdom.", reference: "Colossians 1:13", text: "Who has delivered us from the power of darkness.", link: "/daily-verses/july/day-0.html" },
+            "7-21": { title: "Purity of thought is a precious gift.", reference: "Titus 1:15", text: "Unto the pure all things are pure.", link: "/daily-verses/july/day-1.html" },
+            "7-22": { title: "We rejoice for all that Jesus has done.", reference: "Philippians 4:4", text: "Rejoice in the Lord at all times: and again I say, Rejoice.", link: "/daily-verses/july/day-2.html" },
+            "7-23": { title: "There is a crown to be won.", reference: "Revelation 3:11", text: "Behold, I come quickly: hold that fast which you have.", link: "/daily-verses/july/day-3.html" },
+            "7-24": { title: "Our riches are in Christ.", reference: "2 Corinthians 8:9", text: "For you know the grace of our Lord Jesus Christ, that, though He was rich, yet for your sake He became poor.", link: "/daily-verses/july/day-4.html" },
+            "7-25": { title: "Love for Christ is seen by a devout life.", reference: "Acts 10:2", text: "A devout man, and one who feared God with all his house.", link: "/daily-verses/july/day-5.html" },
+            "7-26": { title: "If we love the Lord we follow good.", reference: "1 Peter 3:13", text: "And who is he that will harm you, if you be followers of that which is good?", link: "/daily-verses/july/day-6.html" },
+            "7-27": { title: "The gospel is power of God.", reference: "2 Timothy 3:5", text: "Having a form of godliness, but denying the power thereof.", link: "/daily-verses/july/day-7.html" },
+            "7-28": { title: "Blessing others because we are blessed.", reference: "1 Peter 3:9", text: "Not rendering evil for evil, but contrariwise blessing.", link: "/daily-verses/july/day-8.html" },
+            "7-29": { title: "Our perfection is in Christ.", reference: "2 Corinthians 13:11", text: "Be perfect, be of good comfort, be of one mind, live in peace.", link: "/daily-verses/july/day-9.html" },
+            "7-30": { title: "The way of faith unites us with Christ.", reference: "Hebrews 11:6", text: "But without faith it is impossible to please Him.", link: "/daily-verses/july/day-0.html" },
+            "7-31": { title: "Riches alone will not stop a person.", reference: "Mark 10:23", text: "How hardly shall they that have riches enter into the kingdom of God!", link: "/daily-verses/july/day-1.html" },
             // August
-            "8-1": { title: "Power, wealth, and earthly splendour.", reference: "Philippians 1:9", text: "And this I pray, that your love may abound yet more and more.", link: "/dailyverses/aug13/dvaug1.html" },
-            "8-2": { title: "Maturity in Christ brings discernment.", reference: "Philippians 1:10", text: "That you may approve things that are excellent.", link: "/dailyverses/aug13/dvaug2.html" },
-            "8-3": { title: "Fruits of righteousness are produced.", reference: "Philippians 1:11", text: "Being filled with the fruits of righteousness.", link: "/dailyverses/aug13/dvaug3.html" },
-            "8-4": { title: "Success is to be in His will.", reference: "1 Peter 2:15", text: "For so is the will of God, that with well doing you may put to silence the ignorance.", link: "/dailyverses/aug13/dvaug4.html" },
-            "8-5": { title: "Freedom in Christ.", reference: "1 Peter 2:16", text: "As free, and not using your liberty for a cloak of maliciousness.", link: "/dailyverses/aug13/dvaug5.html" },
-            "8-6": { title: "The only guaranteed opportunity.", reference: "2 Corinthians 6:2", text: "Behold, now is the accepted time; behold, now is the day of salvation.", link: "/dailyverses/aug13/dvaug6.html" },
-            "8-7": { title: "Sin destroys but grace saves.", reference: "Romans 5:20", text: "But where sin abounded, grace did much more abound.", link: "/dailyverses/aug13/dvaug7.html" },
-            "8-8": { title: "Jesus Christ was accursed for us.", reference: "1 Corinthians 16:22", text: "If any man love not the Lord Jesus Christ, let him be accursed.", link: "/dailyverses/aug13/dvaug8.html" },
-            "8-9": { title: "To reveal His Son in me.", reference: "Galatians 1:16", text: "To reveal His Son in me, that I might preach Him among the nations.", link: "/dailyverses/aug13/dvaug9.html" },
-            "8-10": { title: "Love for Christ is seen in those forgiven.", reference: "Luke 7:47", text: "Her sins, which are many, are forgiven; for she loved much.", link: "/dailyverses/aug13/dvaug10.html" },
-            "8-11": { title: "All who trust in Jesus are chosen.", reference: "John 15:16", text: "You have not chosen Me, but I have chosen you.", link: "/dailyverses/aug13/dvaug11.html" },
-            "8-12": { title: "Quarrels and disputes push people away.", reference: "2 Timothy 2:23", text: "But foolish and unlearned questions avoid, knowing that they produce quarrels.", link: "/dailyverses/aug13/dvaug12.html" },
-            "8-13": { title: "We do not preach philosophy; we preach life.", reference: "Romans 16:25", text: "Now to Him who is of power to establish you according to my gospel.", link: "/dailyverses/aug13/dvaug13.html" },
-            "8-14": { title: "His life works in us.", reference: "Romans 7:24-25", text: "O wretched man that I am! who shall deliver me? I thank God through Jesus Christ.", link: "/dailyverses/aug13/dvaug14.html" },
-            "8-15": { title: "Jesus is the friend of sinners.", reference: "John 8:11", text: "Neither do I condemn you: go, and sin no more.", link: "/dailyverses/aug13/dvaug15.html" },
-            "8-16": { title: "His words abiding in us.", reference: "John 7:46", text: "The officers answered, Never man spoke like this Man.", link: "/dailyverses/aug13/dvaug16.html" },
-            "8-17": { title: "Never offended in Jesus.", reference: "Matthew 11:6", text: "And blessed is he, whosoever shall not be offended in Me.", link: "/dailyverses/aug13/dvaug17.html" },
-            "8-18": { title: "We are all called to minister life.", reference: "Romans 1:11", text: "For I long to see you, that I may impart unto you some spiritual gift.", link: "/dailyverses/aug13/dvaug18.html" },
-            "8-19": { title: "It is by faith we are justified.", reference: "Mark 2:17", text: "They that are whole have no need of the physician, but they that are sick.", link: "/dailyverses/aug13/dvaug19.html" },
-            "8-20": { title: "His salvation, His glory, His honour.", reference: "Revelation 19:1", text: "Alleluia; Salvation, and glory, and honour, and power, unto the Lord our God.", link: "/dailyverses/aug13/dvaug20.html" },
-            "8-21": { title: "Our wisdom is in Christ.", reference: "Colossians 4:5", text: "Walk in wisdom toward them that are without, redeeming the time.", link: "/dailyverses/aug13/dvaug21.html" },
-            "8-22": { title: "There are no barriers that overcome His word.", reference: "2 Timothy 2:9", text: "Wherein I suffer trouble, as an evil doer, even unto bonds; but the word of God is not bound.", link: "/dailyverses/aug13/dvaug22.html" },
-            "8-23": { title: "Our hope is certain.", reference: "Titus 1:2", text: "In hope of eternal life, which God, who cannot lie, promised before the world began.", link: "/dailyverses/aug13/dvaug23.html" },
-            "8-24": { title: "Good works are the expression of who we are.", reference: "Titus 3:14", text: "And let ours also learn to maintain good works for necessary uses.", link: "/dailyverses/aug13/dvaug24.html" },
-            "8-25": { title: "The character of the Father will be seen.", reference: "Luke 6:35", text: "But love your enemies, and do good, and lend, hoping for nothing again.", link: "/dailyverses/aug13/dvaug25.html" },
-            "8-26": { title: "Our first priority should be to let Jesus shine.", reference: "Luke 6:36", text: "Therefore be merciful, as your Father also is merciful.", link: "/dailyverses/aug13/dvaug26.html" },
-            "8-27": { title: "Called by His Spirit, chosen in Christ.", reference: "Revelation 17:14", text: "For He is Lord of lords, and King of kings.", link: "/dailyverses/aug13/dvaug27.html" },
-            "8-28": { title: "Giving the throne of our life to Jesus.", reference: "Matthew 16:24", text: "If any man will come after Me, let him deny himself, and take up his cross.", link: "/dailyverses/aug13/dvaug28.html" },
-            "8-29": { title: "He will complete His work in us.", reference: "1 Thessalonians 5:24", text: "Faithful is He who calls you, who also will do it.", link: "/dailyverses/aug13/dvaug29.html" },
-            "8-30": { title: "We know He will return.", reference: "Matthew 24:44", text: "Therefore you also be ready: for in such an hour as you think not the Son of Man will come.", link: "/dailyverses/aug13/dvaug30.html" },
-            "8-31": { title: "Never lose sight of His wonderful work.", reference: "2 Thessalonians 2:13", text: "But we are bound to give thanks always to God for you, because God has from the beginning chosen you.", link: "/dailyverses/aug13/dvaug31.html" },
+            "8-1": { title: "Power, wealth, and earthly splendour.", reference: "Philippians 1:9", text: "And this I pray, that your love may abound yet more and more.", link: "/daily-verses/august/day-1.html" },
+            "8-2": { title: "Maturity in Christ brings discernment.", reference: "Philippians 1:10", text: "That you may approve things that are excellent.", link: "/daily-verses/august/day-2.html" },
+            "8-3": { title: "Fruits of righteousness are produced.", reference: "Philippians 1:11", text: "Being filled with the fruits of righteousness.", link: "/daily-verses/august/day-3.html" },
+            "8-4": { title: "Success is to be in His will.", reference: "1 Peter 2:15", text: "For so is the will of God, that with well doing you may put to silence the ignorance.", link: "/daily-verses/august/day-4.html" },
+            "8-5": { title: "Freedom in Christ.", reference: "1 Peter 2:16", text: "As free, and not using your liberty for a cloak of maliciousness.", link: "/daily-verses/august/day-5.html" },
+            "8-6": { title: "The only guaranteed opportunity.", reference: "2 Corinthians 6:2", text: "Behold, now is the accepted time; behold, now is the day of salvation.", link: "/daily-verses/august/day-6.html" },
+            "8-7": { title: "Sin destroys but grace saves.", reference: "Romans 5:20", text: "But where sin abounded, grace did much more abound.", link: "/daily-verses/august/day-7.html" },
+            "8-8": { title: "Jesus Christ was accursed for us.", reference: "1 Corinthians 16:22", text: "If any man love not the Lord Jesus Christ, let him be accursed.", link: "/daily-verses/august/day-8.html" },
+            "8-9": { title: "To reveal His Son in me.", reference: "Galatians 1:16", text: "To reveal His Son in me, that I might preach Him among the nations.", link: "/daily-verses/august/day-9.html" },
+            "8-10": { title: "Love for Christ is seen in those forgiven.", reference: "Luke 7:47", text: "Her sins, which are many, are forgiven; for she loved much.", link: "/daily-verses/august/day-0.html" },
+            "8-11": { title: "All who trust in Jesus are chosen.", reference: "John 15:16", text: "You have not chosen Me, but I have chosen you.", link: "/daily-verses/august/day-1.html" },
+            "8-12": { title: "Quarrels and disputes push people away.", reference: "2 Timothy 2:23", text: "But foolish and unlearned questions avoid, knowing that they produce quarrels.", link: "/daily-verses/august/day-2.html" },
+            "8-13": { title: "We do not preach philosophy; we preach life.", reference: "Romans 16:25", text: "Now to Him who is of power to establish you according to my gospel.", link: "/daily-verses/august/day-3.html" },
+            "8-14": { title: "His life works in us.", reference: "Romans 7:24-25", text: "O wretched man that I am! who shall deliver me? I thank God through Jesus Christ.", link: "/daily-verses/august/day-4.html" },
+            "8-15": { title: "Jesus is the friend of sinners.", reference: "John 8:11", text: "Neither do I condemn you: go, and sin no more.", link: "/daily-verses/august/day-5.html" },
+            "8-16": { title: "His words abiding in us.", reference: "John 7:46", text: "The officers answered, Never man spoke like this Man.", link: "/daily-verses/august/day-6.html" },
+            "8-17": { title: "Never offended in Jesus.", reference: "Matthew 11:6", text: "And blessed is he, whosoever shall not be offended in Me.", link: "/daily-verses/august/day-7.html" },
+            "8-18": { title: "We are all called to minister life.", reference: "Romans 1:11", text: "For I long to see you, that I may impart unto you some spiritual gift.", link: "/daily-verses/august/day-8.html" },
+            "8-19": { title: "It is by faith we are justified.", reference: "Mark 2:17", text: "They that are whole have no need of the physician, but they that are sick.", link: "/daily-verses/august/day-9.html" },
+            "8-20": { title: "His salvation, His glory, His honour.", reference: "Revelation 19:1", text: "Alleluia; Salvation, and glory, and honour, and power, unto the Lord our God.", link: "/daily-verses/august/day-0.html" },
+            "8-21": { title: "Our wisdom is in Christ.", reference: "Colossians 4:5", text: "Walk in wisdom toward them that are without, redeeming the time.", link: "/daily-verses/august/day-1.html" },
+            "8-22": { title: "There are no barriers that overcome His word.", reference: "2 Timothy 2:9", text: "Wherein I suffer trouble, as an evil doer, even unto bonds; but the word of God is not bound.", link: "/daily-verses/august/day-2.html" },
+            "8-23": { title: "Our hope is certain.", reference: "Titus 1:2", text: "In hope of eternal life, which God, who cannot lie, promised before the world began.", link: "/daily-verses/august/day-3.html" },
+            "8-24": { title: "Good works are the expression of who we are.", reference: "Titus 3:14", text: "And let ours also learn to maintain good works for necessary uses.", link: "/daily-verses/august/day-4.html" },
+            "8-25": { title: "The character of the Father will be seen.", reference: "Luke 6:35", text: "But love your enemies, and do good, and lend, hoping for nothing again.", link: "/daily-verses/august/day-5.html" },
+            "8-26": { title: "Our first priority should be to let Jesus shine.", reference: "Luke 6:36", text: "Therefore be merciful, as your Father also is merciful.", link: "/daily-verses/august/day-6.html" },
+            "8-27": { title: "Called by His Spirit, chosen in Christ.", reference: "Revelation 17:14", text: "For He is Lord of lords, and King of kings.", link: "/daily-verses/august/day-7.html" },
+            "8-28": { title: "Giving the throne of our life to Jesus.", reference: "Matthew 16:24", text: "If any man will come after Me, let him deny himself, and take up his cross.", link: "/daily-verses/august/day-8.html" },
+            "8-29": { title: "He will complete His work in us.", reference: "1 Thessalonians 5:24", text: "Faithful is He who calls you, who also will do it.", link: "/daily-verses/august/day-9.html" },
+            "8-30": { title: "We know He will return.", reference: "Matthew 24:44", text: "Therefore you also be ready: for in such an hour as you think not the Son of Man will come.", link: "/daily-verses/august/day-0.html" },
+            "8-31": { title: "Never lose sight of His wonderful work.", reference: "2 Thessalonians 2:13", text: "But we are bound to give thanks always to God for you, because God has from the beginning chosen you.", link: "/daily-verses/august/day-1.html" },
             // September
-            "9-1": { title: "Set free from futility of the law.", reference: "Galatians 3:24", text: "Wherefore the law was our schoolmaster to bring us to Christ.", link: "/dailyverses/sept13/dvsept1.html" },
-            "9-2": { title: "Faith alone is the way of holiness.", reference: "Galatians 3:25", text: "But after that faith is come, we are no longer under a schoolmaster.", link: "/dailyverses/sept13/dvsept2.html" },
-            "9-3": { title: "We have nothing to glory in except Christ.", reference: "1 Corinthians 1:31", text: "He that glories, let him glory in the Lord.", link: "/dailyverses/sept13/dvsept3.html" },
-            "9-4": { title: "Faith unites us with God's provision.", reference: "Romans 10:4", text: "For Christ is the end of the law for righteousness to everyone who believes.", link: "/dailyverses/sept13/dvsept4.html" },
-            "9-5": { title: "If we live holy, peace will be written.", reference: "Hebrews 12:14", text: "Follow peace with all, and holiness, without which no man shall see the Lord.", link: "/dailyverses/sept13/dvsept5.html" },
-            "9-6": { title: "Our hearts and minds are His sanctuary.", reference: "2 Corinthians 6:16", text: "For you are the temple of the living God.", link: "/dailyverses/sept13/dvsept6.html" },
-            "9-7": { title: "We dwell in His presence.", reference: "Hebrews 12:22", text: "But you are come unto mount Zion, and unto the city of the living God.", link: "/dailyverses/sept13/dvsept7.html" },
-            "9-8": { title: "They saw afar off; we enter in now.", reference: "Hebrews 11:13", text: "These all died in faith, not having received the promises, but having seen them afar off.", link: "/dailyverses/sept13/dvsept8.html" },
-            "9-9": { title: "We do not walk in darkness.", reference: "John 8:12", text: "I am the light of the world: he that follows Me shall not walk in darkness.", link: "/dailyverses/sept13/dvsept9.html" },
-            "9-10": { title: "We see Jesus.", reference: "Hebrews 2:9", text: "But we see Jesus, who was made a little lower than the angels for the suffering of death.", link: "/dailyverses/sept13/dvsept10.html" },
-            "9-11": { title: "New life; the power of God; union with Christ.", reference: "John 1:12", text: "But as many as received Him, to them gave He power to be the children of God.", link: "/dailyverses/sept13/dvsept11.html" },
-            "9-12": { title: "The approval of God rests upon seekers.", reference: "1 Corinthians 11:19", text: "For there must also be factions among you, that those who are approved may be made manifest.", link: "/dailyverses/sept13/dvsept12.html" },
-            "9-13": { title: "Our debt is to love others.", reference: "Romans 13:8", text: "Owe no one anything except to love one another.", link: "/dailyverses/sept13/dvsept13.html" },
-            "9-14": { title: "He will renew our strength.", reference: "2 Thessalonians 3:13", text: "But you, brethren, be not weary in well doing.", link: "/dailyverses/sept13/dvsept14.html" },
-            "9-15": { title: "Genuine faith is known by works.", reference: "James 2:17", text: "Even so faith, if it has not works, is dead, being alone.", link: "/dailyverses/sept13/dvsept15.html" },
-            "9-16": { title: "Now is the time to live for Jesus.", reference: "1 Thessalonians 5:6", text: "Therefore let us not sleep, as do others; but let us watch and be sober.", link: "/dailyverses/sept13/dvsept16.html" },
-            "9-17": { title: "It is Christ in us who overcomes.", reference: "1 John 5:4", text: "For whatsoever is born of God overcomes the world.", link: "/dailyverses/sept13/dvsept17.html" },
-            "9-18": { title: "The grace of the Lord Jesus is sufficient.", reference: "2 Corinthians 12:9", text: "My grace is sufficient for you: for My strength is made perfect in weakness.", link: "/dailyverses/sept13/dvsept18.html" },
-            "9-19": { title: "The Holy Spirit must be known by experience.", reference: "John 14:17", text: "Even the Spirit of truth; whom the world cannot receive, because it sees Him not.", link: "/dailyverses/sept13/dvsept19.html" },
-            "9-20": { title: "Christ alone; faith alone; grace alone.", reference: "Romans 5:2", text: "By whom also we have access by faith into this grace wherein we stand.", link: "/dailyverses/sept13/dvsept20.html" },
-            "9-21": { title: "It is in Christ we glory.", reference: "Romans 5:3", text: "And not only so, but we glory in tribulations also.", link: "/dailyverses/sept13/dvsept21.html" },
-            "9-22": { title: "The Christian life is more than doctrine.", reference: "Romans 5:4", text: "And patience, experience; and experience, hope.", link: "/dailyverses/sept13/dvsept22.html" },
-            "9-23": { title: "Our hope is in the promises of God.", reference: "Romans 5:5", text: "And hope makes not ashamed; because the love of God is shed abroad in our hearts.", link: "/dailyverses/sept13/dvsept23.html" },
-            "9-24": { title: "Freedom in Christ puts others first.", reference: "1 Corinthians 6:12", text: "All things are lawful to me, but all things are not profitable.", link: "/dailyverses/sept13/dvsept24.html" },
-            "9-25": { title: "Effective prayer life depends on our walk.", reference: "1 Peter 3:7", text: "Likewise, you husbands, dwell with them according to knowledge.", link: "/dailyverses/sept13/dvsept25.html" },
-            "9-26": { title: "Prayer allows all resources of God.", reference: "Colossians 4:2", text: "Continue in prayer, and watch in the same with thanksgiving.", link: "/dailyverses/sept13/dvsept26.html" },
-            "9-27": { title: "The Holy Spirit draws us closer to Jesus.", reference: "Ephesians 4:30", text: "And grieve not the Holy Spirit of God, whereby you are sealed.", link: "/dailyverses/sept13/dvsept27.html" },
-            "9-28": { title: "The many aspects of the grace of God.", reference: "1 Peter 4:10", text: "As every man has received the gift, even so minister the same one to another.", link: "/dailyverses/sept13/dvsept28.html" },
-            "9-29": { title: "The responsibility of new life.", reference: "Philippians 2:12", text: "Work out your own salvation with fear and trembling.", link: "/dailyverses/sept13/dvsept29.html" },
-            "9-30": { title: "The power of God working in hearts.", reference: "Philippians 2:13", text: "For it is God who works in you both to will and to do of His good pleasure.", link: "/dailyverses/sept13/dvsept30.html" },
+            "9-1": { title: "Set free from futility of the law.", reference: "Galatians 3:24", text: "Wherefore the law was our schoolmaster to bring us to Christ.", link: "/daily-verses/september/day-1.html" },
+            "9-2": { title: "Faith alone is the way of holiness.", reference: "Galatians 3:25", text: "But after that faith is come, we are no longer under a schoolmaster.", link: "/daily-verses/september/day-2.html" },
+            "9-3": { title: "We have nothing to glory in except Christ.", reference: "1 Corinthians 1:31", text: "He that glories, let him glory in the Lord.", link: "/daily-verses/september/day-3.html" },
+            "9-4": { title: "Faith unites us with God's provision.", reference: "Romans 10:4", text: "For Christ is the end of the law for righteousness to everyone who believes.", link: "/daily-verses/september/day-4.html" },
+            "9-5": { title: "If we live holy, peace will be written.", reference: "Hebrews 12:14", text: "Follow peace with all, and holiness, without which no man shall see the Lord.", link: "/daily-verses/september/day-5.html" },
+            "9-6": { title: "Our hearts and minds are His sanctuary.", reference: "2 Corinthians 6:16", text: "For you are the temple of the living God.", link: "/daily-verses/september/day-6.html" },
+            "9-7": { title: "We dwell in His presence.", reference: "Hebrews 12:22", text: "But you are come unto mount Zion, and unto the city of the living God.", link: "/daily-verses/september/day-7.html" },
+            "9-8": { title: "They saw afar off; we enter in now.", reference: "Hebrews 11:13", text: "These all died in faith, not having received the promises, but having seen them afar off.", link: "/daily-verses/september/day-8.html" },
+            "9-9": { title: "We do not walk in darkness.", reference: "John 8:12", text: "I am the light of the world: he that follows Me shall not walk in darkness.", link: "/daily-verses/september/day-9.html" },
+            "9-10": { title: "We see Jesus.", reference: "Hebrews 2:9", text: "But we see Jesus, who was made a little lower than the angels for the suffering of death.", link: "/daily-verses/september/day-0.html" },
+            "9-11": { title: "New life; the power of God; union with Christ.", reference: "John 1:12", text: "But as many as received Him, to them gave He power to be the children of God.", link: "/daily-verses/september/day-1.html" },
+            "9-12": { title: "The approval of God rests upon seekers.", reference: "1 Corinthians 11:19", text: "For there must also be factions among you, that those who are approved may be made manifest.", link: "/daily-verses/september/day-2.html" },
+            "9-13": { title: "Our debt is to love others.", reference: "Romans 13:8", text: "Owe no one anything except to love one another.", link: "/daily-verses/september/day-3.html" },
+            "9-14": { title: "He will renew our strength.", reference: "2 Thessalonians 3:13", text: "But you, brethren, be not weary in well doing.", link: "/daily-verses/september/day-4.html" },
+            "9-15": { title: "Genuine faith is known by works.", reference: "James 2:17", text: "Even so faith, if it has not works, is dead, being alone.", link: "/daily-verses/september/day-5.html" },
+            "9-16": { title: "Now is the time to live for Jesus.", reference: "1 Thessalonians 5:6", text: "Therefore let us not sleep, as do others; but let us watch and be sober.", link: "/daily-verses/september/day-6.html" },
+            "9-17": { title: "It is Christ in us who overcomes.", reference: "1 John 5:4", text: "For whatsoever is born of God overcomes the world.", link: "/daily-verses/september/day-7.html" },
+            "9-18": { title: "The grace of the Lord Jesus is sufficient.", reference: "2 Corinthians 12:9", text: "My grace is sufficient for you: for My strength is made perfect in weakness.", link: "/daily-verses/september/day-8.html" },
+            "9-19": { title: "The Holy Spirit must be known by experience.", reference: "John 14:17", text: "Even the Spirit of truth; whom the world cannot receive, because it sees Him not.", link: "/daily-verses/september/day-9.html" },
+            "9-20": { title: "Christ alone; faith alone; grace alone.", reference: "Romans 5:2", text: "By whom also we have access by faith into this grace wherein we stand.", link: "/daily-verses/september/day-0.html" },
+            "9-21": { title: "It is in Christ we glory.", reference: "Romans 5:3", text: "And not only so, but we glory in tribulations also.", link: "/daily-verses/september/day-1.html" },
+            "9-22": { title: "The Christian life is more than doctrine.", reference: "Romans 5:4", text: "And patience, experience; and experience, hope.", link: "/daily-verses/september/day-2.html" },
+            "9-23": { title: "Our hope is in the promises of God.", reference: "Romans 5:5", text: "And hope makes not ashamed; because the love of God is shed abroad in our hearts.", link: "/daily-verses/september/day-3.html" },
+            "9-24": { title: "Freedom in Christ puts others first.", reference: "1 Corinthians 6:12", text: "All things are lawful to me, but all things are not profitable.", link: "/daily-verses/september/day-4.html" },
+            "9-25": { title: "Effective prayer life depends on our walk.", reference: "1 Peter 3:7", text: "Likewise, you husbands, dwell with them according to knowledge.", link: "/daily-verses/september/day-5.html" },
+            "9-26": { title: "Prayer allows all resources of God.", reference: "Colossians 4:2", text: "Continue in prayer, and watch in the same with thanksgiving.", link: "/daily-verses/september/day-6.html" },
+            "9-27": { title: "The Holy Spirit draws us closer to Jesus.", reference: "Ephesians 4:30", text: "And grieve not the Holy Spirit of God, whereby you are sealed.", link: "/daily-verses/september/day-7.html" },
+            "9-28": { title: "The many aspects of the grace of God.", reference: "1 Peter 4:10", text: "As every man has received the gift, even so minister the same one to another.", link: "/daily-verses/september/day-8.html" },
+            "9-29": { title: "The responsibility of new life.", reference: "Philippians 2:12", text: "Work out your own salvation with fear and trembling.", link: "/daily-verses/september/day-9.html" },
+            "9-30": { title: "The power of God working in hearts.", reference: "Philippians 2:13", text: "For it is God who works in you both to will and to do of His good pleasure.", link: "/daily-verses/september/day-0.html" },
             // October
-            "10-1": { title: "Take care so your heart does not harden.", reference: "Hebrews 3:13", text: "But exhort one another daily, while it is called Today.", link: "/dailyverses/oct13/dvoct1.html" },
-            "10-2": { title: "He will fulfil His purpose in our life.", reference: "Mark 9:23", text: "If you can believe, all things are possible to him that believes.", link: "/dailyverses/oct13/dvoct2.html" },
-            "10-3": { title: "The most precious gift is new life.", reference: "Mark 4:19", text: "And the cares of this world, and the deceitfulness of riches, choke the word.", link: "/dailyverses/oct13/dvoct3.html" },
-            "10-4": { title: "The love of Christ will seek reconciliation.", reference: "James 1:20", text: "For the wrath of man works not the righteousness of God.", link: "/dailyverses/oct13/dvoct4.html" },
-            "10-5": { title: "The word of truth; the power of God.", reference: "2 Corinthians 6:7", text: "By the word of truth, by the power of God.", link: "/dailyverses/oct13/dvoct5.html" },
-            "10-6": { title: "Love for Christ is a response to His love.", reference: "1 John 4:19", text: "We love Him, because He first loved us.", link: "/dailyverses/oct13/dvoct6.html" },
-            "10-7": { title: "Fellowship is the blessing of new life.", reference: "1 John 1:7", text: "But if we walk in the light, as He is in the light, we have fellowship.", link: "/dailyverses/oct13/dvoct7.html" },
-            "10-8": { title: "Jesus came to give us a new heart.", reference: "Mark 7:21", text: "For from within, out of the heart of men, proceed evil thoughts.", link: "/dailyverses/oct13/dvoct8.html" },
-            "10-9": { title: "We do not draw back because Christ is our life.", reference: "Hebrews 10:39", text: "But we are not of those who draw back unto destruction.", link: "/dailyverses/oct13/dvoct9.html" },
-            "10-10": { title: "The glorious heights of His riches.", reference: "1 Peter 5:10", text: "But the God of all grace, who has called us unto His eternal glory.", link: "/dailyverses/oct13/dvoct10.html" },
-            "10-11": { title: "Keeping a right perspective.", reference: "2 Corinthians 4:18", text: "While we look not at the things which are seen, but at the things which are not seen.", link: "/dailyverses/oct13/dvoct11.html" },
-            "10-12": { title: "The armour of God protects us.", reference: "Ephesians 6:11", text: "Put on the whole armour of God, that you may be able to stand.", link: "/dailyverses/oct13/dvoct12.html" },
-            "10-13": { title: "Life brings responsibility.", reference: "John 15:4", text: "Abide in Me, and I in you. As the branch cannot bear fruit of itself.", link: "/dailyverses/oct13/dvoct13.html" },
-            "10-14": { title: "Ask; seek; knock.", reference: "Luke 11:9", text: "Ask, and it shall be given you; seek, and you shall find.", link: "/dailyverses/oct13/dvoct14.html" },
-            "10-15": { title: "Prayer is the way God unites His work with us.", reference: "James 5:16", text: "The effectual fervent prayer of a righteous man avails much.", link: "/dailyverses/oct13/dvoct15.html" },
-            "10-16": { title: "We have a higher purpose.", reference: "Colossians 3:23", text: "And whatsoever you do, do it heartily, as to the Lord.", link: "/dailyverses/oct13/dvoct16.html" },
-            "10-17": { title: "Excitement and joy in those who know Him.", reference: "John 4:29", text: "Come, see a Man, who told me all things that I ever did.", link: "/dailyverses/oct13/dvoct17.html" },
-            "10-18": { title: "Sacrificial love one for another.", reference: "1 John 3:16", text: "By this we know the love of God, because He laid down His life for us.", link: "/dailyverses/oct13/dvoct18.html" },
-            "10-19": { title: "The love of Christ must control our words.", reference: "2 Timothy 2:24", text: "And the servant of the Lord must not strive; but be gentle unto all.", link: "/dailyverses/oct13/dvoct19.html" },
-            "10-20": { title: "In Christ we always triumph.", reference: "2 Corinthians 2:14", text: "Now thanks be unto God, who always causes us to triumph in Christ.", link: "/dailyverses/oct13/dvoct20.html" },
-            "10-21": { title: "Keeping guard on our thoughts.", reference: "1 Peter 1:13", text: "Wherefore gird up the loins of your mind, be sober.", link: "/dailyverses/oct13/dvoct21.html" },
-            "10-22": { title: "Peace of God acts as umpire in our life.", reference: "Colossians 3:15", text: "And let the peace of God rule in your hearts.", link: "/dailyverses/oct13/dvoct22.html" },
-            "10-23": { title: "We serve together; we need one another.", reference: "Galatians 6:9", text: "And let us not be weary in well doing.", link: "/dailyverses/oct13/dvoct23.html" },
-            "10-24": { title: "All of grace; all in Christ.", reference: "2 Timothy 1:9", text: "Who has saved us, and called us with a holy calling.", link: "/dailyverses/oct13/dvoct24.html" },
-            "10-25": { title: "Scripture our authority; new life our experience.", reference: "John 5:39", text: "Search the scriptures; for in them you think you have eternal life.", link: "/dailyverses/oct13/dvoct25.html" },
-            "10-26": { title: "Faith and love.", reference: "Ephesians 1:15", text: "Wherefore I also, after I heard of your faith in the Lord Jesus.", link: "/dailyverses/oct13/dvoct26.html" },
-            "10-27": { title: "The lusts we follow remove desire for truth.", reference: "John 8:44", text: "You are of your father the devil, and the lusts of your father you will do.", link: "/dailyverses/oct13/dvoct27.html" },
-            "10-28": { title: "The promises of God are our inheritance.", reference: "2 Corinthians 1:20", text: "For all the promises of God in Him are yes, and in Him Amen.", link: "/dailyverses/oct13/dvoct28.html" },
-            "10-29": { title: "Good works cannot remove a sinful nature.", reference: "Titus 3:5", text: "Not by works of righteousness which we have done, but according to His mercy He saved us.", link: "/dailyverses/oct13/dvoct29.html" },
-            "10-30": { title: "Righteous by faith in Christ alone.", reference: "Romans 1:17", text: "For therein is the righteousness of God revealed from faith to faith.", link: "/dailyverses/oct13/dvoct30.html" },
-            "10-31": { title: "The just shall live by faith.", reference: "Habakkuk 2:4", text: "Behold, his soul which is lifted up is not upright in him: but the just shall live by his faith.", link: "/dailyverses/oct13/dvoct31.html" },
+            "10-1": { title: "Take care so your heart does not harden.", reference: "Hebrews 3:13", text: "But exhort one another daily, while it is called Today.", link: "/daily-verses/october/day-1.html" },
+            "10-2": { title: "He will fulfil His purpose in our life.", reference: "Mark 9:23", text: "If you can believe, all things are possible to him that believes.", link: "/daily-verses/october/day-2.html" },
+            "10-3": { title: "The most precious gift is new life.", reference: "Mark 4:19", text: "And the cares of this world, and the deceitfulness of riches, choke the word.", link: "/daily-verses/october/day-3.html" },
+            "10-4": { title: "The love of Christ will seek reconciliation.", reference: "James 1:20", text: "For the wrath of man works not the righteousness of God.", link: "/daily-verses/october/day-4.html" },
+            "10-5": { title: "The word of truth; the power of God.", reference: "2 Corinthians 6:7", text: "By the word of truth, by the power of God.", link: "/daily-verses/october/day-5.html" },
+            "10-6": { title: "Love for Christ is a response to His love.", reference: "1 John 4:19", text: "We love Him, because He first loved us.", link: "/daily-verses/october/day-6.html" },
+            "10-7": { title: "Fellowship is the blessing of new life.", reference: "1 John 1:7", text: "But if we walk in the light, as He is in the light, we have fellowship.", link: "/daily-verses/october/day-7.html" },
+            "10-8": { title: "Jesus came to give us a new heart.", reference: "Mark 7:21", text: "For from within, out of the heart of men, proceed evil thoughts.", link: "/daily-verses/october/day-8.html" },
+            "10-9": { title: "We do not draw back because Christ is our life.", reference: "Hebrews 10:39", text: "But we are not of those who draw back unto destruction.", link: "/daily-verses/october/day-9.html" },
+            "10-10": { title: "The glorious heights of His riches.", reference: "1 Peter 5:10", text: "But the God of all grace, who has called us unto His eternal glory.", link: "/daily-verses/october/day-0.html" },
+            "10-11": { title: "Keeping a right perspective.", reference: "2 Corinthians 4:18", text: "While we look not at the things which are seen, but at the things which are not seen.", link: "/daily-verses/october/day-1.html" },
+            "10-12": { title: "The armour of God protects us.", reference: "Ephesians 6:11", text: "Put on the whole armour of God, that you may be able to stand.", link: "/daily-verses/october/day-2.html" },
+            "10-13": { title: "Life brings responsibility.", reference: "John 15:4", text: "Abide in Me, and I in you. As the branch cannot bear fruit of itself.", link: "/daily-verses/october/day-3.html" },
+            "10-14": { title: "Ask; seek; knock.", reference: "Luke 11:9", text: "Ask, and it shall be given you; seek, and you shall find.", link: "/daily-verses/october/day-4.html" },
+            "10-15": { title: "Prayer is the way God unites His work with us.", reference: "James 5:16", text: "The effectual fervent prayer of a righteous man avails much.", link: "/daily-verses/october/day-5.html" },
+            "10-16": { title: "We have a higher purpose.", reference: "Colossians 3:23", text: "And whatsoever you do, do it heartily, as to the Lord.", link: "/daily-verses/october/day-6.html" },
+            "10-17": { title: "Excitement and joy in those who know Him.", reference: "John 4:29", text: "Come, see a Man, who told me all things that I ever did.", link: "/daily-verses/october/day-7.html" },
+            "10-18": { title: "Sacrificial love one for another.", reference: "1 John 3:16", text: "By this we know the love of God, because He laid down His life for us.", link: "/daily-verses/october/day-8.html" },
+            "10-19": { title: "The love of Christ must control our words.", reference: "2 Timothy 2:24", text: "And the servant of the Lord must not strive; but be gentle unto all.", link: "/daily-verses/october/day-9.html" },
+            "10-20": { title: "In Christ we always triumph.", reference: "2 Corinthians 2:14", text: "Now thanks be unto God, who always causes us to triumph in Christ.", link: "/daily-verses/october/day-0.html" },
+            "10-21": { title: "Keeping guard on our thoughts.", reference: "1 Peter 1:13", text: "Wherefore gird up the loins of your mind, be sober.", link: "/daily-verses/october/day-1.html" },
+            "10-22": { title: "Peace of God acts as umpire in our life.", reference: "Colossians 3:15", text: "And let the peace of God rule in your hearts.", link: "/daily-verses/october/day-2.html" },
+            "10-23": { title: "We serve together; we need one another.", reference: "Galatians 6:9", text: "And let us not be weary in well doing.", link: "/daily-verses/october/day-3.html" },
+            "10-24": { title: "All of grace; all in Christ.", reference: "2 Timothy 1:9", text: "Who has saved us, and called us with a holy calling.", link: "/daily-verses/october/day-4.html" },
+            "10-25": { title: "Scripture our authority; new life our experience.", reference: "John 5:39", text: "Search the scriptures; for in them you think you have eternal life.", link: "/daily-verses/october/day-5.html" },
+            "10-26": { title: "Faith and love.", reference: "Ephesians 1:15", text: "Wherefore I also, after I heard of your faith in the Lord Jesus.", link: "/daily-verses/october/day-6.html" },
+            "10-27": { title: "The lusts we follow remove desire for truth.", reference: "John 8:44", text: "You are of your father the devil, and the lusts of your father you will do.", link: "/daily-verses/october/day-7.html" },
+            "10-28": { title: "The promises of God are our inheritance.", reference: "2 Corinthians 1:20", text: "For all the promises of God in Him are yes, and in Him Amen.", link: "/daily-verses/october/day-8.html" },
+            "10-29": { title: "Good works cannot remove a sinful nature.", reference: "Titus 3:5", text: "Not by works of righteousness which we have done, but according to His mercy He saved us.", link: "/daily-verses/october/day-9.html" },
+            "10-30": { title: "Righteous by faith in Christ alone.", reference: "Romans 1:17", text: "For therein is the righteousness of God revealed from faith to faith.", link: "/daily-verses/october/day-0.html" },
+            "10-31": { title: "The just shall live by faith.", reference: "Habakkuk 2:4", text: "Behold, his soul which is lifted up is not upright in him: but the just shall live by his faith.", link: "/daily-verses/october/day-1.html" },
             // November
-            "11-1": { title: "Faith looks to the sufficiency of Christ.", reference: "James 2:23", text: "Abraham believed God, and it was imputed unto him for righteousness.", link: "/dailyverses/nov13/dvnov1.html" },
-            "11-2": { title: "Chosen of the Father; accepted in the Son.", reference: "John 6:37", text: "All that the Father gives Me shall come to Me.", link: "/dailyverses/nov13/dvnov2.html" },
-            "11-3": { title: "Holiness is His work in us.", reference: "Galatians 5:22-23", text: "But the fruit of the Spirit is love, joy, peace, longsuffering.", link: "/dailyverses/nov13/dvnov3.html" },
-            "11-4": { title: "Live worthy of the calling.", reference: "2 Thessalonians 1:11", text: "Wherefore also we pray always for you, that our God would count you worthy.", link: "/dailyverses/nov13/dvnov4.html" },
-            "11-5": { title: "The gospel of Christ is the power of God.", reference: "Galatians 1:11", text: "But I certify you, brethren, that the gospel which was preached by me is not according to man.", link: "/dailyverses/nov13/dvnov5.html" },
-            "11-6": { title: "The Christian life is a spiritual warfare.", reference: "Ephesians 6:12", text: "For we wrestle not against flesh and blood.", link: "/dailyverses/nov13/dvnov6.html" },
-            "11-7": { title: "The chastening of the Lord is precious.", reference: "Hebrews 12:6", text: "For whom the Lord loves He chastens.", link: "/dailyverses/nov13/dvnov7.html" },
-            "11-8": { title: "The Christian life is a spiritual warfare.", reference: "2 Peter 3:14", text: "Therefore, beloved, be diligent that you may be found of Him in peace.", link: "/dailyverses/nov13/dvnov8.html" },
-            "11-9": { title: "The Christian life is a spiritual warfare.", reference: "Ephesians 6:13", text: "Wherefore take unto you the whole armour of God.", link: "/dailyverses/nov13/dvnov9.html" },
-            "11-10": { title: "The Christian life is a spiritual warfare.", reference: "Ephesians 4:23", text: "And be renewed in the spirit of your mind.", link: "/dailyverses/nov13/dvnov10.html" },
-            "11-11": { title: "His life dwelling in us.", reference: "Matthew 5:16", text: "Let your light so shine before men.", link: "/dailyverses/nov13/dvnov11.html" },
-            "11-12": { title: "The harvest must be brought in.", reference: "Matthew 9:37", text: "The harvest truly is plenteous, but the labourers are few.", link: "/dailyverses/nov13/dvnov12.html" },
-            "11-13": { title: "All the promises of God are our inheritance.", reference: "2 Corinthians 7:1", text: "Having therefore these promises, dearly beloved, let us cleanse ourselves.", link: "/dailyverses/nov13/dvnov13.html" },
-            "11-14": { title: "The attacks of the enemy come in different ways.", reference: "Ephesians 6:16", text: "Above all, taking the shield of faith.", link: "/dailyverses/nov13/dvnov14.html" },
-            "11-15": { title: "His purpose will be fulfilled in our life.", reference: "2 Timothy 4:18", text: "And the Lord shall deliver me from every evil work.", link: "/dailyverses/nov13/dvnov15.html" },
-            "11-16": { title: "We look for the day of His appearing.", reference: "Titus 2:13", text: "Looking for that blessed hope, and the glorious appearing.", link: "/dailyverses/nov13/dvnov16.html" },
-            "11-17": { title: "Everything we do is important.", reference: "Colossians 3:17", text: "And whatsoever you do in word or deed, do all in the name of the Lord Jesus.", link: "/dailyverses/nov13/dvnov17.html" },
-            "11-18": { title: "We need fellowship with those who love Jesus.", reference: "1 Corinthians 15:33", text: "Be not deceived: evil company corrupts good manners.", link: "/dailyverses/nov13/dvnov18.html" },
-            "11-19": { title: "True worship takes place in the heart.", reference: "Revelation 2:25", text: "But that which you have already hold fast till I come.", link: "/dailyverses/nov13/dvnov19.html" },
-            "11-20": { title: "Our faith is in Christ and not in ourselves.", reference: "Revelation 12:11", text: "And they overcame him by the blood of the Lamb.", link: "/dailyverses/nov13/dvnov20.html" },
-            "11-21": { title: "The gift of God in Jesus Christ is open to all.", reference: "Ephesians 2:13", text: "But now in Christ Jesus you who sometimes were far off are made nigh.", link: "/dailyverses/nov13/dvnov21.html" },
-            "11-22": { title: "The foolishness of preaching and the authority.", reference: "1 Corinthians 1:21", text: "For after that in the wisdom of God the world by wisdom knew not God.", link: "/dailyverses/nov13/dvnov22.html" },
-            "11-23": { title: "The true character of our faith clearly seen.", reference: "1 Peter 1:7", text: "The trial of your faith, being much more precious than gold.", link: "/dailyverses/nov13/dvnov23.html" },
-            "11-24": { title: "We cannot serve the Lord and hold on to lust.", reference: "Romans 1:24", text: "Wherefore God also gave them up to uncleanness through the lusts of their own hearts.", link: "/dailyverses/nov13/dvnov24.html" },
-            "11-25": { title: "Our prayer life is the outworking of His life.", reference: "1 John 3:22", text: "And whatsoever we ask, we receive of Him.", link: "/dailyverses/nov13/dvnov25.html" },
-            "11-26": { title: "Only the Holy Spirit changes hearts.", reference: "Galatians 5:18", text: "But if you are led of the Spirit, you are not under the law.", link: "/dailyverses/nov13/dvnov26.html" },
-            "11-27": { title: "He loved us when we were far from Him.", reference: "Romans 10:20", text: "I was found by those who sought Me not.", link: "/dailyverses/nov13/dvnov27.html" },
-            "11-28": { title: "The Christian life is a relationship.", reference: "1 Corinthians 6:17", text: "But he that is joined unto the Lord is one spirit.", link: "/dailyverses/nov13/dvnov28.html" },
-            "11-29": { title: "Times of persecution are opportunities.", reference: "Philippians 1:29", text: "For unto you it is given in the behalf of Christ, not only to believe on Him, but also to suffer.", link: "/dailyverses/nov13/dvnov29.html" },
-            "11-30": { title: "It is the heart that condemns.", reference: "John 3:19", text: "And this is the condemnation, that light is come into the world, and men loved darkness.", link: "/dailyverses/nov13/dvnov30.html" },
+            "11-1": { title: "Faith looks to the sufficiency of Christ.", reference: "James 2:23", text: "Abraham believed God, and it was imputed unto him for righteousness.", link: "/daily-verses/november/day-1.html" },
+            "11-2": { title: "Chosen of the Father; accepted in the Son.", reference: "John 6:37", text: "All that the Father gives Me shall come to Me.", link: "/daily-verses/november/day-2.html" },
+            "11-3": { title: "Holiness is His work in us.", reference: "Galatians 5:22-23", text: "But the fruit of the Spirit is love, joy, peace, longsuffering.", link: "/daily-verses/november/day-3.html" },
+            "11-4": { title: "Live worthy of the calling.", reference: "2 Thessalonians 1:11", text: "Wherefore also we pray always for you, that our God would count you worthy.", link: "/daily-verses/november/day-4.html" },
+            "11-5": { title: "The gospel of Christ is the power of God.", reference: "Galatians 1:11", text: "But I certify you, brethren, that the gospel which was preached by me is not according to man.", link: "/daily-verses/november/day-5.html" },
+            "11-6": { title: "The Christian life is a spiritual warfare.", reference: "Ephesians 6:12", text: "For we wrestle not against flesh and blood.", link: "/daily-verses/november/day-6.html" },
+            "11-7": { title: "The chastening of the Lord is precious.", reference: "Hebrews 12:6", text: "For whom the Lord loves He chastens.", link: "/daily-verses/november/day-7.html" },
+            "11-8": { title: "The Christian life is a spiritual warfare.", reference: "2 Peter 3:14", text: "Therefore, beloved, be diligent that you may be found of Him in peace.", link: "/daily-verses/november/day-8.html" },
+            "11-9": { title: "The Christian life is a spiritual warfare.", reference: "Ephesians 6:13", text: "Wherefore take unto you the whole armour of God.", link: "/daily-verses/november/day-9.html" },
+            "11-10": { title: "The Christian life is a spiritual warfare.", reference: "Ephesians 4:23", text: "And be renewed in the spirit of your mind.", link: "/daily-verses/november/day-0.html" },
+            "11-11": { title: "His life dwelling in us.", reference: "Matthew 5:16", text: "Let your light so shine before men.", link: "/daily-verses/november/day-1.html" },
+            "11-12": { title: "The harvest must be brought in.", reference: "Matthew 9:37", text: "The harvest truly is plenteous, but the labourers are few.", link: "/daily-verses/november/day-2.html" },
+            "11-13": { title: "All the promises of God are our inheritance.", reference: "2 Corinthians 7:1", text: "Having therefore these promises, dearly beloved, let us cleanse ourselves.", link: "/daily-verses/november/day-3.html" },
+            "11-14": { title: "The attacks of the enemy come in different ways.", reference: "Ephesians 6:16", text: "Above all, taking the shield of faith.", link: "/daily-verses/november/day-4.html" },
+            "11-15": { title: "His purpose will be fulfilled in our life.", reference: "2 Timothy 4:18", text: "And the Lord shall deliver me from every evil work.", link: "/daily-verses/november/day-5.html" },
+            "11-16": { title: "We look for the day of His appearing.", reference: "Titus 2:13", text: "Looking for that blessed hope, and the glorious appearing.", link: "/daily-verses/november/day-6.html" },
+            "11-17": { title: "Everything we do is important.", reference: "Colossians 3:17", text: "And whatsoever you do in word or deed, do all in the name of the Lord Jesus.", link: "/daily-verses/november/day-7.html" },
+            "11-18": { title: "We need fellowship with those who love Jesus.", reference: "1 Corinthians 15:33", text: "Be not deceived: evil company corrupts good manners.", link: "/daily-verses/november/day-8.html" },
+            "11-19": { title: "True worship takes place in the heart.", reference: "Revelation 2:25", text: "But that which you have already hold fast till I come.", link: "/daily-verses/november/day-9.html" },
+            "11-20": { title: "Our faith is in Christ and not in ourselves.", reference: "Revelation 12:11", text: "And they overcame him by the blood of the Lamb.", link: "/daily-verses/november/day-0.html" },
+            "11-21": { title: "The gift of God in Jesus Christ is open to all.", reference: "Ephesians 2:13", text: "But now in Christ Jesus you who sometimes were far off are made nigh.", link: "/daily-verses/november/day-1.html" },
+            "11-22": { title: "The foolishness of preaching and the authority.", reference: "1 Corinthians 1:21", text: "For after that in the wisdom of God the world by wisdom knew not God.", link: "/daily-verses/november/day-2.html" },
+            "11-23": { title: "The true character of our faith clearly seen.", reference: "1 Peter 1:7", text: "The trial of your faith, being much more precious than gold.", link: "/daily-verses/november/day-3.html" },
+            "11-24": { title: "We cannot serve the Lord and hold on to lust.", reference: "Romans 1:24", text: "Wherefore God also gave them up to uncleanness through the lusts of their own hearts.", link: "/daily-verses/november/day-4.html" },
+            "11-25": { title: "Our prayer life is the outworking of His life.", reference: "1 John 3:22", text: "And whatsoever we ask, we receive of Him.", link: "/daily-verses/november/day-5.html" },
+            "11-26": { title: "Only the Holy Spirit changes hearts.", reference: "Galatians 5:18", text: "But if you are led of the Spirit, you are not under the law.", link: "/daily-verses/november/day-6.html" },
+            "11-27": { title: "He loved us when we were far from Him.", reference: "Romans 10:20", text: "I was found by those who sought Me not.", link: "/daily-verses/november/day-7.html" },
+            "11-28": { title: "The Christian life is a relationship.", reference: "1 Corinthians 6:17", text: "But he that is joined unto the Lord is one spirit.", link: "/daily-verses/november/day-8.html" },
+            "11-29": { title: "Times of persecution are opportunities.", reference: "Philippians 1:29", text: "For unto you it is given in the behalf of Christ, not only to believe on Him, but also to suffer.", link: "/daily-verses/november/day-9.html" },
+            "11-30": { title: "It is the heart that condemns.", reference: "John 3:19", text: "And this is the condemnation, that light is come into the world, and men loved darkness.", link: "/daily-verses/november/day-0.html" },
             // December
-            "12-1": { title: "Put on the new life in Christ", reference: "Romans 6:11", text: "Likewise you also reckon yourselves to be dead indeed unto sin, but alive unto God.", link: "/dailyverses/dec13/dvdec1.html" },
-            "12-2": { title: "United in spirit and faith", reference: "Philippians 1:27", text: "That you stand fast in one spirit, with one mind striving together for the faith.", link: "/dailyverses/dec13/dvdec2.html" },
-            "12-3": { title: "Give thanks for Christ in us", reference: "Ephesians 5:20", text: "Giving thanks always for all things unto God and the Father.", link: "/dailyverses/dec13/dvdec3.html" },
-            "12-4": { title: "The Word endures forever", reference: "1 Peter 1:25", text: "But the word of the Lord endures forever.", link: "/dailyverses/dec13/dvdec4.html" },
-            "12-5": { title: "So great salvation", reference: "Hebrews 2:3", text: "How shall we escape, if we neglect so great salvation.", link: "/dailyverses/dec13/dvdec5.html" },
-            "12-6": { title: "God sent forth His Son", reference: "Galatians 4:4", text: "But when the fulness of the time was come, God sent forth His Son.", link: "/dailyverses/dec13/dvdec6.html" },
-            "12-7": { title: "Nothing is impossible with God", reference: "Luke 1:37", text: "For with God nothing shall be impossible.", link: "/dailyverses/dec13/dvdec7.html" },
-            "12-8": { title: "Mary magnifies the Lord", reference: "Luke 1:46", text: "And Mary said, My soul does magnify the Lord.", link: "/dailyverses/dec13/dvdec8.html" },
-            "12-9": { title: "Rejoice in God our Saviour", reference: "Luke 1:47", text: "And my spirit has rejoiced in God my Saviour.", link: "/dailyverses/dec13/dvdec9.html" },
-            "12-10": { title: "He who is mighty", reference: "Luke 1:49", text: "For He who is mighty has done to me great things; and holy is His name.", link: "/dailyverses/dec13/dvdec10.html" },
-            "12-11": { title: "His mercy endures", reference: "Luke 1:50", text: "And His mercy is on those who fear Him from generation to generation.", link: "/dailyverses/dec13/dvdec11.html" },
-            "12-12": { title: "Strength in weakness", reference: "Luke 1:51", text: "He has shown strength with His arm; He has scattered the proud.", link: "/dailyverses/dec13/dvdec12.html" },
-            "12-13": { title: "He lifts the lowly", reference: "Luke 1:52", text: "He has put down the mighty from their thrones, and exalted them of low degree.", link: "/dailyverses/dec13/dvdec13.html" },
-            "12-14": { title: "God's unspeakable gift", reference: "2 Corinthians 9:15", text: "Thanks be unto God for His unspeakable gift.", link: "/dailyverses/dec13/dvdec14.html" },
-            "12-15": { title: "Love put on humility", reference: "Philippians 2:7", text: "But made Himself of no reputation, and took upon Him the form of a servant.", link: "/dailyverses/dec13/dvdec15.html" },
-            "12-16": { title: "Good tidings of great joy", reference: "Luke 2:10", text: "Fear not: for, behold, I bring you good tidings of great joy.", link: "/dailyverses/dec13/dvdec16.html" },
-            "12-17": { title: "Never ashamed of the gospel", reference: "2 Timothy 1:8", text: "Therefore do not be ashamed of the testimony of our Lord.", link: "/dailyverses/dec13/dvdec17.html" },
-            "12-18": { title: "Immanuel - God with us", reference: "Matthew 1:23", text: "Behold, a virgin shall be with child, and shall bear a Son, and they shall call his name Immanuel.", link: "/dailyverses/dec13/dvdec18.html" },
-            "12-19": { title: "A light to the Gentiles", reference: "Luke 2:32", text: "A light to lighten the Gentiles, and the glory of Your people Israel.", link: "/dailyverses/dec13/dvdec19.html" },
-            "12-20": { title: "The foundation of the church", reference: "Matthew 16:18", text: "Upon this rock I will build My church; and the gates of hell shall not prevail against it.", link: "/dailyverses/dec13/dvdec20.html" },
-            "12-21": { title: "The Word made flesh", reference: "John 1:14", text: "And the Word was made flesh, and dwelt among us.", link: "/dailyverses/dec13/dvdec21.html" },
-            "12-22": { title: "Peace on earth", reference: "Luke 2:14", text: "Glory to God in the highest, and on earth peace, good will toward men.", link: "/dailyverses/dec13/dvdec22.html" },
-            "12-23": { title: "The life of Christ in us", reference: "John 1:4", text: "In Him was life; and the life was the light of men.", link: "/dailyverses/dec13/dvdec23.html" },
-            "12-24": { title: "Saved by grace through faith", reference: "Ephesians 2:8", text: "For by grace are you saved through faith; and that not of yourselves.", link: "/dailyverses/dec13/dvdec24.html" },
-            "12-25": { title: "No greater gift than Jesus", reference: "John 3:16", text: "For God so loved the world, that He gave His only begotten Son.", link: "/dailyverses/dec13/dvdec25.html" },
-            "12-26": { title: "Looking for His appearing", reference: "Hebrews 9:28", text: "To those who look for Him shall He appear the second time without sin unto salvation.", link: "/dailyverses/dec13/dvdec26.html" },
-            "12-27": { title: "Faithful in little things", reference: "Luke 16:10", text: "He who is faithful in what is least is faithful also in much.", link: "/dailyverses/dec13/dvdec27.html" },
-            "12-28": { title: "The power of God in us", reference: "2 Corinthians 13:11", text: "Be perfect, be of good comfort, be of one mind, live in peace.", link: "/dailyverses/dec13/dvdec28.html" },
-            "12-29": { title: "Victory in Christ", reference: "1 Corinthians 15:57", text: "But thanks be to God, who gives us the victory through our Lord Jesus Christ.", link: "/dailyverses/dec13/dvdec29.html" },
-            "12-30": { title: "Always victorious", reference: "1 Corinthians 15:57", text: "But thanks be to God, who gives us the victory through our Lord Jesus Christ.", link: "/dailyverses/dec13/dvdec30.html" },
-            "12-31": { title: "Created for good works", reference: "Ephesians 2:10", text: "For we are His workmanship, created in Christ Jesus unto good works.", link: "/dailyverses/dec13/dvdec31.html" }
+            "12-1": { title: "Put on the new life in Christ", reference: "Romans 6:11", text: "Likewise you also reckon yourselves to be dead indeed unto sin, but alive unto God.", link: "/daily-verses/december/day-1.html" },
+            "12-2": { title: "United in spirit and faith", reference: "Philippians 1:27", text: "That you stand fast in one spirit, with one mind striving together for the faith.", link: "/daily-verses/december/day-2.html" },
+            "12-3": { title: "Give thanks for Christ in us", reference: "Ephesians 5:20", text: "Giving thanks always for all things unto God and the Father.", link: "/daily-verses/december/day-3.html" },
+            "12-4": { title: "The Word endures forever", reference: "1 Peter 1:25", text: "But the word of the Lord endures forever.", link: "/daily-verses/december/day-4.html" },
+            "12-5": { title: "So great salvation", reference: "Hebrews 2:3", text: "How shall we escape, if we neglect so great salvation.", link: "/daily-verses/december/day-5.html" },
+            "12-6": { title: "God sent forth His Son", reference: "Galatians 4:4", text: "But when the fulness of the time was come, God sent forth His Son.", link: "/daily-verses/december/day-6.html" },
+            "12-7": { title: "Nothing is impossible with God", reference: "Luke 1:37", text: "For with God nothing shall be impossible.", link: "/daily-verses/december/day-7.html" },
+            "12-8": { title: "Mary magnifies the Lord", reference: "Luke 1:46", text: "And Mary said, My soul does magnify the Lord.", link: "/daily-verses/december/day-8.html" },
+            "12-9": { title: "Rejoice in God our Saviour", reference: "Luke 1:47", text: "And my spirit has rejoiced in God my Saviour.", link: "/daily-verses/december/day-9.html" },
+            "12-10": { title: "He who is mighty", reference: "Luke 1:49", text: "For He who is mighty has done to me great things; and holy is His name.", link: "/daily-verses/december/day-10.html" },
+            "12-11": { title: "His mercy endures", reference: "Luke 1:50", text: "And His mercy is on those who fear Him from generation to generation.", link: "/daily-verses/december/day-11.html" },
+            "12-12": { title: "Strength in weakness", reference: "Luke 1:51", text: "He has shown strength with His arm; He has scattered the proud.", link: "/daily-verses/december/day-12.html" },
+            "12-13": { title: "He lifts the lowly", reference: "Luke 1:52", text: "He has put down the mighty from their thrones, and exalted them of low degree.", link: "/daily-verses/december/day-13.html" },
+            "12-14": { title: "God's unspeakable gift", reference: "2 Corinthians 9:15", text: "Thanks be unto God for His unspeakable gift.", link: "/daily-verses/december/day-14.html" },
+            "12-15": { title: "Love put on humility", reference: "Philippians 2:7", text: "But made Himself of no reputation, and took upon Him the form of a servant.", link: "/daily-verses/december/day-15.html" },
+            "12-16": { title: "Good tidings of great joy", reference: "Luke 2:10", text: "Fear not: for, behold, I bring you good tidings of great joy.", link: "/daily-verses/december/day-16.html" },
+            "12-17": { title: "Never ashamed of the gospel", reference: "2 Timothy 1:8", text: "Therefore do not be ashamed of the testimony of our Lord.", link: "/daily-verses/december/day-17.html" },
+            "12-18": { title: "Immanuel - God with us", reference: "Matthew 1:23", text: "Behold, a virgin shall be with child, and shall bear a Son, and they shall call his name Immanuel.", link: "/daily-verses/december/day-18.html" },
+            "12-19": { title: "A light to the Gentiles", reference: "Luke 2:32", text: "A light to lighten the Gentiles, and the glory of Your people Israel.", link: "/daily-verses/december/day-19.html" },
+            "12-20": { title: "The foundation of the church", reference: "Matthew 16:18", text: "Upon this rock I will build My church; and the gates of hell shall not prevail against it.", link: "/daily-verses/december/day-20.html" },
+            "12-21": { title: "The Word made flesh", reference: "John 1:14", text: "And the Word was made flesh, and dwelt among us.", link: "/daily-verses/december/day-21.html" },
+            "12-22": { title: "Peace on earth", reference: "Luke 2:14", text: "Glory to God in the highest, and on earth peace, good will toward men.", link: "/daily-verses/december/day-22.html" },
+            "12-23": { title: "The life of Christ in us", reference: "John 1:4", text: "In Him was life; and the life was the light of men.", link: "/daily-verses/december/day-23.html" },
+            "12-24": { title: "Saved by grace through faith", reference: "Ephesians 2:8", text: "For by grace are you saved through faith; and that not of yourselves.", link: "/daily-verses/december/day-24.html" },
+            "12-25": { title: "No greater gift than Jesus", reference: "John 3:16", text: "For God so loved the world, that He gave His only begotten Son.", link: "/daily-verses/december/day-25.html" },
+            "12-26": { title: "Looking for His appearing", reference: "Hebrews 9:28", text: "To those who look for Him shall He appear the second time without sin unto salvation.", link: "/daily-verses/december/day-26.html" },
+            "12-27": { title: "Faithful in little things", reference: "Luke 16:10", text: "He who is faithful in what is least is faithful also in much.", link: "/daily-verses/december/day-27.html" },
+            "12-28": { title: "The power of God in us", reference: "2 Corinthians 13:11", text: "Be perfect, be of good comfort, be of one mind, live in peace.", link: "/daily-verses/december/day-28.html" },
+            "12-29": { title: "Victory in Christ", reference: "1 Corinthians 15:57", text: "But thanks be to God, who gives us the victory through our Lord Jesus Christ.", link: "/daily-verses/december/day-29.html" },
+            "12-30": { title: "Always victorious", reference: "1 Corinthians 15:57", text: "But thanks be to God, who gives us the victory through our Lord Jesus Christ.", link: "/daily-verses/december/day-30.html" },
+            "12-31": { title: "Created for good works", reference: "Ephesians 2:10", text: "For we are His workmanship, created in Christ Jesus unto good works.", link: "/daily-verses/december/day-31.html" }
         };
 
         const calendarFallbackVerses = [
@@ -1021,9 +895,6 @@
             nextBtn.style.backgroundColor = 'white';
             nextBtn.style.borderColor = '#e5e7eb';
             nextBtn.style.color = '#6b7280';
-
-            // Update hero banner to match month
-            updateHeroBanner();
 
             // Rebuild month selector with current highlighting
             buildMonthSelector();

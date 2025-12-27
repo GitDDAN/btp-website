@@ -1,97 +1,89 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+
+<html class="scroll-smooth" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Random Bible verse generator - Get inspired with verses from Scripture">
-    <title>Random Verse Generator | Bible Teaching Program</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-09FW4XY50E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-09FW4XY50E');
+</script>
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Random Bible verse generator - Get inspired with verses from Scripture" name="description"/>
+<title>Random Verse Generator | Bible Teaching Program</title><meta content="website" property="og:type"/><meta content="https://bibleteachingprogram.org/random-verse.html" property="og:url"/><meta content="Random Verse Generator | Bible Teaching Program" property="og:title"/><meta content="Random Bible verse generator - Get inspired with verses from Scripture" property="og:description"/><meta content="https://bibleteachingprogram.org/images/hero-banner.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Random Verse Generator | Bible Teaching Program" name="twitter:title"/><meta content="Random Bible verse generator - Get inspired with verses from Scripture" name="twitter:description"/><meta content="https://bibleteachingprogram.org/images/hero-banner.png" name="twitter:image"/>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind with Brand Colors -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'primary': {
-                            '50': '#f0f7ff',
-                            '100': '#e0effe',
-                            '600': '#006fc7',
-                            '700': '#0058a2',
-                            '800': '#004a85',
-                            '900': '#003d6e',
-                        }
+                        'ancient-ink': '#1C1D37',
+                        'heritage-gold': '#CBA378',
+                        'living-sage': '#7F9A83',
+                        'parchment': '#F9F7F2',
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'Georgia', 'serif'],
                     }
                 }
             }
         }
     </script>
+<link href="/css/brand.css" rel="stylesheet"/>
 </head>
-<body class="bg-gradient-to-br from-violet-600 via-purple-700 to-indigo-800 min-h-screen">
-    <!-- Navigation -->
-    <nav class="bg-white/10 backdrop-blur-sm border-b border-white/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <a href="/" class="flex items-center gap-3">
-                    <div class="w-10 h-10 bg-white/20 text-white rounded-lg flex items-center justify-center font-bold text-lg">BTP</div>
-                    <div class="hidden md:block">
-                        <div class="font-bold text-lg text-white">Bible Teaching Program</div>
-                        <div class="text-xs text-white/70">Biblical Education & Courses</div>
-                    </div>
-                </a>
-                <div class="flex items-center gap-4">
-                    <a href="/bible.html" class="text-sm font-medium text-white/80 hover:text-white">Bible</a>
-                    <a href="/dailyverses.html" class="text-sm font-medium text-white/80 hover:text-white">Daily Verses</a>
-                    <a href="/" class="text-sm font-medium text-white/80 hover:text-white">Home</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Main Content -->
-    <main class="flex items-center justify-center min-h-[calc(100vh-64px)] px-4 py-12">
-        <div class="max-w-2xl w-full">
-            <!-- Verse Card -->
-            <div id="verse-card" class="bg-white rounded-2xl sm:rounded-3xl shadow-2xl p-5 sm:p-8 md:p-12 text-center">
-                <div class="text-4xl sm:text-6xl md:text-7xl mb-4 sm:mb-6">&#128214;</div>
-
-                <blockquote id="verse-text" class="text-base sm:text-xl md:text-2xl lg:text-3xl text-gray-800 italic leading-relaxed mb-4 sm:mb-6">
+<body class="bg-ancient-ink min-h-screen">
+<!-- Navigation (loaded from component) -->
+<div id="nav-placeholder"></div>
+<!-- Main Content -->
+<main class="flex items-center justify-center min-h-[calc(100vh-64px)] px-4 py-12">
+<div class="max-w-2xl w-full">
+<!-- Verse Card -->
+<div class="bg-white rounded-2xl sm:rounded-3xl shadow-2xl p-5 sm:p-8 md:p-12 text-center" id="verse-card">
+<div class="text-4xl sm:text-6xl md:text-7xl mb-4 sm:mb-6">📖</div>
+<blockquote class="text-base sm:text-xl md:text-2xl lg:text-3xl text-gray-800 italic leading-relaxed mb-4 sm:mb-6" id="verse-text">
                     Loading...
                 </blockquote>
-
-                <p id="verse-ref" class="text-base sm:text-lg md:text-xl font-bold text-primary-700 mb-2"></p>
-                <p id="verse-title" class="text-xs sm:text-sm text-gray-500 mb-6 sm:mb-8"></p>
-
-                <div class="flex flex-col sm:flex-row gap-3 justify-center">
-                    <button onclick="getRandomVerse()" class="px-4 sm:px-6 py-3 bg-gradient-to-r from-violet-600 to-purple-600 text-white rounded-xl font-bold text-sm sm:text-base hover:from-violet-700 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 whitespace-nowrap">
-                        <span class="text-lg sm:text-xl">&#127922;</span>
+<p class="text-base sm:text-lg md:text-xl font-bold text-heritage-gold mb-2" id="verse-ref"></p>
+<p class="text-xs sm:text-sm text-gray-500 mb-6 sm:mb-8" id="verse-title"></p>
+<div class="flex flex-col sm:flex-row gap-3 justify-center">
+<button class="px-4 sm:px-6 py-3 bg-ancient-ink text-white rounded-xl font-bold text-sm sm:text-base hover:bg-ancient-ink/90 transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 whitespace-nowrap" onclick="getRandomVerse()">
+<span class="text-lg sm:text-xl">🎲</span>
                         New Verse
                     </button>
-                    <a id="verse-link" href="#" class="px-4 sm:px-6 py-3 bg-gray-100 text-gray-700 rounded-xl font-medium text-sm sm:text-base hover:bg-gray-200 transition-all flex items-center justify-center gap-2 whitespace-nowrap">
-                        <span>&#128196;</span>
+<a class="px-4 sm:px-6 py-3 bg-parchment text-gray-700 rounded-xl font-medium text-sm sm:text-base hover:bg-gray-200 transition-all flex items-center justify-center gap-2 whitespace-nowrap" href="#" id="verse-link">
+<span>📄</span>
                         Read Devotional
                     </a>
-                </div>
-            </div>
-
-            <!-- Stats & Info -->
-            <div class="mt-8 text-center text-white/80">
-                <p class="text-sm">
-                    <span class="font-bold text-white">178</span> inspiring verses from
+</div>
+</div>
+<!-- Stats & Info -->
+<div class="mt-8 text-center text-white/80">
+<p class="text-sm">
+<span class="font-bold text-white">178</span> inspiring verses from
                     <span class="font-bold text-white">9</span> books of the Bible
                 </p>
-                <div class="mt-4 flex items-center justify-center gap-4">
-                    <a href="/bible.html" class="text-sm text-white/60 hover:text-white transition flex items-center gap-1">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+<div class="mt-4 flex items-center justify-center gap-4">
+<a class="text-sm text-white/60 hover:text-white transition flex items-center gap-1" href="/bible/index.html">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
                         Back to Bible
                     </a>
-                    <span class="text-white/30">|</span>
-                    <a href="/dailyverses.html" class="text-sm text-white/60 hover:text-white transition">Daily Verses Calendar</a>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <script>
+<span class="text-white/30">|</span>
+<a class="text-sm text-white/60 hover:text-white transition" href="/daily-verses/index.html">Daily Verses Calendar</a>
+</div>
+</div>
+</div>
+</main>
+<script>
         // All verse pages from dailyverses folders (178 verses)
         const verses = [
             { path: "/dailyverses/1cor/1cor10v13.html", ref: "1 Corinthians 10:13", text: "...but God is faithful, who will not allow you to be tempted beyond that which you are able;", title: "The Lord protects us from excessive temptation." },
@@ -295,5 +287,6 @@
         // Load random verse on page load
         getRandomVerse();
     </script>
+<script src="/js/components.js"></script>
 </body>
 </html>

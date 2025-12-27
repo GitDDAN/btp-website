@@ -1,308 +1,231 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Poetic Books of the Old Testament - Job, Psalms, Proverbs, Ecclesiastes, and Song of Solomon (KJV).">
-    <title>Poetic Books | Bible Teaching Program</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
+<html class="scroll-smooth" lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-09FW4XY50E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-09FW4XY50E');
+</script>
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Poetic Books of the Old Testament - Job, Psalms, Proverbs, Ecclesiastes, and Song of Solomon (KJV)." name="description"/>
+<title>Poetic Books | Bible Teaching Program</title><meta content="website" property="og:type"/><meta content="https://bibleteachingprogram.org/biblepoe.html" property="og:url"/><meta content="Poetic Books | Bible Teaching Program" property="og:title"/><meta content="Poetic Books of the Old Testament - Job, Psalms, Proverbs, Ecclesiastes, and Song of Solomon (KJV)." property="og:description"/><meta content="https://bibleteachingprogram.org/images/hero-banner.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Poetic Books | Bible Teaching Program" name="twitter:title"/><meta content="Poetic Books of the Old Testament - Job, Psalms, Proverbs, Ecclesiastes, and Song of Solomon (KJV)." name="twitter:description"/><meta content="https://bibleteachingprogram.org/images/hero-banner.png" name="twitter:image"/>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind with Brand Colors -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'primary': {
-                            '50': '#f0f7ff',
-                            '100': '#e0effe',
-                            '600': '#006fc7',
-                            '700': '#0058a2',
-                            '800': '#004a85',
-                            '900': '#003d6e',
-                        }
+                        'ancient-ink': '#1C1D37',
+                        'heritage-gold': '#CBA378',
+                        'living-sage': '#7F9A83',
+                        'parchment': '#F9F7F2',
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'Georgia', 'serif'],
                     }
                 }
             }
         }
     </script>
+<link href="/css/brand.css" rel="stylesheet"/>
 </head>
-<body class="bg-gray-50">
-
-    <!-- Navigation -->
-    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex items-center gap-6">
-                    <a href="/" class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-primary-700 text-white rounded-lg flex items-center justify-center font-bold text-lg">
-                            BTP
-                        </div>
-                        <div class="hidden md:block">
-                            <div class="font-bold text-lg text-gray-900">Bible Teaching Program</div>
-                            <div class="text-xs text-gray-600">Biblical Education & Courses</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="flex items-center gap-4">
-                    <button onclick="window.history.back()" class="text-sm font-medium text-gray-700 hover:text-primary-700 transition">← Back</button>
-                    <a href="/" class="text-sm font-medium text-gray-700 hover:text-primary-700 transition">Home</a>
-                    </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Breadcrumbs -->
-    <div class="bg-white border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-            <nav class="flex items-center gap-2 text-sm flex-wrap">
-                <a href="/" class="text-gray-600 hover:text-primary-700 transition">Home</a>
-                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                </svg>
-                <a href="/bible.html" class="text-gray-600 hover:text-primary-700 transition">Bible (KJV)</a>
-                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                </svg>
-                <a href="/bibleot.html" class="text-gray-600 hover:text-primary-700 transition">Old Testament</a>
-                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                </svg>
-                <span class="text-gray-900 font-medium">Poetic Books</span>
-            </nav>
-        </div>
-    </div>
-
-    <!-- Page Header -->
-    <section class="bg-gradient-to-br from-amber-600 via-amber-700 to-amber-800 text-white py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center gap-4">
-                <div class="w-16 h-16 bg-white bg-opacity-20 backdrop-blur-sm rounded-xl flex items-center justify-center text-3xl">
+<body class="bg-parchment">
+<!-- Navigation (loaded from component) -->
+<div id="nav-placeholder"></div>
+<!-- Breadcrumbs -->
+<div class="bg-white border-b border-gray-100">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+<nav class="flex items-center gap-2 text-sm flex-wrap">
+<a class="text-gray-600 hover:text-heritage-gold transition" href="/">Home</a>
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<a class="text-gray-600 hover:text-heritage-gold transition" href="/bible/index.html">Bible (KJV)</a>
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<a class="text-gray-600 hover:text-heritage-gold transition" href="/bible/old-testament/index.html">Old Testament</a>
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="text-gray-900 font-medium">Poetic Books</span>
+</nav>
+</div>
+</div>
+<!-- Page Header -->
+<section class="bg-ancient-ink text-white py-12">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center gap-4">
+<div class="w-16 h-16 bg-white bg-opacity-20 backdrop-blur-sm rounded-xl flex items-center justify-center text-3xl">
                     🎵
                 </div>
-                <div>
-                    <h1 class="text-3xl md:text-4xl font-bold">Poetic Books</h1>
-                    <p class="text-lg text-amber-100 mt-1">Wisdom Literature - 5 Books (KJV)</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Main Content -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-
-        <!-- Introduction -->
-        <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200 mb-8">
-            <p class="text-gray-700 leading-relaxed">
+<div>
+<h1 class="text-3xl md:text-4xl font-bold">Poetic Books</h1>
+<p class="text-lg text-heritage-gold/40 mt-1">Wisdom Literature - 5 Books (KJV)</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content -->
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<!-- Introduction -->
+<div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200 mb-8">
+<p class="text-gray-700 leading-relaxed">
                 The Poetic Books, also called Wisdom Literature, contain Hebrew poetry dealing with
                 themes of suffering, worship, wisdom, and love. These five books use parallelism and
                 figurative language to express profound truths about God and human experience.
             </p>
-        </div>
-
-        <!-- Books Grid -->
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-            <!-- Job -->
-            <a href="/bible-reader.html?pdf=/otkjv/poetic/jobkjvwd.pdf" class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-amber-400 hover:shadow-xl transition-all group">
-                <div class="flex items-center gap-4 mb-4">
-                    <div class="w-14 h-14 bg-amber-50 rounded-lg flex items-center justify-center group-hover:bg-amber-100 transition">
-                        <span class="text-2xl font-bold text-amber-700">1</span>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-900 group-hover:text-amber-700 transition">Job</h3>
-                        <span class="text-sm text-gray-500">42 Chapters</span>
-                    </div>
-                </div>
-                <p class="text-gray-600 text-sm mb-4">A righteous man's suffering and God's sovereignty - exploring the mystery of why the righteous suffer.</p>
-                <div class="flex items-center text-amber-700 font-semibold text-sm">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                    </svg>
-                    <span>Read Book</span>
-                </div>
-            </a>
-
-            <!-- Psalms - Special Card -->
-            <div class="bg-gradient-to-br from-amber-50 to-amber-100 rounded-xl p-6 shadow-md border border-amber-200 md:col-span-2 lg:col-span-2">
-                <div class="flex items-center gap-4 mb-4">
-                    <div class="w-14 h-14 bg-amber-200 rounded-lg flex items-center justify-center">
-                        <span class="text-2xl font-bold text-amber-800">2</span>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-900">Psalms</h3>
-                        <span class="text-sm text-gray-600">150 Psalms in 5 Books</span>
-                    </div>
-                </div>
-                <p class="text-gray-700 text-sm mb-4">The songbook of Israel - prayers, praises, and laments expressing every human emotion in worship to God.</p>
-
-                <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 mt-4">
-                    <a href="/bible-reader.html?pdf=/otkjv/psalms/bk1kjvwd.pdf" target="_blank" class="bg-white rounded-lg p-3 text-center hover:bg-amber-50 transition border border-amber-200 hover:border-amber-400">
-                        <div class="font-bold text-amber-700">Book 1</div>
-                        <div class="text-xs text-gray-500">Psalms 1-41</div>
-                    </a>
-                    <a href="/bible-reader.html?pdf=/otkjv/psalms/bk2kjvwd.pdf" target="_blank" class="bg-white rounded-lg p-3 text-center hover:bg-amber-50 transition border border-amber-200 hover:border-amber-400">
-                        <div class="font-bold text-amber-700">Book 2</div>
-                        <div class="text-xs text-gray-500">Psalms 42-72</div>
-                    </a>
-                    <a href="/bible-reader.html?pdf=/otkjv/psalms/bk3kjvwd.pdf" target="_blank" class="bg-white rounded-lg p-3 text-center hover:bg-amber-50 transition border border-amber-200 hover:border-amber-400">
-                        <div class="font-bold text-amber-700">Book 3</div>
-                        <div class="text-xs text-gray-500">Psalms 73-89</div>
-                    </a>
-                    <a href="/bible-reader.html?pdf=/otkjv/psalms/bk4kjvwd.pdf" target="_blank" class="bg-white rounded-lg p-3 text-center hover:bg-amber-50 transition border border-amber-200 hover:border-amber-400">
-                        <div class="font-bold text-amber-700">Book 4</div>
-                        <div class="text-xs text-gray-500">Psalms 90-106</div>
-                    </a>
-                    <a href="/bible-reader.html?pdf=/otkjv/psalms/bk5kjvwd.pdf" target="_blank" class="bg-white rounded-lg p-3 text-center hover:bg-amber-50 transition border border-amber-200 hover:border-amber-400">
-                        <div class="font-bold text-amber-700">Book 5</div>
-                        <div class="text-xs text-gray-500">Psalms 107-150</div>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Proverbs -->
-            <a href="/bible-reader.html?pdf=/otkjv/poetic/prkjvwd.pdf" class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-amber-400 hover:shadow-xl transition-all group">
-                <div class="flex items-center gap-4 mb-4">
-                    <div class="w-14 h-14 bg-amber-50 rounded-lg flex items-center justify-center group-hover:bg-amber-100 transition">
-                        <span class="text-2xl font-bold text-amber-700">3</span>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-900 group-hover:text-amber-700 transition">Proverbs</h3>
-                        <span class="text-sm text-gray-500">31 Chapters</span>
-                    </div>
-                </div>
-                <p class="text-gray-600 text-sm mb-4">Practical wisdom for daily living - collected sayings teaching righteousness, justice, and equity.</p>
-                <div class="flex items-center text-amber-700 font-semibold text-sm">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                    </svg>
-                    <span>Read Book</span>
-                </div>
-            </a>
-
-            <!-- Ecclesiastes -->
-            <a href="/bible-reader.html?pdf=/otkjv/poetic/ecckjvwd.pdf" class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-amber-400 hover:shadow-xl transition-all group">
-                <div class="flex items-center gap-4 mb-4">
-                    <div class="w-14 h-14 bg-amber-50 rounded-lg flex items-center justify-center group-hover:bg-amber-100 transition">
-                        <span class="text-2xl font-bold text-amber-700">4</span>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-900 group-hover:text-amber-700 transition">Ecclesiastes</h3>
-                        <span class="text-sm text-gray-500">12 Chapters</span>
-                    </div>
-                </div>
-                <p class="text-gray-600 text-sm mb-4">The meaning of life - a philosophical exploration concluding that fearing God is what matters most.</p>
-                <div class="flex items-center text-amber-700 font-semibold text-sm">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                    </svg>
-                    <span>Read Book</span>
-                </div>
-            </a>
-
-            <!-- Song of Solomon -->
-            <a href="/bible-reader.html?pdf=/otkjv/poetic/soskjvwd.pdf" class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-amber-400 hover:shadow-xl transition-all group">
-                <div class="flex items-center gap-4 mb-4">
-                    <div class="w-14 h-14 bg-amber-50 rounded-lg flex items-center justify-center group-hover:bg-amber-100 transition">
-                        <span class="text-2xl font-bold text-amber-700">5</span>
-                    </div>
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-900 group-hover:text-amber-700 transition">Song of Solomon</h3>
-                        <span class="text-sm text-gray-500">8 Chapters</span>
-                    </div>
-                </div>
-                <p class="text-gray-600 text-sm mb-4">A celebration of love - poetry about romantic love, often interpreted as Christ's love for the church.</p>
-                <div class="flex items-center text-amber-700 font-semibold text-sm">
-                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                    </svg>
-                    <span>Read Book</span>
-                </div>
-            </a>
-
-        </div>
-
-        <!-- Navigation Links -->
-        <div class="mt-12 flex flex-wrap justify-center gap-4">
-            <a href="/biblehist.html" class="inline-flex items-center gap-2 text-amber-700 hover:text-amber-800 font-medium transition">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-                </svg>
+</div>
+<!-- Books Grid -->
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Job -->
+<a class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-heritage-gold hover:shadow-xl transition-all group" href="/bible-reader.html?pdf=/bible/old-testament/kjv/poetic/jobkjvwd.pdf">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-14 h-14 bg-heritage-gold/10 rounded-lg flex items-center justify-center group-hover:bg-heritage-gold/20 transition">
+<span class="text-2xl font-bold text-heritage-gold">1</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-gray-900 group-hover:text-heritage-gold transition">Job</h3>
+<span class="text-sm text-gray-500">42 Chapters</span>
+</div>
+</div>
+<p class="text-gray-600 text-sm mb-4">A righteous man's suffering and God's sovereignty - exploring the mystery of why the righteous suffer.</p>
+<div class="flex items-center text-heritage-gold font-semibold text-sm">
+<svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Read Book</span>
+</div>
+</a>
+<!-- Psalms - Special Card -->
+<div class="bg-parchment rounded-xl p-6 shadow-md border border-heritage-gold/30 md:col-span-2 lg:col-span-2">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-14 h-14 bg-heritage-gold/30 rounded-lg flex items-center justify-center">
+<span class="text-2xl font-bold text-ancient-ink">2</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-gray-900">Psalms</h3>
+<span class="text-sm text-gray-600">150 Psalms in 5 Books</span>
+</div>
+</div>
+<p class="text-gray-700 text-sm mb-4">The songbook of Israel - prayers, praises, and laments expressing every human emotion in worship to God.</p>
+<div class="grid grid-cols-2 sm:grid-cols-5 gap-3 mt-4">
+<a class="bg-white rounded-lg p-3 text-center hover:bg-heritage-gold/10 transition border border-heritage-gold/30 hover:border-heritage-gold" href="/bible-reader.html?pdf=/bible/old-testament/kjv/psalms/bk1kjvwd.pdf" target="_blank">
+<div class="font-bold text-heritage-gold">Book 1</div>
+<div class="text-xs text-gray-500">Psalms 1-41</div>
+</a>
+<a class="bg-white rounded-lg p-3 text-center hover:bg-heritage-gold/10 transition border border-heritage-gold/30 hover:border-heritage-gold" href="/bible-reader.html?pdf=/bible/old-testament/kjv/psalms/bk2kjvwd.pdf" target="_blank">
+<div class="font-bold text-heritage-gold">Book 2</div>
+<div class="text-xs text-gray-500">Psalms 42-72</div>
+</a>
+<a class="bg-white rounded-lg p-3 text-center hover:bg-heritage-gold/10 transition border border-heritage-gold/30 hover:border-heritage-gold" href="/bible-reader.html?pdf=/bible/old-testament/kjv/psalms/bk3kjvwd.pdf" target="_blank">
+<div class="font-bold text-heritage-gold">Book 3</div>
+<div class="text-xs text-gray-500">Psalms 73-89</div>
+</a>
+<a class="bg-white rounded-lg p-3 text-center hover:bg-heritage-gold/10 transition border border-heritage-gold/30 hover:border-heritage-gold" href="/bible-reader.html?pdf=/bible/old-testament/kjv/psalms/bk4kjvwd.pdf" target="_blank">
+<div class="font-bold text-heritage-gold">Book 4</div>
+<div class="text-xs text-gray-500">Psalms 90-106</div>
+</a>
+<a class="bg-white rounded-lg p-3 text-center hover:bg-heritage-gold/10 transition border border-heritage-gold/30 hover:border-heritage-gold" href="/bible-reader.html?pdf=/bible/old-testament/kjv/psalms/bk5kjvwd.pdf" target="_blank">
+<div class="font-bold text-heritage-gold">Book 5</div>
+<div class="text-xs text-gray-500">Psalms 107-150</div>
+</a>
+</div>
+</div>
+<!-- Proverbs -->
+<a class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-heritage-gold hover:shadow-xl transition-all group" href="/bible-reader.html?pdf=/bible/old-testament/kjv/poetic/prkjvwd.pdf">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-14 h-14 bg-heritage-gold/10 rounded-lg flex items-center justify-center group-hover:bg-heritage-gold/20 transition">
+<span class="text-2xl font-bold text-heritage-gold">3</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-gray-900 group-hover:text-heritage-gold transition">Proverbs</h3>
+<span class="text-sm text-gray-500">31 Chapters</span>
+</div>
+</div>
+<p class="text-gray-600 text-sm mb-4">Practical wisdom for daily living - collected sayings teaching righteousness, justice, and equity.</p>
+<div class="flex items-center text-heritage-gold font-semibold text-sm">
+<svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Read Book</span>
+</div>
+</a>
+<!-- Ecclesiastes -->
+<a class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-heritage-gold hover:shadow-xl transition-all group" href="/bible-reader.html?pdf=/bible/old-testament/kjv/poetic/ecckjvwd.pdf">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-14 h-14 bg-heritage-gold/10 rounded-lg flex items-center justify-center group-hover:bg-heritage-gold/20 transition">
+<span class="text-2xl font-bold text-heritage-gold">4</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-gray-900 group-hover:text-heritage-gold transition">Ecclesiastes</h3>
+<span class="text-sm text-gray-500">12 Chapters</span>
+</div>
+</div>
+<p class="text-gray-600 text-sm mb-4">The meaning of life - a philosophical exploration concluding that fearing God is what matters most.</p>
+<div class="flex items-center text-heritage-gold font-semibold text-sm">
+<svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Read Book</span>
+</div>
+</a>
+<!-- Song of Solomon -->
+<a class="bg-white rounded-xl p-6 shadow-md border border-gray-200 hover:border-heritage-gold hover:shadow-xl transition-all group" href="/bible-reader.html?pdf=/bible/old-testament/kjv/poetic/soskjvwd.pdf">
+<div class="flex items-center gap-4 mb-4">
+<div class="w-14 h-14 bg-heritage-gold/10 rounded-lg flex items-center justify-center group-hover:bg-heritage-gold/20 transition">
+<span class="text-2xl font-bold text-heritage-gold">5</span>
+</div>
+<div>
+<h3 class="text-xl font-bold text-gray-900 group-hover:text-heritage-gold transition">Song of Solomon</h3>
+<span class="text-sm text-gray-500">8 Chapters</span>
+</div>
+</div>
+<p class="text-gray-600 text-sm mb-4">A celebration of love - poetry about romantic love, often interpreted as Christ's love for the church.</p>
+<div class="flex items-center text-heritage-gold font-semibold text-sm">
+<svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span>Read Book</span>
+</div>
+</a>
+</div>
+<!-- Navigation Links -->
+<div class="mt-12 flex flex-wrap justify-center gap-4">
+<a class="inline-flex items-center gap-2 text-heritage-gold hover:text-ancient-ink font-medium transition" href="/bible/old-testament/historical/index.html">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
                 Previous: Historical Books
             </a>
-            <span class="text-gray-300">|</span>
-            <a href="/bibleot.html" class="inline-flex items-center gap-2 text-amber-700 hover:text-amber-800 font-medium transition">
+<span class="text-gray-300">|</span>
+<a class="inline-flex items-center gap-2 text-heritage-gold hover:text-ancient-ink font-medium transition" href="/bible/old-testament/index.html">
                 Old Testament
             </a>
-            <span class="text-gray-300">|</span>
-            <a href="/biblemaj.html" class="inline-flex items-center gap-2 text-amber-700 hover:text-amber-800 font-medium transition">
+<span class="text-gray-300">|</span>
+<a class="inline-flex items-center gap-2 text-heritage-gold hover:text-ancient-ink font-medium transition" href="/bible/old-testament/major-prophets/index.html">
                 Next: Major Prophets
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                </svg>
-            </a>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-                <div class="lg:col-span-1">
-                    <div class="flex items-center gap-3 mb-6">
-                        <div class="w-12 h-12 bg-primary-600 text-white rounded-xl flex items-center justify-center font-bold text-lg shadow-lg">BTP</div>
-                        <div>
-                            <div class="font-bold text-xl text-white">Bible Teaching</div>
-                            <div class="text-sm text-gray-400">Program</div>
-                        </div>
-                    </div>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Equipping believers worldwide with sound biblical teaching and resources for spiritual growth and ministry.</p>
-                    <div class="flex items-center gap-2 text-sm">
-                        <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                        <span class="text-gray-400">Equipping believers worldwide</span>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="font-semibold text-white mb-6 text-lg">Resources</h4>
-                    <ul class="space-y-4">
-                        <li><a href="/bible.html" class="flex items-center gap-3 text-gray-400 hover:text-white transition group"><span class="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center group-hover:bg-primary-600 transition"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></span><span>Bible</span></a></li>
-                        <li><a href="/books.html" class="flex items-center gap-3 text-gray-400 hover:text-white transition group"><span class="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center group-hover:bg-primary-600 transition"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg></span><span>Books</span></a></li>
-                        <li><a href="/courses.html" class="flex items-center gap-3 text-gray-400 hover:text-white transition group"><span class="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center group-hover:bg-primary-600 transition"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg></span><span>Courses</span></a></li>
-                        <li><a href="/dailyverses.html" class="flex items-center gap-3 text-gray-400 hover:text-white transition group"><span class="w-8 h-8 bg-gray-800 rounded-lg flex items-center justify-center group-hover:bg-primary-600 transition"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></span><span>Daily Verses</span></a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold text-white mb-6 text-lg">Bible</h4>
-                    <ul class="space-y-3">
-                        <li><a href="/bibleot.html" class="text-gray-400 hover:text-white transition">Old Testament</a></li>
-                        <li><a href="/biblent.html" class="text-gray-400 hover:text-white transition">New Testament</a></li>
-                        <li><a href="/biblepen.html" class="text-gray-400 hover:text-white transition">Pentateuch</a></li>
-                        <li><a href="/biblehist.html" class="text-gray-400 hover:text-white transition">Historical Books</a></li>
-                        <li><a href="/biblepoe.html" class="text-gray-400 hover:text-white transition">Poetic Books</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold text-white mb-6 text-lg">Today's Verse</h4>
-                    <div id="daily-verse-container" class="bg-gray-800 rounded-lg p-4 border border-gray-700"></div>
-                </div>
-            </div>
-        </div>
-        <div class="border-t border-gray-800">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-                    <p class="text-sm text-gray-500">&copy; 2025 Bible Teaching Program. All rights reserved.</p>
-                    <div class="flex items-center gap-6 text-sm">
-                        <a href="/" class="text-gray-500 hover:text-gray-300 transition">Home</a>
-                        <a href="/bible.html" class="text-gray-500 hover:text-gray-300 transition">Bible</a>
-                        <a href="/courses.html" class="text-gray-500 hover:text-gray-300 transition">Courses</a>
-                        <a href="/dailyverses.html" class="text-gray-500 hover:text-gray-300 transition">Daily Verses</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="/js/daily-verse.js"></script>
-    <script src="/js/inline-editor.js"></script>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</a>
+</div>
+</main>
+<!-- Footer (loaded from component) -->
+<div id="footer-placeholder"></div>
+<script src="/js/components.js"></script>
+<script src="/js/daily-verse.js"></script>
 </body>
 </html>

@@ -1,34 +1,48 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bible Reader - King James Version">
-    <title id="page-title">Bible Reader | Bible Teaching Program</title>
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-    <script>
+<html class="scroll-smooth" lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-09FW4XY50E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-09FW4XY50E');
+</script>
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Bible Reader - King James Version" name="description"/>
+<title id="page-title">Bible Reader | Bible Teaching Program</title><meta content="website" property="og:type"/><meta content="https://bibleteachingprogram.org/bible-reader.html" property="og:url"/><meta content="Bible Reader | Bible Teaching Program" property="og:title"/><meta content="Bible Reader - King James Version" property="og:description"/><meta content="https://bibleteachingprogram.org/images/hero-banner.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Bible Reader | Bible Teaching Program" name="twitter:title"/><meta content="Bible Reader - King James Version" name="twitter:description"/><meta content="https://bibleteachingprogram.org/images/hero-banner.png" name="twitter:image"/>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind with Brand Colors -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'primary': {
-                            '50': '#f0f7ff',
-                            '100': '#e0effe',
-                            '600': '#006fc7',
-                            '700': '#0058a2',
-                            '800': '#004a85',
-                            '900': '#003d6e',
-                        }
+                        'ancient-ink': '#1C1D37',
+                        'heritage-gold': '#CBA378',
+                        'living-sage': '#7F9A83',
+                        'parchment': '#F9F7F2',
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'Georgia', 'serif'],
                     }
                 }
             }
         }
     </script>
-
-    <style>
+<link href="/css/brand.css" rel="stylesheet"/>
+<script src="/js/components.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<style>
         .pdf-canvas-container {
             display: flex;
             justify-content: center;
@@ -45,7 +59,7 @@
         }
         .loading-spinner {
             border: 3px solid #f3f3f3;
-            border-top: 3px solid #0058a2;
+            border-top: 3px solid #CBA378;
             border-radius: 50%;
             width: 40px;
             height: 40px;
@@ -62,231 +76,170 @@
             transform: translateX(4px);
         }
         .sidebar-link.active {
-            background: rgba(217, 119, 6, 0.1);
-            border-left: 3px solid #d97706;
+            background: rgba(203, 163, 120, 0.15);
+            border-left: 3px solid #CBA378;
         }
     </style>
 </head>
-<body class="bg-gray-50">
-
-    <!-- Navigation -->
-    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50 shadow-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <div class="flex items-center gap-6">
-                    <a href="/" class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-primary-700 text-white rounded-lg flex items-center justify-center font-bold text-lg">
-                            BTP
-                        </div>
-                        <div class="hidden md:block">
-                            <div class="font-bold text-lg text-gray-900">Bible Teaching Program</div>
-                            <div class="text-xs text-gray-600">Biblical Education & Courses</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="flex items-center gap-4">
-                    <button onclick="window.history.back()" class="text-sm font-medium text-gray-700 hover:text-primary-700 transition">← Back</button>
-                    <a href="/" class="text-sm font-medium text-gray-700 hover:text-primary-700 transition">Home</a>
-                    </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Breadcrumbs -->
-    <div class="bg-white border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-            <nav id="breadcrumbs" class="flex items-center gap-2 text-sm flex-wrap">
-                <a href="/" class="text-gray-600 hover:text-primary-700 transition">Home</a>
-                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                </svg>
-                <a href="/bible.html" class="text-gray-600 hover:text-primary-700 transition">Bible (KJV)</a>
-                <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                </svg>
-                <span id="breadcrumb-testament" class="text-gray-600"></span>
-                <svg id="breadcrumb-arrow-2" class="w-4 h-4 text-gray-400 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                </svg>
-                <a id="breadcrumb-section-link" href="#" class="text-gray-600 hover:text-primary-700 transition hidden"></a>
-                <svg id="breadcrumb-arrow-3" class="w-4 h-4 text-gray-400 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                </svg>
-                <span id="breadcrumb-book" class="text-gray-900 font-medium"></span>
-            </nav>
-        </div>
-    </div>
-
-    <!-- PDF Controls Bar -->
-    <div class="bg-white border-b border-gray-200 sticky top-16 z-40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div class="flex items-center justify-between flex-wrap gap-4">
-                <!-- Left: Document Info -->
-                <div class="flex items-center gap-4">
-                    <div id="book-icon" class="w-10 h-10 bg-amber-50 rounded-lg flex items-center justify-center">
-                        <span class="text-xl">📖</span>
-                    </div>
-                    <div>
-                        <h1 id="book-title" class="text-base font-bold text-gray-900">Loading...</h1>
-                        <p id="book-subtitle" class="text-xs text-gray-600">King James Version</p>
-                    </div>
-                </div>
-
-                <!-- Center: Navigation Controls -->
-                <div class="flex items-center gap-2 bg-gray-100 rounded-lg p-1">
-                    <button id="prev-page" class="px-3 py-2 rounded-md hover:bg-white transition disabled:opacity-50 disabled:cursor-not-allowed" title="Previous Page">
-                        <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-                        </svg>
-                    </button>
-                    <div class="flex items-center gap-2 px-3">
-                        <span class="text-sm text-gray-700">Page</span>
-                        <input id="page-num" type="number" min="1" value="1" class="w-12 px-2 py-1 text-center border border-gray-300 rounded text-sm">
-                        <span class="text-sm text-gray-600">of <span id="page-count">-</span></span>
-                    </div>
-                    <button id="next-page" class="px-3 py-2 rounded-md hover:bg-white transition disabled:opacity-50 disabled:cursor-not-allowed" title="Next Page">
-                        <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                        </svg>
-                    </button>
-                </div>
-
-                <!-- Right: Zoom & Actions -->
-                <div class="flex items-center gap-2">
-                    <div class="flex items-center gap-1 bg-gray-100 rounded-lg p-1">
-                        <button id="zoom-out" class="px-3 py-2 rounded-md hover:bg-white transition" title="Zoom Out">
-                            <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM13 10H7"/>
-                            </svg>
-                        </button>
-                        <span id="zoom-level" class="text-sm font-medium text-gray-700 px-2 min-w-[60px] text-center">100%</span>
-                        <button id="zoom-in" class="px-3 py-2 rounded-md hover:bg-white transition" title="Zoom In">
-                            <svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/>
-                            </svg>
-                        </button>
-                    </div>
-                    <button onclick="window.print()" class="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50 transition flex items-center gap-2">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
-                        </svg>
-                        <span class="hidden sm:inline">Print</span>
-                    </button>
-                    <a id="download-btn" href="#" download class="px-4 py-2 bg-primary-700 text-white rounded-lg text-sm font-medium hover:bg-primary-800 transition flex items-center gap-2">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
-                        </svg>
-                        <span class="hidden sm:inline">Download</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Main Content with Sidebar -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        <div class="flex flex-col lg:flex-row gap-6">
-
-            <!-- Sidebar -->
-            <aside class="lg:w-64 flex-shrink-0">
-                <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-4 sticky top-36">
-                    <h3 id="sidebar-title" class="font-bold text-gray-900 mb-4 flex items-center gap-2">
-                        <span>📚</span> Related Books
+<body class="bg-parchment">
+<!-- Navigation (loaded from component) -->
+<div id="nav-placeholder"></div>
+<!-- Breadcrumbs -->
+<div class="bg-white border-b border-gray-100">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+<nav class="flex items-center gap-2 text-sm flex-wrap" id="breadcrumbs">
+<a class="text-gray-600 hover:text-heritage-gold transition" href="/">Home</a>
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<a class="text-gray-600 hover:text-heritage-gold transition" href="/bible/index.html">Bible (KJV)</a>
+<svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="text-gray-600" id="breadcrumb-testament"></span>
+<svg class="w-4 h-4 text-gray-400 hidden" fill="none" id="breadcrumb-arrow-2" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<a class="text-gray-600 hover:text-heritage-gold transition hidden" href="#" id="breadcrumb-section-link"></a>
+<svg class="w-4 h-4 text-gray-400 hidden" fill="none" id="breadcrumb-arrow-3" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="text-gray-900 font-medium" id="breadcrumb-book"></span>
+</nav>
+</div>
+</div>
+<!-- PDF Controls Bar -->
+<div class="bg-white border-b border-gray-200 sticky top-16 z-40">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex items-center justify-between flex-wrap gap-4">
+<!-- Left: Document Info -->
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-heritage-gold/10 rounded-lg flex items-center justify-center" id="book-icon">
+<span class="text-xl">📖</span>
+</div>
+<div>
+<h1 class="text-base font-bold text-gray-900" id="book-title">Loading...</h1>
+<p class="text-xs text-gray-600" id="book-subtitle">King James Version</p>
+</div>
+</div>
+<!-- Center: Navigation Controls -->
+<div class="flex items-center gap-2 bg-parchment rounded-lg p-1">
+<button class="px-3 py-2 rounded-md hover:bg-white transition disabled:opacity-50 disabled:cursor-not-allowed" id="prev-page" title="Previous Page">
+<svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<div class="flex items-center gap-2 px-3">
+<span class="text-sm text-gray-700">Page</span>
+<input class="w-12 px-2 py-1 text-center border border-gray-300 rounded text-sm" id="page-num" min="1" type="number" value="1"/>
+<span class="text-sm text-gray-600">of <span id="page-count">-</span></span>
+</div>
+<button class="px-3 py-2 rounded-md hover:bg-white transition disabled:opacity-50 disabled:cursor-not-allowed" id="next-page" title="Next Page">
+<svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<!-- Right: Zoom & Actions -->
+<div class="flex items-center gap-2">
+<div class="flex items-center gap-1 bg-parchment rounded-lg p-1">
+<button class="px-3 py-2 rounded-md hover:bg-white transition" id="zoom-out" title="Zoom Out">
+<svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM13 10H7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+<span class="text-sm font-medium text-gray-700 px-2 min-w-[60px] text-center" id="zoom-level">100%</span>
+<button class="px-3 py-2 rounded-md hover:bg-white transition" id="zoom-in" title="Zoom In">
+<svg class="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</button>
+</div>
+<button class="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-parchment transition flex items-center gap-2" onclick="window.print()">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="hidden sm:inline">Print</span>
+</button>
+<a class="px-4 py-2 bg-ancient-ink text-white rounded-lg text-sm font-medium hover:bg-ancient-ink/90 transition flex items-center gap-2" download="" href="#" id="download-btn">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<span class="hidden sm:inline">Download</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Content with Sidebar -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+<div class="flex flex-col lg:flex-row gap-6">
+<!-- Sidebar -->
+<aside class="lg:w-64 flex-shrink-0">
+<div class="bg-white rounded-xl shadow-sm border border-gray-200 p-4 sticky top-36">
+<h3 class="font-bold text-gray-900 mb-4 flex items-center gap-2" id="sidebar-title">
+<span>📚</span> Related Books
                     </h3>
-                    <nav id="sidebar-nav" class="space-y-1">
-                        <!-- Populated by JavaScript -->
-                    </nav>
-
-                    <!-- Section Navigation -->
-                    <div class="mt-6 pt-4 border-t border-gray-200">
-                        <h4 class="text-xs font-semibold text-gray-500 uppercase mb-3">Browse</h4>
-                        <div class="space-y-2">
-                            <a href="/bibleot.html" class="block text-sm text-gray-600 hover:text-amber-700 transition">Old Testament</a>
-                            <a href="/biblent.html" class="block text-sm text-gray-600 hover:text-primary-700 transition">New Testament</a>
-                            <a href="/bible.html" class="block text-sm text-gray-600 hover:text-primary-700 transition">Bible Home</a>
-                        </div>
-                    </div>
-                </div>
-            </aside>
-
-            <!-- PDF Viewer -->
-            <main class="flex-1">
-                <div class="pdf-canvas-container rounded-xl overflow-hidden">
-                    <!-- Loading State -->
-                    <div id="loading" class="flex flex-col items-center justify-center gap-4">
-                        <div class="loading-spinner"></div>
-                        <p class="text-white text-sm">Loading PDF...</p>
-                    </div>
-
-                    <!-- PDF Canvas -->
-                    <canvas id="pdf-canvas"></canvas>
-
-                    <!-- Error State -->
-                    <div id="error-state" class="hidden bg-white rounded-xl p-12 text-center max-w-md">
-                        <div class="w-20 h-20 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <svg class="w-10 h-10 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                            </svg>
-                        </div>
-                        <h2 class="text-2xl font-bold text-gray-900 mb-3">Unable to Load PDF</h2>
-                        <p class="text-gray-600 mb-6">There was an error loading this Bible book.</p>
-                        <a href="/bible.html" class="inline-flex items-center gap-2 px-6 py-3 bg-primary-700 text-white rounded-lg font-medium hover:bg-primary-800 transition">
+<nav class="space-y-1" id="sidebar-nav">
+<!-- Populated by JavaScript -->
+</nav>
+<!-- Section Navigation -->
+<div class="mt-6 pt-4 border-t border-gray-200">
+<h4 class="text-xs font-semibold text-gray-500 uppercase mb-3">Browse</h4>
+<div class="space-y-2">
+<a class="block text-sm text-gray-600 hover:text-heritage-gold transition" href="/bible/old-testament/index.html">Old Testament</a>
+<a class="block text-sm text-gray-600 hover:text-heritage-gold transition" href="/bible/new-testament/index.html">New Testament</a>
+<a class="block text-sm text-gray-600 hover:text-heritage-gold transition" href="/bible/index.html">Bible Home</a>
+</div>
+</div>
+</div>
+</aside>
+<!-- PDF Viewer -->
+<main class="flex-1">
+<div class="pdf-canvas-container rounded-xl overflow-hidden">
+<!-- Loading State -->
+<div class="flex flex-col items-center justify-center gap-4" id="loading">
+<div class="loading-spinner"></div>
+<p class="text-white text-sm">Loading PDF...</p>
+</div>
+<!-- PDF Canvas -->
+<canvas id="pdf-canvas"></canvas>
+<!-- Error State -->
+<div class="hidden bg-white rounded-xl p-12 text-center max-w-md" id="error-state">
+<div class="w-20 h-20 bg-parchment rounded-full flex items-center justify-center mx-auto mb-6">
+<svg class="w-10 h-10 text-heritage-gold" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<h2 class="text-2xl font-bold text-gray-900 mb-3">Unable to Load PDF</h2>
+<p class="text-gray-600 mb-6">There was an error loading this Bible book.</p>
+<a class="inline-flex items-center gap-2 px-6 py-3 bg-ancient-ink text-white rounded-lg font-medium hover:bg-ancient-ink/90 transition" href="/bible/index.html">
                             Back to Bible
                         </a>
-                    </div>
-
-                    <!-- No Book Selected State -->
-                    <div id="select-state" class="hidden bg-white rounded-xl p-12 text-center max-w-lg">
-                        <div class="w-20 h-20 bg-amber-50 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <span class="text-4xl">📖</span>
-                        </div>
-                        <h2 class="text-2xl font-bold text-gray-900 mb-3">Bible Reader</h2>
-                        <p class="text-gray-600 mb-6">Select a book from the Bible to start reading the King James Version.</p>
-                        <div class="flex flex-col sm:flex-row gap-3 justify-center">
-                            <a href="/bibleot.html" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-amber-600 text-white rounded-lg font-medium hover:bg-amber-700 transition">
-                                <span>📜</span> Old Testament
+</div>
+<!-- No Book Selected State -->
+<div class="hidden bg-white rounded-xl p-12 text-center max-w-lg" id="select-state">
+<div class="w-20 h-20 bg-heritage-gold/10 rounded-full flex items-center justify-center mx-auto mb-6">
+<span class="text-4xl">📖</span>
+</div>
+<h2 class="text-2xl font-bold text-gray-900 mb-3">Bible Reader</h2>
+<p class="text-gray-600 mb-6">Select a book from the Bible to start reading the King James Version.</p>
+<div class="flex flex-col sm:flex-row gap-3 justify-center">
+<a class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-heritage-gold text-ancient-ink rounded-lg font-medium hover:bg-heritage-gold/90 transition" href="/bible/old-testament/index.html">
+<span>📜</span> Old Testament
                             </a>
-                            <a href="/biblent.html" class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-primary-700 text-white rounded-lg font-medium hover:bg-primary-800 transition">
-                                <span>✝️</span> New Testament
+<a class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-ancient-ink text-white rounded-lg font-medium hover:bg-ancient-ink/90 transition" href="/bible/new-testament/index.html">
+<span>✝️</span> New Testament
                             </a>
-                        </div>
-                    </div>
-                </div>
-            </main>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-12 mt-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                <div class="text-center md:text-left">
-                    <div class="flex items-center justify-center md:justify-start gap-3 mb-4">
-                        <div class="w-10 h-10 bg-primary-700 text-white rounded-lg flex items-center justify-center font-bold">
-                            BTP
-                        </div>
-                        <span class="font-bold text-xl text-white">Bible Teaching Program</span>
-                    </div>
-                    <p class="text-gray-400">Equipping believers worldwide through biblical teaching</p>
-                </div>
-                <div class="text-center">
-                    <h4 class="font-semibold text-white mb-4">Quick Links</h4>
-                    <div class="space-y-2">
-                        <a href="/courses.html" class="block text-gray-400 hover:text-white transition">Courses</a>
-                        <a href="/dailyverses.html" class="block text-gray-400 hover:text-white transition">Daily Verses</a>
-                        <a href="/books.html" class="block text-gray-400 hover:text-white transition">Books</a>
-                        <a href="/bible.html" class="block text-gray-400 hover:text-white transition">Bible</a>
-                    </div>
-                </div>
-                <div id="daily-verse-container" class="text-center md:text-right"></div>
-            </div>
-            <div class="border-t border-gray-800 pt-6 text-center">
-                <p class="text-sm text-gray-500">&copy; 2025 Bible Teaching Program. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+<!-- Footer (loaded from component) -->
+<div id="footer-placeholder"></div>
+<script>
         // Set PDF.js worker
         pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
@@ -467,7 +420,7 @@
 
             // Update breadcrumbs
             var testamentEl = document.getElementById('breadcrumb-testament');
-            testamentEl.innerHTML = '<a href="' + section.testamentPage + '" class="text-gray-600 hover:text-primary-700 transition">' + section.testament + '</a>';
+            testamentEl.innerHTML = '<a href="' + section.testamentPage + '" class="text-gray-600 hover:text-heritage-gold transition">' + section.testament + '</a>';
 
             if (!isNT) {
                 document.getElementById('breadcrumb-arrow-2').classList.remove('hidden');
@@ -494,12 +447,12 @@
                 if (b.id.indexOf('bk') === 0 && b.id.indexOf('kjvwd') > 0) {
                     folder = 'psalms';
                 }
-                var bookPath = isNT ? '/ntkjv/' + b.id + '.pdf' : '/otkjv/' + folder + '/' + b.id + '.pdf';
+                var bookPath = isNT ? '/bible/new-testament/kjv/' + b.id + '.pdf' : '/bible/old-testament/kjv/' + folder + '/' + b.id + '.pdf';
 
                 var link = document.createElement('a');
                 link.href = '/bible-reader.html?pdf=' + bookPath;
                 link.className = 'sidebar-link block px-3 py-2 rounded-lg text-sm ' +
-                    (isActive ? 'active bg-amber-50 text-amber-800 font-medium' : 'text-gray-700 hover:bg-gray-50');
+                    (isActive ? 'active bg-heritage-gold/15 text-ancient-ink font-medium' : 'text-gray-700 hover:bg-parchment');
                 link.innerHTML = '<span class="text-gray-400 mr-2">' + (idx + 1) + '.</span>' + b.name;
                 sidebarNav.appendChild(link);
             });
@@ -509,7 +462,7 @@
 
             // Update icon color based on testament
             var iconEl = document.getElementById('book-icon');
-            iconEl.className = 'w-10 h-10 rounded-lg flex items-center justify-center ' + (isNT ? 'bg-blue-50' : 'bg-amber-50');
+            iconEl.className = 'w-10 h-10 rounded-lg flex items-center justify-center ' + (isNT ? 'bg-living-sage/20' : 'bg-heritage-gold/20');
         }
 
         function renderPage(num) {
@@ -635,8 +588,6 @@
             loadPDF(pdfPath);
         });
     </script>
-
-    <script src="/js/daily-verse.js"></script>
-    <script src="/js/inline-editor.js"></script>
+<script src="/js/daily-verse.js"></script>
 </body>
 </html>

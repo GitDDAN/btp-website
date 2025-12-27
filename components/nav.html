@@ -1,322 +1,485 @@
-<!-- Navigation -->
-<nav class="sticky top-0 z-50 shadow-lg">
-    <!-- Mobile Nav (white background with blue accents) -->
-    <div class="md:hidden bg-white border-b border-gray-100">
-        <div class="px-4 py-2.5">
-            <div class="flex items-center justify-between">
-                <a href="/" class="flex items-center gap-2.5">
-                    <div class="w-11 h-11 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 rounded-xl flex items-center justify-center shadow-lg border border-primary-500/20">
-                        <span class="text-white font-black text-lg tracking-tight" style="font-family: 'Georgia', serif;">BTP</span>
-                    </div>
-                    <div class="flex flex-col">
-                        <span class="text-gray-900 font-bold text-sm leading-tight">Bible Teaching</span>
-                        <span class="text-primary-600 text-[10px] font-semibold leading-tight tracking-wide">PROGRAM</span>
-                    </div>
-                </a>
-                <button onclick="openMobileMenu()" class="p-2.5 rounded-xl bg-primary-600 text-white hover:bg-primary-700 transition shadow-md" aria-label="Open menu">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-                    </svg>
-                </button>
-            </div>
-        </div>
-    </div>
-    <!-- Desktop Nav (white background) -->
-    <div class="hidden md:block bg-white border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <a href="/" class="flex items-center gap-3">
-                    <div class="w-11 h-11 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 rounded-xl flex items-center justify-center shadow-lg border border-primary-500/20">
-                        <span class="text-white font-black text-lg tracking-tight" style="font-family: 'Georgia', serif;">BTP</span>
-                    </div>
-                    <div class="flex flex-col">
-                        <span class="text-gray-900 font-bold text-base leading-tight">Bible Teaching Program</span>
-                        <span class="text-primary-600 text-xs font-medium leading-tight">Equipping believers worldwide</span>
-                    </div>
-                </a>
-                <div class="flex items-center gap-4">
-                    <a href="/bible.html" class="text-sm font-medium text-gray-600 hover:text-primary-700 transition px-2 py-1">Bible</a>
-                    <a href="/courses.html" class="text-sm font-medium text-gray-600 hover:text-primary-700 transition px-2 py-1">Courses</a>
-                    <a href="/books.html" class="text-sm font-medium text-gray-600 hover:text-primary-700 transition px-2 py-1">Books</a>
-                    <a href="/dailyverses.html" class="text-sm font-medium text-white bg-primary-700 hover:bg-primary-800 transition px-3 py-1.5 rounded-lg">Daily Verses</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</nav>
+<!-- Brand Styles for Navigation -->
+<style>
+    :root {
+        --ancient-ink: #1C1D37;
+        --heritage-gold: #CBA378;
+        --living-sage: #7F9A83;
+        --parchment: #F9F7F2;
+    }
+    .bg-ancient-ink { background-color: var(--ancient-ink); }
+    .bg-heritage-gold { background-color: var(--heritage-gold); }
+    .bg-living-sage { background-color: var(--living-sage); }
+    .bg-parchment { background-color: var(--parchment); }
+    .text-ancient-ink { color: var(--ancient-ink); }
+    .text-heritage-gold { color: var(--heritage-gold); }
+    .text-living-sage { color: var(--living-sage); }
 
-<!-- Elite Full-Screen Mobile Menu -->
-<div id="mobileMenuOverlay" class="mobile-menu-overlay hidden fixed inset-0 z-[100] md:hidden">
-    <!-- Backdrop -->
-    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeMobileMenu()"></div>
+    /* Mega Menu Styles */
+    .mega-menu-trigger { position: relative; }
+    .mega-menu {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%) translateY(10px);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 100;
+        pointer-events: none;
+    }
+    .mega-menu-trigger:hover .mega-menu,
+    .mega-menu:hover {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+        pointer-events: auto;
+    }
+    .mega-menu-chevron {
+        transition: transform 0.3s ease;
+    }
+    .mega-menu-trigger:hover .mega-menu-chevron {
+        transform: rotate(180deg);
+    }
 
-    <!-- Menu Panel -->
-    <div class="mobile-menu-panel absolute right-0 top-0 bottom-0 w-full max-w-sm bg-white shadow-2xl flex flex-col">
-        <!-- Header -->
-        <div class="flex items-center justify-between px-5 py-4 border-b border-gray-100 bg-gradient-to-r from-primary-600 to-primary-700">
-            <span class="text-white font-bold text-lg">Menu</span>
-            <button onclick="closeMobileMenu()" class="p-2 rounded-full bg-white/20 text-white hover:bg-white/30 transition">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-                </svg>
-            </button>
-        </div>
+    /* Mega Menu Card Hover */
+    .mega-card {
+        transition: all 0.2s ease;
+        border: 1px solid transparent;
+    }
+    .mega-card:hover {
+        border-color: var(--heritage-gold);
+        background: var(--parchment);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
 
-        <!-- Quick Actions -->
-        <div class="grid grid-cols-4 gap-1 p-3 bg-gray-50 border-b border-gray-100">
-            <a href="/" class="flex flex-col items-center p-2 rounded-xl hover:bg-white transition">
-                <span class="text-xl mb-1">&#127968;</span>
-                <span class="text-[10px] text-gray-600 font-medium">Home</span>
-            </a>
-            <a href="/bible.html" class="flex flex-col items-center p-2 rounded-xl hover:bg-white transition">
-                <span class="text-xl mb-1">&#128214;</span>
-                <span class="text-[10px] text-gray-600 font-medium">Bible</span>
-            </a>
-            <a href="/dailyverses.html" class="flex flex-col items-center p-2 rounded-xl hover:bg-white transition">
-                <span class="text-xl mb-1">&#128197;</span>
-                <span class="text-[10px] text-gray-600 font-medium">Verses</span>
-            </a>
-            <a href="/random-verse.html" class="flex flex-col items-center p-2 rounded-xl hover:bg-white transition">
-                <span class="text-xl mb-1">&#127922;</span>
-                <span class="text-[10px] text-gray-600 font-medium">Random</span>
-            </a>
-        </div>
+    /* Glossy Button - Gold */
+    .btn-glossy-gold {
+        position: relative;
+        background: linear-gradient(180deg, rgba(255,255,255,0.2) 0%, transparent 50%, rgba(0,0,0,0.05) 100%), var(--heritage-gold);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.3);
+        transition: all 0.3s ease;
+        overflow: hidden;
+    }
+    .btn-glossy-gold:hover {
+        box-shadow: 0 4px 12px rgba(203, 163, 120, 0.4), inset 0 1px 0 rgba(255,255,255,0.4);
+        transform: translateY(-1px);
+    }
 
-        <!-- Scrollable Menu Content -->
-        <div class="flex-1 overflow-y-auto">
-            <div class="p-3 space-y-1">
+    /* Nav Link Underline Animation */
+    .nav-link {
+        position: relative;
+    }
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: var(--heritage-gold);
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+    }
+    .nav-link:hover::after {
+        width: 100%;
+    }
 
-                <!-- Bible Section -->
-                <div class="menu-section">
-                    <button onclick="toggleMenuAccordion(this)" class="w-full flex items-center justify-between p-3 rounded-xl bg-amber-50 hover:bg-amber-100 transition">
-                        <div class="flex items-center gap-3">
-                            <span class="w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center text-white text-lg">&#128220;</span>
-                            <div class="text-left">
-                                <div class="font-semibold text-gray-900">Bible (KJV)</div>
-                                <div class="text-xs text-gray-500">66 Books</div>
-                            </div>
-                        </div>
-                        <svg class="menu-accordion-arrow w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-                    <div class="menu-accordion-content ml-4 mt-1 space-y-0.5">
-                        <a href="/bibleot.html" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-gray-50 transition">
-                            <span class="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center text-sm">&#128220;</span>
-                            <span class="text-sm text-gray-700">Old Testament</span>
-                            <span class="ml-auto text-xs text-gray-400">39</span>
-                        </a>
-                        <a href="/biblent.html" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-gray-50 transition">
-                            <span class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-sm">&#10024;</span>
-                            <span class="text-sm text-gray-700">New Testament</span>
-                            <span class="ml-auto text-xs text-gray-400">27</span>
-                        </a>
-                        <a href="/biblepen.html" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-gray-50 transition">
-                            <span class="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center text-sm">&#128214;</span>
-                            <span class="text-sm text-gray-700">Pentateuch</span>
-                            <span class="ml-auto text-xs text-gray-400">5</span>
-                        </a>
-                        <a href="/biblepoe.html" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-gray-50 transition">
-                            <span class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center text-sm">&#127925;</span>
-                            <span class="text-sm text-gray-700">Poetic Books</span>
-                            <span class="ml-auto text-xs text-gray-400">5</span>
-                        </a>
-                        <a href="/biblemaj.html" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-gray-50 transition">
-                            <span class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center text-sm">&#128226;</span>
-                            <span class="text-sm text-gray-700">Major Prophets</span>
-                            <span class="ml-auto text-xs text-gray-400">5</span>
-                        </a>
-                        <a href="/biblemin.html" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-gray-50 transition">
-                            <span class="w-8 h-8 bg-orange-100 rounded-lg flex items-center justify-center text-sm">&#128227;</span>
-                            <span class="text-sm text-gray-700">Minor Prophets</span>
-                            <span class="ml-auto text-xs text-gray-400">12</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Courses Section -->
-                <div class="menu-section">
-                    <button onclick="toggleMenuAccordion(this)" class="w-full flex items-center justify-between p-3 rounded-xl bg-blue-50 hover:bg-blue-100 transition">
-                        <div class="flex items-center gap-3">
-                            <span class="w-10 h-10 bg-blue-500 rounded-xl flex items-center justify-center text-white text-lg">&#127891;</span>
-                            <div class="text-left">
-                                <div class="font-semibold text-gray-900">Teaching Courses</div>
-                                <div class="text-xs text-gray-500">18+ Courses</div>
-                            </div>
-                        </div>
-                        <svg class="menu-accordion-arrow w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-                    <div class="menu-accordion-content ml-4 mt-1 space-y-0.5">
-                        <div class="px-2 py-1.5 text-xs font-semibold text-gray-400 uppercase tracking-wide">Foundation</div>
-                        <a href="/cfcross.html" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-gray-50 transition">
-                            <span class="w-8 h-8 bg-red-100 rounded-lg flex items-center justify-center text-sm">&#10013;</span>
-                            <span class="text-sm text-gray-700">The Cross</span>
-                            <span class="ml-auto text-xs text-gray-400">10</span>
-                        </a>
-                        <a href="/btp/foundation/salvation.html" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-gray-50 transition">
-                            <span class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center text-sm">&#128154;</span>
-                            <span class="text-sm text-gray-700">Salvation</span>
-                            <span class="ml-auto text-xs text-gray-400">10</span>
-                        </a>
-                        <a href="/cfeternal.html" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-gray-50 transition">
-                            <span class="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center text-sm">&#128081;</span>
-                            <span class="text-sm text-gray-700">Son of God</span>
-                            <span class="ml-auto text-xs text-gray-400">10</span>
-                        </a>
-                        <div class="px-2 py-1.5 text-xs font-semibold text-gray-400 uppercase tracking-wide mt-2">Christian Life</div>
-                        <a href="/arweb.html" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-gray-50 transition">
-                            <span class="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center text-sm">&#128737;</span>
-                            <span class="text-sm text-gray-700">Armour of God</span>
-                            <span class="ml-auto text-xs text-gray-400">10</span>
-                        </a>
-                        <a href="/fruitweb.html" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-gray-50 transition">
-                            <span class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center text-sm">&#127815;</span>
-                            <span class="text-sm text-gray-700">Fruit of the Spirit</span>
-                            <span class="ml-auto text-xs text-gray-400">10</span>
-                        </a>
-                        <a href="/giftsweb.html" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-gray-50 transition">
-                            <span class="w-8 h-8 bg-violet-100 rounded-lg flex items-center justify-center text-sm">&#127873;</span>
-                            <span class="text-sm text-gray-700">Gifts of the Spirit</span>
-                            <span class="ml-auto text-xs text-gray-400">10</span>
-                        </a>
-                        <a href="/worshipweb.html" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-gray-50 transition">
-                            <span class="w-8 h-8 bg-pink-100 rounded-lg flex items-center justify-center text-sm">&#128588;</span>
-                            <span class="text-sm text-gray-700">Worship</span>
-                        </a>
-                        <div class="px-2 py-1.5 text-xs font-semibold text-gray-400 uppercase tracking-wide mt-2">History & Study</div>
-                        <a href="/chweb.html" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-gray-50 transition">
-                            <span class="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center text-sm">&#9962;</span>
-                            <span class="text-sm text-gray-700">Church History</span>
-                            <span class="ml-auto text-xs text-gray-400">12</span>
-                        </a>
-                        <a href="/greekweb.html" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-gray-50 transition">
-                            <span class="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center text-sm">&#128292;</span>
-                            <span class="text-sm text-gray-700">Greek Word Studies</span>
-                        </a>
-                        <a href="/courses.html" class="flex items-center gap-3 p-2.5 rounded-lg bg-blue-50 hover:bg-blue-100 transition mt-2">
-                            <span class="text-sm text-blue-700 font-medium">View All Courses &#8594;</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Books Section -->
-                <div class="menu-section">
-                    <button onclick="toggleMenuAccordion(this)" class="w-full flex items-center justify-between p-3 rounded-xl bg-purple-50 hover:bg-purple-100 transition">
-                        <div class="flex items-center gap-3">
-                            <span class="w-10 h-10 bg-purple-500 rounded-xl flex items-center justify-center text-white text-lg">&#128218;</span>
-                            <div class="text-left">
-                                <div class="font-semibold text-gray-900">Books & Messages</div>
-                                <div class="text-xs text-gray-500">Classic Authors</div>
-                            </div>
-                        </div>
-                        <svg class="menu-accordion-arrow w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-                    <div class="menu-accordion-content ml-4 mt-1 space-y-0.5">
-                        <a href="/hc/hcindex.html" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-gray-50 transition">
-                            <span class="w-8 h-8 bg-sky-100 rounded-lg flex items-center justify-center text-sm">&#128213;</span>
-                            <span class="text-sm text-gray-700">Higher Calling</span>
-                        </a>
-                        <a href="/is/index.html" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-gray-50 transition">
-                            <span class="w-8 h-8 bg-teal-100 rounded-lg flex items-center justify-center text-sm">&#128674;</span>
-                            <span class="text-sm text-gray-700">Isaac Sharp</span>
-                        </a>
-                        <a href="/gurnall/index.html" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-gray-50 transition">
-                            <span class="w-8 h-8 bg-amber-100 rounded-lg flex items-center justify-center text-sm">&#10013;</span>
-                            <span class="text-sm text-gray-700">William Gurnall</span>
-                        </a>
-                        <a href="/bunyan/index.html" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-gray-50 transition">
-                            <span class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center text-sm">&#128218;</span>
-                            <span class="text-sm text-gray-700">John Bunyan</span>
-                        </a>
-                        <a href="/luther.html" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-gray-50 transition">
-                            <span class="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center text-sm">&#9962;</span>
-                            <span class="text-sm text-gray-700">Martin Luther</span>
-                        </a>
-                        <a href="/prayer/torrey/htp.html" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-gray-50 transition">
-                            <span class="w-8 h-8 bg-indigo-100 rounded-lg flex items-center justify-center text-sm">&#128591;</span>
-                            <span class="text-sm text-gray-700">R.A. Torrey - How to Pray</span>
-                        </a>
-                        <a href="/books.html" class="flex items-center gap-3 p-2.5 rounded-lg bg-purple-50 hover:bg-purple-100 transition mt-2">
-                            <span class="text-sm text-purple-700 font-medium">View All Books &#8594;</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Daily Verses Section -->
-                <div class="menu-section">
-                    <button onclick="toggleMenuAccordion(this)" class="w-full flex items-center justify-between p-3 rounded-xl bg-green-50 hover:bg-green-100 transition">
-                        <div class="flex items-center gap-3">
-                            <span class="w-10 h-10 bg-green-500 rounded-xl flex items-center justify-center text-white text-lg">&#128197;</span>
-                            <div class="text-left">
-                                <div class="font-semibold text-gray-900">Daily Verses</div>
-                                <div class="text-xs text-gray-500">365 Day Calendar</div>
-                            </div>
-                        </div>
-                        <svg class="menu-accordion-arrow w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                        </svg>
-                    </button>
-                    <div class="menu-accordion-content ml-4 mt-1 space-y-0.5">
-                        <a href="/dailyverses.html" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-gray-50 transition">
-                            <span class="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center text-sm">&#128197;</span>
-                            <span class="text-sm text-gray-700">Verse Calendar</span>
-                        </a>
-                        <a href="/random-verse.html" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-gray-50 transition">
-                            <span class="w-8 h-8 bg-violet-100 rounded-lg flex items-center justify-center text-sm">&#127922;</span>
-                            <span class="text-sm text-gray-700">Random Verse</span>
-                        </a>
-                        <a href="/dailyverses/verses-by-book.html" class="flex items-center gap-3 p-2.5 rounded-lg hover:bg-gray-50 transition">
-                            <span class="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center text-sm">&#128214;</span>
-                            <span class="text-sm text-gray-700">Verses by Book</span>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Resources Section -->
-                <div class="menu-section">
-                    <a href="/resources.html" class="w-full flex items-center justify-between p-3 rounded-xl bg-gray-50 hover:bg-gray-100 transition">
-                        <div class="flex items-center gap-3">
-                            <span class="w-10 h-10 bg-gray-500 rounded-xl flex items-center justify-center text-white text-lg">&#128193;</span>
-                            <div class="text-left">
-                                <div class="font-semibold text-gray-900">Resources</div>
-                                <div class="text-xs text-gray-500">PDFs & Downloads</div>
-                            </div>
-                        </div>
-                        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                        </svg>
-                    </a>
-                </div>
-
-                <!-- Sitemap Link -->
-                <div class="menu-section">
-                    <a href="/sitemap.html" class="w-full flex items-center justify-between p-3 rounded-xl bg-gray-50 hover:bg-gray-100 transition">
-                        <div class="flex items-center gap-3">
-                            <span class="w-10 h-10 bg-indigo-500 rounded-xl flex items-center justify-center text-white text-lg">&#128506;</span>
-                            <div class="text-left">
-                                <div class="font-semibold text-gray-900">Full Sitemap</div>
-                                <div class="text-xs text-gray-500">All 200+ Pages</div>
-                            </div>
-                        </div>
-                        <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                        </svg>
-                    </a>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- Footer -->
-        <div class="p-4 border-t border-gray-100 bg-gray-50">
-            <div class="text-center text-xs text-gray-500">
-                Bible Teaching Program<br>
-                <span class="text-gray-400">Equipping believers worldwide</span>
-            </div>
-        </div>
-    </div>
+    /* Mobile Menu Accordion */
+    .mobile-accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    .mobile-accordion-content.open {
+        max-height: 500px;
+    }
+    .mobile-accordion-arrow {
+        transition: transform 0.3s ease;
+    }
+    .mobile-accordion-arrow.open {
+        transform: rotate(180deg);
+    }
+</style>
+<!-- Navigation with Mega Menu - BTP Brand -->
+<nav class="bg-ancient-ink sticky top-0 z-50 shadow-lg">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<!-- Logo -->
+<a class="flex items-center gap-3 group" href="/">
+<svg class="w-10 h-10 group-hover:scale-105 transition-transform" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#1C1D37" height="32" rx="6" width="32"></rect>
+<g fill="none" stroke="#CBA378" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+<path d="M16 6 C14 5 10 4.5 5 5 L5 25 C10 24.5 14 25 16 26"></path>
+<path d="M16 6 C18 5 22 4.5 27 5 L27 25 C22 24.5 18 25 16 26"></path>
+</g>
+<text fill="#CBA378" font-family="Arial, sans-serif" font-size="7" font-weight="bold" text-anchor="middle" x="16" y="18">BTP</text>
+</svg>
+<div class="flex flex-col">
+<span class="text-white font-semibold text-sm leading-tight">Bible Teaching</span>
+<span class="text-heritage-gold text-xs leading-tight">Program</span>
 </div>
+</a>
+<!-- Desktop Navigation -->
+<div class="hidden lg:flex items-center gap-1">
+<!-- Bible Mega Menu -->
+<div class="mega-menu-trigger">
+<a class="nav-link flex items-center gap-1 px-4 py-2 text-sm text-gray-300 hover:text-white transition" href="/bible.html">
+                        Bible
+                        <svg class="w-4 h-4 mega-menu-chevron" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+<div class="mega-menu bg-white rounded-2xl shadow-2xl border border-gray-200 p-6" style="min-width: 600px;">
+<a class="flex items-center gap-3 mb-5 pb-4 border-b border-gray-100 group" href="/bible.html">
+<div class="w-12 h-12 bg-parchment rounded-xl flex items-center justify-center text-2xl group-hover:scale-105 transition-transform">📖</div>
+<div>
+<h3 class="font-semibold text-ancient-ink group-hover:text-heritage-gold transition">King James Version Bible</h3>
+<p class="text-sm text-gray-500">All 66 books organized by section</p>
+</div>
+</a>
+<div class="grid grid-cols-2 gap-6">
+<div>
+<a class="text-xs font-bold text-heritage-gold uppercase tracking-wider mb-3 block hover:underline" href="/bibleot.html">Old Testament</a>
+<div class="space-y-1">
+<a class="mega-card flex items-center gap-3 p-2 rounded-lg" href="/biblepen.html">
+<span class="text-lg">📜</span>
+<div>
+<div class="text-sm font-medium text-gray-800">Pentateuch</div>
+<div class="text-xs text-gray-500">Genesis - Deuteronomy</div>
+</div>
+</a>
+<a class="mega-card flex items-center gap-3 p-2 rounded-lg" href="/biblehist.html">
+<span class="text-lg">🏛️</span>
+<div>
+<div class="text-sm font-medium text-gray-800">Historical Books</div>
+<div class="text-xs text-gray-500">Joshua - Esther</div>
+</div>
+</a>
+<a class="mega-card flex items-center gap-3 p-2 rounded-lg" href="/biblepoe.html">
+<span class="text-lg">🎵</span>
+<div>
+<div class="text-sm font-medium text-gray-800">Poetic Books</div>
+<div class="text-xs text-gray-500">Job - Song of Solomon</div>
+</div>
+</a>
+<a class="mega-card flex items-center gap-3 p-2 rounded-lg" href="/biblemaj.html">
+<span class="text-lg">📢</span>
+<div>
+<div class="text-sm font-medium text-gray-800">Major Prophets</div>
+<div class="text-xs text-gray-500">Isaiah - Daniel</div>
+</div>
+</a>
+<a class="mega-card flex items-center gap-3 p-2 rounded-lg" href="/biblemin.html">
+<span class="text-lg">📣</span>
+<div>
+<div class="text-sm font-medium text-gray-800">Minor Prophets</div>
+<div class="text-xs text-gray-500">Hosea - Malachi</div>
+</div>
+</a>
+</div>
+</div>
+<div>
+<a class="text-xs font-bold text-heritage-gold uppercase tracking-wider mb-3 block hover:underline" href="/biblent.html">New Testament</a>
+<div class="space-y-1">
+<a class="mega-card flex items-center gap-3 p-2 rounded-lg" href="/biblent.html">
+<span class="text-lg">✝️</span>
+<div>
+<div class="text-sm font-medium text-gray-800">All NT Books</div>
+<div class="text-xs text-gray-500">Matthew - Revelation</div>
+</div>
+</a>
+</div>
+<div class="mt-6 p-4 bg-gradient-to-br from-parchment to-parchment rounded-xl border border-heritage-gold/30">
+<p class="text-sm text-gray-600 mb-3">Read the complete KJV Bible online with easy navigation.</p>
+<a class="inline-flex items-center gap-2 text-sm font-semibold text-ancient-ink hover:text-heritage-gold transition" href="/bible.html">
+                                        View All Bible Books
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Courses Mega Menu -->
+<div class="mega-menu-trigger">
+<a class="nav-link flex items-center gap-1 px-4 py-2 text-sm text-gray-300 hover:text-white transition" href="/courses.html">
+                        Courses
+                        <svg class="w-4 h-4 mega-menu-chevron" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+<div class="mega-menu bg-white rounded-2xl shadow-2xl border border-gray-200 p-6" style="min-width: 700px;">
+<a class="flex items-center gap-3 mb-5 pb-4 border-b border-gray-100 group" href="/courses.html">
+<div class="w-12 h-12 bg-ancient-ink/10 rounded-xl flex items-center justify-center text-2xl group-hover:scale-105 transition-transform">📚</div>
+<div>
+<h3 class="font-semibold text-ancient-ink group-hover:text-heritage-gold transition">Bible Courses</h3>
+<p class="text-sm text-gray-500">20+ structured courses across 4 categories</p>
+</div>
+</a>
+<div class="grid grid-cols-4 gap-4">
+<!-- Foundation -->
+<div>
+<a class="flex items-center gap-2 mb-3 group" href="/courses.html#foundation">
+<div class="w-8 h-8 bg-ancient-ink text-heritage-gold rounded-lg flex items-center justify-center text-sm">🏛️</div>
+<span class="text-xs font-bold text-ancient-ink uppercase group-hover:text-heritage-gold transition">Foundation</span>
+</a>
+<div class="space-y-1">
+<a class="block text-sm text-gray-600 hover:text-heritage-gold py-1 transition" href="/courses/foundation/the-cross/index.html">The Cross</a>
+<a class="block text-sm text-gray-600 hover:text-heritage-gold py-1 transition" href="/courses/foundation/salvation/index.html">Salvation</a>
+<a class="block text-sm text-gray-600 hover:text-heritage-gold py-1 transition" href="/courses/foundation/son-of-god/index.html">Son of God</a>
+<a class="block text-sm text-gray-600 hover:text-heritage-gold py-1 transition" href="/cfeternal.html">Eternal Security</a>
+</div>
+</div>
+<!-- Christian Life -->
+<div>
+<a class="flex items-center gap-2 mb-3 group" href="/courses.html#christian-life">
+<div class="w-8 h-8 bg-living-sage text-white rounded-lg flex items-center justify-center text-sm">🌱</div>
+<span class="text-xs font-bold text-living-sage uppercase group-hover:text-heritage-gold transition">Christian Life</span>
+</a>
+<div class="space-y-1">
+<a class="block text-sm text-gray-600 hover:text-heritage-gold py-1 transition" href="/courses/christian-life/armour-of-god/index.html">Armour of God</a>
+<a class="block text-sm text-gray-600 hover:text-heritage-gold py-1 transition" href="/courses/christian-life/fruit-of-spirit/index.html">Fruit of Spirit</a>
+<a class="block text-sm text-gray-600 hover:text-heritage-gold py-1 transition" href="/courses/christian-life/gifts-of-spirit/index.html">Gifts of Spirit</a>
+<a class="block text-sm text-gray-600 hover:text-heritage-gold py-1 transition" href="/prayer.html">Prayer</a>
+</div>
+</div>
+<!-- History -->
+<div>
+<a class="flex items-center gap-2 mb-3 group" href="/courses.html#history">
+<div class="w-8 h-8 bg-heritage-gold text-ancient-ink rounded-lg flex items-center justify-center text-sm">📜</div>
+<span class="text-xs font-bold text-heritage-gold uppercase group-hover:text-ancient-ink transition">History</span>
+</a>
+<div class="space-y-1">
+<a class="block text-sm text-gray-600 hover:text-heritage-gold py-1 transition" href="/courses/history/church-history/index.html">Church History</a>
+<a class="block text-sm text-gray-600 hover:text-heritage-gold py-1 transition" href="/courses/history/modern-missions/index.html">Modern Missions</a>
+<a class="block text-sm text-gray-600 hover:text-heritage-gold py-1 transition" href="/courses/history/holiness-healing-pentecost/index.html">Pentecostalism</a>
+</div>
+</div>
+<!-- Languages -->
+<div>
+<a class="flex items-center gap-2 mb-3 group" href="/courses.html#languages">
+<div class="w-8 h-8 bg-gray-700 text-white rounded-lg flex items-center justify-center text-sm">🔤</div>
+<span class="text-xs font-bold text-gray-700 uppercase group-hover:text-heritage-gold transition">Languages</span>
+</a>
+<div class="space-y-1">
+<a class="block text-sm text-gray-600 hover:text-heritage-gold py-1 transition" href="/courses/languages/greek-word-studies/index.html">Greek Words</a>
+<a class="block text-sm text-gray-600 hover:text-heritage-gold py-1 transition" href="/courses/languages/greek-hebrew-alphabets/index.html">Alphabets</a>
+</div>
+<div class="mt-4 pt-3 border-t border-gray-100">
+<a class="inline-flex items-center gap-1 text-sm font-semibold text-ancient-ink hover:text-heritage-gold transition" href="/courses.html">
+                                        All Courses
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Books Mega Menu -->
+<div class="mega-menu-trigger">
+<a class="nav-link flex items-center gap-1 px-4 py-2 text-sm text-gray-300 hover:text-white transition" href="/books.html">
+                        Books
+                        <svg class="w-4 h-4 mega-menu-chevron" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+<div class="mega-menu bg-white rounded-2xl shadow-2xl border border-gray-200 p-6" style="min-width: 550px;">
+<a class="flex items-center gap-3 mb-5 pb-4 border-b border-gray-100 group" href="/books.html">
+<div class="w-12 h-12 bg-heritage-gold/20 rounded-xl flex items-center justify-center text-2xl group-hover:scale-105 transition-transform">📕</div>
+<div>
+<h3 class="font-semibold text-ancient-ink group-hover:text-heritage-gold transition">Classic Christian Books</h3>
+<p class="text-sm text-gray-500">Timeless writings from great men of faith</p>
+</div>
+</a>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-2">
+<a class="mega-card flex items-center gap-3 p-3 rounded-lg" href="/books/higher-calling/index.html">
+<img alt="Book Cover: Higher Calling" class="w-10 h-12 object-cover rounded shadow" src="/images/higher-calling-cover.png"/>
+<div>
+<div class="text-sm font-medium text-gray-800">Higher Calling to Worship</div>
+<div class="text-xs text-gray-500">Steve Dulwich</div>
+</div>
+</a>
+<a class="mega-card flex items-center gap-3 p-3 rounded-lg" href="/books/john-bunyan/index.html">
+<img alt="Portrait of John Bunyan" class="w-10 h-10 object-cover rounded-full border-2 border-heritage-gold" src="/images/authors/john-bunyan.jpg"/>
+<div>
+<div class="text-sm font-medium text-gray-800">Pilgrim's Progress</div>
+<div class="text-xs text-gray-500">John Bunyan</div>
+</div>
+</a>
+<a class="mega-card flex items-center gap-3 p-3 rounded-lg" href="/books/william-gurnall/index.html">
+<img alt="Portrait of William Gurnall" class="w-10 h-10 object-cover rounded-full border-2 border-heritage-gold" src="/images/authors/william-gurnall.jpg"/>
+<div>
+<div class="text-sm font-medium text-gray-800">Christian in Complete Armour</div>
+<div class="text-xs text-gray-500">William Gurnall</div>
+</div>
+</a>
+</div>
+<div class="space-y-2">
+<a class="mega-card flex items-center gap-3 p-3 rounded-lg" href="/books/john-newton/index.html">
+<img alt="Portrait of John Newton" class="w-10 h-10 object-cover rounded-full border-2 border-heritage-gold" src="/images/authors/john-newton.jpg"/>
+<div>
+<div class="text-sm font-medium text-gray-800">Letters &amp; Hymns</div>
+<div class="text-xs text-gray-500">John Newton</div>
+</div>
+</a>
+<a class="mega-card flex items-center gap-3 p-3 rounded-lg" href="/books/isaac-sharp/index.html">
+<span class="w-10 h-10 bg-living-sage/20 rounded-full flex items-center justify-center text-lg">🏝️</span>
+<div>
+<div class="text-sm font-medium text-gray-800">Faroe Islands Mission</div>
+<div class="text-xs text-gray-500">Isaac Sharp (1862)</div>
+</div>
+</a>
+<a class="mega-card flex items-center gap-3 p-3 rounded-lg" href="/books/ra-torrey/index.html">
+<img alt="Portrait of Ra Torrey" class="w-10 h-10 object-cover rounded-full border-2 border-heritage-gold" src="/images/authors/ra-torrey.jpg"/>
+<div>
+<div class="text-sm font-medium text-gray-800">How to Pray</div>
+<div class="text-xs text-gray-500">R.A. Torrey</div>
+</div>
+</a>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-gray-100 flex justify-between items-center">
+<a class="inline-flex items-center gap-2 text-sm font-semibold text-ancient-ink hover:text-heritage-gold transition" href="/books.html">
+                                Browse All Books
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</a>
+<a class="text-sm text-gray-500 hover:text-heritage-gold transition" href="/messages/">Messages</a>
+</div>
+</div>
+</div>
+<!-- Direct Links -->
+<a class="nav-link px-4 py-2 text-sm text-gray-300 hover:text-white transition" href="/dailyverses.html">Daily Verses</a>
+<!-- CTA Button -->
+<a class="ml-3 text-sm px-5 py-2 btn-glossy-gold text-ancient-ink rounded-lg font-medium" href="/start-teaching.html">
+                    Start Teaching
+                </a>
+</div>
+<!-- Mobile Menu Button -->
+<button aria-label="Open menu" class="lg:hidden p-2 text-gray-300 hover:text-white transition" onclick="openMobileMenu()">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+</div>
+</div>
+</nav>
+<!-- Mobile Menu Overlay -->
+<div class="hidden fixed inset-0 z-[100] lg:hidden" id="mobileMenuOverlay">
+<div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeMobileMenu()"></div>
+<div class="absolute right-0 top-0 bottom-0 w-80 max-w-full bg-white shadow-2xl overflow-y-auto transform transition-transform">
+<!-- Mobile Header -->
+<div class="flex items-center justify-between p-4 bg-ancient-ink sticky top-0 z-10">
+<div class="flex items-center gap-3">
+<svg class="w-8 h-8" viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#1C1D37" height="32" rx="6" width="32"></rect>
+<g fill="none" stroke="#CBA378" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
+<path d="M16 6 C14 5 10 4.5 5 5 L5 25 C10 24.5 14 25 16 26"></path>
+<path d="M16 6 C18 5 22 4.5 27 5 L27 25 C22 24.5 18 25 16 26"></path>
+</g>
+<text fill="#CBA378" font-family="Arial, sans-serif" font-size="7" font-weight="bold" text-anchor="middle" x="16" y="18">BTP</text>
+</svg>
+<span class="text-white font-semibold text-sm">Menu</span>
+</div>
+<button aria-label="Close menu" class="p-2 text-gray-300 hover:text-white transition" onclick="closeMobileMenu()">
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+</div>
+<!-- Mobile Navigation -->
+<div class="p-4">
+<!-- Home -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-parchment text-gray-800 font-medium transition" href="/">
+<span class="text-lg">🏠</span>
+                Home
+            </a>
+<!-- Bible Accordion -->
+<div class="mt-2">
+<button class="w-full flex items-center justify-between px-4 py-3 rounded-xl hover:bg-parchment text-gray-800 font-medium transition" onclick="toggleMobileAccordion('bible')">
+<span class="flex items-center gap-3">
+<span class="text-lg">📖</span>
+                        Bible
+                    </span>
+<svg class="w-5 h-5 mobile-accordion-arrow text-gray-400" fill="none" id="bible-arrow" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+<div class="mobile-accordion-content pl-12 space-y-1" id="bible-content">
+<a class="block py-2 text-sm text-heritage-gold font-medium" href="/bible.html">All Bible Books</a>
+<a class="block py-2 text-sm text-gray-600 hover:text-heritage-gold" href="/biblepen.html">Pentateuch</a>
+<a class="block py-2 text-sm text-gray-600 hover:text-heritage-gold" href="/biblehist.html">Historical Books</a>
+<a class="block py-2 text-sm text-gray-600 hover:text-heritage-gold" href="/biblepoe.html">Poetic Books</a>
+<a class="block py-2 text-sm text-gray-600 hover:text-heritage-gold" href="/biblemaj.html">Major Prophets</a>
+<a class="block py-2 text-sm text-gray-600 hover:text-heritage-gold" href="/biblemin.html">Minor Prophets</a>
+<a class="block py-2 text-sm text-gray-600 hover:text-heritage-gold" href="/biblent.html">New Testament</a>
+</div>
+</div>
+<!-- Courses Accordion -->
+<div class="mt-2">
+<button class="w-full flex items-center justify-between px-4 py-3 rounded-xl hover:bg-parchment text-gray-800 font-medium transition" onclick="toggleMobileAccordion('courses')">
+<span class="flex items-center gap-3">
+<span class="text-lg">📚</span>
+                        Courses
+                    </span>
+<svg class="w-5 h-5 mobile-accordion-arrow text-gray-400" fill="none" id="courses-arrow" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+<div class="mobile-accordion-content pl-12 space-y-1" id="courses-content">
+<a class="block py-2 text-sm text-heritage-gold font-medium" href="/courses.html">All Courses</a>
+<p class="text-xs text-gray-400 uppercase font-bold pt-2">Foundation</p>
+<a class="block py-2 text-sm text-gray-600 hover:text-heritage-gold" href="/courses/foundation/the-cross/index.html">The Cross</a>
+<a class="block py-2 text-sm text-gray-600 hover:text-heritage-gold" href="/courses/foundation/salvation/index.html">Salvation</a>
+<p class="text-xs text-gray-400 uppercase font-bold pt-2">Christian Life</p>
+<a class="block py-2 text-sm text-gray-600 hover:text-heritage-gold" href="/courses/christian-life/armour-of-god/index.html">Armour of God</a>
+<a class="block py-2 text-sm text-gray-600 hover:text-heritage-gold" href="/prayer.html">Prayer</a>
+<p class="text-xs text-gray-400 uppercase font-bold pt-2">History</p>
+<a class="block py-2 text-sm text-gray-600 hover:text-heritage-gold" href="/courses/history/church-history/index.html">Church History</a>
+</div>
+</div>
+<!-- Books Accordion -->
+<div class="mt-2">
+<button class="w-full flex items-center justify-between px-4 py-3 rounded-xl hover:bg-parchment text-gray-800 font-medium transition" onclick="toggleMobileAccordion('books')">
+<span class="flex items-center gap-3">
+<span class="text-lg">📕</span>
+                        Books
+                    </span>
+<svg class="w-5 h-5 mobile-accordion-arrow text-gray-400" fill="none" id="books-arrow" stroke="currentColor" viewbox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+<div class="mobile-accordion-content pl-12 space-y-1" id="books-content">
+<a class="block py-2 text-sm text-heritage-gold font-medium" href="/books.html">All Books</a>
+<a class="block py-2 text-sm text-gray-600 hover:text-heritage-gold" href="/books/higher-calling/index.html">Higher Calling to Worship</a>
+<a class="block py-2 text-sm text-gray-600 hover:text-heritage-gold" href="/books/john-bunyan/index.html">John Bunyan</a>
+<a class="block py-2 text-sm text-gray-600 hover:text-heritage-gold" href="/books/william-gurnall/index.html">William Gurnall</a>
+<a class="block py-2 text-sm text-gray-600 hover:text-heritage-gold" href="/books/john-newton/index.html">John Newton</a>
+<a class="block py-2 text-sm text-gray-600 hover:text-heritage-gold" href="/books/isaac-sharp/index.html">Faroe Islands Mission</a>
+</div>
+</div>
+<!-- Direct Links -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-parchment text-gray-800 font-medium transition mt-2" href="/dailyverses.html">
+<span class="text-lg">📅</span>
+                Daily Verses
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-parchment text-gray-800 font-medium transition" href="/messages/">
+<span class="text-lg">🎬</span>
+                Messages
+            </a>
+<!-- CTA -->
+<div class="mt-6 pt-4 border-t border-gray-100">
+<a class="block w-full text-center px-4 py-3 btn-glossy-gold text-ancient-ink rounded-xl font-semibold" href="/start-teaching.html">
+                    Start Teaching
+                </a>
+</div>
+<!-- Secondary Links -->
+<div class="mt-6 pt-4 border-t border-gray-100 space-y-1">
+<a class="block px-4 py-2 text-sm text-gray-500 hover:text-heritage-gold transition" href="/random-verse.html">Random Verse</a>
+<a class="block px-4 py-2 text-sm text-gray-500 hover:text-heritage-gold transition" href="/sitemap.html">Sitemap</a>
+<a class="block px-4 py-2 text-sm text-gray-500 hover:text-heritage-gold transition" href="/contact.html">Contact</a>
+</div>
+</div>
+</div>
+</div>
+<script>
+function openMobileMenu() {
+    document.getElementById('mobileMenuOverlay').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+}
+function closeMobileMenu() {
+    document.getElementById('mobileMenuOverlay').classList.add('hidden');
+    document.body.style.overflow = '';
+}
+function toggleMobileAccordion(section) {
+    const content = document.getElementById(section + '-content');
+    const arrow = document.getElementById(section + '-arrow');
+    content.classList.toggle('open');
+    arrow.classList.toggle('open');
+}
+</script>

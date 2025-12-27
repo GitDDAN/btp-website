@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-09FW4XY50E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-09FW4XY50E');
+</script>
+
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Random Bible verse generator - Get inspired with verses from Scripture" name="description"/>
+<title>Random Verse Generator | Bible Teaching Program</title><meta content="website" property="og:type"/><meta content="https://bibleteachingprogram.org/daily-verses/random.html" property="og:url"/><meta content="Random Verse Generator | Bible Teaching Program" property="og:title"/><meta content="Random Bible verse generator - Get inspired with verses from Scripture" property="og:description"/><meta content="https://bibleteachingprogram.org/images/hero-banner.png" property="og:image"/><meta content="summary_large_image" name="twitter:card"/><meta content="Random Verse Generator | Bible Teaching Program" name="twitter:title"/><meta content="Random Bible verse generator - Get inspired with verses from Scripture" name="twitter:description"/><meta content="https://bibleteachingprogram.org/images/hero-banner.png" name="twitter:image"/>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Playfair+Display:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind with Brand Colors -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ancient-ink': '#1C1D37',
+                        'heritage-gold': '#CBA378',
+                        'living-sage': '#7F9A83',
+                        'parchment': '#F9F7F2',
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'Georgia', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+<link href="/css/brand.css" rel="stylesheet"/>
+</head>
+<body class="bg-ancient-ink min-h-screen">
+<!-- Navigation (loaded from component) -->
+<div id="nav-placeholder"></div>
+<!-- Main Content -->
+<main class="flex items-center justify-center min-h-[calc(100vh-64px)] px-4 py-12">
+<div class="max-w-2xl w-full">
+<!-- Verse Card -->
+<div class="bg-white rounded-2xl sm:rounded-3xl shadow-2xl p-5 sm:p-8 md:p-12 text-center" id="verse-card">
+<div class="text-4xl sm:text-6xl md:text-7xl mb-4 sm:mb-6">📖</div>
+<blockquote class="text-base sm:text-xl md:text-2xl lg:text-3xl text-gray-800 italic leading-relaxed mb-4 sm:mb-6" id="verse-text">
+                    Loading...
+                </blockquote>
+<p class="text-base sm:text-lg md:text-xl font-bold text-heritage-gold mb-2" id="verse-ref"></p>
+<p class="text-xs sm:text-sm text-gray-500 mb-6 sm:mb-8" id="verse-title"></p>
+<div class="flex flex-col sm:flex-row gap-3 justify-center">
+<button class="px-4 sm:px-6 py-3 bg-ancient-ink text-white rounded-xl font-bold text-sm sm:text-base hover:bg-ancient-ink/90 transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2 whitespace-nowrap" onclick="getRandomVerse()">
+<span class="text-lg sm:text-xl">🎲</span>
+                        New Verse
+                    </button>
+<a class="px-4 sm:px-6 py-3 bg-parchment text-gray-700 rounded-xl font-medium text-sm sm:text-base hover:bg-gray-200 transition-all flex items-center justify-center gap-2 whitespace-nowrap" href="#" id="verse-link">
+<span>📄</span>
+                        Read Devotional
+                    </a>
+</div>
+</div>
+<!-- Stats & Info -->
+<div class="mt-8 text-center text-white/80">
+<p class="text-sm">
+<span class="font-bold text-white">178</span> inspiring verses from
+                    <span class="font-bold text-white">9</span> books of the Bible
+                </p>
+<div class="mt-4 flex items-center justify-center gap-4">
+<a class="text-sm text-white/60 hover:text-white transition flex items-center gap-1" href="/bible/index.html">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        Back to Bible
+                    </a>
+<span class="text-white/30">|</span>
+<a class="text-sm text-white/60 hover:text-white transition" href="/daily-verses/index.html">Daily Verses Calendar</a>
+</div>
+</div>
+</div>
+</main>
+<script>
+        // All verse pages from dailyverses folders (178 verses)
+        const verses = [
+            { path: "/dailyverses/1cor/1cor10v13.html", ref: "1 Corinthians 10:13", text: "...but God is faithful, who will not allow you to be tempted beyond that which you are able;", title: "The Lord protects us from excessive temptation." },
+            { path: "/dailyverses/1cor/1cor12v12.html", ref: "1 Corinthians 12:12", text: "For as the body is one, and has many members, and all the members of that one body, being many, are one body: so also is Christ.", title: "One body in Christ" },
+            { path: "/dailyverses/1cor/1cor12v25.html", ref: "1 Corinthians 12:25", text: "That there should be no schism in the body; but that the members should have the same care one for another.", title: "United as one body." },
+            { path: "/dailyverses/1cor/1cor13v13.html", ref: "1 Corinthians 13:13", text: "And now abides faith, hope, love, these three; but the greatest of these is love.", title: "Faith; hope; love." },
+            { path: "/dailyverses/1cor/1cor13v8.html", ref: "1 Corinthians 13:8", text: "Love never fails:", title: "Love never fails." },
+            { path: "/dailyverses/1cor/1cor14v1.html", ref: "1 Corinthians 14:1", text: "Pursue love, and desire spiritual gifts,", title: "Love and spiritual gifts." },
+            { path: "/dailyverses/1cor/1cor14v8.html", ref: "1 Corinthians 14:8", text: "For if the trumpet gives an uncertain sound, who shall prepare himself to the battle?", title: "A clear message" },
+            { path: "/dailyverses/1cor/1cor15v57.html", ref: "1 Corinthians 15:57", text: "But thanks be to God, who gives us the victory through our Lord Jesus Christ.", title: "Victorious in Christ." },
+            { path: "/dailyverses/1cor/1cor15v58.html", ref: "1 Corinthians 15:58", text: "be steadfast, immoveable, always abounding in the work of the Lord, knowing that your labour is not in vain in the Lord.", title: "Steadfast and immoveable" },
+            { path: "/dailyverses/1cor/1cor16v13_14.html", ref: "1 Corinthians 16:13-14", text: "Watch, stand fast in the faith, be brave, be strong. Let all you do be done with love.", title: "Eyes focused on Christ." },
+            { path: "/dailyverses/1cor/1cor1v18.html", ref: "1 Corinthians 1:18", text: "For the preaching of the cross is to them that perish foolishness; but unto us which are saved it is the power of God.", title: "Delivered from; set free; made new; given life; brought in." },
+            { path: "/dailyverses/1cor/1cor1v29.html", ref: "1 Corinthians 1:29", text: "That no flesh should glory in His presence.", title: "In Christ all things are turned around." },
+            { path: "/dailyverses/1cor/1cor1v30.html", ref: "1 Corinthians 1:30", text: "But of Him are you in Christ Jesus, who of God is made unto us wisdom, and righteousness, and sanctification, and redemption:", title: "Salvation entirely in Christ." },
+            { path: "/dailyverses/1cor/1cor1v31.html", ref: "1 Corinthians 1:31", text: "That, according as it is written, He that glories, let him glory in the Lord.", title: "" },
+            { path: "/dailyverses/1cor/1cor2v16.html", ref: "1 Corinthians 2:16", text: "For who has known the mind of the Lord, that he may instruct Him? But we have the mind of Christ.", title: "His mind is in us" },
+            { path: "/dailyverses/1cor/1cor2v2.html", ref: "1 Corinthians 2:2", text: "For I determined not to know anything among you, save Jesus Christ, and Him crucified.", title: "All we need is in Christ" },
+            { path: "/dailyverses/1cor/1cor2v4.html", ref: "1 Corinthians 2:4", text: "And my speech and my preaching was not with enticing words of man\'s wisdom,", title: "The preaching of the cross brings salvation." },
+            { path: "/dailyverses/1cor/1cor2v9.html", ref: "1 Corinthians 2:9", text: "...the things which God has prepared for them that love Him.", title: "The things He has prepared for us." },
+            { path: "/dailyverses/1cor/1cor3v11.html", ref: "1 Corinthians 3:11", text: "For other foundation can no man lay than that is laid, which is Jesus Christ.", title: "The foundation of our faith." },
+            { path: "/dailyverses/1cor/1cor3v16.html", ref: "1 Corinthians 3:16", text: "Know you not that you are the temple of God, and that the Spirit of God dwells in you?", title: "We are His temple" },
+            { path: "/dailyverses/1cor/1cor4v20.html", ref: "1 Corinthians 4:20", text: "For the kingdom of God is not in word, but in power.", title: "The kingdom of God is power." },
+            { path: "/dailyverses/1cor/1cor6v12.html", ref: "1 Corinthians 6:12", text: "All things are lawful unto me, but all things are not expedient: all things are lawful for me, but I will not be brought under the power of any.", title: "Love controlling freedom" },
+            { path: "/dailyverses/1cor/1cor6v20.html", ref: "1 Corinthians 6:20", text: "For you are bought with a price:", title: "The highest price." },
+            { path: "/dailyverses/1cor/1cor8v3.html", ref: "1 Corinthians 8:3", text: "But if anyone love God, the same is known of Him.", title: "Known of God." },
+            { path: "/dailyverses/1cor/1cor9v25.html", ref: "1 Corinthians 9:25", text: "And everyone who contends for the prize is self controlled in all things. Now they do it to obtain a corruptible crown; but we an incorruptible.", title: "The Christian athlete" },
+            { path: "/dailyverses/1pet/1pet2v7.html", ref: "1 Peter 2:7", text: "...the stone which the builders disallowed, the same is made the head of the corner\'.", title: "Jesus Christ alone can take away sin" },
+            { path: "/dailyverses/2cor/2cor10v4.html", ref: "2 Corinthians 10:4", text: "(For the weapons of our warfare are not carnal, but mighty through God to the pulling down of strong holds;)", title: "Spiritual warfare." },
+            { path: "/dailyverses/2cor/2cor11v3.html", ref: "2 Corinthians 11:3", text: "...the simplicity that is in Christ.", title: "The simplicity of the gospel." },
+            { path: "/dailyverses/2cor/2cor12v9.html", ref: "2 Corinthians 12:9", text: "My grace is sufficient for you: for My strength is made perfect in weakness.", title: "Grace of God working in us." },
+            { path: "/dailyverses/2cor/2cor13v11.html", ref: "2 Corinthians 13:11", text: "Be perfect, be of good comfort, be of one mind, live in peace; and the God of love and peace shall be with you.", title: "Perfect in Christ." },
+            { path: "/dailyverses/2cor/2cor13v5.html", ref: "2 Corinthians 13:5", text: "Examine yourselves, whether you be in the faith; prove your own selves. Do you not know yourselves that Jesus Christ is in you?", title: "Examine yourselves." },
+            { path: "/dailyverses/2cor/2cor1v20.html", ref: "2 Corinthians 1:20", text: "For all the promises of God in Him are yes, and in Him Amen, unto the glory of God by us.", title: "The promises of God" },
+            { path: "/dailyverses/2cor/2cor1v22.html", ref: "2 Corinthians 1:22", text: "Who has also sealed us, and given the down payment of the Spirit in our hearts.", title: "The down payment of the Holy Spirit." },
+            { path: "/dailyverses/2cor/2cor1v4.html", ref: "2 Corinthians 1:4", text: "...that we may be able to comfort them which are in any trouble, by the comfort wherewith we ourselves are comforted of God.", title: "Strengthened to encourage others." },
+            { path: "/dailyverses/2cor/2cor2v14.html", ref: "2 Corinthians 2:14", text: "Now thanks be unto God, who always causes us to triumph in Christ\'.", title: "A victorious Christian" },
+            { path: "/dailyverses/2cor/2cor3v17.html", ref: "2 Corinthians 3:17", text: "Now the Lord is that Spirit: and where the Spirit of the Lord is, there is liberty.", title: "The Spirit of the Lord brings freedom." },
+            { path: "/dailyverses/2cor/2cor3v2.html", ref: "2 Corinthians 3:2", text: "You are our epistle written in our hearts, known and read of all men:", title: "Paul\'s letter of commendation." },
+            { path: "/dailyverses/2cor/2cor4v17.html", ref: "2 Corinthians 4:17", text: "For our light affliction, which is but for a moment, works for us a far more exceeding and eternal weight of glory;", title: "Lightness of our afflictions." },
+            { path: "/dailyverses/2cor/2cor4v18.html", ref: "2 Corinthians 4:18", text: "...for the things which are seen are temporal; but the things which are not seen are eternal.", title: "Christ is everything" },
+            { path: "/dailyverses/2cor/2cor4v4.html", ref: "2 Corinthians 4:4", text: "...lest the light of the glorious gospel of Christ, who is the image of God, should shine unto them.", title: "The glorious gospel." },
+            { path: "/dailyverses/2cor/2cor4v7.html", ref: "2 Corinthians 4:7", text: "But we have this treasure in earthen vessels, that the excellence of the power may be of God, and not of us.", title: "Earthen vessels" },
+            { path: "/dailyverses/2cor/2cor5v10.html", ref: "2 Corinthians 5:10", text: "For we must all appear before the judgment seat of Christ;", title: "Accountabilty and responsibility" },
+            { path: "/dailyverses/2cor/2cor5v14.html", ref: "2 Corinthians 5:14", text: "the love of Christ constrains us", title: "Love of Christ holds everything together." },
+            { path: "/dailyverses/2cor/2cor5v17.html", ref: "2 Corinthians 5:17", text: "Therefore if any man be in Christ, he is a new creation: old things are passed away; behold, all things are become new.", title: "A new creation." },
+            { path: "/dailyverses/2cor/2cor5v21.html", ref: "2 Corinthians 5:21", text: "For He has made Him to be sin for us, who knew no sin; that we might be made the righteousness of God in Him.", title: "Righteous in Him" },
+            { path: "/dailyverses/2cor/2cor5v7.html", ref: "2 Corinthians 5:7", text: "For we walk by faith, not by sight:", title: "Our faith is in Christ; not in the world." },
+            { path: "/dailyverses/2cor/2cor5v9.html", ref: "2 Corinthians 5:9", text: "Wherefore we labour, that, whether present or absent, we may be accepted of Him.", title: "The goal is to please Him." },
+            { path: "/dailyverses/2cor/2cor6v16.html", ref: "2 Corinthians 6:16", text: "And what agreement has the temple of God with idols? for you are the temple of the living God;", title: "The temple of the living God" },
+            { path: "/dailyverses/2cor/2cor6v2.html", ref: "2 Corinthians 6:2", text: "Behold, now is the accepted time; behold, now is the day of salvation.", title: "The gift of salvation in Jesus Christ must be received." },
+            { path: "/dailyverses/2cor/2cor7v1.html", ref: "2 Corinthians 7:1", text: "...perfecting holiness in the fear of God.", title: "Holiness and the fear of the Lord." },
+            { path: "/dailyverses/2cor/2cor7v10.html", ref: "2 Corinthians 7:10", text: "For godly sorrow works repentance to salvation", title: "True repentance." },
+            { path: "/dailyverses/2cor/2cor8v16.html", ref: "2 Corinthians 8:16", text: "But thanks be to God, who put the same earnest care into the heart of Titus for you.", title: "A heart to care for others." },
+            { path: "/dailyverses/2cor/2cor8v2.html", ref: "2 Corinthians 8:2", text: "How that in a great trial of affliction the abundance of their joy and their deep poverty abounded unto the riches of their liberality.", title: "Worship in our afflictions." },
+            { path: "/dailyverses/2cor/2cor8v9.html", ref: "2 Corinthians 8:9", text: "...He became poor, that you through His poverty might be rich.", title: "Christ our riches, jewels, and wealth." },
+            { path: "/dailyverses/2cor/2cor9v15.html", ref: "2 Corinthians 9:15", text: "Thanks be to God for His indescribable gift!", title: "His gift is beyond words." },
+            { path: "/dailyverses/2cor/2cor9v7.html", ref: "2 Corinthians 9:7", text: "God loves a cheerful giver.", title: "Give with hilarious joy." },
+            { path: "/dailyverses/col/col1v10.html", ref: "Colossians 1:10", text: "That you may walk worthy of the Lord, fully pleasing Him, being fruitful in every good work, and increasing in the knowledge of God;", title: "His character; His love; His word seen through us." },
+            { path: "/dailyverses/col/col1v27.html", ref: "Colossians 1:27", text: "...Christ in you, the hope of glory:", title: "One with Christ." },
+            { path: "/dailyverses/col/col2v10.html", ref: "Colossians 2:10", text: "And you are complete in Him,", title: "Complete in Christ." },
+            { path: "/dailyverses/col/col2v3.html", ref: "Colossians 2:3", text: "In whom are hid all the treasures of wisdom and knowledge.", title: "Jesus Christ is God\'s treasury of riches to man." },
+            { path: "/dailyverses/col/col2v6.html", ref: "Colossians 2:6", text: "As you have therefore received Christ Jesus the Lord, so walk in Him:", title: "Walk in Christ." },
+            { path: "/dailyverses/col/col2v7.html", ref: "Colossians 2:7", text: "Rooted and built up in Him, and established in the faith, as you have been taught, abounding in it with thanksgiving.", title: "Rooted; built; established; abounding; thankful." },
+            { path: "/dailyverses/col/col2v8.html", ref: "Colossians 2:8", text: "Beware lest anyone cheat you through philosophy and empty deceit, after the tradition of men,", title: "The gospel is not a philosophy to follow." },
+            { path: "/dailyverses/col/col2v9.html", ref: "Colossians 2:9", text: "For in Him dwells all the fullness of the Godhead bodily.", title: "The Mighty God became like us." },
+            { path: "/dailyverses/col/col3v1.html", ref: "Colossians 3:1", text: "If you then be risen with Christ, seek those things which are above, where Christ sits on the right hand of God.", title: "Seeking after Christ." },
+            { path: "/dailyverses/col/col3v12.html", ref: "Colossians 3:12", text: "Put on therefore, as the chosen of God, holy and beloved, tender mercies, kindness, humbleness of mind, meekness, longsuffering;", title: "Putting on the new life." },
+            { path: "/dailyverses/col/col3v14.html", ref: "Colossians 3:14", text: "And above all these things put on love, which is the bond of perfectness.", title: "Put on love." },
+            { path: "/dailyverses/col/col3v17.html", ref: "Colossians 3:17", text: "And whatsoever you do in word or deed, do all in the name of the Lord Jesus, giving thanks to God and the Father by Him.", title: "His name is associated with us" },
+            { path: "/dailyverses/col/col3v2.html", ref: "Colossians 3:2", text: "Set your affection on things above, not on things on the earth.", title: "Set our mind; our heart; our purpose." },
+            { path: "/dailyverses/col/col3v23.html", ref: "Colossians 3:23", text: "And whatsoever you do, do it heartily, as to the Lord, and not unto men;", title: "The smallest thing is important." },
+            { path: "/dailyverses/col/col3v4.html", ref: "Colossians 3:4", text: "When Christ, who is our life, shall appear, then shall you also appear with Him in glory.", title: "Christ, who is our life." },
+            { path: "/dailyverses/col/col4v2.html", ref: "Colossians 4:2", text: "Continue in prayer, and watch in the same with thanksgiving;", title: "Steadfast in prayer." },
+            { path: "/dailyverses/col/col4v5.html", ref: "Colossians 4:5", text: "Walk in wisdom toward them that are without, redeeming the time.", title: "Walk in wisdom." },
+            { path: "/dailyverses/eph/eph1v13.html", ref: "Ephesians 1:13", text: "In Him you also trusted, after you heard the word of truth, the gospel of your salvation:", title: "We must embrace truth." },
+            { path: "/dailyverses/eph/eph1v15.html", ref: "Ephesians 1:15", text: "...after I heard of your faith in the Lord Jesus, and love unto all the saints\'.", title: "Faith and love." },
+            { path: "/dailyverses/eph/eph1v19.html", ref: "Ephesians 1:19", text: "And what is the exceeding greatness of his power toward us who believe, according to the working of his mighty power\'.", title: "The power of Jesus is above all other." },
+            { path: "/dailyverses/eph/eph1v3.html", ref: "Ephesians 1:3", text: "...who has blessed us with all spiritual blessings in heavenly places in Christ:", title: "Blessed with all spiritual blessings." },
+            { path: "/dailyverses/eph/eph2v10.html", ref: "Ephesians 2:10", text: "For we are his workmanship, created in Christ Jesus unto good works, which God has before ordained that we should walk in them.", title: "Prepared for good works." },
+            { path: "/dailyverses/eph/eph2v19.html", ref: "Ephesians 2:19", text: "Now therefore you are no more strangers and foreigners, but fellow citizens with the saints, and of the household of God;", title: "Citizens of heaven; His royal family." },
+            { path: "/dailyverses/eph/eph2v4.html", ref: "Ephesians 2:4", text: "But God, who is rich in mercy, because of His great love with which He loved us,", title: "The riches of His mercy." },
+            { path: "/dailyverses/eph/eph2v6.html", ref: "Ephesians 2:6", text: "And has raised us up together, and made us sit together in heavenly places in Christ Jesus:", title: "Heights of glory." },
+            { path: "/dailyverses/eph/eph3v11.html", ref: "Ephesians 3:11", text: "According to the eternal purpose which he accomplished in Christ Jesus our Lord:", title: "" },
+            { path: "/dailyverses/eph/eph3v16.html", ref: "Ephesians 3:16", text: "That He would grant you, according to the riches of His glory, to be strengthened with might by His Spirit in the inner being;", title: "His riches are our resources." },
+            { path: "/dailyverses/eph/eph3v17.html", ref: "Ephesians 3:17", text: "That Christ may dwell in your hearts by faith; that you, being rooted and grounded in love,", title: "Rooted and grounded in Christ." },
+            { path: "/dailyverses/eph/eph3v19.html", ref: "Ephesians 3:19", text: "And to know the love of Christ, which passes knowledge, that you might be filled with all the fullness of God.", title: "The love of Christ gave everything for us." },
+            { path: "/dailyverses/eph/eph3v20.html", ref: "Ephesians 3:20", text: "Now unto Him who is able to do exceeding abundantly above all that we ask or think, according to His power that works in us,", title: "He will never disappoint us." },
+            { path: "/dailyverses/eph/eph3v8.html", ref: "Ephesians 3:8", text: "...that I should preach among the Gentiles the unsearchable riches of Christ;", title: "In Christ we are brought into immense riches." },
+            { path: "/dailyverses/eph/eph4v1.html", ref: "Ephesians 4:1", text: "...that you walk worthy of the calling with which you are called,", title: "Walk worthy of His calling." },
+            { path: "/dailyverses/eph/eph4v15.html", ref: "Ephesians 4:15", text: "But speaking the truth in love, may grow up into him in all things, which is the head, even Christ:", title: "Custodians of His word" },
+            { path: "/dailyverses/eph/eph4v23.html", ref: "Ephesians 4:23", text: "And be renewed in the spirit of your mind;", title: "The gravitational pull of the world." },
+            { path: "/dailyverses/eph/eph4v24.html", ref: "Ephesians 4:24", text: "And that you put on the new man, which after God is created in righteousness and true holiness.", title: "Put on new life." },
+            { path: "/dailyverses/eph/eph4v3.html", ref: "Ephesians 4:3", text: "Endeavouring to keep the unity of the Spirit in the bond of peace.", title: "Keep the unity of the Spirit" },
+            { path: "/dailyverses/eph/eph4v30.html", ref: "Ephesians 4:30", text: "And grieve not the Holy Spirit of God by whom you are sealed unto the day of redemption.", title: "Do not grieve the Holy Spirit" },
+            { path: "/dailyverses/eph/eph5v11.html", ref: "Ephesians 5:11", text: "And have no fellowship with the unfruitful works of darkness, but rather reprove them.", title: "The Holy Spirit will lead us in righteousness." },
+            { path: "/dailyverses/eph/eph5v19.html", ref: "Ephesians 5:19", text: "Speaking to one another in psalms and hymns and spiritual songs, singing and making melody in your heart to the Lord;", title: "Speaking to one another; singing to the Lord." },
+            { path: "/dailyverses/eph/eph5v20.html", ref: "Ephesians 5:20", text: "Giving thanks always for all things unto God and the Father in the name of our Lord Jesus Christ;", title: "Giving thanks" },
+            { path: "/dailyverses/armour/eph6v10.html", ref: "Ephesians 6:10", text: "Finally, my brethren, be strong in the Lord, and in the power of His might.", title: "Be strong in the Lord." },
+            { path: "/dailyverses/armour/eph6v11.html", ref: "Ephesians 6:11", text: "Put on the whole armour of God, that you may be able to stand against the deceitful schemes of the devil.", title: "Our armour is Christ." },
+            { path: "/dailyverses/armour/eph6v12.html", ref: "Ephesians 6:12", text: "For we wrestle not against flesh and blood, but against principalities, against powers, against the rulers of the darkness of this world, against spiritual wickedness in high places.", title: "The Christian life is a spiritual warfare." },
+            { path: "/dailyverses/armour/eph6v13.html", ref: "Ephesians 6:13", text: "Wherefore take unto you the whole armour of God, that you may be able to withstand in the evil day, and having done all, to stand.", title: "Standing steadfast in Christ." },
+            { path: "/dailyverses/armour/eph6v14.html", ref: "Ephesians 6:14", text: "Stand therefore, having your loins girt about with truth,", title: "The belt of truth." },
+            { path: "/dailyverses/armour/eph6v15.html", ref: "Ephesians 6:15", text: "And your feet shod with the preparation of the gospel of peace;", title: "Christian armour needs right footwear." },
+            { path: "/dailyverses/armour/eph6v16.html", ref: "Ephesians 6:16", text: "Above all, taking the shield of faith, wherewith you shall be able to quench all the fiery darts of the wicked.", title: "The shield of faith." },
+            { path: "/dailyverses/armour/eph6v17.html", ref: "Ephesians 6:17", text: "And take the helmet of salvation,", title: "The helmet of salvation." },
+            { path: "/dailyverses/armour/eph6v18.html", ref: "Ephesians 6:18", text: "Praying always with all prayer and supplication in the Spirit,", title: "Prayer in the Holy Spirit." },
+            { path: "/dailyverses/armour/eph6v20.html", ref: "Ephesians 6:20", text: "For which I am an ambassador in chains: that therein I may speak boldly, as I ought to speak.", title: "An ambassador in chains." },
+            { path: "/dailyverses/eph/eph6v8.html", ref: "Ephesians 6:8", text: "Knowing that whatever good thing anyone does, the same shall he receive of the Lord,", title: "Servants of Christ." },
+            { path: "/dailyverses/gal/gal1v1516.html", ref: "Galatians 1:15-16", text: "But when it pleased God... to reveal His Son in me,", title: "The gospel is Christ." },
+            { path: "/dailyverses/gal/gal1v4.html", ref: "Galatians 1:4", text: "Who gave Himself for our sins, that He might deliver us from this present evil world,", title: "Jesus delivers us from the power of self." },
+            { path: "/dailyverses/gal/gal2v20.html", ref: "Galatians 2:20", text: "I am crucified with Christ: nevertheless I live; yet not I, but Christ lives in me:", title: "Crucified with Christ; Risen with Christ." },
+            { path: "/dailyverses/gal/gal3v24.html", ref: "Galatians 3:24", text: "Therefore the law was our schoolmaster to bring us unto Christ, that we might be justified by faith.", title: "The law guides; Christ justifies" },
+            { path: "/dailyverses/gal/gal3v27.html", ref: "Galatians 3:27", text: "For as many of you as have been baptized into Christ have put on Christ.", title: "Fully immersed into Christ." },
+            { path: "/dailyverses/gal/gal4v19.html", ref: "Galatians 4:19", text: "My little children, of whom I travail in birth again until Christ be formed in you,", title: "Travailing in birth" },
+            { path: "/dailyverses/gal/gal4v31.html", ref: "Galatians 4:31", text: "So then, brethren, we are not children of the bondwoman, but of the free.", title: "The law cannot produce holiness." },
+            { path: "/dailyverses/gal/gal4v4.html", ref: "Galatians 4:4", text: "But when the fulness of the time was come, God sent forth his Son, made of a woman, made under the law\'.", title: "The Lord\'s way is perfect" },
+            { path: "/dailyverses/gal/gal4v6.html", ref: "Galatians 4:6", text: "And because you are sons, God has sent forth the Spirit of his Son into your hearts, crying, Abba, Father.", title: "The Spirit of Christ in us" },
+            { path: "/dailyverses/gal/gal5v1.html", ref: "Galatians 5:1", text: "Stand fast therefore in the liberty wherewith Christ has made us free, and be not entangled again with the yoke of bondage.", title: "Freedom in Christ." },
+            { path: "/dailyverses/gal/gal5v15.html", ref: "Galatians 5:15", text: "But if you bite and devour one another, take heed that you be not consumed one of another.", title: "Holy Spirit keeps us from conflicts." },
+            { path: "/dailyverses/gal/gal5v22.html", ref: "Galatians 5:22-23", text: "love, joy, peace, longsuffering, gentleness, goodness, faith, meekness, and self control\'.", title: "The fruit of holiness." },
+            { path: "/dailyverses/gal/gal6v14.html", ref: "Galatians 6:14", text: ", \'But God forbid that I should glory, save in the cross of our Lord Jesus Christ, by whom the world is crucified unto me, and I unto the world.", title: "Glory in the cross" },
+            { path: "/dailyverses/gal/gal6v15.html", ref: "Galatians 6:15", text: "For in Christ Jesus neither circumcision nor uncircumcision avails anything, but a new creation.", title: "New life not ritual" },
+            { path: "/dailyverses/gal/gal6v9.html", ref: "Galatians 6:9", text: "And let us not be weary in well doing", title: "A picture of His love." },
+            { path: "/dailyverses/heb/heb4v12.html", ref: "Hebrews 4:12", text: "For the word of God is living, and powerful, and sharper than any two edged sword,", title: "His word is our daily bread." },
+            { path: "/dailyverses/heb/heb6v10.html", ref: "Hebrews 6:10", text: "For God is not unrighteous to forget your work and labour of love,", title: "The Lord will reward His people." },
+            { path: "/dailyverses/phil/phil1v11.html", ref: "Philippians 1:11", text: "Being filled with the fruits of righteousness, which are by Jesus Christ, unto the glory and praise of God.", title: "Glorified by much fruit." },
+            { path: "/dailyverses/phil/phil1v6.html", ref: "Philippians 1:6", text: "Being confident of this very thing, that He who began a good work in you will complete it until the day of Jesus Christ:", title: "His life works in us." },
+            { path: "/dailyverses/phil/phil1v9.html", ref: "Philippians 1:9", text: "And this I pray, that your love may abound yet more and more in knowledge and in all judgment;", title: "Love that is more than emotion." },
+            { path: "/dailyverses/phil/phil2v11.html", ref: "Philippians 2:11", text: "And that every tongue should confess that Jesus Christ is Lord, to the glory of God the Father.", title: "Jesus Christ is Lord." },
+            { path: "/dailyverses/phil/phil2v12.html", ref: "Philippians 2:12-13", text: "...work out your own salvation with fear and trembling. For it is God who works in you both to will and to do of his good pleasure.", title: "Responsible for growth and obedience" },
+            { path: "/dailyverses/phil/phil2v21.html", ref: "Philippians 2:21", text: "For all seek their own, not the things which are Jesus Christ\'s.", title: "Our motivation; our goal; our reward." },
+            { path: "/dailyverses/phil/phil2v3.html", ref: "Philippians 2:3", text: "...but in lowliness of mind let each esteem other better than themselves.", title: "Freedom to look on others more highly than ourselves" },
+            { path: "/dailyverses/phil/phil2v5.html", ref: "Philippians 2:5", text: "Let this mind be in you, which was also in Christ Jesus:", title: "Humility and sacrifice" },
+            { path: "/dailyverses/phil/phil3v10.html", ref: "Philippians 3:10", text: "That I may know Him, and the power of His resurrection,", title: "The glory of Jesus is known by those who love Him." },
+            { path: "/dailyverses/phil/phil3v13.html", ref: "Philippians 3:13", text: "...forgetting those things which are behind, and reaching out unto those things which are ahead,", title: "" },
+            { path: "/dailyverses/phil/phil3v21.html", ref: "Philippians 3:21", text: "Who shall change our lowly body, that it may be fashioned like unto His glorious body,", title: "" },
+            { path: "/dailyverses/phil/phil3v3.html", ref: "Philippians 3:3", text: "For we are the circumcision, who worship God in the Spirit, rejoice in Christ Jesus, and have no confidence in the flesh.", title: "Worship in the Spirit." },
+            { path: "/dailyverses/phil/phil3v7.html", ref: "Philippians 3:7", text: "But what things were gain to me, those I counted loss for Christ.", title: "Desire Christ." },
+            { path: "/dailyverses/phil/phil4v13.html", ref: "Philippians 4:13", text: "I can do all things through Christ who strengthens me.", title: "He is our resource." },
+            { path: "/dailyverses/phil/phil4v19.html", ref: "Philippians 4:19", text: "But my God shall supply all your need according to His riches in glory by Christ Jesus.", title: "In Christ every need is supplied." },
+            { path: "/dailyverses/phil/phil4v4.html", ref: "Philippians 4:4", text: "Rejoice in the Lord at all times: and again I say, Rejoice.", title: "Rejoice in the Lord." },
+            { path: "/dailyverses/phil/phil4v7.html", ref: "Philippians 4:7", text: "And the peace of God, which surpasses all understanding, will guard your hearts and minds through Christ Jesus.", title: "Peace that the world cannot understand." },
+            { path: "/dailyverses/rom/rom10v13.html", ref: "Romans 10:13", text: "For whosoever shall call upon the name of the Lord shall be saved.", title: "If we call, He will answer." },
+            { path: "/dailyverses/rom/rom10v15.html", ref: "Romans 10:15", text: "How beautiful are the feet of them that preach the gospel of peace, and bring glad tidings of good things!", title: "" },
+            { path: "/dailyverses/rom/rom11v33.html", ref: "Romans 11:33", text: "O the depth of the riches both of the wisdom and knowledge of God!", title: "The wisdom and knowledge of God." },
+            { path: "/dailyverses/rom/rom12v1.html", ref: "Romans 12:1", text: "...present your bodies a living sacrifice, holy, acceptable unto God\'.", title: "A living sacrifice." },
+            { path: "/dailyverses/rom/rom12v21.html", ref: "Romans 12:21", text: "Be not overcome of evil, but overcome evil with good.", title: "Power over every evil thing." },
+            { path: "/dailyverses/rom/rom13v11.html", ref: "Romans 13:11", text: "...for now is our salvation nearer than when we believed.", title: "Live for Christ." },
+            { path: "/dailyverses/rom/rom13v8.html", ref: "Romans 13:8", text: "Owe no one anything except to love one another: for he who loves another has fulfilled the law.", title: "The debt we owe." },
+            { path: "/dailyverses/rom/rom14v17.html", ref: "Romans 14:17", text: "For the kingdom of God is not meat and drink; but righteousness, and peace, and joy in the Holy Ghost.", title: "Righteousness; peace; and joy." },
+            { path: "/dailyverses/rom/rom14v19.html", ref: "Romans 14:19", text: "Let us therefore follow after the things which make for peace,", title: "Follow after peace." },
+            { path: "/dailyverses/rom/rom15v13.html", ref: "Romans 15:13", text: "Now the God of hope fill you with all joy and peace in believing, that you may abound in hope, through the power of the Holy Ghost.", title: "Joy; peace; hope." },
+            { path: "/dailyverses/rom/rom15v14.html", ref: "Romans 15:14", text: "...you also are full of goodness, filled with all knowledge, able also to admonish one another.", title: "Evidence of growth." },
+            { path: "/dailyverses/rom/rom15v30.html", ref: "Romans 15:30", text: "strive together with me in your prayers to God for me;", title: "Prayer is working with God." },
+            { path: "/dailyverses/rom/rom16v25.html", ref: "Romans 16:25", text: "Now to Him who is able to establish you according to my gospel, and the preaching of Jesus Christ\'.", title: "Established in Christ" },
+            { path: "/dailyverses/rom/rom1v12.html", ref: "Romans 1:12", text: "That is, that I may be comforted together with you by the mutual faith both of you and me.", title: "The church is not a hierarchy." },
+            { path: "/dailyverses/rom/rom1v16.html", ref: "Romans 1:16", text: "For I am not ashamed of the gospel of Christ: for it is the power of God unto salvation to everyone that believes;", title: "Not ashamed of the gospel." },
+            { path: "/dailyverses/rom/rom2v11.html", ref: "Romans 2:11", text: "For there is no respect of persons with God.", title: "None but Christ." },
+            { path: "/dailyverses/rom/rom3v25.html", ref: "Romans 3:25", text: "Whom God has set forth to be a propitiation through faith in his blood,", title: "Propitiation; forgiveness; and reconciliation." },
+            { path: "/dailyverses/rom/rom3v28.html", ref: "Romans 3:28", text: "Therefore we conclude that a man is justified by faith without the deeds of the law.", title: "Justified by Faith" },
+            { path: "/dailyverses/rom/rom4v20.html", ref: "Romans 4:20", text: "He did not doubt the promise of God through unbelief; but was strong in faith, giving glory to God;", title: "Strong in faith." },
+            { path: "/dailyverses/rom/rom5v1.html", ref: "Romans 5:1", text: "Therefore being justified by faith, we have peace with God through our Lord Jesus Christ\'.", title: "Peace with God." },
+            { path: "/dailyverses/rom/rom5v3.html", ref: "Romans 5:3", text: "And not only so, but we glory in tribulations also: knowing that tribulation works patience;", title: "Glory in Tribulation." },
+            { path: "/dailyverses/rom/rom5v5.html", ref: "Romans 5:5", text: "And hope makes not ashamed; because the love of God is shed abroad in our hearts by the Holy Spirit which is given unto us.", title: "His love in our hearts" },
+            { path: "/dailyverses/rom/rom5v8.html", ref: "Romans 5:8", text: "But God commends His love toward us, in that, while we were yet sinners, Christ died for us.", title: "His love stood with us." },
+            { path: "/dailyverses/rom/rom6v14.html", ref: "Romans 6:14", text: "For sin shall not have dominion over you: for you are not under the law, but under grace.", title: "" },
+            { path: "/dailyverses/rom/rom6v18.html", ref: "Romans 6:18", text: "Being then set free from sin, you became servants of righteousness.", title: "Free to serve in righteousness." },
+            { path: "/dailyverses/rom/rom6v5.html", ref: "Romans 6:5", text: "For if we have been planted together in the likeness of His death, we shall be also in the likeness of His resurrection:", title: "Buried with Christ; risen with Christ." },
+            { path: "/dailyverses/rom/rom7v4.html", ref: "Romans 7:4", text: "...that we should bring forth fruit unto God.", title: "The fruit of a godly life." },
+            { path: "/dailyverses/rom/rom8v1.html", ref: "Romans 8:1", text: "There is therefore now no condemnation to them which are in Christ Jesus, who walk not after the flesh, but after the Spirit.", title: "The wisdom; love; and grace of God." },
+            { path: "/dailyverses/rom/rom8v14.html", ref: "Romans 8:14", text: "For as many as are led by the Spirit of God, they are the sons of God.", title: "The Holy Spirit guides; teaches; and bears witness." },
+            { path: "/dailyverses/rom/rom8v16.html", ref: "Romans 8:16", text: "The Spirit Himself bears witness with our spirit, that we are the children of God:", title: "The witness of the Holy Spirit." },
+            { path: "/dailyverses/rom/rom8v18.html", ref: "Romans 8:18", text: "For I reckon that the sufferings of this present time are not worthy to be compared with the glory which shall be revealed in us.", title: "His glory will be seen in us." },
+            { path: "/dailyverses/rom/rom8v2.html", ref: "Romans 8:2", text: "For the law of the Spirit of life in Christ Jesus has made me free from the law of sin and death.", title: "" },
+            { path: "/dailyverses/rom/rom8v26.html", ref: "Romans 8:26", text: "Likewise the Spirit also helps our weaknesses: for we know not what we should pray for as we should:", title: "Effective prayer." },
+            { path: "/dailyverses/rom/rom8v28.html", ref: "Romans 8:28", text: "And we know that all things work together for good to them that love God, to them who are the called according to his purpose.", title: "His purpose; our desire." },
+            { path: "/dailyverses/rom/rom8v32.html", ref: "Romans 8:32", text: "He that spared not his own Son, but delivered him up for us all, how shall he not with him also freely give us all things?", title: "His provision and His love." },
+            { path: "/dailyverses/rom/rom8v37.html", ref: "Romans 8:37", text: "No, in all these things we are more than conquerors through Him that loved us.", title: "More than conquerors through His love for us." },
+            { path: "/dailyverses/rom/rom9v3.html", ref: "Romans 9:3", text: "For I could wish that myself were accursed from Christ for my brethren, my kinsmen according to the flesh:", title: "The heart of an intercessor." }
+        ];
+
+        function getRandomVerse() {
+            const verse = verses[Math.floor(Math.random() * verses.length)];
+            document.getElementById('verse-text').innerHTML = '"' + verse.text + '"';
+            document.getElementById('verse-ref').textContent = verse.ref;
+            document.getElementById('verse-title').textContent = verse.title || '';
+            document.getElementById('verse-link').href = verse.path;
+
+            // Add animation
+            const card = document.getElementById('verse-card');
+            card.style.opacity = '0';
+            card.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                card.style.transition = 'all 0.4s ease-out';
+                card.style.opacity = '1';
+                card.style.transform = 'scale(1)';
+            }, 50);
+        }
+
+        // Load random verse on page load
+        getRandomVerse();
+    </script>
+<script src="/js/components.js"></script>
+</body>
+</html>
